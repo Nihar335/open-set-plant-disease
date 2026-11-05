@@ -1,0 +1,45 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://agrovaidya.invalid/stage10/schemas/disease_candidate.schema.json",
+  "title": "A candidate explanation (infectious or non-infectious). Never a confirmed diagnosis.",
+  "type": "object",
+  "required": ["candidate_id", "status", "kb_disease_id", "candidate_name", "cause_category", "scientific_cause", "affected_crop",
+               "crop_compatible", "supporting_symptoms", "conflicting_or_missing", "reference_image_matches", "important_alternatives",
+               "recommended_confirmatory_tests", "source_ids", "ranking_method", "ranking_score", "ranking_score_is_probability",
+               "validation_status", "uncertainty_statement"],
+  "properties": {
+    "candidate_id": {"type": "string", "pattern": "^CAND-[0-9]+$"},
+    "status": {"const": "candidate"},
+    "kb_disease_id": {"type": ["string", "null"]},
+    "candidate_name": {"$ref": "common.schema.json#/$defs/localized_text"},
+    "cause_category": {"enum": ["fungal", "bacterial", "viral", "oomycete", "phytoplasma", "nematode", "pest", "nutrient_deficiency",
+                                "nutrient_toxicity", "water_stress", "temperature_injury", "soil_or_salinity", "chemical_injury",
+                                "other_abiotic", "unknown"]},
+    "scientific_cause": {"$ref": "common.schema.json#/$defs/sourced_value"},
+    "affected_crop": {"type": "string", "minLength": 1},
+    "crop_compatible": {"type": "boolean"},
+    "crop_mismatch_note": {"$ref": "common.schema.json#/$defs/localized_text"},
+    "supporting_symptoms": {"type": "array", "items": {"type": "string", "pattern": "^SYM-[0-9]+$"}, "uniqueItems": true},
+    "conflicting_or_missing": {"type": "array", "items": {"$ref": "common.schema.json#/$defs/localized_text"}},
+    "reference_image_matches": {
+      "type": "array",
+      "items": {"type": "object", "required": ["reference_id", "similarity", "license"],
+                "properties": {"reference_id": {"type": "string"}, "similarity": {"type": "number"}, "license": {"type": "string"}},
+                "additionalProperties": false}
+    },
+    "important_alternatives": {"type": "array", "items": {"$ref": "common.schema.json#/$defs/localized_text"}},
+    "recommended_confirmatory_tests": {"type": "array", "items": {"type": "string", "pattern": "^REC-[0-9]+$"}},
+    "source_ids": {"allOf": [{"$ref": "common.schema.json#/$defs/source_ids"}, {"minItems": 1}]},
+    "ranking_method": {"enum": ["kb_symptom_match", "reference_image_similarity", "hybrid", "model_class_evidence"]},
+    "ranking_score": {"type": ["number", "null"], "description": "an ordinal ranking score, NOT a probability"},
+    "ranking_score_is_probability": {"const": false},
+    "validation_status": {"enum": ["unvalidated", "validated"]},
+    "evaluation_reference": {"type": "string", "minLength": 1},
+    "uncertainty_statement": {"$ref": "common.schema.json#/$defs/localized_text"}
+  },
+  "additionalProperties": false,
+  "allOf": [
+    {"if": {"properties": {"crop_compatible": {"const": false}}}, "then": {"required": ["crop_mismatch_note"]}},
+    {"if": {"properties": {"validation_status": {"const": "validated"}}}, "then": {"required": ["evaluation_reference"]}}
+  ]
+}

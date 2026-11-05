@@ -1,0 +1,175 @@
+{
+  "primary": {
+    "temperature": 1.0,
+    "threshold_energy": -3.2140936036581813,
+    "selection": "T fixed a priori (Liu et al. 2020 default; no unknown data); threshold = energy accepting 95% of KNOWN validation images (same rule as Stage-4 MSP)"
+  },
+  "secondary": {
+    "temperature": 0.5,
+    "threshold_energy": -3.211174566681951,
+    "selection": "T = argmax AUROC(known validation vs validation-unknown) over the grid (Stage-2 protocol permits validation-unknowns for such settings); same threshold rule",
+    "differs_from_primary": true
+  },
+  "rule": "accept as known iff E(x) <= threshold_energy, E = -T*logsumexp(logits/T)",
+  "per_temperature_validation": {
+    "0.5": {
+      "temperature": 0.5,
+      "threshold_energy": -3.211174566681951,
+      "known_val_acceptance": 0.9501943634596696,
+      "misclassified_val_rejected": 0.5428571428571428,
+      "correct_val_rejected": 0.04557706444498898,
+      "energy_quantiles_correct": {
+        "0.05": -14.196718215942383,
+        "0.25": -11.176925659179688,
+        "0.5": -9.22834396362484,
+        "0.75": -6.89832163127578,
+        "0.95": -3.315983427797599
+      },
+      "energy_quantiles_incorrect": {
+        "0.05": -7.283067940438998,
+        "0.25": -5.425553411314383,
+        "0.5": -2.362863402891892,
+        "0.75": -0.17471751905939956,
+        "0.95": 4.613574993116789
+      },
+      "auroc_misclassified_vs_correct_known_val": 0.9152658662092624,
+      "auroc_known_val_vs_validation_unknown": 0.9713077232397378,
+      "validation_unknown_rejected": 0.8411584028082493
+    },
+    "0.75": {
+      "temperature": 0.75,
+      "threshold_energy": -3.2135177444541925,
+      "known_val_acceptance": 0.9501943634596696,
+      "misclassified_val_rejected": 0.5428571428571428,
+      "correct_val_rejected": 0.04557706444498898,
+      "energy_quantiles_correct": {
+        "0.05": -14.196718216001695,
+        "0.25": -11.17692565920127,
+        "0.5": -9.22834398671841,
+        "0.75": -6.901036250557223,
+        "0.95": -3.316189412754389
+      },
+      "energy_quantiles_incorrect": {
+        "0.05": -7.363094072825151,
+        "0.25": -5.507425744856537,
+        "0.5": -2.3634159000601342,
+        "0.75": -0.2504428325972728,
+        "0.95": 4.445421441106603
+      },
+      "auroc_misclassified_vs_correct_known_val": 0.9134525851506983,
+      "auroc_known_val_vs_validation_unknown": 0.9711134877068737,
+      "validation_unknown_rejected": 0.840280824923212
+    },
+    "1.0": {
+      "temperature": 1.0,
+      "threshold_energy": -3.2140936036581813,
+      "known_val_acceptance": 0.9501943634596696,
+      "misclassified_val_rejected": 0.5428571428571428,
+      "correct_val_rejected": 0.04557706444498898,
+      "energy_quantiles_correct": {
+        "0.05": -14.1967182437612,
+        "0.25": -11.176925678868315,
+        "0.5": -9.228346963425002,
+        "0.75": -6.901654822873814,
+        "0.95": -3.3251299322705683
+      },
+      "energy_quantiles_incorrect": {
+        "0.05": -7.440767030376503,
+        "0.25": -5.576130008952684,
+        "0.5": -2.3683668795507824,
+        "0.75": -0.3671932549898568,
+        "0.95": 4.251792454720186
+      },
+      "auroc_misclassified_vs_correct_known_val": 0.9105611369762313,
+      "auroc_known_val_vs_validation_unknown": 0.9707733090101834,
+      "validation_unknown_rejected": 0.8372093023255814
+    },
+    "1.5": {
+      "temperature": 1.5,
+      "threshold_energy": -3.2888611580409064,
+      "known_val_acceptance": 0.9501943634596696,
+      "misclassified_val_rejected": 0.5428571428571428,
+      "correct_val_rejected": 0.04557706444498898,
+      "energy_quantiles_correct": {
+        "0.05": -14.196735217927678,
+        "0.25": -11.176947654787218,
+        "0.5": -9.23276368808115,
+        "0.75": -6.912884323497533,
+        "0.95": -3.3660640308272827
+      },
+      "energy_quantiles_incorrect": {
+        "0.05": -7.5905947840075525,
+        "0.25": -5.898339881842803,
+        "0.5": -2.43382963363454,
+        "0.75": -0.6490653946664717,
+        "0.95": 3.7603161411832047
+      },
+      "auroc_misclassified_vs_correct_known_val": 0.9035320474673574,
+      "auroc_known_val_vs_validation_unknown": 0.9695462777350645,
+      "validation_unknown_rejected": 0.8284335234752084
+    },
+    "2.0": {
+      "temperature": 2.0,
+      "threshold_energy": -3.416700002649507,
+      "known_val_acceptance": 0.9501943634596696,
+      "misclassified_val_rejected": 0.5142857142857142,
+      "correct_val_rejected": 0.04582210242587601,
+      "energy_quantiles_correct": {
+        "0.05": -14.197255581256668,
+        "0.25": -11.179334783999314,
+        "0.5": -9.239153884492225,
+        "0.75": -6.959669221086332,
+        "0.95": -3.5275069342315364
+      },
+      "energy_quantiles_incorrect": {
+        "0.05": -7.820900356762764,
+        "0.25": -6.258125575417733,
+        "0.5": -2.6615427993149265,
+        "0.75": -1.0791896476237217,
+        "0.95": 3.024580724589658
+      },
+      "auroc_misclassified_vs_correct_known_val": 0.8947946931774424,
+      "auroc_known_val_vs_validation_unknown": 0.9673154474602479,
+      "validation_unknown_rejected": 0.8078104431768319
+    },
+    "5.0": {
+      "temperature": 5.0,
+      "threshold_energy": -6.976358920926156,
+      "known_val_acceptance": 0.9501943634596696,
+      "misclassified_val_rejected": 0.3142857142857143,
+      "correct_val_rejected": 0.047537368292085276,
+      "energy_quantiles_correct": {
+        "0.05": -14.932095868841122,
+        "0.25": -12.707748720891708,
+        "0.5": -11.275326088043805,
+        "0.75": -9.472895569093273,
+        "0.95": -7.0901373853621985
+      },
+      "energy_quantiles_incorrect": {
+        "0.05": -11.604244235355067,
+        "0.25": -10.169707189427179,
+        "0.5": -7.977415024714631,
+        "0.75": -6.298501769768166,
+        "0.95": -3.2703765700077074
+      },
+      "auroc_misclassified_vs_correct_known_val": 0.814170196380439,
+      "auroc_known_val_vs_validation_unknown": 0.9162969581990635,
+      "validation_unknown_rejected": 0.46160596752961824
+    }
+  },
+  "msp_validation_reference": {
+    "auroc_known_val_vs_validation_unknown": 0.9706842932747598,
+    "threshold_msp": 0.9916749628968144
+  },
+  "validation": {
+    "n_known": 4116,
+    "n_validation_unknown": 2279,
+    "n_misclassified": 35
+  },
+  "logits_val_sha256": "117907ec23596ba310392e9e1d5c1fb18833908604e1198dda5852609254ccb2",
+  "logits_test_sha256": "54d9dd08a223d5384cfe82dde355986db1563f8084f77d5f6bf5b6754787548a",
+  "checkpoint_sha256": "2b5071fb192706065a9fec2d9df8c4949cf05b18040920ef5a2c856685d51a1d",
+  "val_manifest_sha256": "088987183abd78f3b9e82c4e845de38a20bc77e5ce78c6e3364a9f41a0ea9ca3",
+  "test_used": false,
+  "created_utc": "2026-10-08T16:23:07+00:00"
+}

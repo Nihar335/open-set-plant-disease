@@ -1,0 +1,64 @@
+{
+ "note": "Smoke test only. Synthetic inputs; no accuracy measured; not evidence that the model works for Indian plants.",
+ "model": {
+  "repo": "imageomics/bioclip-2",
+  "revision": "2957b322090f9cb17ae72c71981c7218a28d81e0",
+  "file": "open_clip_model.safetensors",
+  "size_bytes": 1710517724,
+  "sha256": "b7b2bf6fbc95799e42630e394cf95803892ab447c1a8ab629dbc82fbeaf7dfef",
+  "sha256_matches_official": true
+ },
+ "errors": [],
+ "environment": {
+  "python": "3.12.0",
+  "os": "Windows-11-10.0.26300-SP0",
+  "torch": "2.5.1+cu121",
+  "open_clip": "3.3.0",
+  "cuda_available": true,
+  "gpu": "NVIDIA GeForce RTX 4050 Laptop GPU",
+  "gpu_total_mib": 6140,
+  "cpu": "Intel64 Family 6 Model 186 Stepping 2, GenuineIntel",
+  "cpu_logical_cores": 16,
+  "ram_total_gib": 15.6,
+  "venv": "C:\\Users\\nihar\\venvs\\agrovaidya-plantid"
+ },
+ "load": {
+  "seconds_cpu": 2.58,
+  "rss_increase_mib": 1669,
+  "n_parameters": 427616513
+ },
+ "gpu_fp32": {
+  "n_images": 50,
+  "warmup_images": 5,
+  "text_encode_seconds_for_prompts": 0.574,
+  "n_prompts": 60,
+  "latency_ms_p50": 50.7,
+  "latency_ms_p95": 53.5,
+  "latency_ms_max": 67.2,
+  "gpu_peak_allocated_mib": 1804,
+  "gpu_peak_reserved_mib": 1936
+ },
+ "gpu_fp16_autocast": {
+  "n_images": 50,
+  "warmup_images": 5,
+  "text_encode_seconds_for_prompts": 0.166,
+  "n_prompts": 60,
+  "latency_ms_p50": 24.6,
+  "latency_ms_p95": 25.4,
+  "latency_ms_max": 25.6,
+  "gpu_peak_allocated_mib": 2411,
+  "gpu_peak_reserved_mib": 2468
+ },
+ "cpu_fp32": {
+  "n_images": 10,
+  "warmup_images": 5,
+  "text_encode_seconds_for_prompts": 2.2,
+  "n_prompts": 60,
+  "latency_ms_p50": 490.6,
+  "latency_ms_p95": 742.8,
+  "latency_ms_max": 742.8,
+  "rss_mib_after": 2861,
+  "rss_increase_mib": 69
+ },
+ "latency_definition": "per image, end to end: JPEG decode (synthetic 1024x768) + preprocessing + image encoder + cosine similarity/softmax against precomputed text embeddings; batch size 1; after warm-up"
+}

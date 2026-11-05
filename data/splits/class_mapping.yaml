@@ -1,0 +1,587 @@
+protocol_version: 1
+seed: 42
+class_id_rule: index in config.yaml osr_protocol.known_classes; unknown images have class_id -1
+known_classes:
+- class_id: 0
+  class_name: Apple___Apple_scab
+  dataset: PlantVillage
+  crop: Apple
+  disease: Apple_scab
+  images: 630
+  split_counts:
+    train: 440
+    val: 95
+    test: 95
+- class_id: 1
+  class_name: Apple___Cedar_apple_rust
+  dataset: PlantVillage
+  crop: Apple
+  disease: Cedar_apple_rust
+  images: 275
+  split_counts:
+    train: 192
+    val: 43
+    test: 40
+- class_id: 2
+  class_name: Apple___healthy
+  dataset: PlantVillage
+  crop: Apple
+  disease: healthy
+  images: 1645
+  split_counts:
+    train: 1151
+    val: 247
+    test: 247
+- class_id: 3
+  class_name: Corn_(maize)___Cercospora_leaf_spot Gray_leaf_spot
+  dataset: PlantVillage
+  crop: Corn_(maize)
+  disease: Cercospora_leaf_spot Gray_leaf_spot
+  images: 513
+  split_counts:
+    train: 359
+    val: 77
+    test: 77
+- class_id: 4
+  class_name: Corn_(maize)___Common_rust_
+  dataset: PlantVillage
+  crop: Corn_(maize)
+  disease: Common_rust_
+  images: 1192
+  split_counts:
+    train: 834
+    val: 179
+    test: 179
+- class_id: 5
+  class_name: Corn_(maize)___healthy
+  dataset: PlantVillage
+  crop: Corn_(maize)
+  disease: healthy
+  images: 1162
+  split_counts:
+    train: 814
+    val: 174
+    test: 174
+- class_id: 6
+  class_name: Grape___Black_rot
+  dataset: PlantVillage
+  crop: Grape
+  disease: Black_rot
+  images: 1180
+  split_counts:
+    train: 828
+    val: 176
+    test: 176
+- class_id: 7
+  class_name: Grape___Leaf_blight_(Isariopsis_Leaf_Spot)
+  dataset: PlantVillage
+  crop: Grape
+  disease: Leaf_blight_(Isariopsis_Leaf_Spot)
+  images: 1076
+  split_counts:
+    train: 752
+    val: 164
+    test: 160
+- class_id: 8
+  class_name: Grape___healthy
+  dataset: PlantVillage
+  crop: Grape
+  disease: healthy
+  images: 423
+  split_counts:
+    train: 296
+    val: 64
+    test: 63
+- class_id: 9
+  class_name: Pepper,_bell___Bacterial_spot
+  dataset: PlantVillage
+  crop: Pepper,_bell
+  disease: Bacterial_spot
+  images: 997
+  split_counts:
+    train: 699
+    val: 151
+    test: 147
+- class_id: 10
+  class_name: Pepper,_bell___healthy
+  dataset: PlantVillage
+  crop: Pepper,_bell
+  disease: healthy
+  images: 1478
+  split_counts:
+    train: 1034
+    val: 222
+    test: 222
+- class_id: 11
+  class_name: Potato___Early_blight
+  dataset: PlantVillage
+  crop: Potato
+  disease: Early_blight
+  images: 1000
+  split_counts:
+    train: 700
+    val: 152
+    test: 148
+- class_id: 12
+  class_name: Potato___Late_blight
+  dataset: PlantVillage
+  crop: Potato
+  disease: Late_blight
+  images: 1000
+  split_counts:
+    train: 700
+    val: 152
+    test: 148
+- class_id: 13
+  class_name: Potato___healthy
+  dataset: PlantVillage
+  crop: Potato
+  disease: healthy
+  images: 152
+  split_counts:
+    train: 104
+    val: 24
+    test: 24
+- class_id: 14
+  class_name: Tomato___Bacterial_spot
+  dataset: PlantVillage
+  crop: Tomato
+  disease: Bacterial_spot
+  images: 2127
+  split_counts:
+    train: 1488
+    val: 320
+    test: 319
+- class_id: 15
+  class_name: Tomato___Early_blight
+  dataset: PlantVillage
+  crop: Tomato
+  disease: Early_blight
+  images: 1000
+  split_counts:
+    train: 700
+    val: 151
+    test: 149
+- class_id: 16
+  class_name: Tomato___Late_blight
+  dataset: PlantVillage
+  crop: Tomato
+  disease: Late_blight
+  images: 1907
+  split_counts:
+    train: 1335
+    val: 286
+    test: 286
+- class_id: 17
+  class_name: Tomato___Leaf_Mold
+  dataset: PlantVillage
+  crop: Tomato
+  disease: Leaf_Mold
+  images: 952
+  split_counts:
+    train: 664
+    val: 144
+    test: 144
+- class_id: 18
+  class_name: Tomato___Spider_mites Two-spotted_spider_mite
+  dataset: PlantVillage
+  crop: Tomato
+  disease: Spider_mites Two-spotted_spider_mite
+  images: 1676
+  split_counts:
+    train: 1172
+    val: 252
+    test: 252
+- class_id: 19
+  class_name: Tomato___Tomato_Yellow_Leaf_Curl_Virus
+  dataset: PlantVillage
+  crop: Tomato
+  disease: Tomato_Yellow_Leaf_Curl_Virus
+  images: 5357
+  split_counts:
+    train: 3750
+    val: 804
+    test: 803
+- class_id: 20
+  class_name: Tomato___healthy
+  dataset: PlantVillage
+  crop: Tomato
+  disease: healthy
+  images: 1591
+  split_counts:
+    train: 1114
+    val: 239
+    test: 238
+unknown_classes:
+  unknown_near (Experiment B, test only):
+  - class_name: Tomato___Septoria_leaf_spot
+    dataset: PlantVillage
+    crop: Tomato
+    disease: Septoria_leaf_spot
+    images: 1771
+    resembles_known:
+    - Tomato___Bacterial_spot
+    - Tomato___Early_blight
+    why_hard: small dark circular lesions with pale centres; easily read as bacterial spot / early-blight spotting
+  - class_name: Tomato___Target_Spot
+    dataset: PlantVillage
+    crop: Tomato
+    disease: Target_Spot
+    images: 1404
+    resembles_known:
+    - Tomato___Early_blight
+    why_hard: brown lesions with concentric rings, the hallmark cue of early blight
+  - class_name: Apple___Black_rot
+    dataset: PlantVillage
+    crop: Apple
+    disease: Black_rot
+    images: 621
+    resembles_known:
+    - Apple___Apple_scab
+    - Apple___Cedar_apple_rust
+    why_hard: 'frog-eye leaf spots: dark lesions on an apple leaf, like scab / rust spotting'
+  - class_name: Grape___Esca_(Black_Measles)
+    dataset: PlantVillage
+    crop: Grape
+    disease: Esca_(Black_Measles)
+    images: 1383
+    resembles_known:
+    - Grape___Black_rot
+    - Grape___Leaf_blight_(Isariopsis_Leaf_Spot)
+    why_hard: dark necrotic spotting and interveinal browning on grape leaves
+  - class_name: Corn_(maize)___Northern_Leaf_Blight
+    dataset: PlantVillage
+    crop: Corn_(maize)
+    disease: Northern_Leaf_Blight
+    images: 985
+    resembles_known:
+    - Corn_(maize)___Cercospora_leaf_spot Gray_leaf_spot
+    why_hard: elongated tan necrotic lesions on a corn blade, like gray leaf spot
+  unknown_far_crop (Experiment A1, test only):
+  - class_name: Blueberry___healthy
+    dataset: PlantVillage
+    crop: Blueberry
+    images: 1502
+    balanced_subset: 300
+  - class_name: Orange___Haunglongbing_(Citrus_greening)
+    dataset: PlantVillage
+    crop: Orange
+    images: 5507
+    balanced_subset: 300
+  - class_name: Peach___Bacterial_spot
+    dataset: PlantVillage
+    crop: Peach
+    images: 2297
+    balanced_subset: 300
+  - class_name: Peach___healthy
+    dataset: PlantVillage
+    crop: Peach
+    images: 360
+    balanced_subset: 300
+  - class_name: Raspberry___healthy
+    dataset: PlantVillage
+    crop: Raspberry
+    images: 371
+    balanced_subset: 300
+  - class_name: Soybean___healthy
+    dataset: PlantVillage
+    crop: Soybean
+    images: 5090
+    balanced_subset: 300
+  - class_name: Squash___Powdery_mildew
+    dataset: PlantVillage
+    crop: Squash
+    images: 1835
+    balanced_subset: 300
+  - class_name: Strawberry___Leaf_scorch
+    dataset: PlantVillage
+    crop: Strawberry
+    images: 1109
+    balanced_subset: 300
+  - class_name: Strawberry___healthy
+    dataset: PlantVillage
+    crop: Strawberry
+    images: 456
+    balanced_subset: 300
+  unknown_far_texture (Experiment A2, test only):
+    dataset: DTD
+    images: 1880
+    textures: 47
+validation_classes:
+  known_val: the val split of every known class
+  unknown_val (validation only; never in test):
+  - class_name: Tomato___Tomato_mosaic_virus
+    images: 373
+  - class_name: Cherry_(including_sour)___Powdery_mildew
+    images: 1052
+  - class_name: Cherry_(including_sour)___healthy
+    images: 854
+test_classes:
+  A:
+  - known PlantVillage test split
+  - unknown_far_crop
+  - unknown_far_texture (DTD)
+  B:
+  - known PlantVillage test split
+  - unknown_near
+  C:
+  - PlantDoc known_field
+  - PlantDoc unknown_near_field
+  - PlantDoc unknown_far_field
+plantdoc_mapping:
+- plantdoc_class: Apple Scab Leaf
+  pv_equivalent: Apple___Apple_scab
+  role: known_field
+  class_id: 0
+  images_total: 93
+  images_used: 92
+  excluded:
+    plantdoc_duplicate_copy_one_kept: 1
+  per_class_metrics: true
+- plantdoc_class: Apple leaf
+  pv_equivalent: Apple___healthy
+  role: known_field
+  class_id: 2
+  images_total: 91
+  images_used: 91
+  excluded: {}
+  per_class_metrics: true
+- plantdoc_class: Apple rust leaf
+  pv_equivalent: Apple___Cedar_apple_rust
+  role: known_field
+  class_id: 1
+  images_total: 89
+  images_used: 89
+  excluded: {}
+  per_class_metrics: true
+- plantdoc_class: Bell_pepper leaf
+  pv_equivalent: Pepper,_bell___healthy
+  role: known_field
+  class_id: 10
+  images_total: 61
+  images_used: 61
+  excluded: {}
+  per_class_metrics: true
+- plantdoc_class: Bell_pepper leaf spot
+  pv_equivalent: Pepper,_bell___Bacterial_spot
+  role: known_field
+  class_id: 9
+  images_total: 71
+  images_used: 69
+  excluded:
+    plantdoc_duplicate_copy_one_kept: 2
+  per_class_metrics: true
+- plantdoc_class: Blueberry leaf
+  pv_equivalent: Blueberry___healthy
+  role: unknown_far_field
+  class_id: -1
+  images_total: 117
+  images_used: 116
+  excluded:
+    plantdoc_duplicate_copy_one_kept: 1
+  per_class_metrics: true
+- plantdoc_class: Cherry leaf
+  pv_equivalent: Cherry_(including_sour)___healthy
+  role: unknown_val
+  class_id: -1
+  images_total: 57
+  images_used: 0
+  excluded:
+    plantdoc_class_reserved_for_validation_unknowns: 57
+  per_class_metrics: false
+- plantdoc_class: Corn Gray leaf spot
+  pv_equivalent: Corn_(maize)___Cercospora_leaf_spot Gray_leaf_spot
+  role: known_field
+  class_id: 3
+  images_total: 68
+  images_used: 63
+  excluded:
+    plantdoc_label_conflict_same_image_in_two_classes: 5
+  per_class_metrics: true
+- plantdoc_class: Corn leaf blight
+  pv_equivalent: Corn_(maize)___Northern_Leaf_Blight
+  role: unknown_near_field
+  class_id: -1
+  images_total: 192
+  images_used: 184
+  excluded:
+    plantdoc_label_conflict_same_image_in_two_classes: 5
+    plantdoc_duplicate_copy_one_kept: 3
+  per_class_metrics: true
+  caveat: file names show Southern corn leaf blight mixed in; both are unseen diseases, so the unknown label stays valid
+- plantdoc_class: Corn rust leaf
+  pv_equivalent: Corn_(maize)___Common_rust_
+  role: known_field
+  class_id: 4
+  images_total: 116
+  images_used: 116
+  excluded: {}
+  per_class_metrics: true
+  caveat: file names show Southern corn rust mixed in; PlantVillage class is Common rust
+- plantdoc_class: Peach leaf
+  pv_equivalent: Peach___healthy
+  role: unknown_far_field
+  class_id: -1
+  images_total: 112
+  images_used: 112
+  excluded: {}
+  per_class_metrics: true
+- plantdoc_class: Potato leaf early blight
+  pv_equivalent: Potato___Early_blight
+  role: known_field
+  class_id: 11
+  images_total: 117
+  images_used: 104
+  excluded:
+    plantdoc_label_conflict_same_image_in_two_classes: 13
+  per_class_metrics: true
+- plantdoc_class: Potato leaf late blight
+  pv_equivalent: Potato___Late_blight
+  role: known_field
+  class_id: 12
+  images_total: 105
+  images_used: 94
+  excluded:
+    plantdoc_label_conflict_same_image_in_two_classes: 9
+    plantdoc_duplicate_copy_one_kept: 2
+  per_class_metrics: true
+- plantdoc_class: Raspberry leaf
+  pv_equivalent: Raspberry___healthy
+  role: unknown_far_field
+  class_id: -1
+  images_total: 119
+  images_used: 118
+  excluded:
+    plantdoc_duplicate_copy_one_kept: 1
+  per_class_metrics: true
+- plantdoc_class: Soyabean leaf
+  pv_equivalent: Soybean___healthy
+  role: unknown_far_field
+  class_id: -1
+  images_total: 65
+  images_used: 65
+  excluded: {}
+  per_class_metrics: true
+- plantdoc_class: Squash Powdery mildew leaf
+  pv_equivalent: Squash___Powdery_mildew
+  role: unknown_far_field
+  class_id: -1
+  images_total: 130
+  images_used: 129
+  excluded:
+    plantdoc_duplicate_copy_one_kept: 1
+  per_class_metrics: true
+- plantdoc_class: Strawberry leaf
+  pv_equivalent: Strawberry___healthy
+  role: unknown_far_field
+  class_id: -1
+  images_total: 96
+  images_used: 96
+  excluded: {}
+  per_class_metrics: true
+- plantdoc_class: Tomato Early blight leaf
+  pv_equivalent: Tomato___Early_blight
+  role: known_field
+  class_id: 15
+  images_total: 88
+  images_used: 80
+  excluded:
+    plantdoc_label_conflict_same_image_in_two_classes: 7
+    plantdoc_duplicate_copy_one_kept: 1
+  per_class_metrics: true
+- plantdoc_class: Tomato Septoria leaf spot
+  pv_equivalent: Tomato___Septoria_leaf_spot
+  role: unknown_near_field
+  class_id: -1
+  images_total: 151
+  images_used: 143
+  excluded:
+    plantdoc_label_conflict_same_image_in_two_classes: 4
+    plantdoc_duplicate_copy_one_kept: 4
+  per_class_metrics: true
+- plantdoc_class: Tomato leaf
+  pv_equivalent: Tomato___healthy
+  role: known_field
+  class_id: 20
+  images_total: 63
+  images_used: 63
+  excluded: {}
+  per_class_metrics: true
+- plantdoc_class: Tomato leaf bacterial spot
+  pv_equivalent: Tomato___Bacterial_spot
+  role: known_field
+  class_id: 14
+  images_total: 110
+  images_used: 106
+  excluded:
+    plantdoc_duplicate_copy_one_kept: 2
+    plantdoc_label_conflict_same_image_in_two_classes: 2
+  per_class_metrics: true
+- plantdoc_class: Tomato leaf late blight
+  pv_equivalent: Tomato___Late_blight
+  role: known_field
+  class_id: 16
+  images_total: 111
+  images_used: 102
+  excluded:
+    plantdoc_label_conflict_same_image_in_two_classes: 7
+    plantdoc_duplicate_copy_one_kept: 2
+  per_class_metrics: true
+- plantdoc_class: Tomato leaf mosaic virus
+  pv_equivalent: Tomato___Tomato_mosaic_virus
+  role: unknown_val
+  class_id: -1
+  images_total: 54
+  images_used: 0
+  excluded:
+    plantdoc_class_reserved_for_validation_unknowns: 54
+  per_class_metrics: false
+- plantdoc_class: Tomato leaf yellow virus
+  pv_equivalent: Tomato___Tomato_Yellow_Leaf_Curl_Virus
+  role: known_field
+  class_id: 19
+  images_total: 76
+  images_used: 73
+  excluded:
+    plantdoc_duplicate_copy_one_kept: 2
+    plantdoc_label_conflict_same_image_in_two_classes: 1
+  per_class_metrics: true
+- plantdoc_class: Tomato mold leaf
+  pv_equivalent: Tomato___Leaf_Mold
+  role: known_field
+  class_id: 17
+  images_total: 91
+  images_used: 90
+  excluded:
+    plantdoc_label_conflict_same_image_in_two_classes: 1
+  per_class_metrics: true
+- plantdoc_class: Tomato two spotted spider mites leaf
+  pv_equivalent: Tomato___Spider_mites Two-spotted_spider_mite
+  role: known_field
+  class_id: 18
+  images_total: 2
+  images_used: 2
+  excluded: {}
+  per_class_metrics: false
+  caveat: only 2 images
+- plantdoc_class: grape leaf
+  pv_equivalent: Grape___healthy
+  role: known_field
+  class_id: 8
+  images_total: 69
+  images_used: 69
+  excluded: {}
+  per_class_metrics: true
+- plantdoc_class: grape leaf black rot
+  pv_equivalent: Grape___Black_rot
+  role: known_field
+  class_id: 6
+  images_total: 64
+  images_used: 63
+  excluded:
+    plantdoc_duplicate_copy_one_kept: 1
+  per_class_metrics: true
+experiments:
+  A: 'Easy open set: known PlantVillage test vs unseen crops (A1) and non-plant textures (A2)'
+  B: 'Hard same-crop open set: known PlantVillage test vs unseen diseases on known crops'
+  C: 'Cross-domain open set: PlantDoc field images (known-field vs unknown-field), model trained on PlantVillage only'

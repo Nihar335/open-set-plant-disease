@@ -1,0 +1,145 @@
+{
+ "protocol": "v2",
+ "created_utc": "2026-10-14T23:12:43+00:00",
+ "data": "development only",
+ "sealed_test_read": false,
+ "seal_sha256": "8a2d094533f9a83d110d8f1803da8e93414018f1a33b367df325def2188f6185",
+ "dev_manifest_sha256": "95ddc42fd1ac50153f21cc178e49aef9e1d960ce6db8fcc7a4ceaf7664bf826a",
+ "dev_scores_sha256": "77bfc95619b5d6f6dfa92e3aecf9dcb942f3c14affea1f92507f56460a9cd819",
+ "template": "T1",
+ "device": "cuda",
+ "n_unsupported": 360,
+ "n_supported": 175,
+ "latency_ms": {
+  "p50": 55.9266000000207,
+  "p95": 69.08339999972668
+ },
+ "status": "unresolved",
+ "reason": "supported coverage 0.674 < 0.70; supported correct-with-refusals 0.674 < 0.80",
+ "tau": null,
+ "selection": {
+  "tau": 0.9677987704740295,
+  "accepted": 26,
+  "n": 360,
+  "fa": 0.07222222222222222,
+  "cp_upper": 0.0987991861901932,
+  "boot_micro_upper": 0.09497206703910614,
+  "boot_macro_upper": 0.09873180561785165,
+  "U": 0.0987991861901932
+ },
+ "supported": {
+  "n": 175,
+  "coverage": 0.6742857142857143,
+  "correct_with_refusals": 0.6742857142857143,
+  "selective_accuracy": 1.0
+ },
+ "folds": [
+  {
+   "fold": 0,
+   "tau": 0.9659436355100403,
+   "heldout_unsupported": 62,
+   "heldout_supported": 37,
+   "heldout_fa": 0.0967741935483871,
+   "heldout_coverage": 0.7567567567567568,
+   "heldout_correct_with_refusals": 0.7567567567567568,
+   "heldout_selective_accuracy": 1.0
+  },
+  {
+   "fold": 1,
+   "tau": 0.975921095417572,
+   "heldout_unsupported": 86,
+   "heldout_supported": 27,
+   "heldout_fa": 0.046511627906976744,
+   "heldout_coverage": 0.4074074074074074,
+   "heldout_correct_with_refusals": 0.4074074074074074,
+   "heldout_selective_accuracy": 1.0
+  },
+  {
+   "fold": 2,
+   "tau": 0.9657984982000122,
+   "heldout_unsupported": 73,
+   "heldout_supported": 35,
+   "heldout_fa": 0.1095890410958904,
+   "heldout_coverage": 0.8,
+   "heldout_correct_with_refusals": 0.8,
+   "heldout_selective_accuracy": 1.0
+  },
+  {
+   "fold": 3,
+   "tau": 0.975921095417572,
+   "heldout_unsupported": 75,
+   "heldout_supported": 46,
+   "heldout_fa": 0.02666666666666667,
+   "heldout_coverage": 0.6086956521739131,
+   "heldout_correct_with_refusals": 0.6086956521739131,
+   "heldout_selective_accuracy": 1.0
+  },
+  {
+   "fold": 4,
+   "tau": 0.9690557728276977,
+   "heldout_unsupported": 64,
+   "heldout_supported": 30,
+   "heldout_fa": 0.0625,
+   "heldout_coverage": 0.7666666666666667,
+   "heldout_correct_with_refusals": 0.7666666666666667,
+   "heldout_selective_accuracy": 1.0
+  }
+ ],
+ "minimums": {
+  "unsupported_images": [
+   360,
+   true
+  ],
+  "unsupported_photographers": [
+   215,
+   true
+  ],
+  "group_N_compound_leaved_neem_like": [
+   [
+    116,
+    81
+   ],
+   true
+  ],
+  "group_M_glossy_simple_leaved": [
+   [
+    84,
+    76
+   ],
+   true
+  ],
+  "group_F_peepal_like": [
+   [
+    48,
+    43
+   ],
+   true
+  ],
+  "group_A_small_leaved_thorny": [
+   [
+    53,
+    37
+   ],
+   true
+  ],
+  "group_P_palms_outside_vocabulary": [
+   [
+    59,
+    51
+   ],
+   true
+  ],
+  "max_taxon_share": [
+   0.0333,
+   true
+  ],
+  "max_photographer_share": [
+   0.0278,
+   true
+  ],
+  "supported_images": [
+   175,
+   true
+  ]
+ }
+}

@@ -1,0 +1,42 @@
+# Controlled vocabulary of observable features used to link conditions, questions, diagnostics and retrieval.
+# 'observable_from_single_photo' is an editorial planning hint (what a leaf photo can usually show), not a validated property.
+- {feature_id: FEAT-CONCENTRIC-RINGS, label: "Spots/lesions with concentric rings (target or bull's-eye pattern)", category: lesion, observable_from_single_photo: often}
+- {feature_id: FEAT-YELLOW-HALO, label: "Yellow halo or yellow margin around spots", category: lesion, observable_from_single_photo: often}
+- {feature_id: FEAT-GREY-TAN-CENTRE-DARK-MARGIN, label: "Spots with grey or tan centre and darker margin/band", category: lesion, observable_from_single_photo: often}
+- {feature_id: FEAT-PURPLE-MARGIN-FROGEYE, label: "Spots with purple margin and brown/tan centre ('frogeye')", category: lesion, observable_from_single_photo: often}
+- {feature_id: FEAT-BLACK-SPECKS-IN-LESION, label: "Tiny black specks (fruiting bodies) inside lesions, best seen with a hand lens", category: sign, observable_from_single_photo: sometimes}
+- {feature_id: FEAT-ELONGATED-CIGAR-LESIONS, label: "Long cigar/spindle-shaped grey-green to tan leaf lesions", category: lesion, observable_from_single_photo: often}
+- {feature_id: FEAT-VEIN-LIMITED-RECTANGULAR, label: "Rectangular lesions running parallel to and limited by leaf veins", category: lesion, observable_from_single_photo: often}
+- {feature_id: FEAT-SPINDLE-GREY-CENTRE-BROWN-MARGIN, label: "Spindle-shaped spots with grey centre and dark brown margin", category: lesion, observable_from_single_photo: often}
+- {feature_id: FEAT-INTERVEINAL-STRIPING, label: "Interveinal 'tiger' striping (red or yellow stripes drying to necrosis)", category: colour_pattern, observable_from_single_photo: often}
+- {feature_id: FEAT-INTERVEINAL-CHLOROSIS-GREEN-MARGINS, label: "Interveinal yellowing while leaf margins/veins stay green", category: colour_pattern, observable_from_single_photo: often}
+- {feature_id: FEAT-MARGIN-SCORCH, label: "Scorching/browning of leaf tips and margins", category: colour_pattern, observable_from_single_photo: often}
+- {feature_id: FEAT-WATER-SOAKED-LESIONS, label: "Water-soaked (wet-looking) lesions", category: lesion, observable_from_single_photo: sometimes}
+- {feature_id: FEAT-WHITE-GROWTH-UNDERSIDE, label: "White growth on the leaf underside (or on lesions)", category: sign, observable_from_single_photo: sometimes}
+- {feature_id: FEAT-YELLOW-TRANSLUCENT-UPPER-SPOTS, label: "Irregular yellowish, translucent spots on the upper leaf surface", category: lesion, observable_from_single_photo: often}
+- {feature_id: FEAT-POWDERY-BROWN-PUSTULES, label: "Powdery cinnamon-brown pustules on both leaf surfaces", category: sign, observable_from_single_photo: often}
+- {feature_id: FEAT-DUSTY-SPORES-UNDERSIDE, label: "Dusty dark/green spore growth on the underside below lesions", category: sign, observable_from_single_photo: sometimes}
+- {feature_id: FEAT-BRONZING, label: "Reddish-brown bronzing of leaves", category: colour_pattern, observable_from_single_photo: often}
+- {feature_id: FEAT-FINE-WEBBING, label: "Fine silken webbing on leaves", category: sign, observable_from_single_photo: sometimes}
+- {feature_id: FEAT-OLDER-LOWER-LEAVES-FIRST, label: "Symptoms start on older/lower leaves and move upward", category: distribution, observable_from_single_photo: "no"}
+- {feature_id: FEAT-SINGLE-SHOOT-OR-CANE, label: "Symptoms confined to one shoot or shoots from the same spur/cane", category: distribution, observable_from_single_photo: "no"}
+- {feature_id: FEAT-DARK-SPOTS-WOOD-SECTION, label: "Dark spots/rings in a cross-section of cane, spur or trunk", category: sign, observable_from_single_photo: "no"}
+- {feature_id: FEAT-RAPID-BLIGHT-DEFOLIATION, label: "Spots merge, leaves blight and drop", category: damage, observable_from_single_photo: sometimes}
+- {feature_id: FEAT-STEM-LESIONS, label: "Lesions/cankers on stems, shoots or branches", category: plant_part, observable_from_single_photo: sometimes}
+- {feature_id: FEAT-FRUIT-LESIONS, label: "Spots or rot on fruit", category: plant_part, observable_from_single_photo: sometimes}
+- {feature_id: FEAT-FRUIT-MUMMY, label: "Fruit shrivels into a dry, hard 'mummy'", category: plant_part, observable_from_single_photo: sometimes}
+- {feature_id: FEAT-BERRY-SPOTS-PURPLE-RING, label: "Small dark berry spots bordered by a brown-purple ring", category: plant_part, observable_from_single_photo: sometimes}
+- {feature_id: FEAT-SUNKEN-BLACK-SPOTS-RIPENING-FRUIT, label: "Sunken black spots appearing on fruit during ripening", category: plant_part, observable_from_single_photo: sometimes}
+- {feature_id: FEAT-NODE-OR-NECK-BLACK-LESIONS, label: "Black lesions girdling nodes or the panicle neck", category: plant_part, observable_from_single_photo: sometimes}
+- {feature_id: FEAT-FRUIT-SPOTS-WHITE-HALO, label: "Small water-soaked fruit spots with a white halo", category: plant_part, observable_from_single_photo: sometimes}
+- {feature_id: FEAT-WILTING, label: "Wilting of leaves or shoots", category: damage, observable_from_single_photo: sometimes}
+- {feature_id: FEAT-ENV-HIGH-HUMIDITY-WET, label: "Recent high humidity / wet weather", category: environment, observable_from_single_photo: "no"}
+- {feature_id: FEAT-ENV-COOL-WET, label: "Recent cool, wet weather", category: environment, observable_from_single_photo: "no"}
+- {feature_id: FEAT-ENV-WARM-HUMID, label: "Recent warm, humid or warm wet weather", category: environment, observable_from_single_photo: "no"}
+- {feature_id: FEAT-ENV-RAIN-SPLASH-WIND, label: "Wind-driven rain / rain splash", category: environment, observable_from_single_photo: "no"}
+# Generic, image-observable features (added 2026-10-15 for the visible-sign analyser, SC-M5-02)
+- {feature_id: "FEAT-LEAF-SPOTS", label: "Spots or patches of dead tissue on leaves (brown, tan or black)", category: "lesion", observable_from_single_photo: "often"}
+- {feature_id: "FEAT-LEAF-YELLOWING", label: "Yellowing of leaves or parts of leaves", category: "colour_pattern", observable_from_single_photo: "often"}
+- {feature_id: "FEAT-LEAF-CURL", label: "Leaves curl or roll (often downward) and crinkle", category: "damage", observable_from_single_photo: "often"}
+- {feature_id: "FEAT-STUNTING", label: "Plant stunted, short and bushy", category: "damage", observable_from_single_photo: "sometimes"}
+- {feature_id: "FEAT-YELLOW-ORANGE-SPOTS", label: "Bright yellow-orange to reddish spots on the upper leaf surface", category: "lesion", observable_from_single_photo: "often"}

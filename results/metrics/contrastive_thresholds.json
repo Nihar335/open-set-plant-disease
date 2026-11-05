@@ -1,0 +1,54 @@
+{
+  "rule": "accept as known iff score <= threshold; threshold accepts 95% of KNOWN validation images",
+  "fits": "prototypes / Mahalanobis / linear head fitted on KNOWN TRAINING embeddings only",
+  "thresholds": {
+    "original::prototype_cosine": 0.4672405274704071,
+    "original::mahalanobis_normalised": 3667.013828273379,
+    "contrastive::prototype_cosine": 0.5193012704629028,
+    "contrastive::mahalanobis_normalised": 4500.684684639937,
+    "contrastive::msp_linear_head_u": 0.17689308784503865,
+    "contrastive::energy_linear_head": -5.123311662698785
+  },
+  "known_validation": {
+    "original": {
+      "nc_accuracy": 0.9647716229348883,
+      "nc_macro_f1": 0.9590711224668595
+    },
+    "contrastive": {
+      "nc_accuracy": 0.9771622934888241,
+      "nc_macro_f1": 0.9748206462727877,
+      "linear_head_accuracy": 0.9910106899902819,
+      "linear_head_macro_f1": 0.9897231868789076
+    }
+  },
+  "validation_unknown_reported_only": {
+    "original::prototype_cosine": {
+      "auroc_known_val_vs_validation_unknown": 0.8799319514679814,
+      "validation_unknown_rejected": 0.3966652040368583
+    },
+    "original::mahalanobis_normalised": {
+      "auroc_known_val_vs_validation_unknown": 0.8487590673453609,
+      "validation_unknown_rejected": 0.43527863097849934
+    },
+    "contrastive::prototype_cosine": {
+      "auroc_known_val_vs_validation_unknown": 0.9566723636737338,
+      "validation_unknown_rejected": 0.7411145239139973
+    },
+    "contrastive::mahalanobis_normalised": {
+      "auroc_known_val_vs_validation_unknown": 0.9590369840658635,
+      "validation_unknown_rejected": 0.7806055287406757
+    },
+    "contrastive::msp_linear_head_u": {
+      "auroc_known_val_vs_validation_unknown": 0.9902847053696424,
+      "validation_unknown_rejected": 0.9609477841158403
+    },
+    "contrastive::energy_linear_head": {
+      "auroc_known_val_vs_validation_unknown": 0.9911685729892783,
+      "validation_unknown_rejected": 0.9684071961386573
+    }
+  },
+  "checkpoint_sha256": "ccaf82fe5c2206dd42e7a9da696d37d353195df0834111854415817639a2658c",
+  "contrastive_test_embeddings_sha256": "b57a2ab0b7cfe4872619a740db66857aab95e5c8e4085c4ad0a4f5daf911e269",
+  "test_used": false,
+  "created_utc": "2026-10-08T18:46:51+00:00"
+}

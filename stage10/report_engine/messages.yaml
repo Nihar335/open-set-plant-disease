@@ -1,0 +1,125 @@
+# Fixed report texts (deterministic templates). English is authoritative.
+# Hindi ("hi") strings are UNREVIEWED draft translations: status pending_fluent_speaker_review (stage10/config.yaml).
+# Knowledge-base content (claims, management summaries, source titles) is English-only and is never machine-translated.
+# No text here may contain a dose, rate, concentration, soil value or a promise of recovery (checked by tests).
+meta:
+  catalogue_version: "0.3.0"
+  translation_status: {en: authoritative, hi: pending_fluent_speaker_review}
+
+messages:
+  disclaimer:
+    en: "AgroVaidya is a research prototype, not a diagnostic service. This report has not been reviewed by an expert. Before acting, confirm any diagnosis with a qualified plant-health expert, for example at the local Krishi Vigyan Kendra (KVK) or a state agricultural university."
+    hi: "एग्रोवैद्य एक शोध प्रोटोटाइप है, निदान सेवा नहीं। इस रिपोर्ट की किसी विशेषज्ञ ने समीक्षा नहीं की है। कोई भी कदम उठाने से पहले किसी योग्य पादप-स्वास्थ्य विशेषज्ञ से निदान की पुष्टि कराएँ, जैसे स्थानीय कृषि विज्ञान केंद्र (KVK) या किसी राज्य कृषि विश्वविद्यालय में।"
+  warn_not_confirmed:
+    en: "Nothing in this report is a confirmed diagnosis. The model output and the knowledge-base matches are not laboratory or expert confirmation."
+    hi: "इस रिपोर्ट में कुछ भी पुष्ट निदान नहीं है। मॉडल का परिणाम और ज्ञान-आधार से मिलान, प्रयोगशाला या विशेषज्ञ द्वारा की गई पुष्टि नहीं हैं।"
+  warn_no_chemicals:
+    en: "No pesticide, fungicide or biological product is recommended in this report. Chemical and biological control options mentioned in sources are withheld because their current registration in India, crop/use applicability and label guidance have not been verified. Ask your local KVK or state agriculture department about registered products."
+    hi: "इस रिपोर्ट में किसी कीटनाशक, कवकनाशी या जैविक उत्पाद की सिफारिश नहीं की गई है। स्रोतों में बताए गए रासायनिक और जैविक नियंत्रण विकल्प रोक दिए गए हैं, क्योंकि भारत में उनके वर्तमान पंजीकरण, फसल/उपयोग के लिए उपयुक्तता और लेबल निर्देशों का सत्यापन नहीं हुआ है। पंजीकृत उत्पादों के बारे में अपने स्थानीय कृषि विज्ञान केंद्र या राज्य कृषि विभाग से पूछें।"
+  warn_no_doses:
+    en: "This report never gives pesticide doses, fertiliser rates, soil pH or nutrient values, and does not promise recovery."
+    hi: "यह रिपोर्ट कभी भी कीटनाशक की मात्रा, उर्वरक की दर, मिट्टी का pH या पोषक तत्वों के मान नहीं बताती, और ठीक होने का वादा नहीं करती।"
+  warn_nutrient:
+    en: "A suspected nutrient deficiency is only a hypothesis. Confirm it with a soil or plant-tissue test before applying any fertiliser."
+    hi: "पोषक तत्व की संदिग्ध कमी केवल एक अनुमान है। कोई भी उर्वरक डालने से पहले मिट्टी या पौधे के ऊतक की जाँच से इसकी पुष्टि करें।"
+  warn_ranking:
+    en: "Candidate ranking scores are ordinal match scores, not probabilities, and the ranking has not been validated."
+    hi: "संभावित कारणों के रैंकिंग स्कोर केवल क्रम बताने वाले मिलान स्कोर हैं, प्रायिकता (probability) नहीं, और इस रैंकिंग का सत्यापन नहीं हुआ है।"
+  warn_foreign:
+    en: "Some guidance comes from sources outside India and is marked 'not verified for India'. Check it with local experts before use."
+    hi: "कुछ मार्गदर्शन भारत के बाहर के स्रोतों से है और उस पर 'भारत के लिए सत्यापित नहीं' लिखा है। उपयोग से पहले स्थानीय विशेषज्ञों से इसकी जाँच कराएँ।"
+  warn_crop_unconfirmed:
+    en: "You have not confirmed the plant. Possible causes are preliminary and must not be acted on until the crop is confirmed."
+    hi: "आपने पौधे की पुष्टि नहीं की है। संभावित कारण प्रारंभिक हैं और फसल की पुष्टि होने तक उन पर कार्रवाई नहीं की जानी चाहिए।"
+  warn_outside_model:
+    en: "The image model was never trained on this plant. Any image-based result is not applicable, and image diagnosis for this plant is not available."
+    hi: "छवि मॉडल को इस पौधे पर कभी प्रशिक्षित नहीं किया गया। छवि पर आधारित कोई भी परिणाम लागू नहीं होता, और इस पौधे के लिए छवि से निदान उपलब्ध नहीं है।"
+  warn_unfamiliar_not_new:
+    en: "An 'unfamiliar to this model' result does not mean a new disease has been discovered."
+    hi: "'इस मॉडल के लिए अपरिचित' परिणाम का अर्थ यह नहीं है कि कोई नया रोग खोजा गया है।"
+  translation_note:
+    en: "Hindi text in this report is an unreviewed draft translation pending review by a fluent speaker. The English text is authoritative. Disease and management details come from English-language sources and are shown in English."
+    hi: "इस रिपोर्ट का हिंदी पाठ एक असमीक्षित मसौदा अनुवाद है, जिसकी किसी धाराप्रवाह वक्ता द्वारा समीक्षा लंबित है। अंग्रेज़ी पाठ ही प्रामाणिक है। रोग और प्रबंधन की जानकारी अंग्रेज़ी स्रोतों से ली गई है और अंग्रेज़ी में दिखाई गई है।"
+
+  osr_known:
+    en: "The image meets the frozen model's acceptance criterion for one of its 21 known classes."
+    hi: "यह छवि फ़्रोज़न मॉडल की 21 ज्ञात श्रेणियों में से किसी एक के स्वीकृति मानदंड को पूरा करती है।"
+  osr_unknown:
+    en: "Potentially unfamiliar to this model; further investigation is recommended. The image does not meet the current model's acceptance criteria for a known class. This may reflect an unseen disease, image-quality problems, a different plant, environmental stress, or domain shift. The OSR output does not establish the actual cause."
+    hi: "इस मॉडल के लिए संभवतः अपरिचित; आगे जाँच की सलाह दी जाती है। यह छवि वर्तमान मॉडल की किसी ज्ञात श्रेणी के स्वीकृति मानदंडों को पूरा नहीं करती। इसका कारण कोई अनदेखा रोग, छवि की गुणवत्ता की समस्या, कोई दूसरा पौधा, पर्यावरणीय तनाव या डोमेन शिफ्ट हो सकता है। OSR परिणाम वास्तविक कारण स्थापित नहीं करता।"
+  osr_note:
+    en: "Research-model output (Stage 7 contrastive Energy, threshold frozen on known validation images). It is not a laboratory confirmation, and the softmax values are not calibrated probabilities of correctness."
+    hi: "शोध-मॉडल का परिणाम (स्टेज 7 कॉन्ट्रास्टिव एनर्जी; सीमा ज्ञात सत्यापन छवियों पर स्थिर की गई)। यह प्रयोगशाला पुष्टि नहीं है, और softmax मान सही होने की कैलिब्रेटेड प्रायिकता नहीं हैं।"
+  osr_not_run:
+    en: "The frozen image model was not run for this report."
+    hi: "इस रिपोर्ट के लिए फ़्रोज़न छवि मॉडल नहीं चलाया गया।"
+
+  candidate_uncertainty:
+    en: "Candidate only, not confirmed. Knowledge-base match; the ranking is unvalidated and the score is not a probability."
+    hi: "केवल संभावित कारण, पुष्टि नहीं हुई। ज्ञान-आधार से मिलान; रैंकिंग असत्यापित है और स्कोर प्रायिकता नहीं है।"
+  candidate_hybrid_uncertainty:
+    en: "Possible cause only, not confirmed. Ranked from the model's closest matches for this crop (the photo did not meet the model's acceptance criterion) and the signs seen; the ranking is unvalidated and the score is not a probability."
+    hi: "केवल संभावित कारण, पुष्टि नहीं हुई। इस फ़सल के लिए मॉडल के सबसे निकट मिलानों (तस्वीर मॉडल की स्वीकृति कसौटी पर खरी नहीं उतरी) और दिखे लक्षणों से क्रम दिया गया; क्रम असत्यापित है और स्कोर प्रायिकता नहीं है।"
+  candidate_model_class_uncertainty:
+    en: "Candidate only, not confirmed. Returned because the frozen model accepted the image as this known class; the model has not been validated on field photographs."
+    hi: "केवल संभावित कारण, पुष्टि नहीं हुई। यह इसलिए दिखाया गया क्योंकि फ़्रोज़न मॉडल ने छवि को इस ज्ञात श्रेणी के रूप में स्वीकार किया; मॉडल का खेत में ली गई तस्वीरों पर सत्यापन नहीं हुआ है।"
+  candidate_preliminary:
+    en: "Preliminary and not actionable: the plant has not been confirmed, so this candidate's host crop cannot be checked."
+    hi: "प्रारंभिक, कार्रवाई योग्य नहीं: पौधे की पुष्टि नहीं हुई है, इसलिए इस संभावित कारण की मेज़बान फसल की जाँच नहीं हो सकती।"
+  candidate_crop_mismatch:
+    en: "Not applicable to the confirmed crop: this condition is recorded for a different host plant."
+    hi: "पुष्टि की गई फसल पर लागू नहीं: यह स्थिति किसी दूसरे मेज़बान पौधे के लिए दर्ज है।"
+  insufficient_evidence:
+    en: "Insufficient evidence to rank a reliable disease candidate. Additional observations or laboratory testing are recommended."
+    hi: "किसी विश्वसनीय संभावित रोग को रैंक करने के लिए पर्याप्त प्रमाण नहीं हैं। अतिरिक्त अवलोकन या प्रयोगशाला जाँच की सलाह दी जाती है।"
+  insufficient_plant_not_in_kb:
+    en: "This plant is not in the AgroVaidya knowledge base. No taxonomy, disease or management information can be given for it, and no candidate causes can be ranked."
+    hi: "यह पौधा एग्रोवैद्य ज्ञान-आधार में नहीं है। इसके लिए वर्गिकी, रोग या प्रबंधन की कोई जानकारी नहीं दी जा सकती, और किसी संभावित कारण की रैंकिंग नहीं हो सकती।"
+  insufficient_image:
+    en: "The image did not pass the basic quality checks, so no image-based assessment is reported. Please retake the photo."
+    hi: "छवि बुनियादी गुणवत्ता जाँच में सफल नहीं हुई, इसलिए छवि-आधारित कोई आकलन नहीं दिया गया है। कृपया फ़ोटो दोबारा लें।"
+
+  act_confirm_crop:
+    en: "Confirm the name of the crop before acting on anything in this report."
+    hi: "इस रिपोर्ट की किसी भी बात पर कार्रवाई करने से पहले फसल के नाम की पुष्टि करें।"
+  act_more_photos:
+    en: "Take more clear photos in daylight: the upper and lower leaf surface, the whole plant, and any affected stems or fruit."
+    hi: "दिन के उजाले में और साफ़ फ़ोटो लें: पत्ती की ऊपरी और निचली सतह, पूरा पौधा, और प्रभावित तने या फल।"
+  act_retake_photo:
+    en: "Retake the photo: one leaf filling most of the frame, in focus, in even daylight, saved as JPEG or PNG."
+    hi: "फ़ोटो दोबारा लें: एक पत्ती फ़्रेम का अधिकांश भाग भरे, फ़ोकस में हो, समान दिन के उजाले में हो, और JPEG या PNG में सहेजी गई हो।"
+  act_no_spray_yet:
+    en: "Do not spray pesticides or apply fertiliser on the basis of this report alone; wait until the cause is confirmed."
+    hi: "केवल इस रिपोर्ट के आधार पर कीटनाशक का छिड़काव या उर्वरक का उपयोग न करें; कारण की पुष्टि होने तक प्रतीक्षा करें।"
+  act_consult_expert:
+    en: "Show the plant or the photos to the local Krishi Vigyan Kendra (KVK), a state agricultural university or the agriculture department for confirmation."
+    hi: "पुष्टि के लिए पौधा या फ़ोटो स्थानीय कृषि विज्ञान केंद्र (KVK), किसी राज्य कृषि विश्वविद्यालय या कृषि विभाग को दिखाएँ।"
+  act_registered_products:
+    en: "If treatment is needed after confirmation, ask the KVK or state agriculture department which products are currently registered for this crop and use in India."
+    hi: "पुष्टि के बाद उपचार की ज़रूरत हो, तो कृषि विज्ञान केंद्र या राज्य कृषि विभाग से पूछें कि भारत में इस फसल और उपयोग के लिए कौन-से उत्पाद अभी पंजीकृत हैं।"
+  act_monitor:
+    en: "Mark the affected plants and check whether symptoms spread to new leaves or nearby plants."
+    hi: "प्रभावित पौधों पर निशान लगाएँ और देखें कि लक्षण नई पत्तियों या आसपास के पौधों तक फैल रहे हैं या नहीं।"
+
+  record_photo:
+    en: "Date and photo of the same leaves or plant"
+    hi: "उन्हीं पत्तियों या पौधे की तारीख और फ़ोटो"
+  record_spread:
+    en: "Whether symptoms have spread to new leaves or other plants"
+    hi: "क्या लक्षण नई पत्तियों या दूसरे पौधों तक फैले हैं"
+  record_weather:
+    en: "Weather since the last check (rain, humidity, heat)"
+    hi: "पिछली जाँच के बाद का मौसम (बारिश, नमी, गर्मी)"
+  record_tests:
+    en: "Results of any test or expert visit"
+    hi: "किसी भी जाँच या विशेषज्ञ के दौरे के परिणाम"
+
+  plant_unidentified:
+    en: "Plant not identified"
+    hi: "पौधे की पहचान नहीं हुई"
+  rec_nutrient_test:
+    en: "Suspected only, not confirmed: {condition}. Confirm or rule it out with a soil and/or plant-tissue test, and ask the local KVK or a qualified agricultural expert about any correction. This report names no corrective product or rate."
+    hi: "केवल संदेह, पुष्टि नहीं हुई: {condition}। मिट्टी और/या पौधे के ऊतक की जाँच से इसकी पुष्टि करें या इसे खारिज करें, और किसी भी सुधार के बारे में स्थानीय कृषि विज्ञान केंद्र या किसी योग्य कृषि विशेषज्ञ से पूछें। यह रिपोर्ट कोई सुधारक उत्पाद या दर नहीं बताती।"
+  rec_nutrient_verification:
+    en: "Soil and/or plant-tissue nutrient analysis by a qualified laboratory, arranged through the KVK or a soil-testing laboratory. (The knowledge base has no verified source for the test procedure yet.)"
+    hi: "कृषि विज्ञान केंद्र या मिट्टी-परीक्षण प्रयोगशाला के माध्यम से किसी योग्य प्रयोगशाला द्वारा मिट्टी और/या पौधे के ऊतक का पोषक-तत्व विश्लेषण। (ज्ञान-आधार में अभी इस जाँच प्रक्रिया का कोई सत्यापित स्रोत नहीं है।)"

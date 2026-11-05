@@ -1,0 +1,534 @@
+{
+ "description": "Plant-identification coverage. 'identifiable' and 'diagnosable' are separate and never inferred from each other. Plants outside the vocabulary are not supported. No universal plant recognition is claimed.",
+ "vocabulary": {
+  "id": "vocabulary_v1",
+  "sha256": "f3f0ed5841f2d9a7f7013900699d766c1163d31415d91c6daf48421298121216",
+  "n_taxa": 40
+ },
+ "outside_vocabulary": {
+  "status": "not_supported",
+  "behaviour": "the adapter should refuse; wrong acceptances are possible and are measured only on development data until the sealed evaluation is authorised"
+ },
+ "taxa": {
+  "Oryza sativa": {
+   "common_name_en": "rice",
+   "identifiable": {
+    "status": "not_established",
+    "evaluation_id": null,
+    "basis": "no authorised sealed protocol-v2 evaluation yet; the retired pilot is not evidence"
+   },
+   "diagnosable": {
+    "frozen_disease_model_scope": false,
+    "kb_plant_id": null,
+    "basis": "frozen six-crop disease classifier scope (knowledge base), independent of identification"
+   }
+  },
+  "Triticum aestivum": {
+   "common_name_en": "wheat",
+   "identifiable": {
+    "status": "not_established",
+    "evaluation_id": null,
+    "basis": "no authorised sealed protocol-v2 evaluation yet; the retired pilot is not evidence"
+   },
+   "diagnosable": {
+    "frozen_disease_model_scope": false,
+    "kb_plant_id": null,
+    "basis": "frozen six-crop disease classifier scope (knowledge base), independent of identification"
+   }
+  },
+  "Zea mays": {
+   "common_name_en": "maize",
+   "identifiable": {
+    "status": "not_established",
+    "evaluation_id": null,
+    "basis": "no authorised sealed protocol-v2 evaluation yet; the retired pilot is not evidence"
+   },
+   "diagnosable": {
+    "frozen_disease_model_scope": true,
+    "kb_plant_id": "PLANT-MAIZE",
+    "basis": "frozen six-crop disease classifier scope (knowledge base), independent of identification"
+   }
+  },
+  "Sorghum bicolor": {
+   "common_name_en": "sorghum",
+   "identifiable": {
+    "status": "not_established",
+    "evaluation_id": null,
+    "basis": "no authorised sealed protocol-v2 evaluation yet; the retired pilot is not evidence"
+   },
+   "diagnosable": {
+    "frozen_disease_model_scope": false,
+    "kb_plant_id": null,
+    "basis": "frozen six-crop disease classifier scope (knowledge base), independent of identification"
+   }
+  },
+  "Cenchrus americanus": {
+   "common_name_en": "pearl millet",
+   "identifiable": {
+    "status": "not_established",
+    "evaluation_id": null,
+    "basis": "no authorised sealed protocol-v2 evaluation yet; the retired pilot is not evidence"
+   },
+   "diagnosable": {
+    "frozen_disease_model_scope": false,
+    "kb_plant_id": null,
+    "basis": "frozen six-crop disease classifier scope (knowledge base), independent of identification"
+   }
+  },
+  "Eleusine coracana": {
+   "common_name_en": "finger millet",
+   "identifiable": {
+    "status": "not_established",
+    "evaluation_id": null,
+    "basis": "no authorised sealed protocol-v2 evaluation yet; the retired pilot is not evidence"
+   },
+   "diagnosable": {
+    "frozen_disease_model_scope": false,
+    "kb_plant_id": null,
+    "basis": "frozen six-crop disease classifier scope (knowledge base), independent of identification"
+   }
+  },
+  "Cajanus cajan": {
+   "common_name_en": "pigeon pea",
+   "identifiable": {
+    "status": "not_established",
+    "evaluation_id": null,
+    "basis": "no authorised sealed protocol-v2 evaluation yet; the retired pilot is not evidence"
+   },
+   "diagnosable": {
+    "frozen_disease_model_scope": false,
+    "kb_plant_id": null,
+    "basis": "frozen six-crop disease classifier scope (knowledge base), independent of identification"
+   }
+  },
+  "Cicer arietinum": {
+   "common_name_en": "chickpea",
+   "identifiable": {
+    "status": "not_established",
+    "evaluation_id": null,
+    "basis": "no authorised sealed protocol-v2 evaluation yet; the retired pilot is not evidence"
+   },
+   "diagnosable": {
+    "frozen_disease_model_scope": false,
+    "kb_plant_id": null,
+    "basis": "frozen six-crop disease classifier scope (knowledge base), independent of identification"
+   }
+  },
+  "Vigna radiata": {
+   "common_name_en": "mung bean",
+   "identifiable": {
+    "status": "not_established",
+    "evaluation_id": null,
+    "basis": "no authorised sealed protocol-v2 evaluation yet; the retired pilot is not evidence"
+   },
+   "diagnosable": {
+    "frozen_disease_model_scope": false,
+    "kb_plant_id": null,
+    "basis": "frozen six-crop disease classifier scope (knowledge base), independent of identification"
+   }
+  },
+  "Vigna mungo": {
+   "common_name_en": "black gram",
+   "identifiable": {
+    "status": "not_established",
+    "evaluation_id": null,
+    "basis": "no authorised sealed protocol-v2 evaluation yet; the retired pilot is not evidence"
+   },
+   "diagnosable": {
+    "frozen_disease_model_scope": false,
+    "kb_plant_id": null,
+    "basis": "frozen six-crop disease classifier scope (knowledge base), independent of identification"
+   }
+  },
+  "Vigna unguiculata": {
+   "common_name_en": "cowpea",
+   "identifiable": {
+    "status": "not_established",
+    "evaluation_id": null,
+    "basis": "no authorised sealed protocol-v2 evaluation yet; the retired pilot is not evidence"
+   },
+   "diagnosable": {
+    "frozen_disease_model_scope": false,
+    "kb_plant_id": null,
+    "basis": "frozen six-crop disease classifier scope (knowledge base), independent of identification"
+   }
+  },
+  "Arachis hypogaea": {
+   "common_name_en": "groundnut",
+   "identifiable": {
+    "status": "not_established",
+    "evaluation_id": null,
+    "basis": "no authorised sealed protocol-v2 evaluation yet; the retired pilot is not evidence"
+   },
+   "diagnosable": {
+    "frozen_disease_model_scope": false,
+    "kb_plant_id": null,
+    "basis": "frozen six-crop disease classifier scope (knowledge base), independent of identification"
+   }
+  },
+  "Brassica juncea": {
+   "common_name_en": "Indian mustard",
+   "identifiable": {
+    "status": "not_established",
+    "evaluation_id": null,
+    "basis": "no authorised sealed protocol-v2 evaluation yet; the retired pilot is not evidence"
+   },
+   "diagnosable": {
+    "frozen_disease_model_scope": false,
+    "kb_plant_id": null,
+    "basis": "frozen six-crop disease classifier scope (knowledge base), independent of identification"
+   }
+  },
+  "Brassica oleracea": {
+   "common_name_en": "cabbage",
+   "identifiable": {
+    "status": "not_established",
+    "evaluation_id": null,
+    "basis": "no authorised sealed protocol-v2 evaluation yet; the retired pilot is not evidence"
+   },
+   "diagnosable": {
+    "frozen_disease_model_scope": false,
+    "kb_plant_id": null,
+    "basis": "frozen six-crop disease classifier scope (knowledge base), independent of identification"
+   }
+  },
+  "Sesamum indicum": {
+   "common_name_en": "sesame",
+   "identifiable": {
+    "status": "not_established",
+    "evaluation_id": null,
+    "basis": "no authorised sealed protocol-v2 evaluation yet; the retired pilot is not evidence"
+   },
+   "diagnosable": {
+    "frozen_disease_model_scope": false,
+    "kb_plant_id": null,
+    "basis": "frozen six-crop disease classifier scope (knowledge base), independent of identification"
+   }
+  },
+  "Gossypium hirsutum": {
+   "common_name_en": "cotton",
+   "identifiable": {
+    "status": "not_established",
+    "evaluation_id": null,
+    "basis": "no authorised sealed protocol-v2 evaluation yet; the retired pilot is not evidence"
+   },
+   "diagnosable": {
+    "frozen_disease_model_scope": false,
+    "kb_plant_id": null,
+    "basis": "frozen six-crop disease classifier scope (knowledge base), independent of identification"
+   }
+  },
+  "Saccharum officinarum": {
+   "common_name_en": "sugarcane",
+   "identifiable": {
+    "status": "not_established",
+    "evaluation_id": null,
+    "basis": "no authorised sealed protocol-v2 evaluation yet; the retired pilot is not evidence"
+   },
+   "diagnosable": {
+    "frozen_disease_model_scope": false,
+    "kb_plant_id": null,
+    "basis": "frozen six-crop disease classifier scope (knowledge base), independent of identification"
+   }
+  },
+  "Solanum lycopersicum": {
+   "common_name_en": "tomato",
+   "identifiable": {
+    "status": "not_established",
+    "evaluation_id": null,
+    "basis": "no authorised sealed protocol-v2 evaluation yet; the retired pilot is not evidence"
+   },
+   "diagnosable": {
+    "frozen_disease_model_scope": true,
+    "kb_plant_id": "PLANT-TOMATO",
+    "basis": "frozen six-crop disease classifier scope (knowledge base), independent of identification"
+   }
+  },
+  "Solanum melongena": {
+   "common_name_en": "brinjal",
+   "identifiable": {
+    "status": "not_established",
+    "evaluation_id": null,
+    "basis": "no authorised sealed protocol-v2 evaluation yet; the retired pilot is not evidence"
+   },
+   "diagnosable": {
+    "frozen_disease_model_scope": false,
+    "kb_plant_id": null,
+    "basis": "frozen six-crop disease classifier scope (knowledge base), independent of identification"
+   }
+  },
+  "Solanum tuberosum": {
+   "common_name_en": "potato",
+   "identifiable": {
+    "status": "not_established",
+    "evaluation_id": null,
+    "basis": "no authorised sealed protocol-v2 evaluation yet; the retired pilot is not evidence"
+   },
+   "diagnosable": {
+    "frozen_disease_model_scope": true,
+    "kb_plant_id": "PLANT-POTATO",
+    "basis": "frozen six-crop disease classifier scope (knowledge base), independent of identification"
+   }
+  },
+  "Capsicum annuum": {
+   "common_name_en": "chilli",
+   "identifiable": {
+    "status": "not_established",
+    "evaluation_id": null,
+    "basis": "no authorised sealed protocol-v2 evaluation yet; the retired pilot is not evidence"
+   },
+   "diagnosable": {
+    "frozen_disease_model_scope": true,
+    "kb_plant_id": "PLANT-PEPPER-BELL",
+    "basis": "frozen six-crop disease classifier scope (knowledge base), independent of identification"
+   }
+  },
+  "Abelmoschus esculentus": {
+   "common_name_en": "okra",
+   "identifiable": {
+    "status": "not_established",
+    "evaluation_id": null,
+    "basis": "no authorised sealed protocol-v2 evaluation yet; the retired pilot is not evidence"
+   },
+   "diagnosable": {
+    "frozen_disease_model_scope": false,
+    "kb_plant_id": null,
+    "basis": "frozen six-crop disease classifier scope (knowledge base), independent of identification"
+   }
+  },
+  "Mangifera indica": {
+   "common_name_en": "mango",
+   "identifiable": {
+    "status": "not_established",
+    "evaluation_id": null,
+    "basis": "no authorised sealed protocol-v2 evaluation yet; the retired pilot is not evidence"
+   },
+   "diagnosable": {
+    "frozen_disease_model_scope": false,
+    "kb_plant_id": null,
+    "basis": "frozen six-crop disease classifier scope (knowledge base), independent of identification"
+   }
+  },
+  "Carica papaya": {
+   "common_name_en": "papaya",
+   "identifiable": {
+    "status": "not_established",
+    "evaluation_id": null,
+    "basis": "no authorised sealed protocol-v2 evaluation yet; the retired pilot is not evidence"
+   },
+   "diagnosable": {
+    "frozen_disease_model_scope": false,
+    "kb_plant_id": null,
+    "basis": "frozen six-crop disease classifier scope (knowledge base), independent of identification"
+   }
+  },
+  "Psidium guajava": {
+   "common_name_en": "guava",
+   "identifiable": {
+    "status": "not_established",
+    "evaluation_id": null,
+    "basis": "no authorised sealed protocol-v2 evaluation yet; the retired pilot is not evidence"
+   },
+   "diagnosable": {
+    "frozen_disease_model_scope": false,
+    "kb_plant_id": null,
+    "basis": "frozen six-crop disease classifier scope (knowledge base), independent of identification"
+   }
+  },
+  "Citrus limon": {
+   "common_name_en": "lemon",
+   "identifiable": {
+    "status": "not_established",
+    "evaluation_id": null,
+    "basis": "no authorised sealed protocol-v2 evaluation yet; the retired pilot is not evidence"
+   },
+   "diagnosable": {
+    "frozen_disease_model_scope": false,
+    "kb_plant_id": null,
+    "basis": "frozen six-crop disease classifier scope (knowledge base), independent of identification"
+   }
+  },
+  "Citrus maxima": {
+   "common_name_en": "pomelo",
+   "identifiable": {
+    "status": "not_established",
+    "evaluation_id": null,
+    "basis": "no authorised sealed protocol-v2 evaluation yet; the retired pilot is not evidence"
+   },
+   "diagnosable": {
+    "frozen_disease_model_scope": false,
+    "kb_plant_id": null,
+    "basis": "frozen six-crop disease classifier scope (knowledge base), independent of identification"
+   }
+  },
+  "Cocos nucifera": {
+   "common_name_en": "coconut",
+   "identifiable": {
+    "status": "not_established",
+    "evaluation_id": null,
+    "basis": "no authorised sealed protocol-v2 evaluation yet; the retired pilot is not evidence"
+   },
+   "diagnosable": {
+    "frozen_disease_model_scope": false,
+    "kb_plant_id": null,
+    "basis": "frozen six-crop disease classifier scope (knowledge base), independent of identification"
+   }
+  },
+  "Curcuma longa": {
+   "common_name_en": "turmeric",
+   "identifiable": {
+    "status": "not_established",
+    "evaluation_id": null,
+    "basis": "no authorised sealed protocol-v2 evaluation yet; the retired pilot is not evidence"
+   },
+   "diagnosable": {
+    "frozen_disease_model_scope": false,
+    "kb_plant_id": null,
+    "basis": "frozen six-crop disease classifier scope (knowledge base), independent of identification"
+   }
+  },
+  "Allium cepa": {
+   "common_name_en": "onion",
+   "identifiable": {
+    "status": "not_established",
+    "evaluation_id": null,
+    "basis": "no authorised sealed protocol-v2 evaluation yet; the retired pilot is not evidence"
+   },
+   "diagnosable": {
+    "frozen_disease_model_scope": false,
+    "kb_plant_id": null,
+    "basis": "frozen six-crop disease classifier scope (knowledge base), independent of identification"
+   }
+  },
+  "Momordica charantia": {
+   "common_name_en": "bitter gourd",
+   "identifiable": {
+    "status": "not_established",
+    "evaluation_id": null,
+    "basis": "no authorised sealed protocol-v2 evaluation yet; the retired pilot is not evidence"
+   },
+   "diagnosable": {
+    "frozen_disease_model_scope": false,
+    "kb_plant_id": null,
+    "basis": "frozen six-crop disease classifier scope (knowledge base), independent of identification"
+   }
+  },
+  "Lagenaria siceraria": {
+   "common_name_en": "bottle gourd",
+   "identifiable": {
+    "status": "not_established",
+    "evaluation_id": null,
+    "basis": "no authorised sealed protocol-v2 evaluation yet; the retired pilot is not evidence"
+   },
+   "diagnosable": {
+    "frozen_disease_model_scope": false,
+    "kb_plant_id": null,
+    "basis": "frozen six-crop disease classifier scope (knowledge base), independent of identification"
+   }
+  },
+  "Luffa aegyptiaca": {
+   "common_name_en": "sponge gourd",
+   "identifiable": {
+    "status": "not_established",
+    "evaluation_id": null,
+    "basis": "no authorised sealed protocol-v2 evaluation yet; the retired pilot is not evidence"
+   },
+   "diagnosable": {
+    "frozen_disease_model_scope": false,
+    "kb_plant_id": null,
+    "basis": "frozen six-crop disease classifier scope (knowledge base), independent of identification"
+   }
+  },
+  "Cucurbita maxima": {
+   "common_name_en": "pumpkin",
+   "identifiable": {
+    "status": "not_established",
+    "evaluation_id": null,
+    "basis": "no authorised sealed protocol-v2 evaluation yet; the retired pilot is not evidence"
+   },
+   "diagnosable": {
+    "frozen_disease_model_scope": false,
+    "kb_plant_id": null,
+    "basis": "frozen six-crop disease classifier scope (knowledge base), independent of identification"
+   }
+  },
+  "Coriandrum sativum": {
+   "common_name_en": "coriander",
+   "identifiable": {
+    "status": "not_established",
+    "evaluation_id": null,
+    "basis": "no authorised sealed protocol-v2 evaluation yet; the retired pilot is not evidence"
+   },
+   "diagnosable": {
+    "frozen_disease_model_scope": false,
+    "kb_plant_id": null,
+    "basis": "frozen six-crop disease classifier scope (knowledge base), independent of identification"
+   }
+  },
+  "Musa acuminata": {
+   "common_name_en": "banana",
+   "identifiable": {
+    "status": "not_established",
+    "evaluation_id": null,
+    "basis": "no authorised sealed protocol-v2 evaluation yet; the retired pilot is not evidence"
+   },
+   "diagnosable": {
+    "frozen_disease_model_scope": false,
+    "kb_plant_id": null,
+    "basis": "frozen six-crop disease classifier scope (knowledge base), independent of identification"
+   }
+  },
+  "Punica granatum": {
+   "common_name_en": "pomegranate",
+   "identifiable": {
+    "status": "not_established",
+    "evaluation_id": null,
+    "basis": "no authorised sealed protocol-v2 evaluation yet; the retired pilot is not evidence"
+   },
+   "diagnosable": {
+    "frozen_disease_model_scope": false,
+    "kb_plant_id": null,
+    "basis": "frozen six-crop disease classifier scope (knowledge base), independent of identification"
+   }
+  },
+  "Ricinus communis": {
+   "common_name_en": "castor",
+   "identifiable": {
+    "status": "not_established",
+    "evaluation_id": null,
+    "basis": "no authorised sealed protocol-v2 evaluation yet; the retired pilot is not evidence"
+   },
+   "diagnosable": {
+    "frozen_disease_model_scope": false,
+    "kb_plant_id": null,
+    "basis": "frozen six-crop disease classifier scope (knowledge base), independent of identification"
+   }
+  },
+  "Areca catechu": {
+   "common_name_en": "areca nut",
+   "identifiable": {
+    "status": "not_established",
+    "evaluation_id": null,
+    "basis": "no authorised sealed protocol-v2 evaluation yet; the retired pilot is not evidence"
+   },
+   "diagnosable": {
+    "frozen_disease_model_scope": false,
+    "kb_plant_id": null,
+    "basis": "frozen six-crop disease classifier scope (knowledge base), independent of identification"
+   }
+  },
+  "Coffea arabica": {
+   "common_name_en": "coffee",
+   "identifiable": {
+    "status": "not_established",
+    "evaluation_id": null,
+    "basis": "no authorised sealed protocol-v2 evaluation yet; the retired pilot is not evidence"
+   },
+   "diagnosable": {
+    "frozen_disease_model_scope": false,
+    "kb_plant_id": null,
+    "basis": "frozen six-crop disease classifier scope (knowledge base), independent of identification"
+   }
+  }
+ }
+}

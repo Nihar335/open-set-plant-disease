@@ -1,0 +1,41 @@
+{
+ "created_utc": "2026-10-15T00:45:37+00:00",
+ "data": "Stage 1-9 known-class validation images",
+ "n_images": 400,
+ "sample_salt": "agrovaidya-m5-a2-quality-v1",
+ "sample_sha256": "cd2c133e256bd7ace04aa96fb140cc4181e85a5ffb6a7bb49b53e2c7ed5f2569",
+ "rule": "keep >= 99% of originals: blur = P1 of sharpness; brightness = [P0.5, P99.5]",
+ "blur_laplacian_var_min": 27.3,
+ "brightness_range": [
+  20.6,
+  185.1
+ ],
+ "fraction_flagged": {
+  "orig": {
+   "blurry": 0.01,
+   "too_dark": 0.005,
+   "too_bright": 0.005
+  },
+  "blur2": {
+   "blurry": 1.0,
+   "too_dark": 0.005,
+   "too_bright": 0.0075
+  },
+  "blur4": {
+   "blurry": 1.0,
+   "too_dark": 0.0075,
+   "too_bright": 0.0075
+  },
+  "dark": {
+   "blurry": 0.33,
+   "too_dark": 0.885,
+   "too_bright": 0.0
+  },
+  "bright": {
+   "blurry": 0.1775,
+   "too_dark": 0.0,
+   "too_bright": 0.99
+  }
+ },
+ "limitation": "Laboratory photos on plain backgrounds; conservative thresholds; re-check on licence-verified field photos."
+}

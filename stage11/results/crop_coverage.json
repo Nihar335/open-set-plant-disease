@@ -1,0 +1,2928 @@
+{
+ "generated_by": "stage11/coverage.py",
+ "evaluation_file": "multicrop_eval.json",
+ "summary": {
+  "trained": 9,
+  "partial": 15,
+  "symptom_only": 11,
+  "unsupported": 43
+ },
+ "plants": [
+  {
+   "common_name": "Tomato",
+   "scientific_name": "Solanum lycopersicum L.",
+   "family": "Solanaceae",
+   "model_crop": "tomato",
+   "support_category": "trained",
+   "model_coverage": "diagnosable",
+   "trained_classes": [
+    "tomato_bacterial_spot",
+    "tomato_early_blight",
+    "tomato_late_blight",
+    "tomato_leaf_mold",
+    "tomato_septoria_leaf_spot",
+    "tomato_spider_mites",
+    "tomato_target_spot",
+    "tomato_yellow_leaf_curl_virus",
+    "tomato_mosaic_virus",
+    "tomato_healthy"
+   ],
+   "related_classes": [],
+   "image_counts": {
+    "tomato_bacterial_spot": {
+     "plantvillage/train": 1759,
+     "plantvillage/val": 204,
+     "plantvillage/test": 164,
+     "plantdoc/train": 91,
+     "plantdoc/val": 10,
+     "plantdoc/test": 8
+    },
+    "tomato_early_blight": {
+     "plantvillage/train": 780,
+     "plantvillage/val": 129,
+     "plantvillage/test": 91,
+     "plantdoc/train": 71,
+     "plantdoc/val": 8,
+     "plantdoc/test": 9
+    },
+    "tomato_late_blight": {
+     "plantvillage/train": 1548,
+     "plantvillage/val": 147,
+     "plantvillage/test": 212,
+     "plantdoc/train": 88,
+     "plantdoc/val": 13,
+     "plantdoc/test": 10
+    },
+    "tomato_leaf_mold": {
+     "plantvillage/train": 788,
+     "plantvillage/val": 80,
+     "plantvillage/test": 84,
+     "plantdoc/train": 78,
+     "plantdoc/val": 7,
+     "plantdoc/test": 6
+    },
+    "tomato_septoria_leaf_spot": {
+     "plantvillage/train": 1433,
+     "plantvillage/val": 149,
+     "plantvillage/test": 189,
+     "plantdoc/train": 125,
+     "plantdoc/val": 14,
+     "plantdoc/test": 10
+    },
+    "tomato_spider_mites": {
+     "plantvillage/train": 1332,
+     "plantvillage/val": 164,
+     "plantvillage/test": 180,
+     "plantdoc/train": 2
+    },
+    "tomato_target_spot": {
+     "plantvillage/train": 1114,
+     "plantvillage/val": 159,
+     "plantvillage/test": 131
+    },
+    "tomato_yellow_leaf_curl_virus": {
+     "plantvillage/train": 4250,
+     "plantvillage/val": 504,
+     "plantvillage/test": 603,
+     "plantdoc/train": 64,
+     "plantdoc/val": 6,
+     "plantdoc/test": 5
+    },
+    "tomato_mosaic_virus": {
+     "plantvillage/train": 301,
+     "plantvillage/val": 38,
+     "plantvillage/test": 34,
+     "plantdoc/train": 40,
+     "plantdoc/val": 4,
+     "plantdoc/test": 10
+    },
+    "tomato_healthy": {
+     "plantvillage/train": 1180,
+     "plantvillage/val": 136,
+     "plantvillage/test": 275,
+     "plantdoc/train": 51,
+     "plantdoc/val": 4,
+     "plantdoc/test": 8
+    }
+   },
+   "data_sources": [
+    {
+     "source": "plantdoc",
+     "name": "PlantDoc (web photos)",
+     "licence": "CC BY 4.0",
+     "domain": "field/web"
+    },
+    {
+     "source": "plantvillage",
+     "name": "PlantVillage (lab photos, plain background)",
+     "licence": "CC BY-SA 3.0 (HF card; verify)",
+     "domain": "lab"
+    }
+   ],
+   "field_test_photos": 66,
+   "field_evaluation": {
+    "n": 66,
+    "top1": 0.7424242424242424,
+    "top3": 0.9090909090909091,
+    "ece_p_crop": 0.16635901187405444,
+    "false_crop_conflict": 0.18181818181818182,
+    "v2": {
+     "named": 0.5909090909090909,
+     "named_acc": 0.8717948717948718,
+     "known_rejected": 0.40909090909090906,
+     "unknown_top3_has_true": 0.8148148148148148
+    },
+    "v3": {
+     "named": 0.5757575757575758,
+     "named_acc": 0.868421052631579,
+     "known_rejected": 0.4242424242424242,
+     "unknown_top3_has_true": 0.8214285714285714
+    }
+   },
+   "kb_diseases_stage11": [
+    "tomato_bacterial_spot",
+    "tomato_early_blight",
+    "tomato_late_blight",
+    "tomato_leaf_mold",
+    "tomato_septoria_leaf_spot",
+    "tomato_spider_mites",
+    "tomato_target_spot",
+    "tomato_yellow_leaf_curl_virus",
+    "tomato_mosaic_virus"
+   ],
+   "kb_diseases_without_photos": [],
+   "stage10_kb": {
+    "plant_id": "PLANT-TOMATO",
+    "conditions_sourced": [
+     "COND-TOMATO-BACTERIAL-CANKER",
+     "COND-TOMATO-BACTERIAL-SPOT",
+     "COND-TOMATO-EARLY-BLIGHT",
+     "COND-TOMATO-LATE-BLIGHT",
+     "COND-TOMATO-LEAF-MOLD",
+     "COND-TOMATO-MAGNESIUM-DEFICIENCY",
+     "COND-TOMATO-POTASSIUM-DEFICIENCY",
+     "COND-TOMATO-RED-SPIDER-MITE",
+     "COND-TOMATO-SEPTORIA-LEAF-SPOT",
+     "COND-TOMATO-TARGET-SPOT",
+     "COND-TOMATO-YELLOW-LEAF-CURL-VIRUS"
+    ]
+   },
+   "limitations": [
+    "database entries are not expert-reviewed"
+   ]
+  },
+  {
+   "common_name": "Potato",
+   "scientific_name": "Solanum tuberosum L.",
+   "family": "Solanaceae",
+   "model_crop": "potato",
+   "support_category": "trained",
+   "model_coverage": "diagnosable",
+   "trained_classes": [
+    "potato_early_blight",
+    "potato_late_blight",
+    "potato_healthy"
+   ],
+   "related_classes": [],
+   "image_counts": {
+    "potato_early_blight": {
+     "plantvillage/train": 840,
+     "plantvillage/val": 64,
+     "plantvillage/test": 96,
+     "plantdoc/train": 94,
+     "plantdoc/val": 11,
+     "plantdoc/test": 7
+    },
+    "potato_late_blight": {
+     "plantvillage/train": 800,
+     "plantvillage/val": 120,
+     "plantvillage/test": 80,
+     "plantdoc/train": 82,
+     "plantdoc/val": 13,
+     "plantdoc/test": 5
+    },
+    "potato_healthy": {
+     "plantvillage/train": 128,
+     "plantvillage/val": 16,
+     "plantvillage/test": 8
+    }
+   },
+   "data_sources": [
+    {
+     "source": "plantdoc",
+     "name": "PlantDoc (web photos)",
+     "licence": "CC BY 4.0",
+     "domain": "field/web"
+    },
+    {
+     "source": "plantvillage",
+     "name": "PlantVillage (lab photos, plain background)",
+     "licence": "CC BY-SA 3.0 (HF card; verify)",
+     "domain": "lab"
+    }
+   ],
+   "field_test_photos": 12,
+   "field_evaluation": {
+    "n": 12,
+    "top1": 0.75,
+    "top3": 1.0,
+    "ece_p_crop": 0.2753034432729085,
+    "false_crop_conflict": 0.25,
+    "v2": {
+     "named": 0.6666666666666666,
+     "named_acc": 0.625,
+     "known_rejected": 0.33333333333333337,
+     "unknown_top3_has_true": 1.0
+    },
+    "v3": {
+     "named": 0.6666666666666666,
+     "named_acc": 0.625,
+     "known_rejected": 0.33333333333333337,
+     "unknown_top3_has_true": 1.0
+    }
+   },
+   "kb_diseases_stage11": [
+    "potato_early_blight",
+    "potato_late_blight"
+   ],
+   "kb_diseases_without_photos": [],
+   "stage10_kb": {
+    "plant_id": "PLANT-POTATO",
+    "conditions_sourced": [
+     "COND-POTATO-EARLY-BLIGHT",
+     "COND-POTATO-LATE-BLIGHT"
+    ]
+   },
+   "limitations": [
+    "field test photos: 12 (too few to estimate field accuracy per disease)",
+    "database entries are not expert-reviewed"
+   ]
+  },
+  {
+   "common_name": "Bell pepper",
+   "scientific_name": "Capsicum annuum L.",
+   "family": "Solanaceae",
+   "model_crop": "bell pepper",
+   "support_category": "trained",
+   "model_coverage": "diagnosable",
+   "trained_classes": [
+    "pepper_bacterial_spot",
+    "pepper_healthy"
+   ],
+   "related_classes": [],
+   "image_counts": {
+    "pepper_bacterial_spot": {
+     "plantvillage/train": 712,
+     "plantvillage/val": 122,
+     "plantvillage/test": 163,
+     "plantdoc/train": 56,
+     "plantdoc/val": 6,
+     "plantdoc/test": 9
+    },
+    "pepper_healthy": {
+     "plantvillage/train": 1130,
+     "plantvillage/val": 141,
+     "plantvillage/test": 207,
+     "plantdoc/train": 46,
+     "plantdoc/val": 7,
+     "plantdoc/test": 8
+    }
+   },
+   "data_sources": [
+    {
+     "source": "plantdoc",
+     "name": "PlantDoc (web photos)",
+     "licence": "CC BY 4.0",
+     "domain": "field/web"
+    },
+    {
+     "source": "plantvillage",
+     "name": "PlantVillage (lab photos, plain background)",
+     "licence": "CC BY-SA 3.0 (HF card; verify)",
+     "domain": "lab"
+    }
+   ],
+   "field_test_photos": 17,
+   "field_evaluation": {
+    "n": 17,
+    "top1": 0.8235294117647058,
+    "top3": 1.0,
+    "ece_p_crop": 0.1532740838387433,
+    "false_crop_conflict": 0.17647058823529413,
+    "v2": {
+     "named": 0.6470588235294118,
+     "named_acc": 0.8181818181818182,
+     "known_rejected": 0.3529411764705882,
+     "unknown_top3_has_true": 1.0
+    },
+    "v3": {
+     "named": 0.6470588235294118,
+     "named_acc": 0.8181818181818182,
+     "known_rejected": 0.3529411764705882,
+     "unknown_top3_has_true": 1.0
+    }
+   },
+   "kb_diseases_stage11": [
+    "pepper_bacterial_spot",
+    "chilli_leaf_curl",
+    "chilli_anthracnose_leaf_spot"
+   ],
+   "kb_diseases_without_photos": [
+    "chilli_leaf_curl",
+    "chilli_anthracnose_leaf_spot"
+   ],
+   "stage10_kb": {
+    "plant_id": "PLANT-PEPPER-BELL",
+    "conditions_sourced": [
+     "COND-PEPPER-BACTERIAL-SPOT"
+    ]
+   },
+   "limitations": [
+    "field test photos: 17 (too few to estimate field accuracy per disease)",
+    "database entries are not expert-reviewed"
+   ]
+  },
+  {
+   "common_name": "Chilli",
+   "scientific_name": "Capsicum annuum L.",
+   "family": "Solanaceae",
+   "model_crop": "chilli",
+   "support_category": "partial",
+   "model_coverage": "related",
+   "trained_classes": [],
+   "related_classes": [
+    "pepper_bacterial_spot",
+    "pepper_healthy"
+   ],
+   "image_counts": {
+    "pepper_bacterial_spot": {
+     "plantvillage/train": 712,
+     "plantvillage/val": 122,
+     "plantvillage/test": 163,
+     "plantdoc/train": 56,
+     "plantdoc/val": 6,
+     "plantdoc/test": 9
+    },
+    "pepper_healthy": {
+     "plantvillage/train": 1130,
+     "plantvillage/val": 141,
+     "plantvillage/test": 207,
+     "plantdoc/train": 46,
+     "plantdoc/val": 7,
+     "plantdoc/test": 8
+    }
+   },
+   "data_sources": [
+    {
+     "source": "plantdoc",
+     "name": "PlantDoc (web photos)",
+     "licence": "CC BY 4.0",
+     "domain": "field/web"
+    },
+    {
+     "source": "plantvillage",
+     "name": "PlantVillage (lab photos, plain background)",
+     "licence": "CC BY-SA 3.0 (HF card; verify)",
+     "domain": "lab"
+    }
+   ],
+   "field_test_photos": 17,
+   "field_evaluation": null,
+   "kb_diseases_stage11": [
+    "pepper_bacterial_spot",
+    "chilli_leaf_curl",
+    "chilli_anthracnose_leaf_spot"
+   ],
+   "kb_diseases_without_photos": [
+    "chilli_leaf_curl",
+    "chilli_anthracnose_leaf_spot"
+   ],
+   "stage10_kb": {
+    "plant_id": "PLANT-PEPPER-BELL",
+    "conditions_sourced": [
+     "COND-PEPPER-BACTERIAL-SPOT"
+    ]
+   },
+   "limitations": [
+    "no photos of this crop; uses bell pepper classes as leads only",
+    "database entries are not expert-reviewed"
+   ]
+  },
+  {
+   "common_name": "Brinjal",
+   "scientific_name": "Solanum melongena L.",
+   "family": "Solanaceae",
+   "model_crop": "brinjal",
+   "support_category": "symptom_only",
+   "model_coverage": "none",
+   "trained_classes": [],
+   "related_classes": [],
+   "image_counts": {},
+   "data_sources": [],
+   "field_test_photos": 0,
+   "field_evaluation": null,
+   "kb_diseases_stage11": [
+    "brinjal_little_leaf"
+   ],
+   "kb_diseases_without_photos": [
+    "brinjal_little_leaf"
+   ],
+   "stage10_kb": null,
+   "limitations": [
+    "symptom matching only; always 'Unknown disease' with leads",
+    "database entries are not expert-reviewed"
+   ]
+  },
+  {
+   "common_name": "Apple",
+   "scientific_name": "Malus domestica (Suckow) Borkh.",
+   "family": "Rosaceae",
+   "model_crop": "apple",
+   "support_category": "trained",
+   "model_coverage": "diagnosable",
+   "trained_classes": [
+    "apple_scab",
+    "apple_black_rot",
+    "apple_cedar_rust",
+    "apple_alternaria_leaf_spot",
+    "apple_marssonina_blotch",
+    "apple_grey_spot",
+    "apple_powdery_mildew",
+    "apple_mosaic",
+    "apple_healthy"
+   ],
+   "related_classes": [],
+   "image_counts": {
+    "apple_scab": {
+     "plantvillage/train": 509,
+     "plantvillage/val": 56,
+     "plantvillage/test": 65,
+     "plantdoc/train": 74,
+     "plantdoc/val": 9,
+     "plantdoc/test": 10,
+     "appleleaf9/train": 4299,
+     "appleleaf9/val": 529,
+     "appleleaf9/test": 537
+    },
+    "apple_black_rot": {
+     "plantvillage/train": 450,
+     "plantvillage/val": 100,
+     "plantvillage/test": 71,
+     "appleleaf9/train": 2525,
+     "appleleaf9/val": 334,
+     "appleleaf9/test": 313
+    },
+    "apple_cedar_rust": {
+     "plantvillage/train": 215,
+     "plantvillage/val": 24,
+     "plantvillage/test": 36,
+     "plantdoc/train": 71,
+     "plantdoc/val": 8,
+     "plantdoc/test": 10,
+     "appleleaf9/train": 1969,
+     "appleleaf9/val": 233,
+     "appleleaf9/test": 235
+    },
+    "apple_alternaria_leaf_spot": {
+     "appleleaf9/train": 304,
+     "appleleaf9/val": 43,
+     "appleleaf9/test": 41,
+     "kashmir_apple/train": 1511,
+     "kashmir_apple/val": 180,
+     "kashmir_apple/test": 184
+    },
+    "apple_marssonina_blotch": {
+     "appleleaf9/train": 261,
+     "appleleaf9/val": 38,
+     "appleleaf9/test": 41
+    },
+    "apple_grey_spot": {
+     "appleleaf9/train": 233,
+     "appleleaf9/val": 34,
+     "appleleaf9/test": 28
+    },
+    "apple_powdery_mildew": {
+     "appleleaf9/train": 944,
+     "appleleaf9/val": 124,
+     "appleleaf9/test": 115
+    },
+    "apple_mosaic": {
+     "appleleaf9/train": 293,
+     "appleleaf9/val": 35,
+     "appleleaf9/test": 33,
+     "kashmir_apple/train": 1508,
+     "kashmir_apple/val": 195,
+     "kashmir_apple/test": 184
+    },
+    "apple_healthy": {
+     "plantvillage/train": 1307,
+     "plantvillage/val": 209,
+     "plantvillage/test": 129,
+     "plantdoc/train": 72,
+     "plantdoc/val": 10,
+     "plantdoc/test": 9,
+     "appleleaf9/train": 418,
+     "appleleaf9/val": 51,
+     "appleleaf9/test": 46,
+     "kashmir_apple/train": 1430,
+     "kashmir_apple/val": 161,
+     "kashmir_apple/test": 162
+    }
+   },
+   "data_sources": [
+    {
+     "source": "appleleaf9",
+     "name": "AppleLeaf9 (Yang et al. 2022; includes Plant Pathology 2020/2021 + ATLDSD)",
+     "licence": "CC BY 4.0",
+     "domain": "field (few orchards / cameras)"
+    },
+    {
+     "source": "kashmir_apple",
+     "name": "Kashmir indigenous apple (Yatoo & Sharma 2024)",
+     "licence": "CC BY 4.0",
+     "domain": "field (J&K orchards, 256 px)"
+    },
+    {
+     "source": "plantdoc",
+     "name": "PlantDoc (web photos)",
+     "licence": "CC BY 4.0",
+     "domain": "field/web"
+    },
+    {
+     "source": "plantvillage",
+     "name": "PlantVillage (lab photos, plain background)",
+     "licence": "CC BY-SA 3.0 (HF card; verify)",
+     "domain": "lab"
+    }
+   ],
+   "field_test_photos": 1948,
+   "field_evaluation": {
+    "n": 29,
+    "top1": 0.8275862068965517,
+    "top3": 0.9310344827586207,
+    "ece_p_crop": 0.12200600319895252,
+    "false_crop_conflict": 0.1724137931034483,
+    "v2": {
+     "named": 0.7586206896551724,
+     "named_acc": 0.9090909090909091,
+     "known_rejected": 0.24137931034482762,
+     "unknown_top3_has_true": 0.7142857142857143
+    },
+    "v3": {
+     "named": 0.7586206896551724,
+     "named_acc": 0.9090909090909091,
+     "known_rejected": 0.24137931034482762,
+     "unknown_top3_has_true": 0.7142857142857143
+    }
+   },
+   "kb_diseases_stage11": [
+    "apple_scab",
+    "apple_black_rot",
+    "apple_cedar_rust",
+    "apple_alternaria_leaf_spot",
+    "apple_marssonina_blotch",
+    "apple_grey_spot",
+    "apple_powdery_mildew",
+    "apple_mosaic"
+   ],
+   "kb_diseases_without_photos": [],
+   "stage10_kb": {
+    "plant_id": "PLANT-APPLE",
+    "conditions_sourced": [
+     "COND-APPLE-BLACK-ROT",
+     "COND-APPLE-CEDAR-APPLE-RUST",
+     "COND-APPLE-SCAB"
+    ]
+   },
+   "limitations": [
+    "apple field classes come mostly from one source each (e.g. 3,166/3,172 black-rot field photos are Plant Pathology 2021, one orchard); no independent black-rot field test exists",
+    "database entries are not expert-reviewed"
+   ]
+  },
+  {
+   "common_name": "Grape",
+   "scientific_name": "Vitis vinifera L.",
+   "family": "Vitaceae",
+   "model_crop": "grape",
+   "support_category": "trained",
+   "model_coverage": "diagnosable",
+   "trained_classes": [
+    "grape_black_rot",
+    "grape_esca",
+    "grape_leaf_blight",
+    "grape_healthy"
+   ],
+   "related_classes": [],
+   "image_counts": {
+    "grape_black_rot": {
+     "plantvillage/train": 1004,
+     "plantvillage/val": 72,
+     "plantvillage/test": 104,
+     "plantdoc/train": 52,
+     "plantdoc/val": 4,
+     "plantdoc/test": 8
+    },
+    "grape_esca": {
+     "plantvillage/train": 1139,
+     "plantvillage/val": 140,
+     "plantvillage/test": 104
+    },
+    "grape_leaf_blight": {
+     "plantvillage/train": 836,
+     "plantvillage/val": 104,
+     "plantvillage/test": 136
+    },
+    "grape_healthy": {
+     "plantvillage/train": 337,
+     "plantvillage/val": 46,
+     "plantvillage/test": 40,
+     "plantdoc/train": 49,
+     "plantdoc/val": 8,
+     "plantdoc/test": 12
+    }
+   },
+   "data_sources": [
+    {
+     "source": "plantdoc",
+     "name": "PlantDoc (web photos)",
+     "licence": "CC BY 4.0",
+     "domain": "field/web"
+    },
+    {
+     "source": "plantvillage",
+     "name": "PlantVillage (lab photos, plain background)",
+     "licence": "CC BY-SA 3.0 (HF card; verify)",
+     "domain": "lab"
+    }
+   ],
+   "field_test_photos": 20,
+   "field_evaluation": {
+    "n": 20,
+    "top1": 1.0,
+    "top3": 1.0,
+    "ece_p_crop": 0.0049454569816589355,
+    "false_crop_conflict": 0.0,
+    "v2": {
+     "named": 1.0,
+     "named_acc": 1.0,
+     "known_rejected": 0.0,
+     "unknown_top3_has_true": null
+    },
+    "v3": {
+     "named": 1.0,
+     "named_acc": 1.0,
+     "known_rejected": 0.0,
+     "unknown_top3_has_true": null
+    }
+   },
+   "kb_diseases_stage11": [
+    "grape_black_rot",
+    "grape_esca",
+    "grape_leaf_blight"
+   ],
+   "kb_diseases_without_photos": [],
+   "stage10_kb": {
+    "plant_id": "PLANT-GRAPE",
+    "conditions_sourced": [
+     "COND-GRAPE-BLACK-ROT",
+     "COND-GRAPE-DOWNY-MILDEW",
+     "COND-GRAPE-ESCA",
+     "COND-GRAPE-LEAF-BLIGHT-ISARIOPSIS"
+    ]
+   },
+   "limitations": [
+    "field test photos: 20 (too few to estimate field accuracy per disease)",
+    "database entries are not expert-reviewed"
+   ]
+  },
+  {
+   "common_name": "Maize",
+   "scientific_name": "Zea mays L.",
+   "family": "Poaceae",
+   "model_crop": "maize",
+   "support_category": "trained",
+   "model_coverage": "diagnosable",
+   "trained_classes": [
+    "corn_gray_leaf_spot",
+    "corn_common_rust",
+    "corn_northern_leaf_blight",
+    "corn_healthy"
+   ],
+   "related_classes": [],
+   "image_counts": {
+    "corn_gray_leaf_spot": {
+     "plantvillage/train": 425,
+     "plantvillage/val": 46,
+     "plantvillage/test": 42,
+     "plantdoc/train": 60,
+     "plantdoc/val": 2,
+     "plantdoc/test": 3
+    },
+    "corn_common_rust": {
+     "plantvillage/train": 956,
+     "plantvillage/val": 125,
+     "plantvillage/test": 111,
+     "plantdoc/train": 101,
+     "plantdoc/val": 5,
+     "plantdoc/test": 10
+    },
+    "corn_northern_leaf_blight": {
+     "plantvillage/train": 777,
+     "plantvillage/val": 100,
+     "plantvillage/test": 108,
+     "plantdoc/train": 163,
+     "plantdoc/val": 16,
+     "plantdoc/test": 10
+    },
+    "corn_healthy": {
+     "plantvillage/train": 961,
+     "plantvillage/val": 88,
+     "plantvillage/test": 113
+    }
+   },
+   "data_sources": [
+    {
+     "source": "plantdoc",
+     "name": "PlantDoc (web photos)",
+     "licence": "CC BY 4.0",
+     "domain": "field/web"
+    },
+    {
+     "source": "plantvillage",
+     "name": "PlantVillage (lab photos, plain background)",
+     "licence": "CC BY-SA 3.0 (HF card; verify)",
+     "domain": "lab"
+    }
+   ],
+   "field_test_photos": 23,
+   "field_evaluation": {
+    "n": 23,
+    "top1": 0.6086956521739131,
+    "top3": 0.9565217391304348,
+    "ece_p_crop": 0.3901175390119138,
+    "false_crop_conflict": 0.0,
+    "v2": {
+     "named": 0.9565217391304348,
+     "named_acc": 0.5909090909090909,
+     "known_rejected": 0.04347826086956519,
+     "unknown_top3_has_true": 1.0
+    },
+    "v3": {
+     "named": 0.9565217391304348,
+     "named_acc": 0.5909090909090909,
+     "known_rejected": 0.04347826086956519,
+     "unknown_top3_has_true": 1.0
+    }
+   },
+   "kb_diseases_stage11": [
+    "corn_gray_leaf_spot",
+    "corn_common_rust",
+    "corn_northern_leaf_blight"
+   ],
+   "kb_diseases_without_photos": [],
+   "stage10_kb": {
+    "plant_id": "PLANT-MAIZE",
+    "conditions_sourced": [
+     "COND-MAIZE-COMMON-RUST",
+     "COND-MAIZE-GRAY-LEAF-SPOT",
+     "COND-MAIZE-NORTHERN-LEAF-BLIGHT"
+    ]
+   },
+   "limitations": [
+    "field test photos: 23 (too few to estimate field accuracy per disease)",
+    "database entries are not expert-reviewed"
+   ]
+  },
+  {
+   "common_name": "Orange",
+   "scientific_name": "Citrus sinensis (L.) Osbeck",
+   "family": "Rutaceae",
+   "model_crop": "citrus",
+   "support_category": "partial",
+   "model_coverage": "limited",
+   "trained_classes": [
+    "citrus_greening"
+   ],
+   "related_classes": [],
+   "image_counts": {
+    "citrus_greening": {
+     "plantvillage/train": 4490,
+     "plantvillage/val": 563,
+     "plantvillage/test": 454
+    }
+   },
+   "data_sources": [
+    {
+     "source": "plantvillage",
+     "name": "PlantVillage (lab photos, plain background)",
+     "licence": "CC BY-SA 3.0 (HF card; verify)",
+     "domain": "lab"
+    }
+   ],
+   "field_test_photos": 0,
+   "field_evaluation": null,
+   "kb_diseases_stage11": [
+    "citrus_greening",
+    "citrus_canker"
+   ],
+   "kb_diseases_without_photos": [
+    "citrus_canker"
+   ],
+   "stage10_kb": null,
+   "limitations": [
+    "only disease classes trained; no named results",
+    "field test photos: 0 (too few to estimate field accuracy per disease)",
+    "database entries are not expert-reviewed"
+   ]
+  },
+  {
+   "common_name": "Mandarin",
+   "scientific_name": "Citrus reticulata Blanco",
+   "family": "Rutaceae",
+   "model_crop": "citrus",
+   "support_category": "partial",
+   "model_coverage": "limited",
+   "trained_classes": [
+    "citrus_greening"
+   ],
+   "related_classes": [],
+   "image_counts": {
+    "citrus_greening": {
+     "plantvillage/train": 4490,
+     "plantvillage/val": 563,
+     "plantvillage/test": 454
+    }
+   },
+   "data_sources": [
+    {
+     "source": "plantvillage",
+     "name": "PlantVillage (lab photos, plain background)",
+     "licence": "CC BY-SA 3.0 (HF card; verify)",
+     "domain": "lab"
+    }
+   ],
+   "field_test_photos": 0,
+   "field_evaluation": null,
+   "kb_diseases_stage11": [
+    "citrus_greening",
+    "citrus_canker"
+   ],
+   "kb_diseases_without_photos": [
+    "citrus_canker"
+   ],
+   "stage10_kb": null,
+   "limitations": [
+    "only disease classes trained; no named results",
+    "field test photos: 0 (too few to estimate field accuracy per disease)",
+    "database entries are not expert-reviewed"
+   ]
+  },
+  {
+   "common_name": "Lemon",
+   "scientific_name": "Citrus limon (L.) Osbeck",
+   "family": "Rutaceae",
+   "model_crop": "citrus",
+   "support_category": "partial",
+   "model_coverage": "limited",
+   "trained_classes": [
+    "citrus_greening"
+   ],
+   "related_classes": [],
+   "image_counts": {
+    "citrus_greening": {
+     "plantvillage/train": 4490,
+     "plantvillage/val": 563,
+     "plantvillage/test": 454
+    }
+   },
+   "data_sources": [
+    {
+     "source": "plantvillage",
+     "name": "PlantVillage (lab photos, plain background)",
+     "licence": "CC BY-SA 3.0 (HF card; verify)",
+     "domain": "lab"
+    }
+   ],
+   "field_test_photos": 0,
+   "field_evaluation": null,
+   "kb_diseases_stage11": [
+    "citrus_greening",
+    "citrus_canker"
+   ],
+   "kb_diseases_without_photos": [
+    "citrus_canker"
+   ],
+   "stage10_kb": null,
+   "limitations": [
+    "only disease classes trained; no named results",
+    "field test photos: 0 (too few to estimate field accuracy per disease)",
+    "database entries are not expert-reviewed"
+   ]
+  },
+  {
+   "common_name": "Acid lime",
+   "scientific_name": "Citrus aurantiifolia (Christm.) Swingle",
+   "family": "Rutaceae",
+   "model_crop": "citrus",
+   "support_category": "partial",
+   "model_coverage": "limited",
+   "trained_classes": [
+    "citrus_greening"
+   ],
+   "related_classes": [],
+   "image_counts": {
+    "citrus_greening": {
+     "plantvillage/train": 4490,
+     "plantvillage/val": 563,
+     "plantvillage/test": 454
+    }
+   },
+   "data_sources": [
+    {
+     "source": "plantvillage",
+     "name": "PlantVillage (lab photos, plain background)",
+     "licence": "CC BY-SA 3.0 (HF card; verify)",
+     "domain": "lab"
+    }
+   ],
+   "field_test_photos": 0,
+   "field_evaluation": null,
+   "kb_diseases_stage11": [
+    "citrus_greening",
+    "citrus_canker"
+   ],
+   "kb_diseases_without_photos": [
+    "citrus_canker"
+   ],
+   "stage10_kb": null,
+   "limitations": [
+    "only disease classes trained; no named results",
+    "field test photos: 0 (too few to estimate field accuracy per disease)",
+    "database entries are not expert-reviewed"
+   ]
+  },
+  {
+   "common_name": "Peach",
+   "scientific_name": "Prunus persica (L.) Batsch",
+   "family": "Rosaceae",
+   "model_crop": "peach",
+   "support_category": "trained",
+   "model_coverage": "diagnosable",
+   "trained_classes": [
+    "peach_bacterial_spot",
+    "peach_healthy"
+   ],
+   "related_classes": [],
+   "image_counts": {
+    "peach_bacterial_spot": {
+     "plantvillage/train": 1862,
+     "plantvillage/val": 219,
+     "plantvillage/test": 216
+    },
+    "peach_healthy": {
+     "plantvillage/train": 309,
+     "plantvillage/val": 31,
+     "plantvillage/test": 20,
+     "plantdoc/train": 91,
+     "plantdoc/val": 12,
+     "plantdoc/test": 9
+    }
+   },
+   "data_sources": [
+    {
+     "source": "plantdoc",
+     "name": "PlantDoc (web photos)",
+     "licence": "CC BY 4.0",
+     "domain": "field/web"
+    },
+    {
+     "source": "plantvillage",
+     "name": "PlantVillage (lab photos, plain background)",
+     "licence": "CC BY-SA 3.0 (HF card; verify)",
+     "domain": "lab"
+    }
+   ],
+   "field_test_photos": 9,
+   "field_evaluation": {
+    "n": 9,
+    "top1": 1.0,
+    "top3": 1.0,
+    "ece_p_crop": 0.056172721915774874,
+    "false_crop_conflict": 0.2222222222222222,
+    "v2": {
+     "named": 0.7777777777777778,
+     "named_acc": 1.0,
+     "known_rejected": 0.2222222222222222,
+     "unknown_top3_has_true": 1.0
+    },
+    "v3": {
+     "named": 0.7777777777777778,
+     "named_acc": 1.0,
+     "known_rejected": 0.2222222222222222,
+     "unknown_top3_has_true": 1.0
+    }
+   },
+   "kb_diseases_stage11": [
+    "peach_bacterial_spot"
+   ],
+   "kb_diseases_without_photos": [],
+   "stage10_kb": null,
+   "limitations": [
+    "field test photos: 9 (too few to estimate field accuracy per disease)",
+    "database entries are not expert-reviewed"
+   ]
+  },
+  {
+   "common_name": "Cherry",
+   "scientific_name": "Prunus avium (L.) L.",
+   "family": "Rosaceae",
+   "model_crop": "cherry",
+   "support_category": "trained",
+   "model_coverage": "diagnosable",
+   "trained_classes": [
+    "cherry_powdery_mildew",
+    "cherry_healthy"
+   ],
+   "related_classes": [],
+   "image_counts": {
+    "cherry_powdery_mildew": {
+     "plantvillage/train": 801,
+     "plantvillage/val": 121,
+     "plantvillage/test": 130
+    },
+    "cherry_healthy": {
+     "plantvillage/train": 648,
+     "plantvillage/val": 65,
+     "plantvillage/test": 141,
+     "plantdoc/train": 42,
+     "plantdoc/val": 5,
+     "plantdoc/test": 10
+    }
+   },
+   "data_sources": [
+    {
+     "source": "plantdoc",
+     "name": "PlantDoc (web photos)",
+     "licence": "CC BY 4.0",
+     "domain": "field/web"
+    },
+    {
+     "source": "plantvillage",
+     "name": "PlantVillage (lab photos, plain background)",
+     "licence": "CC BY-SA 3.0 (HF card; verify)",
+     "domain": "lab"
+    }
+   ],
+   "field_test_photos": 10,
+   "field_evaluation": {
+    "n": 10,
+    "top1": 1.0,
+    "top3": 1.0,
+    "ece_p_crop": 0.03167020082473755,
+    "false_crop_conflict": 0.5,
+    "v2": {
+     "named": 0.6,
+     "named_acc": 1.0,
+     "known_rejected": 0.4,
+     "unknown_top3_has_true": 1.0
+    },
+    "v3": {
+     "named": 0.5,
+     "named_acc": 1.0,
+     "known_rejected": 0.5,
+     "unknown_top3_has_true": 1.0
+    }
+   },
+   "kb_diseases_stage11": [
+    "cherry_powdery_mildew"
+   ],
+   "kb_diseases_without_photos": [],
+   "stage10_kb": null,
+   "limitations": [
+    "field test photos: 10 (too few to estimate field accuracy per disease)",
+    "database entries are not expert-reviewed"
+   ]
+  },
+  {
+   "common_name": "Strawberry",
+   "scientific_name": "Fragaria × ananassa (Duchesne ex Weston) Duchesne ex Rozier",
+   "family": "Rosaceae",
+   "model_crop": "strawberry",
+   "support_category": "trained",
+   "model_coverage": "diagnosable",
+   "trained_classes": [
+    "strawberry_leaf_scorch",
+    "strawberry_healthy"
+   ],
+   "related_classes": [],
+   "image_counts": {
+    "strawberry_leaf_scorch": {
+     "plantvillage/train": 857,
+     "plantvillage/val": 118,
+     "plantvillage/test": 134
+    },
+    "strawberry_healthy": {
+     "plantvillage/train": 378,
+     "plantvillage/val": 48,
+     "plantvillage/test": 30,
+     "plantdoc/train": 75,
+     "plantdoc/val": 13,
+     "plantdoc/test": 8
+    }
+   },
+   "data_sources": [
+    {
+     "source": "plantdoc",
+     "name": "PlantDoc (web photos)",
+     "licence": "CC BY 4.0",
+     "domain": "field/web"
+    },
+    {
+     "source": "plantvillage",
+     "name": "PlantVillage (lab photos, plain background)",
+     "licence": "CC BY-SA 3.0 (HF card; verify)",
+     "domain": "lab"
+    }
+   ],
+   "field_test_photos": 8,
+   "field_evaluation": {
+    "n": 8,
+    "top1": 1.0,
+    "top3": 1.0,
+    "ece_p_crop": 0.0006935596466064453,
+    "false_crop_conflict": 0.0,
+    "v2": {
+     "named": 1.0,
+     "named_acc": 1.0,
+     "known_rejected": 0.0,
+     "unknown_top3_has_true": null
+    },
+    "v3": {
+     "named": 1.0,
+     "named_acc": 1.0,
+     "known_rejected": 0.0,
+     "unknown_top3_has_true": null
+    }
+   },
+   "kb_diseases_stage11": [
+    "strawberry_leaf_scorch"
+   ],
+   "kb_diseases_without_photos": [],
+   "stage10_kb": null,
+   "limitations": [
+    "field test photos: 8 (too few to estimate field accuracy per disease)",
+    "database entries are not expert-reviewed"
+   ]
+  },
+  {
+   "common_name": "Blueberry",
+   "scientific_name": "Vaccinium corymbosum L.",
+   "family": "Ericaceae",
+   "model_crop": "blueberry",
+   "support_category": "partial",
+   "model_coverage": "limited",
+   "trained_classes": [
+    "blueberry_healthy"
+   ],
+   "related_classes": [],
+   "image_counts": {
+    "blueberry_healthy": {
+     "plantvillage/train": 1238,
+     "plantvillage/val": 119,
+     "plantvillage/test": 145,
+     "plantdoc/train": 99,
+     "plantdoc/val": 7,
+     "plantdoc/test": 10
+    }
+   },
+   "data_sources": [
+    {
+     "source": "plantdoc",
+     "name": "PlantDoc (web photos)",
+     "licence": "CC BY 4.0",
+     "domain": "field/web"
+    },
+    {
+     "source": "plantvillage",
+     "name": "PlantVillage (lab photos, plain background)",
+     "licence": "CC BY-SA 3.0 (HF card; verify)",
+     "domain": "lab"
+    }
+   ],
+   "field_test_photos": 10,
+   "field_evaluation": {
+    "n": 10,
+    "top1": 1.0,
+    "top3": 1.0,
+    "ece_p_crop": 0.0,
+    "false_crop_conflict": 0.4,
+    "v2": {
+     "named": 0.6,
+     "named_acc": 1.0,
+     "known_rejected": 0.4,
+     "unknown_top3_has_true": 1.0
+    },
+    "v3": {
+     "named": 0.0,
+     "named_acc": null,
+     "known_rejected": 1.0,
+     "unknown_top3_has_true": 1.0
+    }
+   },
+   "kb_diseases_stage11": [],
+   "kb_diseases_without_photos": [],
+   "stage10_kb": null,
+   "limitations": [
+    "only healthy classes trained; no named results",
+    "field test photos: 10 (too few to estimate field accuracy per disease)",
+    "database entries are not expert-reviewed"
+   ]
+  },
+  {
+   "common_name": "Raspberry",
+   "scientific_name": "Rubus idaeus L.",
+   "family": "Rosaceae",
+   "model_crop": "raspberry",
+   "support_category": "partial",
+   "model_coverage": "limited",
+   "trained_classes": [
+    "raspberry_healthy"
+   ],
+   "related_classes": [],
+   "image_counts": {
+    "raspberry_healthy": {
+     "plantvillage/train": 327,
+     "plantvillage/val": 44,
+     "plantdoc/train": 101,
+     "plantdoc/val": 11,
+     "plantdoc/test": 7
+    }
+   },
+   "data_sources": [
+    {
+     "source": "plantdoc",
+     "name": "PlantDoc (web photos)",
+     "licence": "CC BY 4.0",
+     "domain": "field/web"
+    },
+    {
+     "source": "plantvillage",
+     "name": "PlantVillage (lab photos, plain background)",
+     "licence": "CC BY-SA 3.0 (HF card; verify)",
+     "domain": "lab"
+    }
+   ],
+   "field_test_photos": 7,
+   "field_evaluation": {
+    "n": 7,
+    "top1": 1.0,
+    "top3": 1.0,
+    "ece_p_crop": 0.0,
+    "false_crop_conflict": 0.0,
+    "v2": {
+     "named": 1.0,
+     "named_acc": 1.0,
+     "known_rejected": 0.0,
+     "unknown_top3_has_true": null
+    },
+    "v3": {
+     "named": 0.0,
+     "named_acc": null,
+     "known_rejected": 1.0,
+     "unknown_top3_has_true": 1.0
+    }
+   },
+   "kb_diseases_stage11": [],
+   "kb_diseases_without_photos": [],
+   "stage10_kb": null,
+   "limitations": [
+    "only healthy classes trained; no named results",
+    "field test photos: 7 (too few to estimate field accuracy per disease)",
+    "database entries are not expert-reviewed"
+   ]
+  },
+  {
+   "common_name": "Soybean",
+   "scientific_name": "Glycine max (L.) Merr.",
+   "family": "Fabaceae",
+   "model_crop": "soybean",
+   "support_category": "partial",
+   "model_coverage": "limited",
+   "trained_classes": [
+    "soybean_healthy"
+   ],
+   "related_classes": [],
+   "image_counts": {
+    "soybean_healthy": {
+     "plantvillage/train": 4192,
+     "plantvillage/val": 404,
+     "plantvillage/test": 494,
+     "plantdoc/train": 53,
+     "plantdoc/val": 4,
+     "plantdoc/test": 8
+    }
+   },
+   "data_sources": [
+    {
+     "source": "plantdoc",
+     "name": "PlantDoc (web photos)",
+     "licence": "CC BY 4.0",
+     "domain": "field/web"
+    },
+    {
+     "source": "plantvillage",
+     "name": "PlantVillage (lab photos, plain background)",
+     "licence": "CC BY-SA 3.0 (HF card; verify)",
+     "domain": "lab"
+    }
+   ],
+   "field_test_photos": 8,
+   "field_evaluation": {
+    "n": 8,
+    "top1": 1.0,
+    "top3": 1.0,
+    "ece_p_crop": 0.0,
+    "false_crop_conflict": 0.5,
+    "v2": {
+     "named": 0.5,
+     "named_acc": 1.0,
+     "known_rejected": 0.5,
+     "unknown_top3_has_true": 1.0
+    },
+    "v3": {
+     "named": 0.0,
+     "named_acc": null,
+     "known_rejected": 1.0,
+     "unknown_top3_has_true": 1.0
+    }
+   },
+   "kb_diseases_stage11": [],
+   "kb_diseases_without_photos": [],
+   "stage10_kb": null,
+   "limitations": [
+    "only healthy classes trained; no named results",
+    "field test photos: 8 (too few to estimate field accuracy per disease)",
+    "database entries are not expert-reviewed"
+   ]
+  },
+  {
+   "common_name": "Squash",
+   "scientific_name": "Cucurbita pepo L.",
+   "family": "Cucurbitaceae",
+   "model_crop": "squash",
+   "support_category": "partial",
+   "model_coverage": "limited",
+   "trained_classes": [
+    "squash_powdery_mildew"
+   ],
+   "related_classes": [],
+   "image_counts": {
+    "squash_powdery_mildew": {
+     "plantvillage/train": 1463,
+     "plantvillage/val": 188,
+     "plantvillage/test": 184,
+     "plantdoc/train": 112,
+     "plantdoc/val": 12,
+     "plantdoc/test": 6
+    }
+   },
+   "data_sources": [
+    {
+     "source": "plantdoc",
+     "name": "PlantDoc (web photos)",
+     "licence": "CC BY 4.0",
+     "domain": "field/web"
+    },
+    {
+     "source": "plantvillage",
+     "name": "PlantVillage (lab photos, plain background)",
+     "licence": "CC BY-SA 3.0 (HF card; verify)",
+     "domain": "lab"
+    }
+   ],
+   "field_test_photos": 6,
+   "field_evaluation": {
+    "n": 6,
+    "top1": 1.0,
+    "top3": 1.0,
+    "ece_p_crop": 0.0,
+    "false_crop_conflict": 0.0,
+    "v2": {
+     "named": 1.0,
+     "named_acc": 1.0,
+     "known_rejected": 0.0,
+     "unknown_top3_has_true": null
+    },
+    "v3": {
+     "named": 0.0,
+     "named_acc": null,
+     "known_rejected": 1.0,
+     "unknown_top3_has_true": 1.0
+    }
+   },
+   "kb_diseases_stage11": [
+    "squash_powdery_mildew",
+    "cucurbit_downy_mildew"
+   ],
+   "kb_diseases_without_photos": [
+    "cucurbit_downy_mildew"
+   ],
+   "stage10_kb": null,
+   "limitations": [
+    "only disease classes trained; no named results",
+    "field test photos: 6 (too few to estimate field accuracy per disease)",
+    "database entries are not expert-reviewed"
+   ]
+  },
+  {
+   "common_name": "Pumpkin",
+   "scientific_name": "Cucurbita moschata Duchesne",
+   "family": "Cucurbitaceae",
+   "model_crop": "squash",
+   "support_category": "partial",
+   "model_coverage": "limited",
+   "trained_classes": [
+    "squash_powdery_mildew"
+   ],
+   "related_classes": [],
+   "image_counts": {
+    "squash_powdery_mildew": {
+     "plantvillage/train": 1463,
+     "plantvillage/val": 188,
+     "plantvillage/test": 184,
+     "plantdoc/train": 112,
+     "plantdoc/val": 12,
+     "plantdoc/test": 6
+    }
+   },
+   "data_sources": [
+    {
+     "source": "plantdoc",
+     "name": "PlantDoc (web photos)",
+     "licence": "CC BY 4.0",
+     "domain": "field/web"
+    },
+    {
+     "source": "plantvillage",
+     "name": "PlantVillage (lab photos, plain background)",
+     "licence": "CC BY-SA 3.0 (HF card; verify)",
+     "domain": "lab"
+    }
+   ],
+   "field_test_photos": 6,
+   "field_evaluation": {
+    "n": 6,
+    "top1": 1.0,
+    "top3": 1.0,
+    "ece_p_crop": 0.0,
+    "false_crop_conflict": 0.0,
+    "v2": {
+     "named": 1.0,
+     "named_acc": 1.0,
+     "known_rejected": 0.0,
+     "unknown_top3_has_true": null
+    },
+    "v3": {
+     "named": 0.0,
+     "named_acc": null,
+     "known_rejected": 1.0,
+     "unknown_top3_has_true": 1.0
+    }
+   },
+   "kb_diseases_stage11": [
+    "squash_powdery_mildew",
+    "cucurbit_downy_mildew"
+   ],
+   "kb_diseases_without_photos": [
+    "cucurbit_downy_mildew"
+   ],
+   "stage10_kb": null,
+   "limitations": [
+    "only disease classes trained; no named results",
+    "field test photos: 6 (too few to estimate field accuracy per disease)",
+    "database entries are not expert-reviewed"
+   ]
+  },
+  {
+   "common_name": "Cucumber",
+   "scientific_name": "Cucumis sativus L.",
+   "family": "Cucurbitaceae",
+   "model_crop": "cucurbits",
+   "support_category": "partial",
+   "model_coverage": "related",
+   "trained_classes": [],
+   "related_classes": [
+    "squash_powdery_mildew"
+   ],
+   "image_counts": {
+    "squash_powdery_mildew": {
+     "plantvillage/train": 1463,
+     "plantvillage/val": 188,
+     "plantvillage/test": 184,
+     "plantdoc/train": 112,
+     "plantdoc/val": 12,
+     "plantdoc/test": 6
+    }
+   },
+   "data_sources": [
+    {
+     "source": "plantdoc",
+     "name": "PlantDoc (web photos)",
+     "licence": "CC BY 4.0",
+     "domain": "field/web"
+    },
+    {
+     "source": "plantvillage",
+     "name": "PlantVillage (lab photos, plain background)",
+     "licence": "CC BY-SA 3.0 (HF card; verify)",
+     "domain": "lab"
+    }
+   ],
+   "field_test_photos": 6,
+   "field_evaluation": null,
+   "kb_diseases_stage11": [
+    "squash_powdery_mildew",
+    "cucurbit_downy_mildew"
+   ],
+   "kb_diseases_without_photos": [
+    "cucurbit_downy_mildew"
+   ],
+   "stage10_kb": null,
+   "limitations": [
+    "no photos of this crop; uses squash classes as leads only",
+    "database entries are not expert-reviewed"
+   ]
+  },
+  {
+   "common_name": "Bottle gourd",
+   "scientific_name": "Lagenaria siceraria (Molina) Standl.",
+   "family": "Cucurbitaceae",
+   "model_crop": "cucurbits",
+   "support_category": "partial",
+   "model_coverage": "related",
+   "trained_classes": [],
+   "related_classes": [
+    "squash_powdery_mildew"
+   ],
+   "image_counts": {
+    "squash_powdery_mildew": {
+     "plantvillage/train": 1463,
+     "plantvillage/val": 188,
+     "plantvillage/test": 184,
+     "plantdoc/train": 112,
+     "plantdoc/val": 12,
+     "plantdoc/test": 6
+    }
+   },
+   "data_sources": [
+    {
+     "source": "plantdoc",
+     "name": "PlantDoc (web photos)",
+     "licence": "CC BY 4.0",
+     "domain": "field/web"
+    },
+    {
+     "source": "plantvillage",
+     "name": "PlantVillage (lab photos, plain background)",
+     "licence": "CC BY-SA 3.0 (HF card; verify)",
+     "domain": "lab"
+    }
+   ],
+   "field_test_photos": 6,
+   "field_evaluation": null,
+   "kb_diseases_stage11": [
+    "squash_powdery_mildew",
+    "cucurbit_downy_mildew"
+   ],
+   "kb_diseases_without_photos": [
+    "cucurbit_downy_mildew"
+   ],
+   "stage10_kb": null,
+   "limitations": [
+    "no photos of this crop; uses squash classes as leads only",
+    "database entries are not expert-reviewed"
+   ]
+  },
+  {
+   "common_name": "Bitter gourd",
+   "scientific_name": "Momordica charantia L.",
+   "family": "Cucurbitaceae",
+   "model_crop": "cucurbits",
+   "support_category": "partial",
+   "model_coverage": "related",
+   "trained_classes": [],
+   "related_classes": [
+    "squash_powdery_mildew"
+   ],
+   "image_counts": {
+    "squash_powdery_mildew": {
+     "plantvillage/train": 1463,
+     "plantvillage/val": 188,
+     "plantvillage/test": 184,
+     "plantdoc/train": 112,
+     "plantdoc/val": 12,
+     "plantdoc/test": 6
+    }
+   },
+   "data_sources": [
+    {
+     "source": "plantdoc",
+     "name": "PlantDoc (web photos)",
+     "licence": "CC BY 4.0",
+     "domain": "field/web"
+    },
+    {
+     "source": "plantvillage",
+     "name": "PlantVillage (lab photos, plain background)",
+     "licence": "CC BY-SA 3.0 (HF card; verify)",
+     "domain": "lab"
+    }
+   ],
+   "field_test_photos": 6,
+   "field_evaluation": null,
+   "kb_diseases_stage11": [
+    "squash_powdery_mildew",
+    "cucurbit_downy_mildew"
+   ],
+   "kb_diseases_without_photos": [
+    "cucurbit_downy_mildew"
+   ],
+   "stage10_kb": null,
+   "limitations": [
+    "no photos of this crop; uses squash classes as leads only",
+    "database entries are not expert-reviewed"
+   ]
+  },
+  {
+   "common_name": "Watermelon",
+   "scientific_name": "Citrullus lanatus (Thunb.) Matsum. & Nakai",
+   "family": "Cucurbitaceae",
+   "model_crop": "cucurbits",
+   "support_category": "partial",
+   "model_coverage": "related",
+   "trained_classes": [],
+   "related_classes": [
+    "squash_powdery_mildew"
+   ],
+   "image_counts": {
+    "squash_powdery_mildew": {
+     "plantvillage/train": 1463,
+     "plantvillage/val": 188,
+     "plantvillage/test": 184,
+     "plantdoc/train": 112,
+     "plantdoc/val": 12,
+     "plantdoc/test": 6
+    }
+   },
+   "data_sources": [
+    {
+     "source": "plantdoc",
+     "name": "PlantDoc (web photos)",
+     "licence": "CC BY 4.0",
+     "domain": "field/web"
+    },
+    {
+     "source": "plantvillage",
+     "name": "PlantVillage (lab photos, plain background)",
+     "licence": "CC BY-SA 3.0 (HF card; verify)",
+     "domain": "lab"
+    }
+   ],
+   "field_test_photos": 6,
+   "field_evaluation": null,
+   "kb_diseases_stage11": [
+    "squash_powdery_mildew",
+    "cucurbit_downy_mildew"
+   ],
+   "kb_diseases_without_photos": [
+    "cucurbit_downy_mildew"
+   ],
+   "stage10_kb": null,
+   "limitations": [
+    "no photos of this crop; uses squash classes as leads only",
+    "database entries are not expert-reviewed"
+   ]
+  },
+  {
+   "common_name": "Muskmelon",
+   "scientific_name": "Cucumis melo L.",
+   "family": "Cucurbitaceae",
+   "model_crop": "cucurbits",
+   "support_category": "partial",
+   "model_coverage": "related",
+   "trained_classes": [],
+   "related_classes": [
+    "squash_powdery_mildew"
+   ],
+   "image_counts": {
+    "squash_powdery_mildew": {
+     "plantvillage/train": 1463,
+     "plantvillage/val": 188,
+     "plantvillage/test": 184,
+     "plantdoc/train": 112,
+     "plantdoc/val": 12,
+     "plantdoc/test": 6
+    }
+   },
+   "data_sources": [
+    {
+     "source": "plantdoc",
+     "name": "PlantDoc (web photos)",
+     "licence": "CC BY 4.0",
+     "domain": "field/web"
+    },
+    {
+     "source": "plantvillage",
+     "name": "PlantVillage (lab photos, plain background)",
+     "licence": "CC BY-SA 3.0 (HF card; verify)",
+     "domain": "lab"
+    }
+   ],
+   "field_test_photos": 6,
+   "field_evaluation": null,
+   "kb_diseases_stage11": [
+    "squash_powdery_mildew",
+    "cucurbit_downy_mildew"
+   ],
+   "kb_diseases_without_photos": [
+    "cucurbit_downy_mildew"
+   ],
+   "stage10_kb": null,
+   "limitations": [
+    "no photos of this crop; uses squash classes as leads only",
+    "database entries are not expert-reviewed"
+   ]
+  },
+  {
+   "common_name": "Rice",
+   "scientific_name": "Oryza sativa L.",
+   "family": "Poaceae",
+   "model_crop": "rice",
+   "support_category": "symptom_only",
+   "model_coverage": "none",
+   "trained_classes": [],
+   "related_classes": [],
+   "image_counts": {},
+   "data_sources": [],
+   "field_test_photos": 0,
+   "field_evaluation": null,
+   "kb_diseases_stage11": [
+    "rice_blast",
+    "rice_brown_spot",
+    "rice_bacterial_leaf_blight"
+   ],
+   "kb_diseases_without_photos": [
+    "rice_blast",
+    "rice_brown_spot",
+    "rice_bacterial_leaf_blight"
+   ],
+   "stage10_kb": {
+    "plant_id": "PLANT-RICE",
+    "conditions_sourced": [
+     "COND-RICE-BLAST"
+    ]
+   },
+   "limitations": [
+    "symptom matching only; always 'Unknown disease' with leads",
+    "database entries are not expert-reviewed"
+   ]
+  },
+  {
+   "common_name": "Wheat",
+   "scientific_name": "Triticum aestivum L.",
+   "family": "Poaceae",
+   "model_crop": "wheat",
+   "support_category": "symptom_only",
+   "model_coverage": "none",
+   "trained_classes": [],
+   "related_classes": [],
+   "image_counts": {},
+   "data_sources": [],
+   "field_test_photos": 0,
+   "field_evaluation": null,
+   "kb_diseases_stage11": [
+    "wheat_leaf_rust",
+    "wheat_yellow_rust"
+   ],
+   "kb_diseases_without_photos": [
+    "wheat_leaf_rust",
+    "wheat_yellow_rust"
+   ],
+   "stage10_kb": null,
+   "limitations": [
+    "symptom matching only; always 'Unknown disease' with leads",
+    "database entries are not expert-reviewed"
+   ]
+  },
+  {
+   "common_name": "Cotton",
+   "scientific_name": "Gossypium hirsutum L.",
+   "family": "Malvaceae",
+   "model_crop": "cotton",
+   "support_category": "symptom_only",
+   "model_coverage": "none",
+   "trained_classes": [],
+   "related_classes": [],
+   "image_counts": {},
+   "data_sources": [],
+   "field_test_photos": 0,
+   "field_evaluation": null,
+   "kb_diseases_stage11": [
+    "cotton_leaf_curl"
+   ],
+   "kb_diseases_without_photos": [
+    "cotton_leaf_curl"
+   ],
+   "stage10_kb": null,
+   "limitations": [
+    "symptom matching only; always 'Unknown disease' with leads",
+    "database entries are not expert-reviewed"
+   ]
+  },
+  {
+   "common_name": "Okra",
+   "scientific_name": "Abelmoschus esculentus (L.) Moench",
+   "family": "Malvaceae",
+   "model_crop": "okra",
+   "support_category": "symptom_only",
+   "model_coverage": "none",
+   "trained_classes": [],
+   "related_classes": [],
+   "image_counts": {},
+   "data_sources": [],
+   "field_test_photos": 0,
+   "field_evaluation": null,
+   "kb_diseases_stage11": [
+    "okra_yellow_vein_mosaic"
+   ],
+   "kb_diseases_without_photos": [
+    "okra_yellow_vein_mosaic"
+   ],
+   "stage10_kb": null,
+   "limitations": [
+    "symptom matching only; always 'Unknown disease' with leads",
+    "database entries are not expert-reviewed"
+   ]
+  },
+  {
+   "common_name": "Banana",
+   "scientific_name": "Musa × paradisiaca L.",
+   "family": "Musaceae",
+   "model_crop": "banana",
+   "support_category": "symptom_only",
+   "model_coverage": "none",
+   "trained_classes": [],
+   "related_classes": [],
+   "image_counts": {},
+   "data_sources": [],
+   "field_test_photos": 0,
+   "field_evaluation": null,
+   "kb_diseases_stage11": [
+    "banana_sigatoka"
+   ],
+   "kb_diseases_without_photos": [
+    "banana_sigatoka"
+   ],
+   "stage10_kb": null,
+   "limitations": [
+    "symptom matching only; always 'Unknown disease' with leads",
+    "database entries are not expert-reviewed"
+   ]
+  },
+  {
+   "common_name": "Groundnut",
+   "scientific_name": "Arachis hypogaea L.",
+   "family": "Fabaceae",
+   "model_crop": "groundnut",
+   "support_category": "symptom_only",
+   "model_coverage": "none",
+   "trained_classes": [],
+   "related_classes": [],
+   "image_counts": {},
+   "data_sources": [],
+   "field_test_photos": 0,
+   "field_evaluation": null,
+   "kb_diseases_stage11": [
+    "groundnut_tikka"
+   ],
+   "kb_diseases_without_photos": [
+    "groundnut_tikka"
+   ],
+   "stage10_kb": null,
+   "limitations": [
+    "symptom matching only; always 'Unknown disease' with leads",
+    "database entries are not expert-reviewed"
+   ]
+  },
+  {
+   "common_name": "Mango",
+   "scientific_name": "Mangifera indica L.",
+   "family": "Anacardiaceae",
+   "model_crop": "mango",
+   "support_category": "symptom_only",
+   "model_coverage": "none",
+   "trained_classes": [],
+   "related_classes": [],
+   "image_counts": {},
+   "data_sources": [],
+   "field_test_photos": 0,
+   "field_evaluation": null,
+   "kb_diseases_stage11": [
+    "mango_powdery_mildew",
+    "mango_anthracnose"
+   ],
+   "kb_diseases_without_photos": [
+    "mango_powdery_mildew",
+    "mango_anthracnose"
+   ],
+   "stage10_kb": {
+    "plant_id": "PLANT-MANGO",
+    "conditions_sourced": [
+     "COND-MANGO-ANTHRACNOSE"
+    ]
+   },
+   "limitations": [
+    "symptom matching only; always 'Unknown disease' with leads",
+    "database entries are not expert-reviewed"
+   ]
+  },
+  {
+   "common_name": "Onion",
+   "scientific_name": "Allium cepa L.",
+   "family": "Amaryllidaceae",
+   "model_crop": "onion",
+   "support_category": "symptom_only",
+   "model_coverage": "none",
+   "trained_classes": [],
+   "related_classes": [],
+   "image_counts": {},
+   "data_sources": [],
+   "field_test_photos": 0,
+   "field_evaluation": null,
+   "kb_diseases_stage11": [
+    "onion_purple_blotch"
+   ],
+   "kb_diseases_without_photos": [
+    "onion_purple_blotch"
+   ],
+   "stage10_kb": null,
+   "limitations": [
+    "symptom matching only; always 'Unknown disease' with leads",
+    "database entries are not expert-reviewed"
+   ]
+  },
+  {
+   "common_name": "Mustard",
+   "scientific_name": "Brassica juncea (L.) Czern.",
+   "family": "Brassicaceae",
+   "model_crop": "mustard",
+   "support_category": "symptom_only",
+   "model_coverage": "none",
+   "trained_classes": [],
+   "related_classes": [],
+   "image_counts": {},
+   "data_sources": [],
+   "field_test_photos": 0,
+   "field_evaluation": null,
+   "kb_diseases_stage11": [
+    "mustard_alternaria_blight"
+   ],
+   "kb_diseases_without_photos": [
+    "mustard_alternaria_blight"
+   ],
+   "stage10_kb": null,
+   "limitations": [
+    "symptom matching only; always 'Unknown disease' with leads",
+    "database entries are not expert-reviewed"
+   ]
+  },
+  {
+   "common_name": "Papaya",
+   "scientific_name": "Carica papaya L.",
+   "family": "Caricaceae",
+   "model_crop": "papaya",
+   "support_category": "symptom_only",
+   "model_coverage": "none",
+   "trained_classes": [],
+   "related_classes": [],
+   "image_counts": {},
+   "data_sources": [],
+   "field_test_photos": 0,
+   "field_evaluation": null,
+   "kb_diseases_stage11": [
+    "papaya_ringspot"
+   ],
+   "kb_diseases_without_photos": [
+    "papaya_ringspot"
+   ],
+   "stage10_kb": null,
+   "limitations": [
+    "symptom matching only; always 'Unknown disease' with leads",
+    "database entries are not expert-reviewed"
+   ]
+  },
+  {
+   "common_name": "Sugarcane",
+   "scientific_name": "Saccharum officinarum L.",
+   "family": "Poaceae",
+   "model_crop": null,
+   "support_category": "unsupported",
+   "model_coverage": "none",
+   "trained_classes": [],
+   "related_classes": [],
+   "image_counts": {},
+   "data_sources": [],
+   "field_test_photos": 0,
+   "field_evaluation": null,
+   "kb_diseases_stage11": [],
+   "kb_diseases_without_photos": [],
+   "stage10_kb": null,
+   "limitations": [
+    "no diseases in the database",
+    "database entries are not expert-reviewed"
+   ]
+  },
+  {
+   "common_name": "Sorghum",
+   "scientific_name": "Sorghum bicolor (L.) Moench",
+   "family": "Poaceae",
+   "model_crop": null,
+   "support_category": "unsupported",
+   "model_coverage": "none",
+   "trained_classes": [],
+   "related_classes": [],
+   "image_counts": {},
+   "data_sources": [],
+   "field_test_photos": 0,
+   "field_evaluation": null,
+   "kb_diseases_stage11": [],
+   "kb_diseases_without_photos": [],
+   "stage10_kb": null,
+   "limitations": [
+    "no diseases in the database",
+    "database entries are not expert-reviewed"
+   ]
+  },
+  {
+   "common_name": "Pearl millet",
+   "scientific_name": "Cenchrus americanus (L.) Morrone",
+   "family": "Poaceae",
+   "model_crop": null,
+   "support_category": "unsupported",
+   "model_coverage": "none",
+   "trained_classes": [],
+   "related_classes": [],
+   "image_counts": {},
+   "data_sources": [],
+   "field_test_photos": 0,
+   "field_evaluation": null,
+   "kb_diseases_stage11": [],
+   "kb_diseases_without_photos": [],
+   "stage10_kb": null,
+   "limitations": [
+    "no diseases in the database",
+    "database entries are not expert-reviewed"
+   ]
+  },
+  {
+   "common_name": "Finger millet",
+   "scientific_name": "Eleusine coracana (L.) Gaertn.",
+   "family": "Poaceae",
+   "model_crop": null,
+   "support_category": "unsupported",
+   "model_coverage": "none",
+   "trained_classes": [],
+   "related_classes": [],
+   "image_counts": {},
+   "data_sources": [],
+   "field_test_photos": 0,
+   "field_evaluation": null,
+   "kb_diseases_stage11": [],
+   "kb_diseases_without_photos": [],
+   "stage10_kb": null,
+   "limitations": [
+    "no diseases in the database",
+    "database entries are not expert-reviewed"
+   ]
+  },
+  {
+   "common_name": "Chickpea",
+   "scientific_name": "Cicer arietinum L.",
+   "family": "Fabaceae",
+   "model_crop": null,
+   "support_category": "unsupported",
+   "model_coverage": "none",
+   "trained_classes": [],
+   "related_classes": [],
+   "image_counts": {},
+   "data_sources": [],
+   "field_test_photos": 0,
+   "field_evaluation": null,
+   "kb_diseases_stage11": [],
+   "kb_diseases_without_photos": [],
+   "stage10_kb": null,
+   "limitations": [
+    "no diseases in the database",
+    "database entries are not expert-reviewed"
+   ]
+  },
+  {
+   "common_name": "Pigeon pea",
+   "scientific_name": "Cajanus cajan (L.) Millsp.",
+   "family": "Fabaceae",
+   "model_crop": null,
+   "support_category": "unsupported",
+   "model_coverage": "none",
+   "trained_classes": [],
+   "related_classes": [],
+   "image_counts": {},
+   "data_sources": [],
+   "field_test_photos": 0,
+   "field_evaluation": null,
+   "kb_diseases_stage11": [],
+   "kb_diseases_without_photos": [],
+   "stage10_kb": null,
+   "limitations": [
+    "no diseases in the database",
+    "database entries are not expert-reviewed"
+   ]
+  },
+  {
+   "common_name": "Green gram",
+   "scientific_name": "Vigna radiata (L.) R.Wilczek",
+   "family": "Fabaceae",
+   "model_crop": null,
+   "support_category": "unsupported",
+   "model_coverage": "none",
+   "trained_classes": [],
+   "related_classes": [],
+   "image_counts": {},
+   "data_sources": [],
+   "field_test_photos": 0,
+   "field_evaluation": null,
+   "kb_diseases_stage11": [],
+   "kb_diseases_without_photos": [],
+   "stage10_kb": null,
+   "limitations": [
+    "no diseases in the database",
+    "database entries are not expert-reviewed"
+   ]
+  },
+  {
+   "common_name": "Black gram",
+   "scientific_name": "Vigna mungo (L.) Hepper",
+   "family": "Fabaceae",
+   "model_crop": null,
+   "support_category": "unsupported",
+   "model_coverage": "none",
+   "trained_classes": [],
+   "related_classes": [],
+   "image_counts": {},
+   "data_sources": [],
+   "field_test_photos": 0,
+   "field_evaluation": null,
+   "kb_diseases_stage11": [],
+   "kb_diseases_without_photos": [],
+   "stage10_kb": null,
+   "limitations": [
+    "no diseases in the database",
+    "database entries are not expert-reviewed"
+   ]
+  },
+  {
+   "common_name": "Lentil",
+   "scientific_name": "Lens culinaris Medik.",
+   "family": "Fabaceae",
+   "model_crop": null,
+   "support_category": "unsupported",
+   "model_coverage": "none",
+   "trained_classes": [],
+   "related_classes": [],
+   "image_counts": {},
+   "data_sources": [],
+   "field_test_photos": 0,
+   "field_evaluation": null,
+   "kb_diseases_stage11": [],
+   "kb_diseases_without_photos": [],
+   "stage10_kb": null,
+   "limitations": [
+    "no diseases in the database",
+    "database entries are not expert-reviewed"
+   ]
+  },
+  {
+   "common_name": "Cowpea",
+   "scientific_name": "Vigna unguiculata (L.) Walp.",
+   "family": "Fabaceae",
+   "model_crop": null,
+   "support_category": "unsupported",
+   "model_coverage": "none",
+   "trained_classes": [],
+   "related_classes": [],
+   "image_counts": {},
+   "data_sources": [],
+   "field_test_photos": 0,
+   "field_evaluation": null,
+   "kb_diseases_stage11": [],
+   "kb_diseases_without_photos": [],
+   "stage10_kb": null,
+   "limitations": [
+    "no diseases in the database",
+    "database entries are not expert-reviewed"
+   ]
+  },
+  {
+   "common_name": "Sunflower",
+   "scientific_name": "Helianthus annuus L.",
+   "family": "Asteraceae",
+   "model_crop": null,
+   "support_category": "unsupported",
+   "model_coverage": "none",
+   "trained_classes": [],
+   "related_classes": [],
+   "image_counts": {},
+   "data_sources": [],
+   "field_test_photos": 0,
+   "field_evaluation": null,
+   "kb_diseases_stage11": [],
+   "kb_diseases_without_photos": [],
+   "stage10_kb": null,
+   "limitations": [
+    "no diseases in the database",
+    "database entries are not expert-reviewed"
+   ]
+  },
+  {
+   "common_name": "Sesame",
+   "scientific_name": "Sesamum indicum L.",
+   "family": "Pedaliaceae",
+   "model_crop": null,
+   "support_category": "unsupported",
+   "model_coverage": "none",
+   "trained_classes": [],
+   "related_classes": [],
+   "image_counts": {},
+   "data_sources": [],
+   "field_test_photos": 0,
+   "field_evaluation": null,
+   "kb_diseases_stage11": [],
+   "kb_diseases_without_photos": [],
+   "stage10_kb": null,
+   "limitations": [
+    "no diseases in the database",
+    "database entries are not expert-reviewed"
+   ]
+  },
+  {
+   "common_name": "Castor",
+   "scientific_name": "Ricinus communis L.",
+   "family": "Euphorbiaceae",
+   "model_crop": null,
+   "support_category": "unsupported",
+   "model_coverage": "none",
+   "trained_classes": [],
+   "related_classes": [],
+   "image_counts": {},
+   "data_sources": [],
+   "field_test_photos": 0,
+   "field_evaluation": null,
+   "kb_diseases_stage11": [],
+   "kb_diseases_without_photos": [],
+   "stage10_kb": null,
+   "limitations": [
+    "no diseases in the database",
+    "database entries are not expert-reviewed"
+   ]
+  },
+  {
+   "common_name": "Cabbage",
+   "scientific_name": "Brassica oleracea var. capitata L.",
+   "family": "Brassicaceae",
+   "model_crop": null,
+   "support_category": "unsupported",
+   "model_coverage": "none",
+   "trained_classes": [],
+   "related_classes": [],
+   "image_counts": {},
+   "data_sources": [],
+   "field_test_photos": 0,
+   "field_evaluation": null,
+   "kb_diseases_stage11": [],
+   "kb_diseases_without_photos": [],
+   "stage10_kb": null,
+   "limitations": [
+    "no diseases in the database",
+    "database entries are not expert-reviewed"
+   ]
+  },
+  {
+   "common_name": "Cauliflower",
+   "scientific_name": "Brassica oleracea var. botrytis L.",
+   "family": "Brassicaceae",
+   "model_crop": null,
+   "support_category": "unsupported",
+   "model_coverage": "none",
+   "trained_classes": [],
+   "related_classes": [],
+   "image_counts": {},
+   "data_sources": [],
+   "field_test_photos": 0,
+   "field_evaluation": null,
+   "kb_diseases_stage11": [],
+   "kb_diseases_without_photos": [],
+   "stage10_kb": null,
+   "limitations": [
+    "no diseases in the database",
+    "database entries are not expert-reviewed"
+   ]
+  },
+  {
+   "common_name": "Carrot",
+   "scientific_name": "Daucus carota subsp. sativus (Hoffm.) Arcang.",
+   "family": "Apiaceae",
+   "model_crop": null,
+   "support_category": "unsupported",
+   "model_coverage": "none",
+   "trained_classes": [],
+   "related_classes": [],
+   "image_counts": {},
+   "data_sources": [],
+   "field_test_photos": 0,
+   "field_evaluation": null,
+   "kb_diseases_stage11": [],
+   "kb_diseases_without_photos": [],
+   "stage10_kb": null,
+   "limitations": [
+    "no diseases in the database",
+    "database entries are not expert-reviewed"
+   ]
+  },
+  {
+   "common_name": "Radish",
+   "scientific_name": "Raphanus sativus L.",
+   "family": "Brassicaceae",
+   "model_crop": null,
+   "support_category": "unsupported",
+   "model_coverage": "none",
+   "trained_classes": [],
+   "related_classes": [],
+   "image_counts": {},
+   "data_sources": [],
+   "field_test_photos": 0,
+   "field_evaluation": null,
+   "kb_diseases_stage11": [],
+   "kb_diseases_without_photos": [],
+   "stage10_kb": null,
+   "limitations": [
+    "no diseases in the database",
+    "database entries are not expert-reviewed"
+   ]
+  },
+  {
+   "common_name": "Spinach",
+   "scientific_name": "Spinacia oleracea L.",
+   "family": "Amaranthaceae",
+   "model_crop": null,
+   "support_category": "unsupported",
+   "model_coverage": "none",
+   "trained_classes": [],
+   "related_classes": [],
+   "image_counts": {},
+   "data_sources": [],
+   "field_test_photos": 0,
+   "field_evaluation": null,
+   "kb_diseases_stage11": [],
+   "kb_diseases_without_photos": [],
+   "stage10_kb": null,
+   "limitations": [
+    "no diseases in the database",
+    "database entries are not expert-reviewed"
+   ]
+  },
+  {
+   "common_name": "Garlic",
+   "scientific_name": "Allium sativum L.",
+   "family": "Amaryllidaceae",
+   "model_crop": null,
+   "support_category": "unsupported",
+   "model_coverage": "none",
+   "trained_classes": [],
+   "related_classes": [],
+   "image_counts": {},
+   "data_sources": [],
+   "field_test_photos": 0,
+   "field_evaluation": null,
+   "kb_diseases_stage11": [],
+   "kb_diseases_without_photos": [],
+   "stage10_kb": null,
+   "limitations": [
+    "no diseases in the database",
+    "database entries are not expert-reviewed"
+   ]
+  },
+  {
+   "common_name": "Ginger",
+   "scientific_name": "Zingiber officinale Roscoe",
+   "family": "Zingiberaceae",
+   "model_crop": null,
+   "support_category": "unsupported",
+   "model_coverage": "none",
+   "trained_classes": [],
+   "related_classes": [],
+   "image_counts": {},
+   "data_sources": [],
+   "field_test_photos": 0,
+   "field_evaluation": null,
+   "kb_diseases_stage11": [],
+   "kb_diseases_without_photos": [],
+   "stage10_kb": null,
+   "limitations": [
+    "no diseases in the database",
+    "database entries are not expert-reviewed"
+   ]
+  },
+  {
+   "common_name": "Turmeric",
+   "scientific_name": "Curcuma longa L.",
+   "family": "Zingiberaceae",
+   "model_crop": null,
+   "support_category": "unsupported",
+   "model_coverage": "none",
+   "trained_classes": [],
+   "related_classes": [],
+   "image_counts": {},
+   "data_sources": [],
+   "field_test_photos": 0,
+   "field_evaluation": null,
+   "kb_diseases_stage11": [],
+   "kb_diseases_without_photos": [],
+   "stage10_kb": null,
+   "limitations": [
+    "no diseases in the database",
+    "database entries are not expert-reviewed"
+   ]
+  },
+  {
+   "common_name": "Coriander",
+   "scientific_name": "Coriandrum sativum L.",
+   "family": "Apiaceae",
+   "model_crop": null,
+   "support_category": "unsupported",
+   "model_coverage": "none",
+   "trained_classes": [],
+   "related_classes": [],
+   "image_counts": {},
+   "data_sources": [],
+   "field_test_photos": 0,
+   "field_evaluation": null,
+   "kb_diseases_stage11": [],
+   "kb_diseases_without_photos": [],
+   "stage10_kb": null,
+   "limitations": [
+    "no diseases in the database",
+    "database entries are not expert-reviewed"
+   ]
+  },
+  {
+   "common_name": "Guava",
+   "scientific_name": "Psidium guajava L.",
+   "family": "Myrtaceae",
+   "model_crop": null,
+   "support_category": "unsupported",
+   "model_coverage": "none",
+   "trained_classes": [],
+   "related_classes": [],
+   "image_counts": {},
+   "data_sources": [],
+   "field_test_photos": 0,
+   "field_evaluation": null,
+   "kb_diseases_stage11": [],
+   "kb_diseases_without_photos": [],
+   "stage10_kb": null,
+   "limitations": [
+    "no diseases in the database",
+    "database entries are not expert-reviewed"
+   ]
+  },
+  {
+   "common_name": "Pomegranate",
+   "scientific_name": "Punica granatum L.",
+   "family": "Lythraceae",
+   "model_crop": null,
+   "support_category": "unsupported",
+   "model_coverage": "none",
+   "trained_classes": [],
+   "related_classes": [],
+   "image_counts": {},
+   "data_sources": [],
+   "field_test_photos": 0,
+   "field_evaluation": null,
+   "kb_diseases_stage11": [],
+   "kb_diseases_without_photos": [],
+   "stage10_kb": null,
+   "limitations": [
+    "no diseases in the database",
+    "database entries are not expert-reviewed"
+   ]
+  },
+  {
+   "common_name": "Coconut",
+   "scientific_name": "Cocos nucifera L.",
+   "family": "Arecaceae",
+   "model_crop": null,
+   "support_category": "unsupported",
+   "model_coverage": "none",
+   "trained_classes": [],
+   "related_classes": [],
+   "image_counts": {},
+   "data_sources": [],
+   "field_test_photos": 0,
+   "field_evaluation": null,
+   "kb_diseases_stage11": [],
+   "kb_diseases_without_photos": [],
+   "stage10_kb": null,
+   "limitations": [
+    "no diseases in the database",
+    "database entries are not expert-reviewed"
+   ]
+  },
+  {
+   "common_name": "Arecanut",
+   "scientific_name": "Areca catechu L.",
+   "family": "Arecaceae",
+   "model_crop": null,
+   "support_category": "unsupported",
+   "model_coverage": "none",
+   "trained_classes": [],
+   "related_classes": [],
+   "image_counts": {},
+   "data_sources": [],
+   "field_test_photos": 0,
+   "field_evaluation": null,
+   "kb_diseases_stage11": [],
+   "kb_diseases_without_photos": [],
+   "stage10_kb": null,
+   "limitations": [
+    "no diseases in the database",
+    "database entries are not expert-reviewed"
+   ]
+  },
+  {
+   "common_name": "Tea",
+   "scientific_name": "Camellia sinensis (L.) Kuntze",
+   "family": "Theaceae",
+   "model_crop": null,
+   "support_category": "unsupported",
+   "model_coverage": "none",
+   "trained_classes": [],
+   "related_classes": [],
+   "image_counts": {},
+   "data_sources": [],
+   "field_test_photos": 0,
+   "field_evaluation": null,
+   "kb_diseases_stage11": [],
+   "kb_diseases_without_photos": [],
+   "stage10_kb": null,
+   "limitations": [
+    "no diseases in the database",
+    "database entries are not expert-reviewed"
+   ]
+  },
+  {
+   "common_name": "Coffee",
+   "scientific_name": "Coffea arabica L.",
+   "family": "Rubiaceae",
+   "model_crop": null,
+   "support_category": "unsupported",
+   "model_coverage": "none",
+   "trained_classes": [],
+   "related_classes": [],
+   "image_counts": {},
+   "data_sources": [],
+   "field_test_photos": 0,
+   "field_evaluation": null,
+   "kb_diseases_stage11": [],
+   "kb_diseases_without_photos": [],
+   "stage10_kb": null,
+   "limitations": [
+    "no diseases in the database",
+    "database entries are not expert-reviewed"
+   ]
+  },
+  {
+   "common_name": "Black pepper",
+   "scientific_name": "Piper nigrum L.",
+   "family": "Piperaceae",
+   "model_crop": null,
+   "support_category": "unsupported",
+   "model_coverage": "none",
+   "trained_classes": [],
+   "related_classes": [],
+   "image_counts": {},
+   "data_sources": [],
+   "field_test_photos": 0,
+   "field_evaluation": null,
+   "kb_diseases_stage11": [],
+   "kb_diseases_without_photos": [],
+   "stage10_kb": null,
+   "limitations": [
+    "no diseases in the database",
+    "database entries are not expert-reviewed"
+   ]
+  },
+  {
+   "common_name": "Cardamom",
+   "scientific_name": "Elettaria cardamomum (L.) Maton",
+   "family": "Zingiberaceae",
+   "model_crop": null,
+   "support_category": "unsupported",
+   "model_coverage": "none",
+   "trained_classes": [],
+   "related_classes": [],
+   "image_counts": {},
+   "data_sources": [],
+   "field_test_photos": 0,
+   "field_evaluation": null,
+   "kb_diseases_stage11": [],
+   "kb_diseases_without_photos": [],
+   "stage10_kb": null,
+   "limitations": [
+    "no diseases in the database",
+    "database entries are not expert-reviewed"
+   ]
+  },
+  {
+   "common_name": "Jute",
+   "scientific_name": "Corchorus olitorius L.",
+   "family": "Malvaceae",
+   "model_crop": null,
+   "support_category": "unsupported",
+   "model_coverage": "none",
+   "trained_classes": [],
+   "related_classes": [],
+   "image_counts": {},
+   "data_sources": [],
+   "field_test_photos": 0,
+   "field_evaluation": null,
+   "kb_diseases_stage11": [],
+   "kb_diseases_without_photos": [],
+   "stage10_kb": null,
+   "limitations": [
+    "no diseases in the database",
+    "database entries are not expert-reviewed"
+   ]
+  },
+  {
+   "common_name": "Tobacco",
+   "scientific_name": "Nicotiana tabacum L.",
+   "family": "Solanaceae",
+   "model_crop": null,
+   "support_category": "unsupported",
+   "model_coverage": "none",
+   "trained_classes": [],
+   "related_classes": [],
+   "image_counts": {},
+   "data_sources": [],
+   "field_test_photos": 0,
+   "field_evaluation": null,
+   "kb_diseases_stage11": [],
+   "kb_diseases_without_photos": [],
+   "stage10_kb": null,
+   "limitations": [
+    "no diseases in the database",
+    "database entries are not expert-reviewed"
+   ]
+  },
+  {
+   "common_name": "Rose",
+   "scientific_name": "Rosa × hybrida (hort.)",
+   "family": "Rosaceae",
+   "model_crop": null,
+   "support_category": "unsupported",
+   "model_coverage": "none",
+   "trained_classes": [],
+   "related_classes": [],
+   "image_counts": {},
+   "data_sources": [],
+   "field_test_photos": 0,
+   "field_evaluation": null,
+   "kb_diseases_stage11": [],
+   "kb_diseases_without_photos": [],
+   "stage10_kb": null,
+   "limitations": [
+    "no diseases in the database",
+    "database entries are not expert-reviewed"
+   ]
+  },
+  {
+   "common_name": "Marigold",
+   "scientific_name": "Tagetes erecta L.",
+   "family": "Asteraceae",
+   "model_crop": null,
+   "support_category": "unsupported",
+   "model_coverage": "none",
+   "trained_classes": [],
+   "related_classes": [],
+   "image_counts": {},
+   "data_sources": [],
+   "field_test_photos": 0,
+   "field_evaluation": null,
+   "kb_diseases_stage11": [],
+   "kb_diseases_without_photos": [],
+   "stage10_kb": null,
+   "limitations": [
+    "no diseases in the database",
+    "database entries are not expert-reviewed"
+   ]
+  },
+  {
+   "common_name": "Cashew",
+   "scientific_name": "Anacardium occidentale L.",
+   "family": "Anacardiaceae",
+   "model_crop": null,
+   "support_category": "unsupported",
+   "model_coverage": "none",
+   "trained_classes": [],
+   "related_classes": [],
+   "image_counts": {},
+   "data_sources": [],
+   "field_test_photos": 0,
+   "field_evaluation": null,
+   "kb_diseases_stage11": [],
+   "kb_diseases_without_photos": [],
+   "stage10_kb": null,
+   "limitations": [
+    "no diseases in the database",
+    "database entries are not expert-reviewed"
+   ]
+  },
+  {
+   "common_name": "Sapota",
+   "scientific_name": "Manilkara zapota (L.) P.Royen",
+   "family": "Sapotaceae",
+   "model_crop": null,
+   "support_category": "unsupported",
+   "model_coverage": "none",
+   "trained_classes": [],
+   "related_classes": [],
+   "image_counts": {},
+   "data_sources": [],
+   "field_test_photos": 0,
+   "field_evaluation": null,
+   "kb_diseases_stage11": [],
+   "kb_diseases_without_photos": [],
+   "stage10_kb": null,
+   "limitations": [
+    "no diseases in the database",
+    "database entries are not expert-reviewed"
+   ]
+  },
+  {
+   "common_name": "Jackfruit",
+   "scientific_name": "Artocarpus heterophyllus Lam.",
+   "family": "Moraceae",
+   "model_crop": null,
+   "support_category": "unsupported",
+   "model_coverage": "none",
+   "trained_classes": [],
+   "related_classes": [],
+   "image_counts": {},
+   "data_sources": [],
+   "field_test_photos": 0,
+   "field_evaluation": null,
+   "kb_diseases_stage11": [],
+   "kb_diseases_without_photos": [],
+   "stage10_kb": null,
+   "limitations": [
+    "no diseases in the database",
+    "database entries are not expert-reviewed"
+   ]
+  },
+  {
+   "common_name": "Pear",
+   "scientific_name": "Pyrus communis L.",
+   "family": "Rosaceae",
+   "model_crop": null,
+   "support_category": "unsupported",
+   "model_coverage": "none",
+   "trained_classes": [],
+   "related_classes": [],
+   "image_counts": {},
+   "data_sources": [],
+   "field_test_photos": 0,
+   "field_evaluation": null,
+   "kb_diseases_stage11": [],
+   "kb_diseases_without_photos": [],
+   "stage10_kb": null,
+   "limitations": [
+    "no diseases in the database",
+    "database entries are not expert-reviewed"
+   ]
+  },
+  {
+   "common_name": "Plum",
+   "scientific_name": "Prunus domestica L.",
+   "family": "Rosaceae",
+   "model_crop": null,
+   "support_category": "unsupported",
+   "model_coverage": "none",
+   "trained_classes": [],
+   "related_classes": [],
+   "image_counts": {},
+   "data_sources": [],
+   "field_test_photos": 0,
+   "field_evaluation": null,
+   "kb_diseases_stage11": [],
+   "kb_diseases_without_photos": [],
+   "stage10_kb": null,
+   "limitations": [
+    "no diseases in the database",
+    "database entries are not expert-reviewed"
+   ]
+  },
+  {
+   "common_name": "Sweet potato",
+   "scientific_name": "Ipomoea batatas (L.) Lam.",
+   "family": "Convolvulaceae",
+   "model_crop": null,
+   "support_category": "unsupported",
+   "model_coverage": "none",
+   "trained_classes": [],
+   "related_classes": [],
+   "image_counts": {},
+   "data_sources": [],
+   "field_test_photos": 0,
+   "field_evaluation": null,
+   "kb_diseases_stage11": [],
+   "kb_diseases_without_photos": [],
+   "stage10_kb": null,
+   "limitations": [
+    "no diseases in the database",
+    "database entries are not expert-reviewed"
+   ]
+  },
+  {
+   "common_name": "Cassava",
+   "scientific_name": "Manihot esculenta Crantz",
+   "family": "Euphorbiaceae",
+   "model_crop": null,
+   "support_category": "unsupported",
+   "model_coverage": "none",
+   "trained_classes": [],
+   "related_classes": [],
+   "image_counts": {},
+   "data_sources": [],
+   "field_test_photos": 0,
+   "field_evaluation": null,
+   "kb_diseases_stage11": [],
+   "kb_diseases_without_photos": [],
+   "stage10_kb": null,
+   "limitations": [
+    "no diseases in the database",
+    "database entries are not expert-reviewed"
+   ]
+  },
+  {
+   "common_name": "French bean",
+   "scientific_name": "Phaseolus vulgaris L.",
+   "family": "Fabaceae",
+   "model_crop": null,
+   "support_category": "unsupported",
+   "model_coverage": "none",
+   "trained_classes": [],
+   "related_classes": [],
+   "image_counts": {},
+   "data_sources": [],
+   "field_test_photos": 0,
+   "field_evaluation": null,
+   "kb_diseases_stage11": [],
+   "kb_diseases_without_photos": [],
+   "stage10_kb": null,
+   "limitations": [
+    "no diseases in the database",
+    "database entries are not expert-reviewed"
+   ]
+  },
+  {
+   "common_name": "Pea",
+   "scientific_name": "Pisum sativum L.",
+   "family": "Fabaceae",
+   "model_crop": null,
+   "support_category": "unsupported",
+   "model_coverage": "none",
+   "trained_classes": [],
+   "related_classes": [],
+   "image_counts": {},
+   "data_sources": [],
+   "field_test_photos": 0,
+   "field_evaluation": null,
+   "kb_diseases_stage11": [],
+   "kb_diseases_without_photos": [],
+   "stage10_kb": null,
+   "limitations": [
+    "no diseases in the database",
+    "database entries are not expert-reviewed"
+   ]
+  }
+ ]
+}

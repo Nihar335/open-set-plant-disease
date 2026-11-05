@@ -1,0 +1,8 @@
+{
+  "temperature": 0.8000000000000003,
+  "beta": 0.0,
+  "m0": 0.9416,
+  "threshold": 0.8,
+  "fitted_on": "validation only",
+  "checkpoint_epoch": 10
+}

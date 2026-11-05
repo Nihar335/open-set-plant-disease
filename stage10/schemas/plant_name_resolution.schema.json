@@ -1,0 +1,41 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://agrovaidya.invalid/stage10/schemas/plant_name_resolution.schema.json",
+  "title": "Resolution of a user-provided plant name (SC-M4-03). A plant identity appears only when status is 'resolved'.",
+  "type": "object",
+  "required": ["status", "entered_text", "plant_id", "plant", "matched_alias", "alias_kind", "suggestions", "message", "requires_user_choice"],
+  "properties": {
+    "status": {"enum": ["resolved", "ambiguous", "needs_clarification", "unknown", "empty", "invalid"]},
+    "entered_text": {"type": ["string", "null"], "maxLength": 60},
+    "plant_id": {"type": ["string", "null"], "pattern": "^PLANT-[A-Z0-9-]+$"},
+    "plant": {"oneOf": [{"type": "null"}, {"$ref": "#/$defs/plant_option"}]},
+    "matched_alias": {"type": ["string", "null"]},
+    "alias_kind": {"enum": [null, "common_name", "synonym", "scientific_name", "plant_id", "local_name", "selected_from_list"]},
+    "suggestions": {"type": "array", "maxItems": 8, "items": {"$ref": "#/$defs/plant_option"}},
+    "message": {"type": "string", "minLength": 1},
+    "requires_user_choice": {"type": "boolean"}
+  },
+  "additionalProperties": false,
+  "allOf": [
+    {"if": {"properties": {"status": {"const": "resolved"}}},
+     "then": {"properties": {"plant_id": {"type": "string"}, "plant": {"type": "object"}, "requires_user_choice": {"const": false},
+                             "suggestions": {"maxItems": 0}}},
+     "else": {"properties": {"plant_id": {"type": "null"}, "plant": {"type": "null"}, "requires_user_choice": {"const": true}}}},
+    {"if": {"properties": {"status": {"enum": ["ambiguous"]}}}, "then": {"properties": {"suggestions": {"minItems": 2}}}}
+  ],
+  "$defs": {
+    "plant_option": {
+      "type": "object",
+      "required": ["plant_id", "display_name", "scientific_name", "disease_model_supported", "knowledge_base_conditions_sourced", "accepted_names"],
+      "properties": {
+        "plant_id": {"type": "string", "pattern": "^PLANT-[A-Z0-9-]+$"},
+        "display_name": {"type": "string"},
+        "scientific_name": {"type": "string"},
+        "disease_model_supported": {"type": "boolean"},
+        "knowledge_base_conditions_sourced": {"type": "integer", "minimum": 0},
+        "accepted_names": {"type": "array", "items": {"type": "string"}, "minItems": 1}
+      },
+      "additionalProperties": false
+    }
+  }
+}

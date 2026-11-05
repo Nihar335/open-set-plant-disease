@@ -1,0 +1,42 @@
+# Source-availability survey for D2 (look-alikes) and C1 (coconut vs areca). Owner approval 2026-10-15:
+# planning and source-count checks only. METADATA ONLY: no image file is requested; no identification API is used.
+version: 1
+salt: agrovaidya-m4-d2-v1            # proposed photographer split salt (pre-declared before any count was seen)
+dev_fraction: 0.4                    # proposed share of NON-pilot photographers assigned to development
+gbif:
+  dataset_key: 50c9509d-22c7-4a22-a47d-8c48425ef4a7   # iNaturalist Research-grade Observations
+  country: IN
+  event_date: "2025-01-01,2026-10-15"
+  record_licence_markers: ["publicdomain/zero/1.0", "licenses/by/4.0"]
+  page_size: 300
+  max_records_scanned_per_taxon: 3000
+  sleep_seconds: 1.0
+max_images_per_photographer_per_taxon: 2
+targets:                             # per taxon, per split (caps, not guarantees)
+  unsupported: {dev: 12, test: 15}
+  supported_control: {dev: 15, test: 15}
+  c1: {dev: 40, test: 60}            # coconut and areca only (C1 replaces the control target for these two)
+minimums:
+  d2_dev_unsupported_images: 200
+  d2_dev_unsupported_photographers: 100
+  d2_test_unsupported_images: 450    # ~300 independent images for 80% power at true FA 5%, inflated x1.5 for clustering
+  per_group_min_dev: 30              # zero-failure upper bound < 10% needs >= 29
+  supported_controls_dev: 100
+  supported_controls_test: 100
+  c1_dev_per_species: 40
+  c1_dev_photographers_per_species: 20
+  c1_test_per_species: 60
+  c1_test_photographers_per_species: 30
+  c1_descriptive_only_below_test: 30
+unsupported_groups:                  # provisional names; resolved by GBIF species/match (exact match required)
+  N_compound_leaved_neem_like: [Azadirachta indica, Melia azedarach, Ailanthus excelsa, Toona ciliata, Murraya koenigii,
+                                Millettia pinnata, Tamarindus indica, Moringa oleifera, Dalbergia sissoo, Phyllanthus emblica]
+  M_glossy_simple_leaved: [Syzygium cumini, Monoon longifolium, Anacardium occidentale, Saraca asoca, Mimusops elengi,
+                           Manilkara zapota, Artocarpus heterophyllus]
+  F_peepal_like: [Ficus religiosa, Ficus benghalensis, Ficus racemosa, Thespesia populnea]
+  A_small_leaved_thorny: [Prosopis juliflora, Vachellia nilotica, Leucaena leucocephala, Parkinsonia aculeata, Ziziphus mauritiana]
+  P_palms_outside_vocabulary: [Borassus flabellifer, Phoenix sylvestris, Caryota urens, Roystonea regia, Dypsis lutescens,
+                               Elaeis guineensis]
+supported_controls: [Mangifera indica, Psidium guajava, Punica granatum, Citrus limon, Citrus maxima, Coffea arabica,
+                     Cocos nucifera, Areca catechu, Carica papaya, Musa acuminata]   # keys taken from frozen vocabulary_v1.json
+c1_species: [Cocos nucifera, Areca catechu]

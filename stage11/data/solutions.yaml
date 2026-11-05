@@ -1,0 +1,215 @@
+# Stage 11 solutions per disease (key -> cultural / biological / chemical).
+#
+# chemical lists ACTIVE INGREDIENTS commonly named in Indian State Agricultural University packages of practice and
+# ICAR / TNAU advisories for the disease. No doses, products or spray intervals are given on purpose:
+#   * use only products registered by CIBRC (Central Insecticides Board & Registration Committee) for that crop;
+#   * follow the label and your State Agricultural University's current spray schedule;
+#   * rotate fungicide groups to avoid resistance; respect the pre-harvest interval.
+# Curated by the project team from public advisories; NOT expert-reviewed. The app shows this disclaimer.
+
+apple_scab:
+  cultural: [Collect and destroy or compost fallen leaves in autumn (a urea spray on fallen leaves speeds their decay), Prune for an open canopy and quick drying, Plant scab-resistant varieties where available]
+  biological: []
+  chemical: [mancozeb, captan, dodine, difenoconazole, hexaconazole]
+apple_black_rot:
+  cultural: [Remove mummified fruit and dead or cankered wood during winter pruning, Destroy prunings away from the orchard, Avoid tree stress (drought / sunscald) and wounds]
+  biological: []
+  chemical: [captan, mancozeb, thiophanate-methyl]
+apple_cedar_rust:
+  cultural: [Remove juniper / cedar alternate hosts near the orchard where possible, Plant rust-tolerant varieties]
+  biological: []
+  chemical: [mancozeb, myclobutanil, hexaconazole]
+apple_alternaria_leaf_spot:
+  cultural: [Collect and destroy fallen leaves, Prune for air flow and light, Avoid excess nitrogen and keep the orchard floor weed-free, Correct boron / potassium deficiency (soil test)]
+  biological: []
+  chemical: [mancozeb, propineb, difenoconazole, hexaconazole]
+apple_marssonina_blotch:
+  cultural: [Collect and destroy fallen leaves in autumn, Prune for air flow, Avoid long leaf wetness (no overhead irrigation)]
+  biological: []
+  chemical: [mancozeb, carbendazim + mancozeb, hexaconazole, difenoconazole]
+apple_grey_spot:
+  cultural: [Remove fallen leaves, Improve air flow]
+  biological: []
+  chemical: [mancozeb, carbendazim]
+apple_powdery_mildew:
+  cultural: [Prune out white infected shoots and buds in winter and spring, Keep the canopy open]
+  biological: []
+  chemical: [wettable sulphur, hexaconazole, penconazole]
+apple_mosaic:
+  cultural: [No cure — use certified virus-free rootstocks and budwood, Do not take budwood from infected trees, Keep the tree vigorous with balanced nutrition]
+  biological: []
+  chemical: []
+
+cherry_powdery_mildew:
+  cultural: [Prune for air flow and sunlight, Avoid excess nitrogen, Remove water shoots]
+  biological: []
+  chemical: [wettable sulphur, hexaconazole, myclobutanil]
+peach_bacterial_spot:
+  cultural: [Plant tolerant varieties, Avoid sandy wind-exposed sites, Keep trees well nourished, Prune in dry weather]
+  biological: []
+  chemical: [copper oxychloride, copper hydroxide, streptomycin sulphate + tetracycline (streptocycline)]
+strawberry_leaf_scorch:
+  cultural: [Remove old infected leaves after harvest, Avoid overhead watering, Renew beds regularly, Use healthy runners]
+  biological: []
+  chemical: [captan, copper oxychloride]
+corn_gray_leaf_spot:
+  cultural: [Rotate away from maize for one season, Bury or remove crop residue, Grow tolerant hybrids]
+  biological: []
+  chemical: [azoxystrobin, propiconazole, mancozeb]
+corn_common_rust:
+  cultural: [Grow resistant hybrids, Sow early so the crop escapes peak spore load]
+  biological: []
+  chemical: [mancozeb, propiconazole]
+corn_northern_leaf_blight:
+  cultural: [Grow resistant hybrids, Rotate crops, Plough under infected residue]
+  biological: [Trichoderma harzianum seed treatment]
+  chemical: [mancozeb, propiconazole, azoxystrobin]
+grape_black_rot:
+  cultural: [Remove mummified berries and infected canes, Open the canopy for air flow, Keep the vineyard weed-free]
+  biological: []
+  chemical: [mancozeb, myclobutanil, Bordeaux mixture]
+grape_esca:
+  cultural: [Prune in dry weather, Protect large pruning wounds (e.g. Bordeaux paste), Remove dead arms and badly infected vines, Avoid water stress]
+  biological: [Trichoderma-based pruning-wound protectants]
+  chemical: []
+grape_leaf_blight:
+  cultural: [Remove and destroy fallen infected leaves, Keep the canopy open]
+  biological: []
+  chemical: [mancozeb, copper oxychloride, Bordeaux mixture]
+citrus_greening:
+  cultural: [Use certified disease-free nursery plants, Remove and destroy confirmed infected trees, Monitor and control Asian citrus psyllid on new flushes, Balanced nutrition including micronutrients (zinc, manganese)]
+  biological: []
+  chemical: [imidacloprid or thiamethoxam (against the psyllid vector only — there is no cure for the bacterium)]
+pepper_bacterial_spot:
+  cultural: [Use disease-free seed and transplants, Avoid overhead irrigation, Rotate 2–3 years away from pepper and tomato, Remove infected plant debris]
+  biological: [Pseudomonas fluorescens]
+  chemical: [copper oxychloride, copper hydroxide, streptomycin sulphate + tetracycline (streptocycline)]
+potato_early_blight:
+  cultural: [Remove lower infected leaves, Keep plants well nourished (especially nitrogen and potassium), Rotate crops, Avoid evening irrigation]
+  biological: [Trichoderma viride, Pseudomonas fluorescens]
+  chemical: [mancozeb, chlorothalonil, azoxystrobin, difenoconazole]
+potato_late_blight:
+  cultural: [Act at once — it spreads within days in cool wet weather, Remove and destroy infected plants and volunteers, Use healthy seed tubers, Earth up to protect tubers, Haulm cutting before harvest in severe attack]
+  biological: []
+  chemical: [mancozeb (protective), cymoxanil + mancozeb, metalaxyl-M + mancozeb, dimethomorph, fluopicolide + propamocarb]
+squash_powdery_mildew:
+  cultural: [Grow tolerant varieties, Space plants for air flow, Remove heavily infected old leaves]
+  biological: []
+  chemical: [wettable sulphur, hexaconazole, azoxystrobin]
+tomato_bacterial_spot:
+  cultural: [Use clean seed and transplants, Do not work among wet plants, Rotate away from tomato and pepper, Remove infected debris]
+  biological: [Pseudomonas fluorescens]
+  chemical: [copper oxychloride, copper hydroxide, streptomycin sulphate + tetracycline (streptocycline)]
+tomato_early_blight:
+  cultural: [Remove lower infected leaves, Mulch to stop soil splash, Stake plants, Rotate crops]
+  biological: [Trichoderma viride, Pseudomonas fluorescens]
+  chemical: [mancozeb, chlorothalonil, azoxystrobin, difenoconazole]
+tomato_late_blight:
+  cultural: [Act at once, Remove and destroy infected plants, Avoid overhead irrigation, Do not plant tomato next to potato]
+  biological: []
+  chemical: [mancozeb (protective), cymoxanil + mancozeb, metalaxyl-M + mancozeb, dimethomorph]
+tomato_leaf_mold:
+  cultural: [Reduce humidity — ventilate polyhouses, Avoid wetting leaves, Remove infected leaves, Grow resistant varieties]
+  biological: []
+  chemical: [chlorothalonil, mancozeb, difenoconazole]
+tomato_septoria_leaf_spot:
+  cultural: [Remove lower infected leaves, Mulch, Avoid overhead watering, Rotate crops]
+  biological: []
+  chemical: [mancozeb, chlorothalonil, azoxystrobin]
+tomato_spider_mites:
+  cultural: [Spray water on the leaf underside, Remove heavily infested leaves, Conserve predatory mites, Avoid dusty field edges and water stress]
+  biological: [neem oil / azadirachtin, predatory mites (Phytoseiulus persimilis)]
+  chemical: [wettable sulphur, spiromesifen, fenpyroximate, abamectin]
+tomato_target_spot:
+  cultural: [Remove lower leaves and crop debris, Improve air flow, Rotate crops]
+  biological: []
+  chemical: [chlorothalonil, azoxystrobin, mancozeb]
+tomato_yellow_leaf_curl_virus:
+  cultural: [Raise seedlings under 40–50 mesh insect net, Use resistant / tolerant hybrids, Uproot infected plants early, Yellow sticky traps, Remove weed hosts]
+  biological: [neem oil / azadirachtin against whitefly]
+  chemical: [imidacloprid or thiamethoxam or cyantraniliprole (against the whitefly vector only — there is no cure for the virus)]
+tomato_mosaic_virus:
+  cultural: [Use certified seed, Wash hands and tools with soap or milk when handling plants, Remove infected plants, Do not smoke / handle tobacco near plants]
+  biological: []
+  chemical: []
+
+rice_blast:
+  cultural: [Avoid excess nitrogen (split doses), Grow resistant varieties, Keep bunds weed-free]
+  biological: [Pseudomonas fluorescens seed and foliar treatment]
+  chemical: [tricyclazole, isoprothiolane, azoxystrobin]
+rice_brown_spot:
+  cultural: [Correct soil nutrient deficiencies (potassium, silicon) after a soil test, Use healthy treated seed]
+  biological: [Pseudomonas fluorescens]
+  chemical: [mancozeb, propiconazole]
+rice_bacterial_leaf_blight:
+  cultural: [Grow resistant varieties, Avoid excess nitrogen, Drain water from infected plots, Do not clip seedling tips]
+  biological: []
+  chemical: [copper hydroxide, streptomycin sulphate + tetracycline (streptocycline)]
+wheat_leaf_rust:
+  cultural: [Grow resistant varieties recommended for your zone, Sow on time]
+  biological: []
+  chemical: [propiconazole, tebuconazole]
+wheat_yellow_rust:
+  cultural: [Grow resistant varieties, Report early patches to the agriculture department]
+  biological: []
+  chemical: [propiconazole, tebuconazole]
+cotton_leaf_curl:
+  cultural: [Grow tolerant hybrids, Remove weed hosts and infected plants, Avoid late sowing]
+  biological: [neem oil / azadirachtin against whitefly]
+  chemical: [whitefly control only — e.g. flonicamid, pyriproxyfen, spiromesifen (no cure for the virus)]
+chilli_leaf_curl:
+  cultural: [Raise seedlings under insect net, Uproot infected plants, Barrier crop of maize / sorghum, Yellow sticky traps]
+  biological: [neem oil / azadirachtin]
+  chemical: [vector control only — imidacloprid or thiamethoxam against whitefly / thrips, fenpyroximate against mites]
+chilli_anthracnose_leaf_spot:
+  cultural: [Use healthy seed, Remove infected leaves and fruit, Rotate crops]
+  biological: [Trichoderma viride seed treatment]
+  chemical: [mancozeb, carbendazim, azoxystrobin]
+okra_yellow_vein_mosaic:
+  cultural: [Grow resistant varieties, Uproot infected plants early, Yellow sticky traps]
+  biological: [neem oil / azadirachtin]
+  chemical: [imidacloprid or thiamethoxam (against the whitefly vector only)]
+banana_sigatoka:
+  cultural: [Remove and destroy infected leaves, Improve drainage, Avoid dense planting]
+  biological: []
+  chemical: [propiconazole, carbendazim, mineral oil]
+groundnut_tikka:
+  cultural: [Rotate crops, Remove volunteer plants and crop residue]
+  biological: []
+  chemical: [carbendazim + mancozeb, tebuconazole, chlorothalonil]
+mango_powdery_mildew:
+  cultural: [Prune for air flow, Monitor during flowering in cool cloudy weather]
+  biological: []
+  chemical: [wettable sulphur, hexaconazole]
+mango_anthracnose:
+  cultural: [Prune and destroy infected twigs and leaves, Avoid overhead irrigation]
+  biological: []
+  chemical: [carbendazim, copper oxychloride]
+citrus_canker:
+  cultural: [Prune infected twigs in dry weather, Windbreaks, Disease-free nursery plants]
+  biological: []
+  chemical: [copper oxychloride, streptomycin sulphate + tetracycline (streptocycline)]
+cucurbit_downy_mildew:
+  cultural: [Wide spacing, Drip instead of overhead irrigation, Remove infected leaves]
+  biological: []
+  chemical: [mancozeb, metalaxyl-M + mancozeb, cymoxanil + mancozeb]
+brinjal_little_leaf:
+  cultural: [Uproot infected plants early, Remove weed hosts]
+  biological: []
+  chemical: [leafhopper control only — e.g. imidacloprid or thiamethoxam]
+onion_purple_blotch:
+  cultural: [Rotate crops, Avoid dense planting, Remove infected leaves]
+  biological: []
+  chemical: [mancozeb, tebuconazole, difenoconazole]
+mustard_alternaria_blight:
+  cultural: [Sow on time, Use healthy seed, Remove lower infected leaves]
+  biological: []
+  chemical: [mancozeb, iprodione]
+papaya_ringspot:
+  cultural: [Raise seedlings under net, Barrier crop (e.g. maize), Remove infected plants early]
+  biological: []
+  chemical: [aphid control only — no cure for the virus]
+generic_nutrient_deficiency:
+  cultural: [Get a soil test (Soil Health Card) before adding any fertiliser, Apply nutrients only as recommended for your soil]
+  biological: []
+  chemical: []

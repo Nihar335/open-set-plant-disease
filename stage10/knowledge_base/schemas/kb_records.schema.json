@@ -1,0 +1,1068 @@
+{
+ "$schema": "https://json-schema.org/draft/2020-12/schema",
+ "$id": "https://agrovaidya.invalid/stage10/kb/kb_records.schema.json",
+ "title": "AgroVaidya knowledge-base record types (v1)",
+ "$defs": {
+  "id_source": {
+   "type": "string",
+   "pattern": "^SRC-[A-Z0-9][A-Z0-9-]*$"
+  },
+  "id_plant": {
+   "type": "string",
+   "pattern": "^PLANT-[A-Z0-9-]+$"
+  },
+  "id_condition": {
+   "type": "string",
+   "pattern": "^COND-[A-Z0-9-]+$"
+  },
+  "id_feature": {
+   "type": "string",
+   "pattern": "^FEAT-[A-Z0-9-]+$"
+  },
+  "id_question": {
+   "type": "string",
+   "pattern": "^Q-[A-Z0-9-]+$"
+  },
+  "id_diagnostic": {
+   "type": "string",
+   "pattern": "^DIAG-[A-Z0-9-]+$"
+  },
+  "id_management": {
+   "type": "string",
+   "pattern": "^MGMT-[A-Z0-9-]+$"
+  },
+  "date": {
+   "type": "string",
+   "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$"
+  },
+  "review_status": {
+   "enum": [
+    "draft",
+    "source_verified",
+    "expert_reviewed"
+   ]
+  },
+  "geo": {
+   "enum": [
+    "India_specific",
+    "India_region",
+    "international_not_verified_for_India",
+    "international_verified_for_India",
+    "global"
+   ]
+  },
+  "evidence": {
+   "type": "object",
+   "required": [
+    "source_id",
+    "passage"
+   ],
+   "properties": {
+    "source_id": {
+     "$ref": "#/$defs/id_source"
+    },
+    "passage": {
+     "type": "string",
+     "minLength": 12,
+     "description": "verbatim substring of the cached source text"
+    }
+   },
+   "additionalProperties": false
+  },
+  "claim": {
+   "type": "object",
+   "required": [
+    "text",
+    "evidence"
+   ],
+   "properties": {
+    "text": {
+     "type": "string",
+     "minLength": 3
+    },
+    "evidence": {
+     "type": "array",
+     "minItems": 1,
+     "items": {
+      "$ref": "#/$defs/evidence"
+     }
+    }
+   },
+   "additionalProperties": false
+  },
+  "source": {
+   "type": "object",
+   "required": [
+    "source_id",
+    "title",
+    "publisher_or_author",
+    "url",
+    "accessed_on",
+    "published_or_updated",
+    "source_type",
+    "geographic_relevance",
+    "language",
+    "license_or_terms",
+    "verification",
+    "review_status",
+    "limitations"
+   ],
+   "properties": {
+    "source_id": {
+     "$ref": "#/$defs/id_source"
+    },
+    "title": {
+     "type": "string",
+     "minLength": 3
+    },
+    "publisher_or_author": {
+     "type": "string",
+     "minLength": 2
+    },
+    "url": {
+     "type": "string",
+     "pattern": "^https://"
+    },
+    "accessed_on": {
+     "$ref": "#/$defs/date"
+    },
+    "published_or_updated": {
+     "type": [
+      "string",
+      "null"
+     ]
+    },
+    "source_type": {
+     "enum": [
+      "icar",
+      "state_agricultural_university",
+      "kvk",
+      "government_india",
+      "university_extension_international",
+      "international_organization",
+      "peer_reviewed",
+      "botanical_authority",
+      "taxonomic_database",
+      "other"
+     ]
+    },
+    "geographic_relevance": {
+     "$ref": "#/$defs/geo"
+    },
+    "language": {
+     "type": "string",
+     "pattern": "^[a-z]{2,3}$"
+    },
+    "license_or_terms": {
+     "type": "string",
+     "minLength": 3
+    },
+    "verification": {
+     "type": "object",
+     "required": [
+      "method",
+      "bytes_sha256",
+      "cache_file"
+     ],
+     "properties": {
+      "method": {
+       "const": "fetched_and_read_full_text"
+      },
+      "bytes_sha256": {
+       "type": "string",
+       "pattern": "^[0-9a-f]{64}$"
+      },
+      "cache_file": {
+       "type": "string"
+      }
+     },
+     "additionalProperties": false
+    },
+    "review_status": {
+     "$ref": "#/$defs/review_status"
+    },
+    "limitations": {
+     "type": "string"
+    }
+   },
+   "additionalProperties": false
+  },
+  "plant": {
+   "type": "object",
+   "required": [
+    "plant_id",
+    "common_names",
+    "scientific_name",
+    "taxonomy",
+    "crop_categories",
+    "frozen_model_scope",
+    "review_status"
+   ],
+   "properties": {
+    "plant_id": {
+     "$ref": "#/$defs/id_plant"
+    },
+    "common_names": {
+     "type": "array",
+     "minItems": 1,
+     "items": {
+      "type": "object",
+      "required": [
+       "name",
+       "lang"
+      ],
+      "properties": {
+       "name": {
+        "type": "string"
+       },
+       "lang": {
+        "type": "string"
+       },
+       "review": {
+        "enum": [
+         "source_verified",
+         "editorial",
+         "pending_fluent_speaker_review"
+        ]
+       }
+      },
+      "additionalProperties": false
+     }
+    },
+    "scientific_name": {
+     "type": "string"
+    },
+    "taxonomy": {
+     "type": "object",
+     "required": [
+      "kingdom",
+      "family",
+      "genus",
+      "species",
+      "status",
+      "evidence"
+     ],
+     "properties": {
+      "kingdom": {
+       "type": "string"
+      },
+      "family": {
+       "type": "string"
+      },
+      "genus": {
+       "type": "string"
+      },
+      "species": {
+       "type": "string"
+      },
+      "status": {
+       "enum": [
+        "ACCEPTED"
+       ]
+      },
+      "database_key": {
+       "type": "string"
+      },
+      "evidence": {
+       "type": "array",
+       "minItems": 1,
+       "items": {
+        "$ref": "#/$defs/evidence"
+       }
+      }
+     },
+     "additionalProperties": false
+    },
+    "synonyms": {
+     "type": "array",
+     "items": {
+      "type": "string"
+     }
+    },
+    "crop_categories": {
+     "type": "array",
+     "minItems": 1,
+     "items": {
+      "enum": [
+       "vegetable",
+       "fruit_tree",
+       "fruit_vine",
+       "cereal",
+       "pulse",
+       "oilseed",
+       "spice",
+       "plantation",
+       "flower",
+       "ornamental",
+       "medicinal",
+       "fodder",
+       "other"
+      ]
+     }
+    },
+    "frozen_model_scope": {
+     "type": "boolean"
+    },
+    "frozen_model_crop_label": {
+     "type": [
+      "string",
+      "null"
+     ]
+    },
+    "review_status": {
+     "$ref": "#/$defs/review_status"
+    }
+   },
+   "additionalProperties": false
+  },
+  "feature_link": {
+   "type": "object",
+   "required": [
+    "feature_id",
+    "role",
+    "claim"
+   ],
+   "properties": {
+    "feature_id": {
+     "$ref": "#/$defs/id_feature"
+    },
+    "role": {
+     "enum": [
+      "distinguishing",
+      "typical",
+      "occasional"
+     ]
+    },
+    "claim": {
+     "$ref": "#/$defs/claim"
+    }
+   },
+   "additionalProperties": false
+  },
+  "condition": {
+   "type": "object",
+   "required": [
+    "condition_id",
+    "condition_type",
+    "cause_category",
+    "common_names",
+    "scientific_cause",
+    "affected_plants",
+    "features",
+    "favourable_conditions",
+    "spread_and_survival",
+    "look_alikes",
+    "diagnostic_ids",
+    "management_ids",
+    "curability",
+    "geographic_applicability",
+    "known_uncertainties",
+    "research_role",
+    "curation_status",
+    "review_status",
+    "last_verified"
+   ],
+   "properties": {
+    "condition_id": {
+     "$ref": "#/$defs/id_condition"
+    },
+    "condition_type": {
+     "enum": [
+      "infectious_disease",
+      "pest",
+      "nutrient_disorder",
+      "abiotic_stress",
+      "chemical_injury"
+     ]
+    },
+    "cause_category": {
+     "enum": [
+      "fungal",
+      "bacterial",
+      "viral",
+      "oomycete",
+      "fungal_complex",
+      "mite",
+      "insect",
+      "nutrient_deficiency",
+      "nutrient_toxicity",
+      "water_stress",
+      "temperature_injury",
+      "soil_or_salinity",
+      "chemical_injury",
+      "unknown"
+     ]
+    },
+    "common_names": {
+     "type": "array",
+     "minItems": 1,
+     "items": {
+      "type": "string"
+     }
+    },
+    "scientific_cause": {
+     "oneOf": [
+      {
+       "type": "null"
+      },
+      {
+       "type": "object",
+       "required": [
+        "name",
+        "claim"
+       ],
+       "properties": {
+        "name": {
+         "type": "string"
+        },
+        "synonyms": {
+         "type": "array",
+         "items": {
+          "type": "string"
+         }
+        },
+        "claim": {
+         "$ref": "#/$defs/claim"
+        }
+       },
+       "additionalProperties": false
+      }
+     ]
+    },
+    "affected_plants": {
+     "type": "array",
+     "items": {
+      "type": "object",
+      "required": [
+       "plant_id",
+       "claim"
+      ],
+      "properties": {
+       "plant_id": {
+        "$ref": "#/$defs/id_plant"
+       },
+       "claim": {
+        "$ref": "#/$defs/claim"
+       }
+      },
+      "additionalProperties": false
+     }
+    },
+    "unsourced_host_plants": {
+     "type": "array",
+     "items": {
+      "$ref": "#/$defs/id_plant"
+     },
+     "description": "stub-only host mapping from the research class names; not a sourced claim"
+    },
+    "features": {
+     "type": "array",
+     "items": {
+      "$ref": "#/$defs/feature_link"
+     }
+    },
+    "favourable_conditions": {
+     "type": "array",
+     "items": {
+      "$ref": "#/$defs/feature_link"
+     }
+    },
+    "spread_and_survival": {
+     "type": "array",
+     "items": {
+      "$ref": "#/$defs/claim"
+     }
+    },
+    "look_alikes": {
+     "type": "array",
+     "items": {
+      "type": "object",
+      "required": [
+       "condition_id",
+       "basis"
+      ],
+      "properties": {
+       "condition_id": {
+        "$ref": "#/$defs/id_condition"
+       },
+       "basis": {
+        "enum": [
+         "source_statement",
+         "shared_kb_features",
+         "research_protocol_pairing"
+        ]
+       },
+       "claim": {
+        "$ref": "#/$defs/claim"
+       }
+      },
+      "additionalProperties": false
+     }
+    },
+    "diagnostic_ids": {
+     "type": "array",
+     "items": {
+      "$ref": "#/$defs/id_diagnostic"
+     }
+    },
+    "management_ids": {
+     "type": "array",
+     "items": {
+      "$ref": "#/$defs/id_management"
+     }
+    },
+    "curability": {
+     "type": "object",
+     "required": [
+      "status"
+     ],
+     "properties": {
+      "status": {
+       "enum": [
+        "not_documented",
+        "managed_not_eradicated",
+        "preventable_and_manageable",
+        "correctable_if_confirmed",
+        "not_curable_in_infected_tissue"
+       ]
+      },
+      "claim": {
+       "$ref": "#/$defs/claim"
+      }
+     },
+     "additionalProperties": false
+    },
+    "geographic_applicability": {
+     "type": "array",
+     "items": {
+      "$ref": "#/$defs/geo"
+     }
+    },
+    "seasonality": {
+     "type": "array",
+     "items": {
+      "$ref": "#/$defs/claim"
+     }
+    },
+    "known_uncertainties": {
+     "type": "array",
+     "items": {
+      "type": "string"
+     }
+    },
+    "research_role": {
+     "enum": [
+      "frozen_model_known_class",
+      "held_out_hard_unknown",
+      "not_in_research_protocol"
+     ]
+    },
+    "frozen_model_class": {
+     "type": [
+      "string",
+      "null"
+     ]
+    },
+    "curation_status": {
+     "enum": [
+      "sourced",
+      "stub_unsourced"
+     ]
+    },
+    "review_status": {
+     "$ref": "#/$defs/review_status"
+    },
+    "last_verified": {
+     "oneOf": [
+      {
+       "type": "null"
+      },
+      {
+       "$ref": "#/$defs/date"
+      }
+     ]
+    }
+   },
+   "additionalProperties": false,
+   "allOf": [
+    {
+     "if": {
+      "properties": {
+       "curation_status": {
+        "const": "stub_unsourced"
+       }
+      }
+     },
+     "then": {
+      "properties": {
+       "features": {
+        "maxItems": 0
+       },
+       "affected_plants": {
+        "maxItems": 0
+       },
+       "favourable_conditions": {
+        "maxItems": 0
+       },
+       "spread_and_survival": {
+        "maxItems": 0
+       },
+       "management_ids": {
+        "maxItems": 0
+       },
+       "scientific_cause": {
+        "const": null
+       },
+       "review_status": {
+        "const": "draft"
+       }
+      },
+      "required": [
+       "unsourced_host_plants"
+      ]
+     }
+    },
+    {
+     "if": {
+      "properties": {
+       "curation_status": {
+        "const": "sourced"
+       }
+      }
+     },
+     "then": {
+      "properties": {
+       "features": {
+        "minItems": 1
+       },
+       "affected_plants": {
+        "minItems": 1
+       },
+       "last_verified": {
+        "$ref": "#/$defs/date"
+       }
+      }
+     }
+    }
+   ]
+  },
+  "diagnostic": {
+   "type": "object",
+   "required": [
+    "diagnostic_id",
+    "method_type",
+    "name",
+    "description",
+    "features_checked",
+    "what_it_can_establish",
+    "what_it_cannot_establish",
+    "claims",
+    "curation_status",
+    "review_status"
+   ],
+   "properties": {
+    "diagnostic_id": {
+     "$ref": "#/$defs/id_diagnostic"
+    },
+    "method_type": {
+     "enum": [
+      "field_observation",
+      "hand_lens",
+      "cross_section",
+      "photograph",
+      "soil_test",
+      "tissue_test",
+      "laboratory_test"
+     ]
+    },
+    "name": {
+     "type": "string"
+    },
+    "description": {
+     "type": "string"
+    },
+    "features_checked": {
+     "type": "array",
+     "items": {
+      "$ref": "#/$defs/id_feature"
+     }
+    },
+    "what_it_can_establish": {
+     "type": "string"
+    },
+    "what_it_cannot_establish": {
+     "type": "string"
+    },
+    "claims": {
+     "type": "array",
+     "items": {
+      "$ref": "#/$defs/claim"
+     }
+    },
+    "curation_status": {
+     "enum": [
+      "sourced",
+      "needs_source"
+     ]
+    },
+    "review_status": {
+     "$ref": "#/$defs/review_status"
+    }
+   },
+   "additionalProperties": false,
+   "allOf": [
+    {
+     "if": {
+      "properties": {
+       "curation_status": {
+        "const": "sourced"
+       }
+      }
+     },
+     "then": {
+      "properties": {
+       "claims": {
+        "minItems": 1
+       }
+      }
+     }
+    }
+   ]
+  },
+  "management": {
+   "type": "object",
+   "required": [
+    "management_id",
+    "applies_to_conditions",
+    "category",
+    "consequential",
+    "summary",
+    "claim",
+    "dose_policy",
+    "geographic_applicability",
+    "review_status"
+   ],
+   "properties": {
+    "management_id": {
+     "$ref": "#/$defs/id_management"
+    },
+    "applies_to_conditions": {
+     "type": "array",
+     "minItems": 1,
+     "items": {
+      "$ref": "#/$defs/id_condition"
+     }
+    },
+    "category": {
+     "enum": [
+      "prevention",
+      "cultural",
+      "sanitation",
+      "irrigation",
+      "drainage",
+      "soil",
+      "nutrient",
+      "resistant_variety",
+      "biological",
+      "chemical",
+      "monitoring"
+     ]
+    },
+    "consequential": {
+     "type": "boolean"
+    },
+    "summary": {
+     "type": "string",
+     "description": "our wording; must not contain doses or rates"
+    },
+    "claim": {
+     "$ref": "#/$defs/claim"
+    },
+    "dose_policy": {
+     "enum": [
+      "no_dose_in_source",
+      "withheld_by_policy"
+     ]
+    },
+    "safety_notes": {
+     "type": "array",
+     "items": {
+      "type": "string",
+      "minLength": 5
+     }
+    },
+    "geographic_applicability": {
+     "$ref": "#/$defs/geo"
+    },
+    "requires_confirmation_first": {
+     "type": "boolean"
+    },
+    "review_status": {
+     "$ref": "#/$defs/review_status"
+    }
+   },
+   "additionalProperties": false,
+   "allOf": [
+    {
+     "if": {
+      "properties": {
+       "category": {
+        "enum": [
+         "chemical",
+         "nutrient",
+         "biological"
+        ]
+       }
+      }
+     },
+     "then": {
+      "required": [
+       "safety_notes"
+      ],
+      "properties": {
+       "consequential": {
+        "const": true
+       },
+       "safety_notes": {
+        "minItems": 1
+       }
+      }
+     }
+    },
+    {
+     "if": {
+      "properties": {
+       "category": {
+        "const": "nutrient"
+       }
+      }
+     },
+     "then": {
+      "required": [
+       "requires_confirmation_first"
+      ],
+      "properties": {
+       "requires_confirmation_first": {
+        "const": true
+       }
+      }
+     }
+    }
+   ]
+  },
+  "feature": {
+   "type": "object",
+   "required": [
+    "feature_id",
+    "label",
+    "category",
+    "observable_from_single_photo"
+   ],
+   "properties": {
+    "feature_id": {
+     "$ref": "#/$defs/id_feature"
+    },
+    "label": {
+     "type": "string"
+    },
+    "category": {
+     "enum": [
+      "lesion",
+      "colour_pattern",
+      "distribution",
+      "sign",
+      "plant_part",
+      "damage",
+      "environment"
+     ]
+    },
+    "observable_from_single_photo": {
+     "enum": [
+      "often",
+      "sometimes",
+      "no"
+     ]
+    }
+   },
+   "additionalProperties": false
+  },
+  "question": {
+   "type": "object",
+   "required": [
+    "question_id",
+    "text",
+    "options"
+   ],
+   "properties": {
+    "question_id": {
+     "$ref": "#/$defs/id_question"
+    },
+    "text": {
+     "type": "string"
+    },
+    "options": {
+     "type": "array",
+     "minItems": 2,
+     "items": {
+      "type": "object",
+      "required": [
+       "option_id",
+       "label",
+       "sets"
+      ],
+      "properties": {
+       "option_id": {
+        "type": "string"
+       },
+       "label": {
+        "type": "string"
+       },
+       "sets": {
+        "type": "object",
+        "propertyNames": {
+         "pattern": "^FEAT-[A-Z0-9-]+$"
+        },
+        "additionalProperties": {
+         "type": "boolean"
+        }
+       }
+      },
+      "additionalProperties": false
+     }
+    }
+   },
+   "additionalProperties": false
+  },
+  "model_class": {
+   "type": "object",
+   "required": [
+    "class_name",
+    "research_role",
+    "plant_id",
+    "condition_id"
+   ],
+   "properties": {
+    "class_name": {
+     "type": "string"
+    },
+    "research_role": {
+     "enum": [
+      "frozen_model_known_class",
+      "held_out_hard_unknown"
+     ]
+    },
+    "plant_id": {
+     "$ref": "#/$defs/id_plant"
+    },
+    "condition_id": {
+     "oneOf": [
+      {
+       "type": "null"
+      },
+      {
+       "$ref": "#/$defs/id_condition"
+      }
+     ]
+    }
+   },
+   "additionalProperties": false
+  },
+  "id_crop_requirement": {
+   "type": "string",
+   "pattern": "^CROPREQ-[A-Z0-9-]+$"
+  },
+  "crop_requirement": {
+   "type": "object",
+   "description": "Growing conditions for a plant: temperature, soil and which nutrients it needs (never doses).",
+   "required": [
+    "crop_requirement_id",
+    "plant_id",
+    "temperature",
+    "soil",
+    "nutrients",
+    "geographic_applicability",
+    "review_status"
+   ],
+   "properties": {
+    "crop_requirement_id": {
+     "$ref": "#/$defs/id_crop_requirement"
+    },
+    "plant_id": {
+     "$ref": "#/$defs/id_plant"
+    },
+    "temperature": {
+     "oneOf": [
+      {
+       "type": "null"
+      },
+      {
+       "$ref": "#/$defs/claim"
+      }
+     ]
+    },
+    "soil": {
+     "oneOf": [
+      {
+       "type": "null"
+      },
+      {
+       "$ref": "#/$defs/claim"
+      }
+     ]
+    },
+    "nutrients": {
+     "oneOf": [
+      {
+       "type": "null"
+      },
+      {
+       "type": "object",
+       "required": [
+        "needed",
+        "claim"
+       ],
+       "properties": {
+        "needed": {
+         "type": "array",
+         "minItems": 1,
+         "items": {
+          "enum": [
+           "nitrogen",
+           "phosphorus",
+           "potassium",
+           "organic_manure",
+           "zinc",
+           "boron",
+           "manganese",
+           "calcium",
+           "iron",
+           "sulphur",
+           "magnesium"
+          ]
+         }
+        },
+        "claim": {
+         "$ref": "#/$defs/claim"
+        }
+       },
+       "additionalProperties": false
+      }
+     ]
+    },
+    "notes": {
+     "type": "array",
+     "items": {
+      "type": "string"
+     }
+    },
+    "geographic_applicability": {
+     "$ref": "#/$defs/geo"
+    },
+    "review_status": {
+     "$ref": "#/$defs/review_status"
+    }
+   },
+   "additionalProperties": false
+  }
+ }
+}

@@ -1,0 +1,1 @@
+{"private": true, "type": "module", "description": "AgroVaidya web app (no npm dependencies). Tests: node --test stage10/app/tests_js/"}

@@ -1,0 +1,59 @@
+# D2 / C1 acquisition configuration - FROZEN with protocol v2 (PROTOCOL_V2.md; hash-locked in protocol_v2_lock.json).
+# Option B (owner, 2026-10-15). Internal, non-commercial research evaluation only (LICENCE_AND_INTENDED_USE_REVIEW.md s.8).
+version: 2
+status: FROZEN
+
+source:
+  gbif_dataset_key: 50c9509d-22c7-4a22-a47d-8c48425ef4a7   # iNaturalist Research-grade Observations (via GBIF)
+  country: IN
+  event_date: "2025-01-01,2026-10-15"                       # projection date; acquisition re-verifies every record live
+  one_image_per_observation: true
+  allowed_image_hosts: [inaturalist-open-data.s3.amazonaws.com]
+  image_size_variant: medium
+
+licences:
+  # EXACT URIs only (version-specific). SA, ND, NC-SA, NC-ND, other versions and all-rights-reserved are excluded.
+  allowed_media_licence_uris:
+    - http://creativecommons.org/publicdomain/zero/1.0/
+    - http://creativecommons.org/licenses/by/4.0/
+    - http://creativecommons.org/licenses/by-nc/4.0/
+  allowed_record_licence_markers: ["publicdomain/zero/1.0", "licenses/by/4.0", "licenses/by-nc/4.0"]
+  nc_use_restrictions:                                       # owner 2026-10-15; apply to EVERY CC BY-NC image
+    - internal, non-commercial research evaluation only
+    - originals and stored copies never redistributed and never included in any public dataset
+    - never used to train or fine-tune BioCLIP or any other model
+    - never used in a deployed or commercial product
+    - attribution, source, licence version, observation identifier and all available provenance preserved per image
+    - stored separately from any future public or commercially intended dataset
+    - if terms or compatibility are unclear, stop and request owner review
+
+storage:
+  root: stage10_local/d2_internal_nc_eval                    # outside frozen directories; NOT a public or commercial dataset
+  stored_max_side_px: 1024
+  min_side_px: 224
+
+split:
+  unit: photographer
+  salt: agrovaidya-m4-d2-v1
+  dev_fraction: 0.4                                          # share of NON-pilot photographers assigned to development
+  pilot_photographers: development_only                      # the 47 pilot photographers never enter test
+  pilot_images: excluded                                     # none of the 157 pilot images is eligible anywhere
+
+caps:
+  per_photographer_per_taxon: 2
+  per_photographer_per_split: 10
+targets:                                                     # per taxon, per split (primary selection)
+  unsupported: {dev: 12, test: 20}
+  supported_control: {dev: 20, test: 20}
+  c1: {dev: 40, test: 60}
+reserve_fraction: 0.5                                        # pre-ranked reserves replace primaries removed by image-level checks
+
+c1_status:
+  Cocos nucifera: planned
+  Areca catechu: descriptive_only                            # owner 2026-10-15: projected 18 dev / 17 test is NOT sufficient
+
+overlap_checks:                                              # enforced on downloaded bytes BEFORE any image is stored
+  - exact MD5 against all 62,523 Stage 1-9 images (data/splits/manifest_all.csv)
+  - perceptual near-duplicate against the read-only Stage 1-9 index (stage10/plant_id/neardup.py; dHash<=0 or pHash<=3; 8 orientations)
+  - dHash near-duplicate (<=4 bits, 8 orientations) within D2 and against the 157 retired pilot images
+  - GBIF id / observation URL / MD5 against all pilot manifests

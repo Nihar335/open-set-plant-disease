@@ -1,0 +1,128 @@
+# Stage 11 diagnostic test catalogue: tests that confirm or rule out a suggested disease.
+# Curated from standard plant-pathology diagnostic practice (field, hand-lens, incubation, microscopy,
+# serological and molecular tests). Provenance: curated by the project team, NOT expert-reviewed and NOT
+# verified passage-by-passage like the Stage 10 knowledge base. Laboratory tests should be done through a
+# State Agricultural University plant-pathology lab, a Krishi Vigyan Kendra (KVK) or an accredited private lab.
+#
+# level: field (farmer can do it), hand_lens, home_lab (simple kit), lab (needs a laboratory)
+# confirms: what a positive result means.
+- id: visual_pattern_check
+  name: Whole-plant symptom pattern check
+  level: field
+  time: 10 minutes
+  procedure: Walk the field and check where symptoms appear (old vs young leaves, lower vs upper canopy, scattered plants vs patches), whether fruits or stems are affected, and how fast it is spreading.
+  confirms: Helps separate infectious diseases (spreading, patchy) from nutrient, herbicide or weather damage (uniform, follows rows or sprays).
+- id: hand_lens_spores
+  name: Hand-lens (10–20x) check of lesions
+  level: hand_lens
+  time: 5 minutes
+  procedure: Look at lesion centres and the leaf underside with a 10–20x hand lens for spores, powdery growth, pustules, black fruiting bodies (dots) or mites.
+  confirms: Fungal structures (pustules, fruiting bodies, mould) point to a fungal disease; moving dots point to mites.
+- id: moist_chamber
+  name: Moist-chamber (humid box) incubation
+  level: home_lab
+  time: 24–72 hours
+  procedure: Place a freshly infected leaf on wet tissue paper in a closed plastic box or bag at room temperature, away from sunlight. After 1–3 days inspect the lesions with a hand lens.
+  confirms: Fungal or oomycete growth forming on the lesion margins (white downy growth for late blight, dark spores for early blight / leaf spots). No growth after 3 days suggests bacterial, viral or non-infectious causes.
+- id: spore_microscopy
+  name: Microscopic spore identification
+  level: lab
+  time: 1 day
+  procedure: Scrape or tape-lift growth from a lesion, mount in lactophenol cotton blue and examine under a compound microscope. Compare spore shape, septation and size with reference descriptions.
+  confirms: Identifies the fungal genus (e.g. Alternaria beaked multi-celled spores, Septoria thread-like spores in pycnidia, Cercospora long needle-like spores).
+- id: culture_isolation
+  name: Pathogen isolation on culture medium
+  level: lab
+  time: 3–10 days
+  procedure: Surface-sterilise small pieces from the lesion edge and plate on potato dextrose agar (fungi) or nutrient / King's B agar (bacteria). Identify colonies by morphology, microscopy or sequencing.
+  confirms: Isolates and identifies the causal organism; the standard confirmation for fungal and bacterial diseases.
+- id: bacterial_ooze
+  name: Bacterial ooze / streaming test
+  level: home_lab
+  time: 5–10 minutes
+  procedure: Cut a thin piece across the margin of a fresh lesion, place it in a drop of clean water on a glass slide and watch under a microscope (or against light for stems in a glass of water) for milky streams flowing out of the cut edge.
+  confirms: Streaming of bacteria from the cut tissue indicates a bacterial disease; fungal lesions do not stream.
+- id: koh_string_test
+  name: KOH (3%) string test
+  level: lab
+  time: 10 minutes
+  procedure: Mix a loopful of a pure bacterial colony with a drop of 3% potassium hydroxide on a slide and lift the loop slowly.
+  confirms: A sticky string forming indicates Gram-negative bacteria (e.g. Xanthomonas, Pseudomonas), supporting a bacterial-spot diagnosis.
+- id: pcr_bacteria
+  name: PCR for bacterial pathogen
+  level: lab
+  time: 1–2 days
+  procedure: Lab extracts DNA from lesion tissue or a pure culture and runs species-specific PCR (e.g. Xanthomonas spp. for bacterial spot).
+  confirms: Definitive identification of the bacterial species.
+- id: elisa_virus
+  name: ELISA / lateral-flow immunostrip for virus
+  level: lab
+  time: 15 minutes (strip) to 1 day (ELISA)
+  procedure: Grind young symptomatic leaf tissue in extraction buffer and test with a virus-specific immunostrip or DAS-ELISA kit (e.g. Tomato mosaic virus / Tobamovirus).
+  confirms: Presence of the specific virus antigen; a negative strip on a strongly symptomatic plant points to a different virus.
+- id: pcr_virus
+  name: PCR / RT-PCR for virus
+  level: lab
+  time: 1–2 days
+  procedure: Lab extracts nucleic acid from young leaves and runs PCR (DNA viruses such as begomoviruses, e.g. TYLCV) or RT-PCR (RNA viruses such as tobamoviruses).
+  confirms: Definitive identification of the virus.
+- id: vector_check
+  name: Insect-vector inspection (whitefly / aphid / psyllid)
+  level: field
+  time: 10 minutes
+  procedure: Shake or tap shoots over white paper and inspect the underside of young leaves; use yellow sticky traps for 2–3 days.
+  confirms: Presence of the vector (whiteflies for leaf-curl begomoviruses, Asian citrus psyllid for greening, aphids for many mosaics) supports, but does not prove, a vector-borne virus/bacterium.
+- id: mite_paper_tap
+  name: White-paper tap test for mites
+  level: field
+  time: 2 minutes
+  procedure: Hold white paper under a stippled leaf and tap the leaf sharply. Watch the paper for tiny moving specks; check the leaf underside with a hand lens for mites, eggs and webbing.
+  confirms: Moving specks and webbing confirm spider mites; no mites suggests another cause of stippling (e.g. ozone, thrips, nutrient).
+- id: iodine_starch_test
+  name: Iodine starch test (citrus greening screen)
+  level: home_lab
+  time: 15 minutes
+  procedure: Scratch or cut a symptomatic leaf, rub the cut with an iodine solution (or soak a leaf disc). Compare with a healthy leaf.
+  confirms: Dark blue-black staining shows starch build-up typical of greening; a screening test only — confirm with qPCR.
+- id: qpcr_hlb
+  name: qPCR for Candidatus Liberibacter asiaticus
+  level: lab
+  time: 1–3 days
+  procedure: Send mature symptomatic leaves with midribs to a citrus lab for quantitative PCR.
+  confirms: Definitive detection of the greening bacterium.
+- id: oomycete_strip
+  name: Phytophthora lateral-flow / LAMP test
+  level: lab
+  time: 15 minutes to 1 hour
+  procedure: Test lesion-margin tissue with a Phytophthora immunostrip or LAMP assay.
+  confirms: Presence of Phytophthora (late blight); separates it from early blight and bacterial lesions.
+- id: underside_growth_check
+  name: Leaf-underside growth check
+  level: field
+  time: 2 minutes
+  procedure: Turn affected leaves over early in the morning and look for white, grey, olive or purple downy / velvety growth beneath the spots.
+  confirms: Growth under the lesions points to downy mildew, late blight or leaf mould rather than a bacterial spot.
+- id: wood_cross_section
+  name: Wood cross-section (trunk diseases)
+  level: field
+  time: 10 minutes
+  procedure: Cut across the cane, spur or trunk from which a symptomatic shoot grows and look for dark spots or streaks in the wood.
+  confirms: Dark streaking or concentric dark spots in the wood support Esca / trunk disease; send wood to a lab for fungal isolation.
+- id: soil_and_tissue_test
+  name: Soil test and leaf nutrient analysis
+  level: lab
+  time: 3–10 days
+  procedure: Collect soil from the root zone and recently matured leaves; send to a Soil Testing Laboratory (Soil Health Card scheme) for nutrient analysis.
+  confirms: Rules out nutrient deficiency or toxicity that can mimic yellowing, mottling and margin scorch.
+- id: rub_test_powdery
+  name: Rub test for powdery mildew
+  level: field
+  time: 1 minute
+  procedure: Rub the white coating gently with a finger or wet cloth.
+  confirms: Powdery mildew growth rubs off and leaves green or yellowed tissue below; spray residue or dust behaves differently under a hand lens (no threads/chains of spores).
+- id: xylem_scorch_check
+  name: Leaf-scorch vs drought check
+  level: field
+  time: 10 minutes
+  procedure: Check soil moisture at root depth and whether scorch is on individual leaflets with purple spots (disease) or uniform on the whole plant after hot dry days (drought / salt).
+  confirms: Separates fungal leaf scorch from water stress and salt injury.

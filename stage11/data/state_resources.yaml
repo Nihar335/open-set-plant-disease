@@ -1,0 +1,71 @@
+# Where to get a diagnosis confirmed / which package of practices applies, per state or union territory.
+# labs: State Agricultural Universities (SAUs) or ICAR institutes with plant-pathology departments / plant-health
+#   clinics that farmers can send samples to. The nearest Krishi Vigyan Kendra (KVK) forwards samples too.
+# Curated from public institution lists; contact details are not included (they change). NOT expert-reviewed.
+national:
+  helpline: "Kisan Call Centre 1800-180-1551 (toll free)"
+  kvk: "Your district Krishi Vigyan Kendra (KVK) — sample collection and advice"
+  registration: "CIBRC (Central Insecticides Board & Registration Committee) list of registered products"
+crop_institutes:
+  apple: "ICAR-Central Institute of Temperate Horticulture (CITH), Srinagar"
+  cherry: "ICAR-Central Institute of Temperate Horticulture (CITH), Srinagar"
+  peach: "ICAR-Central Institute of Temperate Horticulture (CITH), Srinagar"
+  strawberry: "ICAR-Central Institute of Temperate Horticulture (CITH), Srinagar"
+  potato: "ICAR-Central Potato Research Institute (CPRI), Shimla"
+  tomato: "ICAR-Indian Institute of Vegetable Research (IIVR), Varanasi"
+  bell pepper: "ICAR-Indian Institute of Vegetable Research (IIVR), Varanasi"
+  chilli: "ICAR-Indian Institute of Vegetable Research (IIVR), Varanasi"
+  brinjal: "ICAR-Indian Institute of Vegetable Research (IIVR), Varanasi"
+  okra: "ICAR-Indian Institute of Vegetable Research (IIVR), Varanasi"
+  squash: "ICAR-Indian Institute of Vegetable Research (IIVR), Varanasi"
+  cucurbits: "ICAR-Indian Institute of Vegetable Research (IIVR), Varanasi"
+  grape: "ICAR-National Research Centre for Grapes (NRCG), Pune"
+  citrus: "ICAR-Central Citrus Research Institute (CCRI), Nagpur"
+  maize: "ICAR-Indian Institute of Maize Research (IIMR), Ludhiana"
+  soybean: "ICAR-Indian Institute of Soybean Research (IISR), Indore"
+  rice: "ICAR-National Rice Research Institute (NRRI), Cuttack / ICAR-IIRR, Hyderabad"
+  wheat: "ICAR-Indian Institute of Wheat and Barley Research (IIWBR), Karnal"
+  cotton: "ICAR-Central Institute for Cotton Research (CICR), Nagpur"
+  banana: "ICAR-National Research Centre for Banana (NRCB), Tiruchirappalli"
+  mango: "ICAR-Central Institute for Subtropical Horticulture (CISH), Lucknow"
+  groundnut: "ICAR-Directorate of Groundnut Research (DGR), Junagadh"
+  mustard: "ICAR-Directorate of Rapeseed-Mustard Research (DRMR), Bharatpur"
+  onion: "ICAR-Directorate of Onion and Garlic Research (DOGR), Pune"
+  papaya: "ICAR-Indian Institute of Horticultural Research (IIHR), Bengaluru"
+states:
+  Andhra Pradesh: {labs: ["Acharya N.G. Ranga Agricultural University (ANGRAU), Guntur", "Dr. Y.S.R. Horticultural University, Venkataramannagudem"]}
+  Arunachal Pradesh: {labs: ["College of Horticulture & Forestry, Pasighat (Central Agricultural University)", "ICAR Research Complex for NEH Region, Arunachal Pradesh Centre, Basar"]}
+  Assam: {labs: ["Assam Agricultural University, Jorhat"]}
+  Bihar: {labs: ["Bihar Agricultural University, Sabour", "Dr. Rajendra Prasad Central Agricultural University, Pusa"]}
+  Chhattisgarh: {labs: ["Indira Gandhi Krishi Vishwavidyalaya, Raipur"]}
+  Goa: {labs: ["ICAR-Central Coastal Agricultural Research Institute, Old Goa"]}
+  Gujarat: {labs: ["Anand Agricultural University, Anand", "Junagadh Agricultural University", "Navsari Agricultural University", "Sardarkrushinagar Dantiwada Agricultural University"]}
+  Haryana: {labs: ["CCS Haryana Agricultural University, Hisar"]}
+  Himachal Pradesh: {labs: ["Dr. Y.S. Parmar University of Horticulture and Forestry, Nauni (Solan)", "CSK Himachal Pradesh Krishi Vishvavidyalaya, Palampur"], schedules: {apple: "Dr. YSP UHF Nauni apple spray schedule", potato: "ICAR-CPRI Shimla late-blight advisories"}}
+  Jharkhand: {labs: ["Birsa Agricultural University, Ranchi"]}
+  Karnataka: {labs: ["University of Agricultural Sciences, Bengaluru", "University of Agricultural Sciences, Dharwad", "University of Horticultural Sciences, Bagalkot", "ICAR-IIHR, Bengaluru"]}
+  Kerala: {labs: ["Kerala Agricultural University, Thrissur"]}
+  Madhya Pradesh: {labs: ["Jawaharlal Nehru Krishi Vishwa Vidyalaya, Jabalpur", "Rajmata Vijayaraje Scindia Krishi Vishwa Vidyalaya, Gwalior"]}
+  Maharashtra: {labs: ["Mahatma Phule Krishi Vidyapeeth, Rahuri", "Dr. Panjabrao Deshmukh Krishi Vidyapeeth, Akola", "Vasantrao Naik Marathwada Krishi Vidyapeeth, Parbhani", "Dr. Balasaheb Sawant Konkan Krishi Vidyapeeth, Dapoli"], schedules: {grape: "ICAR-NRC Grapes, Pune disease advisories", citrus: "ICAR-CCRI Nagpur advisories"}}
+  Manipur: {labs: ["Central Agricultural University, Imphal"]}
+  Meghalaya: {labs: ["ICAR Research Complex for NEH Region, Umiam"]}
+  Mizoram: {labs: ["ICAR Research Complex for NEH Region, Mizoram Centre, Kolasib"]}
+  Nagaland: {labs: ["School of Agricultural Sciences, Nagaland University, Medziphema"]}
+  Odisha: {labs: ["Odisha University of Agriculture and Technology, Bhubaneswar", "ICAR-NRRI, Cuttack (rice)"]}
+  Punjab: {labs: ["Punjab Agricultural University, Ludhiana"]}
+  Rajasthan: {labs: ["Swami Keshwanand Rajasthan Agricultural University, Bikaner", "Maharana Pratap University of Agriculture and Technology, Udaipur", "Sri Karan Narendra Agriculture University, Jobner"]}
+  Sikkim: {labs: ["ICAR Research Complex for NEH Region, Sikkim Centre, Tadong (Gangtok)"]}
+  Tamil Nadu: {labs: ["Tamil Nadu Agricultural University, Coimbatore"]}
+  Telangana: {labs: ["Professor Jayashankar Telangana Agricultural University, Hyderabad", "Sri Konda Laxman Telangana Horticultural University", "ICAR-Indian Institute of Rice Research, Hyderabad"]}
+  Tripura: {labs: ["ICAR Research Complex for NEH Region, Tripura Centre, Lembucherra"]}
+  Uttar Pradesh: {labs: ["Chandra Shekhar Azad University of Agriculture and Technology, Kanpur", "Acharya Narendra Deva University of Agriculture and Technology, Ayodhya", "Sardar Vallabhbhai Patel University of Agriculture and Technology, Meerut", "ICAR-IIVR, Varanasi"]}
+  Uttarakhand: {labs: ["G.B. Pant University of Agriculture and Technology, Pantnagar", "VCSG Uttarakhand University of Horticulture and Forestry, Bharsar"], schedules: {apple: "VCSG UUHF Bharsar apple spray schedule"}}
+  West Bengal: {labs: ["Bidhan Chandra Krishi Viswavidyalaya, Mohanpur", "Uttar Banga Krishi Viswavidyalaya, Cooch Behar"]}
+  Andaman and Nicobar Islands: {labs: ["ICAR-Central Island Agricultural Research Institute, Sri Vijaya Puram (Port Blair)"]}
+  Chandigarh: {labs: ["Punjab Agricultural University, Ludhiana"]}
+  Dadra and Nagar Haveli and Daman and Diu: {labs: ["Navsari Agricultural University (Gujarat)"]}
+  Delhi: {labs: ["ICAR-Indian Agricultural Research Institute, Pusa, New Delhi (Division of Plant Pathology)"]}
+  Jammu and Kashmir: {labs: ["SKUAST-Kashmir, Shalimar (Srinagar)", "SKUAST-Jammu, Chatha (Jammu)", "ICAR-CITH, Srinagar"], schedules: {apple: "SKUAST-Kashmir apple spray schedule (issued every season with the Department of Horticulture, J&K)"}}
+  Ladakh: {labs: ["SKUAST-Kashmir, KVK Leh / Kargil", "DRDO Defence Institute of High Altitude Research, Leh"]}
+  Lakshadweep: {labs: ["KVK Lakshadweep, Kavaratti", "ICAR-Central Plantation Crops Research Institute, Kasaragod (Kerala)"]}
+  Puducherry: {labs: ["Pandit Jawaharlal Nehru College of Agriculture and Research Institute, Karaikal"]}

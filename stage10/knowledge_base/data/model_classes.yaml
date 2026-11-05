@@ -1,0 +1,28 @@
+# Mapping of the frozen research model's 21 known classes and the 5 held-out hard unknown classes to KB records.
+# Class names copied from config.yaml osr_protocol (frozen). Healthy classes map to condition_id null.
+- {class_name: Apple___Apple_scab, research_role: frozen_model_known_class, plant_id: PLANT-APPLE, condition_id: COND-APPLE-SCAB}
+- {class_name: Apple___Cedar_apple_rust, research_role: frozen_model_known_class, plant_id: PLANT-APPLE, condition_id: COND-APPLE-CEDAR-APPLE-RUST}
+- {class_name: Apple___healthy, research_role: frozen_model_known_class, plant_id: PLANT-APPLE, condition_id: null}
+- {class_name: "Corn_(maize)___Cercospora_leaf_spot Gray_leaf_spot", research_role: frozen_model_known_class, plant_id: PLANT-MAIZE, condition_id: COND-MAIZE-GRAY-LEAF-SPOT}
+- {class_name: "Corn_(maize)___Common_rust_", research_role: frozen_model_known_class, plant_id: PLANT-MAIZE, condition_id: COND-MAIZE-COMMON-RUST}
+- {class_name: "Corn_(maize)___healthy", research_role: frozen_model_known_class, plant_id: PLANT-MAIZE, condition_id: null}
+- {class_name: Grape___Black_rot, research_role: frozen_model_known_class, plant_id: PLANT-GRAPE, condition_id: COND-GRAPE-BLACK-ROT}
+- {class_name: "Grape___Leaf_blight_(Isariopsis_Leaf_Spot)", research_role: frozen_model_known_class, plant_id: PLANT-GRAPE, condition_id: COND-GRAPE-LEAF-BLIGHT-ISARIOPSIS}
+- {class_name: Grape___healthy, research_role: frozen_model_known_class, plant_id: PLANT-GRAPE, condition_id: null}
+- {class_name: "Pepper,_bell___Bacterial_spot", research_role: frozen_model_known_class, plant_id: PLANT-PEPPER-BELL, condition_id: COND-PEPPER-BACTERIAL-SPOT}
+- {class_name: "Pepper,_bell___healthy", research_role: frozen_model_known_class, plant_id: PLANT-PEPPER-BELL, condition_id: null}
+- {class_name: Potato___Early_blight, research_role: frozen_model_known_class, plant_id: PLANT-POTATO, condition_id: COND-POTATO-EARLY-BLIGHT}
+- {class_name: Potato___Late_blight, research_role: frozen_model_known_class, plant_id: PLANT-POTATO, condition_id: COND-POTATO-LATE-BLIGHT}
+- {class_name: Potato___healthy, research_role: frozen_model_known_class, plant_id: PLANT-POTATO, condition_id: null}
+- {class_name: Tomato___Bacterial_spot, research_role: frozen_model_known_class, plant_id: PLANT-TOMATO, condition_id: COND-TOMATO-BACTERIAL-SPOT}
+- {class_name: Tomato___Early_blight, research_role: frozen_model_known_class, plant_id: PLANT-TOMATO, condition_id: COND-TOMATO-EARLY-BLIGHT}
+- {class_name: Tomato___Late_blight, research_role: frozen_model_known_class, plant_id: PLANT-TOMATO, condition_id: COND-TOMATO-LATE-BLIGHT}
+- {class_name: Tomato___Leaf_Mold, research_role: frozen_model_known_class, plant_id: PLANT-TOMATO, condition_id: COND-TOMATO-LEAF-MOLD}
+- {class_name: "Tomato___Spider_mites Two-spotted_spider_mite", research_role: frozen_model_known_class, plant_id: PLANT-TOMATO, condition_id: COND-TOMATO-RED-SPIDER-MITE}
+- {class_name: Tomato___Tomato_Yellow_Leaf_Curl_Virus, research_role: frozen_model_known_class, plant_id: PLANT-TOMATO, condition_id: COND-TOMATO-YELLOW-LEAF-CURL-VIRUS}
+- {class_name: Tomato___healthy, research_role: frozen_model_known_class, plant_id: PLANT-TOMATO, condition_id: null}
+- {class_name: Tomato___Septoria_leaf_spot, research_role: held_out_hard_unknown, plant_id: PLANT-TOMATO, condition_id: COND-TOMATO-SEPTORIA-LEAF-SPOT}
+- {class_name: Tomato___Target_Spot, research_role: held_out_hard_unknown, plant_id: PLANT-TOMATO, condition_id: COND-TOMATO-TARGET-SPOT}
+- {class_name: Apple___Black_rot, research_role: held_out_hard_unknown, plant_id: PLANT-APPLE, condition_id: COND-APPLE-BLACK-ROT}
+- {class_name: "Grape___Esca_(Black_Measles)", research_role: held_out_hard_unknown, plant_id: PLANT-GRAPE, condition_id: COND-GRAPE-ESCA}
+- {class_name: "Corn_(maize)___Northern_Leaf_Blight", research_role: held_out_hard_unknown, plant_id: PLANT-MAIZE, condition_id: COND-MAIZE-NORTHERN-LEAF-BLIGHT}

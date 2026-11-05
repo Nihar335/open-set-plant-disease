@@ -1,0 +1,98 @@
+{
+ "created": "2026-10-23T15:43:44",
+ "split": "validation only (audit 'calib')",
+ "checkpoint": "models/stage11/best.pt (v2, epoch 10)",
+ "calibration": {
+  "temperature": 0.8000000000000003,
+  "beta": 0.0,
+  "m0": 0.9416,
+  "threshold": 0.8,
+  "fitted_on": "validation only",
+  "checkpoint_epoch": 10
+ },
+ "threshold": 0.6,
+ "old_threshold": 0.8,
+ "by_source": {
+  "lab": {
+   "n": 5203,
+   "top1": 0.9961560638093407,
+   "top3": 1.0,
+   "current": {
+    "n": 5203,
+    "named": 0.7445704401306938,
+    "n_named": 3874,
+    "named_acc": 0.9966442953020134,
+    "unknown_top3_has_true": 1.0
+   },
+   "old_80": {
+    "n": 5203,
+    "named": 0.7422640784162983,
+    "n_named": 3862,
+    "named_acc": 0.9979285344381149,
+    "unknown_top3_has_true": 1.0
+   }
+  },
+  "field": {
+   "n": 229,
+   "top1": 0.8427947598253275,
+   "top3": 0.9694323144104804,
+   "current": {
+    "n": 229,
+    "named": 0.6812227074235808,
+    "n_named": 156,
+    "named_acc": 0.8717948717948718,
+    "unknown_top3_has_true": 0.9315068493150684
+   },
+   "old_80": {
+    "n": 229,
+    "named": 0.6244541484716157,
+    "n_named": 143,
+    "named_acc": 0.8951048951048951,
+    "unknown_top3_has_true": 0.9418604651162791
+   }
+  },
+  "apple_field": {
+   "n": 1957,
+   "top1": 0.9841594276954522,
+   "top3": 0.9989780275932549,
+   "current": {
+    "n": 1957,
+    "named": 0.9902912621359223,
+    "n_named": 1938,
+    "named_acc": 0.9881320949432405,
+    "unknown_top3_has_true": 0.9473684210526315
+   },
+   "old_80": {
+    "n": 1957,
+    "named": 0.9795605518650996,
+    "n_named": 1917,
+    "named_acc": 0.9916536254564423,
+    "unknown_top3_has_true": 0.975
+   }
+  }
+ },
+ "wrong_crop_claims": {
+  "lab": {
+   "pairs": 67639,
+   "current": 5.913747985629593e-05,
+   "old_80": 2.9568739928147963e-05
+  },
+  "field": {
+   "pairs": 2977,
+   "current": 0.008061807188444743,
+   "old_80": 0.006046355391333557
+  }
+ },
+ "ood": {
+  "dtd_texture": {
+   "n_photos": 1899,
+   "current": 0.04385766945008651,
+   "old_80": 0.030128639133378463
+  },
+  "unsupported_plant": {
+   "n_photos": 256,
+   "current": 0.043247767857142856,
+   "old_80": 0.03571428571428571
+  }
+ }
+}

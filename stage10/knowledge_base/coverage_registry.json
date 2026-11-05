@@ -1,0 +1,1194 @@
+{
+  "kb_version": "0.1.0",
+  "generated_from": "stage10/knowledge_base/data/*.yaml",
+  "capabilities": {
+    "knowledge_base_text": "implemented (seed v0.1.0); claims source-verified, not expert-reviewed",
+    "kb_text_retrieval": "implemented; ranking UNVALIDATED (no independent evaluation data yet)",
+    "frozen_model_osr_decision": "reused unchanged from Stage 9 (contrastive Energy, frozen threshold); research-evaluated only",
+    "image_symptom_analysis": "not implemented (roadmap task M5-A5)",
+    "reference_image_retrieval": "not available: no licence-verified reference images acquired",
+    "report_generation": "structured deterministic report engine implemented (Milestone 3: stage10/report_engine); outputs not expert-reviewed",
+    "ui_pdf": "not implemented (planned later milestones)",
+    "expert_review": "none performed",
+    "hindi_content": "not present in the knowledge base yet"
+  },
+  "summary": {
+    "plants": 8,
+    "conditions_total": 26,
+    "conditions_sourced": 26,
+    "conditions_stub": 0,
+    "sources_verified": 44,
+    "expert_reviewed_records": 0
+  },
+  "plants": {
+    "PLANT-APPLE": {
+      "common_names": [
+        "Apple"
+      ],
+      "scientific_name": "Malus domestica (Suckow) Borkh.",
+      "taxonomy_source_ids": [
+        "SRC-GBIF-MALUS-DOMESTICA"
+      ],
+      "crop_categories": [
+        "fruit_tree"
+      ],
+      "conditions_sourced": [
+        "COND-APPLE-BLACK-ROT",
+        "COND-APPLE-CEDAR-APPLE-RUST",
+        "COND-APPLE-SCAB"
+      ],
+      "conditions_stub_unsourced": [],
+      "sources_verified": [
+        "SRC-CLEMSON-APPLE-CAR",
+        "SRC-GBIF-MALUS-DOMESTICA",
+        "SRC-PSU-APPLE-BLACKROT",
+        "SRC-TNAU-APPLE-SCAB-PH"
+      ],
+      "frozen_model_scope": true,
+      "image_diagnosis": {
+        "status": "frozen_model_crop",
+        "note": "frozen_research_model_known_class: evaluated only on PlantVillage lab-style test images in the research project (Stage 3 known-test accuracy 99.24%); NOT validated on field photographs (PlantDoc known-disease accuracy about 32%) and NOT validated as an agricultural diagnostic"
+      },
+      "geographic_applicability": [
+        "India_region",
+        "international_not_verified_for_India"
+      ],
+      "review_status": "source_verified",
+      "expert_reviewed": false,
+      "known_limitations": [
+        "Knowledge-base coverage does not imply image-diagnosis capability.",
+        "Seed knowledge base: condition coverage for this plant is partial."
+      ]
+    },
+    "PLANT-GRAPE": {
+      "common_names": [
+        "Grape",
+        "Grapevine"
+      ],
+      "scientific_name": "Vitis vinifera L.",
+      "taxonomy_source_ids": [
+        "SRC-GBIF-VITIS-VINIFERA"
+      ],
+      "crop_categories": [
+        "fruit_vine"
+      ],
+      "conditions_sourced": [
+        "COND-GRAPE-BLACK-ROT",
+        "COND-GRAPE-DOWNY-MILDEW",
+        "COND-GRAPE-ESCA",
+        "COND-GRAPE-LEAF-BLIGHT-ISARIOPSIS"
+      ],
+      "conditions_stub_unsourced": [],
+      "sources_verified": [
+        "SRC-GBIF-VITIS-VINIFERA",
+        "SRC-TNAU-GRAPE-DOWNY",
+        "SRC-UCIPM-GRAPE-ESCA",
+        "SRC-UKY-GRAPE-LEAFSPOTS",
+        "SRC-UMAINE-GRAPE-BLACKROT"
+      ],
+      "frozen_model_scope": true,
+      "image_diagnosis": {
+        "status": "frozen_model_crop",
+        "note": "frozen_research_model_known_class: evaluated only on PlantVillage lab-style test images in the research project (Stage 3 known-test accuracy 99.24%); NOT validated on field photographs (PlantDoc known-disease accuracy about 32%) and NOT validated as an agricultural diagnostic"
+      },
+      "geographic_applicability": [
+        "India_region",
+        "international_not_verified_for_India"
+      ],
+      "review_status": "source_verified",
+      "expert_reviewed": false,
+      "known_limitations": [
+        "Knowledge-base coverage does not imply image-diagnosis capability.",
+        "Seed knowledge base: condition coverage for this plant is partial."
+      ]
+    },
+    "PLANT-MAIZE": {
+      "common_names": [
+        "Maize",
+        "Corn"
+      ],
+      "scientific_name": "Zea mays L.",
+      "taxonomy_source_ids": [
+        "SRC-GBIF-ZEA-MAYS"
+      ],
+      "crop_categories": [
+        "cereal"
+      ],
+      "conditions_sourced": [
+        "COND-MAIZE-COMMON-RUST",
+        "COND-MAIZE-GRAY-LEAF-SPOT",
+        "COND-MAIZE-NORTHERN-LEAF-BLIGHT"
+      ],
+      "conditions_stub_unsourced": [],
+      "sources_verified": [
+        "SRC-CORNELL-MAIZE-GLS",
+        "SRC-CORNELL-MAIZE-NCLB",
+        "SRC-GBIF-ZEA-MAYS",
+        "SRC-TNAU-MAIZE-LEAFBLIGHT",
+        "SRC-TNAU-MAIZE-RUST",
+        "SRC-TNAU-MAIZE-TLB"
+      ],
+      "frozen_model_scope": true,
+      "image_diagnosis": {
+        "status": "frozen_model_crop",
+        "note": "frozen_research_model_known_class: evaluated only on PlantVillage lab-style test images in the research project (Stage 3 known-test accuracy 99.24%); NOT validated on field photographs (PlantDoc known-disease accuracy about 32%) and NOT validated as an agricultural diagnostic"
+      },
+      "geographic_applicability": [
+        "India_region",
+        "international_not_verified_for_India"
+      ],
+      "review_status": "source_verified",
+      "expert_reviewed": false,
+      "known_limitations": [
+        "Knowledge-base coverage does not imply image-diagnosis capability.",
+        "Seed knowledge base: condition coverage for this plant is partial."
+      ]
+    },
+    "PLANT-MANGO": {
+      "common_names": [
+        "Mango"
+      ],
+      "scientific_name": "Mangifera indica L.",
+      "taxonomy_source_ids": [
+        "SRC-GBIF-MANGIFERA-INDICA"
+      ],
+      "crop_categories": [
+        "fruit_tree"
+      ],
+      "conditions_sourced": [
+        "COND-MANGO-ANTHRACNOSE"
+      ],
+      "conditions_stub_unsourced": [],
+      "sources_verified": [
+        "SRC-GBIF-MANGIFERA-INDICA",
+        "SRC-TNAU-MANGO-ANTHRACNOSE-PH"
+      ],
+      "frozen_model_scope": false,
+      "image_diagnosis": {
+        "status": "not_covered_by_frozen_model",
+        "note": "not_covered_by_frozen_model: no image-based diagnosis capability"
+      },
+      "geographic_applicability": [
+        "India_region"
+      ],
+      "review_status": "source_verified",
+      "expert_reviewed": false,
+      "known_limitations": [
+        "Knowledge-base coverage does not imply image-diagnosis capability.",
+        "Seed knowledge base: condition coverage for this plant is partial."
+      ]
+    },
+    "PLANT-PEPPER-BELL": {
+      "common_names": [
+        "Bell pepper",
+        "Capsicum"
+      ],
+      "scientific_name": "Capsicum annuum L.",
+      "taxonomy_source_ids": [
+        "SRC-GBIF-CAPSICUM-ANNUUM"
+      ],
+      "crop_categories": [
+        "vegetable"
+      ],
+      "conditions_sourced": [
+        "COND-PEPPER-BACTERIAL-SPOT"
+      ],
+      "conditions_stub_unsourced": [],
+      "sources_verified": [
+        "SRC-GBIF-CAPSICUM-ANNUUM",
+        "SRC-TNAU-CHILLI-BACTSPOT"
+      ],
+      "frozen_model_scope": true,
+      "image_diagnosis": {
+        "status": "frozen_model_crop",
+        "note": "frozen_research_model_known_class: evaluated only on PlantVillage lab-style test images in the research project (Stage 3 known-test accuracy 99.24%); NOT validated on field photographs (PlantDoc known-disease accuracy about 32%) and NOT validated as an agricultural diagnostic"
+      },
+      "geographic_applicability": [
+        "India_region"
+      ],
+      "review_status": "source_verified",
+      "expert_reviewed": false,
+      "known_limitations": [
+        "Knowledge-base coverage does not imply image-diagnosis capability.",
+        "Seed knowledge base: condition coverage for this plant is partial."
+      ]
+    },
+    "PLANT-POTATO": {
+      "common_names": [
+        "Potato"
+      ],
+      "scientific_name": "Solanum tuberosum L.",
+      "taxonomy_source_ids": [
+        "SRC-GBIF-SOLANUM-TUBEROSUM"
+      ],
+      "crop_categories": [
+        "vegetable"
+      ],
+      "conditions_sourced": [
+        "COND-POTATO-EARLY-BLIGHT",
+        "COND-POTATO-LATE-BLIGHT"
+      ],
+      "conditions_stub_unsourced": [],
+      "sources_verified": [
+        "SRC-GBIF-SOLANUM-TUBEROSUM",
+        "SRC-TNAU-POTATO-EARLYBLIGHT",
+        "SRC-TNAU-POTATO-LATEBLIGHT"
+      ],
+      "frozen_model_scope": true,
+      "image_diagnosis": {
+        "status": "frozen_model_crop",
+        "note": "frozen_research_model_known_class: evaluated only on PlantVillage lab-style test images in the research project (Stage 3 known-test accuracy 99.24%); NOT validated on field photographs (PlantDoc known-disease accuracy about 32%) and NOT validated as an agricultural diagnostic"
+      },
+      "geographic_applicability": [
+        "India_region"
+      ],
+      "review_status": "source_verified",
+      "expert_reviewed": false,
+      "known_limitations": [
+        "Knowledge-base coverage does not imply image-diagnosis capability.",
+        "Seed knowledge base: condition coverage for this plant is partial."
+      ]
+    },
+    "PLANT-RICE": {
+      "common_names": [
+        "Rice",
+        "Paddy"
+      ],
+      "scientific_name": "Oryza sativa L.",
+      "taxonomy_source_ids": [
+        "SRC-GBIF-ORYZA-SATIVA"
+      ],
+      "crop_categories": [
+        "cereal"
+      ],
+      "conditions_sourced": [
+        "COND-RICE-BLAST"
+      ],
+      "conditions_stub_unsourced": [],
+      "sources_verified": [
+        "SRC-GBIF-ORYZA-SATIVA",
+        "SRC-TNAU-RICE-BLAST"
+      ],
+      "frozen_model_scope": false,
+      "image_diagnosis": {
+        "status": "not_covered_by_frozen_model",
+        "note": "not_covered_by_frozen_model: no image-based diagnosis capability"
+      },
+      "geographic_applicability": [
+        "India_region"
+      ],
+      "review_status": "source_verified",
+      "expert_reviewed": false,
+      "known_limitations": [
+        "Knowledge-base coverage does not imply image-diagnosis capability.",
+        "Seed knowledge base: condition coverage for this plant is partial."
+      ]
+    },
+    "PLANT-TOMATO": {
+      "common_names": [
+        "Tomato"
+      ],
+      "scientific_name": "Solanum lycopersicum L.",
+      "taxonomy_source_ids": [
+        "SRC-GBIF-SOLANUM-LYCOPERSICUM"
+      ],
+      "crop_categories": [
+        "vegetable"
+      ],
+      "conditions_sourced": [
+        "COND-TOMATO-BACTERIAL-CANKER",
+        "COND-TOMATO-BACTERIAL-SPOT",
+        "COND-TOMATO-EARLY-BLIGHT",
+        "COND-TOMATO-LATE-BLIGHT",
+        "COND-TOMATO-LEAF-MOLD",
+        "COND-TOMATO-MAGNESIUM-DEFICIENCY",
+        "COND-TOMATO-POTASSIUM-DEFICIENCY",
+        "COND-TOMATO-RED-SPIDER-MITE",
+        "COND-TOMATO-SEPTORIA-LEAF-SPOT",
+        "COND-TOMATO-TARGET-SPOT",
+        "COND-TOMATO-YELLOW-LEAF-CURL-VIRUS"
+      ],
+      "conditions_stub_unsourced": [],
+      "sources_verified": [
+        "SRC-CORNELL-TOM-LEAFMOLD",
+        "SRC-GBIF-SOLANUM-LYCOPERSICUM",
+        "SRC-PPP-TOM-TARGETSPOT",
+        "SRC-TNAU-TOM-BACTCANKER",
+        "SRC-TNAU-TOM-BACTSPOT",
+        "SRC-TNAU-TOM-EARLYBLIGHT",
+        "SRC-TNAU-TOM-K-DEF",
+        "SRC-TNAU-TOM-LATEBLIGHT",
+        "SRC-TNAU-TOM-LEAFCURL",
+        "SRC-TNAU-TOM-MG-DEF",
+        "SRC-TNAU-TOM-SEPTORIA",
+        "SRC-TNAU-TOM-SPIDERMITE"
+      ],
+      "frozen_model_scope": true,
+      "image_diagnosis": {
+        "status": "frozen_model_crop",
+        "note": "frozen_research_model_known_class: evaluated only on PlantVillage lab-style test images in the research project (Stage 3 known-test accuracy 99.24%); NOT validated on field photographs (PlantDoc known-disease accuracy about 32%) and NOT validated as an agricultural diagnostic"
+      },
+      "geographic_applicability": [
+        "India_region",
+        "international_not_verified_for_India"
+      ],
+      "review_status": "source_verified",
+      "expert_reviewed": false,
+      "known_limitations": [
+        "Knowledge-base coverage does not imply image-diagnosis capability.",
+        "Seed knowledge base: condition coverage for this plant is partial."
+      ]
+    }
+  },
+  "conditions": {
+    "COND-APPLE-BLACK-ROT": {
+      "names": [
+        "Black rot",
+        "Frogeye leaf spot"
+      ],
+      "condition_type": "infectious_disease",
+      "plants": [
+        "PLANT-APPLE"
+      ],
+      "knowledge_base_information": "sourced",
+      "n_claims": 11,
+      "sources_verified": [
+        "SRC-PSU-APPLE-BLACKROT"
+      ],
+      "management_records": 4,
+      "diagnostic_records": 3,
+      "kb_text_retrieval": "eligible (unvalidated)",
+      "image_diagnosis": {
+        "status": "held_out_unknown_in_research",
+        "class_name": "Apple___Black_rot",
+        "note": "held_out_unknown_in_research: excluded from model training; the frozen model cannot name it and can only flag an image as potentially unfamiliar (OSR). Not a validated diagnosis",
+        "frozen_stage8_osr_reference": {
+          "detector": "Contrastive Energy (Stage 7 head)",
+          "auroc_vs_known": 0.9947,
+          "detection_at_frozen_threshold": 0.9936,
+          "source_file": "results/final/final_numbers.json"
+        }
+      },
+      "geographic_applicability": [
+        "international_not_verified_for_India"
+      ],
+      "review_status": "source_verified",
+      "expert_reviewed": false,
+      "known_limitations": [
+        "Only a US (Pennsylvania) extension source verified so far; Indian apple-growing guidance not yet sourced.",
+        "The source distinguishes black rot from bitter rot (not yet in this knowledge base)."
+      ],
+      "last_verified": "2026-10-14"
+    },
+    "COND-APPLE-CEDAR-APPLE-RUST": {
+      "names": [
+        "Cedar apple rust"
+      ],
+      "condition_type": "infectious_disease",
+      "plants": [
+        "PLANT-APPLE"
+      ],
+      "knowledge_base_information": "sourced",
+      "n_claims": 6,
+      "sources_verified": [
+        "SRC-CLEMSON-APPLE-CAR"
+      ],
+      "management_records": 3,
+      "diagnostic_records": 2,
+      "kb_text_retrieval": "eligible (unvalidated)",
+      "image_diagnosis": {
+        "status": "frozen_model_known_class",
+        "class_name": "Apple___Cedar_apple_rust",
+        "note": "frozen_research_model_known_class: evaluated only on PlantVillage lab-style test images in the research project (Stage 3 known-test accuracy 99.24%); NOT validated on field photographs (PlantDoc known-disease accuracy about 32%) and NOT validated as an agricultural diagnostic"
+      },
+      "geographic_applicability": [
+        "international_not_verified_for_India"
+      ],
+      "review_status": "source_verified",
+      "expert_reviewed": false,
+      "known_limitations": [
+        "Needs a juniper/red-cedar alternate host; whether it occurs in a given Indian region is not established by this source."
+      ],
+      "last_verified": "2026-10-15"
+    },
+    "COND-APPLE-SCAB": {
+      "names": [
+        "Apple scab"
+      ],
+      "condition_type": "infectious_disease",
+      "plants": [
+        "PLANT-APPLE"
+      ],
+      "knowledge_base_information": "sourced",
+      "n_claims": 3,
+      "sources_verified": [
+        "SRC-TNAU-APPLE-SCAB-PH"
+      ],
+      "management_records": 2,
+      "diagnostic_records": 1,
+      "kb_text_retrieval": "eligible (unvalidated)",
+      "image_diagnosis": {
+        "status": "frozen_model_known_class",
+        "class_name": "Apple___Apple_scab",
+        "note": "frozen_research_model_known_class: evaluated only on PlantVillage lab-style test images in the research project (Stage 3 known-test accuracy 99.24%); NOT validated on field photographs (PlantDoc known-disease accuracy about 32%) and NOT validated as an agricultural diagnostic"
+      },
+      "geographic_applicability": [
+        "India_region"
+      ],
+      "review_status": "source_verified",
+      "expert_reviewed": false,
+      "known_limitations": [
+        "The verified source covers post-harvest fruit symptoms only; leaf symptoms are not yet sourced, so leaf-based retrieval cannot propose this condition."
+      ],
+      "last_verified": "2026-10-14"
+    },
+    "COND-GRAPE-BLACK-ROT": {
+      "names": [
+        "Black rot"
+      ],
+      "condition_type": "infectious_disease",
+      "plants": [
+        "PLANT-GRAPE"
+      ],
+      "knowledge_base_information": "sourced",
+      "n_claims": 9,
+      "sources_verified": [
+        "SRC-UMAINE-GRAPE-BLACKROT"
+      ],
+      "management_records": 4,
+      "diagnostic_records": 2,
+      "kb_text_retrieval": "eligible (unvalidated)",
+      "image_diagnosis": {
+        "status": "frozen_model_known_class",
+        "class_name": "Grape___Black_rot",
+        "note": "frozen_research_model_known_class: evaluated only on PlantVillage lab-style test images in the research project (Stage 3 known-test accuracy 99.24%); NOT validated on field photographs (PlantDoc known-disease accuracy about 32%) and NOT validated as an agricultural diagnostic"
+      },
+      "geographic_applicability": [
+        "international_not_verified_for_India"
+      ],
+      "review_status": "source_verified",
+      "expert_reviewed": false,
+      "known_limitations": [
+        "Only a US (Maine) extension source verified so far."
+      ],
+      "last_verified": "2026-10-14"
+    },
+    "COND-GRAPE-DOWNY-MILDEW": {
+      "names": [
+        "Downy mildew"
+      ],
+      "condition_type": "infectious_disease",
+      "plants": [
+        "PLANT-GRAPE"
+      ],
+      "knowledge_base_information": "sourced",
+      "n_claims": 9,
+      "sources_verified": [
+        "SRC-TNAU-GRAPE-DOWNY"
+      ],
+      "management_records": 1,
+      "diagnostic_records": 2,
+      "kb_text_retrieval": "eligible (unvalidated)",
+      "image_diagnosis": {
+        "status": "not_covered_by_frozen_model",
+        "note": "not_covered_by_frozen_model: no image-based diagnosis capability"
+      },
+      "geographic_applicability": [
+        "India_region"
+      ],
+      "review_status": "source_verified",
+      "expert_reviewed": false,
+      "known_limitations": [
+        "Not one of the frozen model's classes; included as a grape differential."
+      ],
+      "last_verified": "2026-10-14"
+    },
+    "COND-GRAPE-ESCA": {
+      "names": [
+        "Esca",
+        "Black measles"
+      ],
+      "condition_type": "infectious_disease",
+      "plants": [
+        "PLANT-GRAPE"
+      ],
+      "knowledge_base_information": "sourced",
+      "n_claims": 9,
+      "sources_verified": [
+        "SRC-UCIPM-GRAPE-ESCA"
+      ],
+      "management_records": 0,
+      "diagnostic_records": 2,
+      "kb_text_retrieval": "eligible (unvalidated)",
+      "image_diagnosis": {
+        "status": "held_out_unknown_in_research",
+        "class_name": "Grape___Esca_(Black_Measles)",
+        "note": "held_out_unknown_in_research: excluded from model training; the frozen model cannot name it and can only flag an image as potentially unfamiliar (OSR). Not a validated diagnosis",
+        "frozen_stage8_osr_reference": {
+          "detector": "Contrastive Energy (Stage 7 head)",
+          "auroc_vs_known": 0.8368,
+          "detection_at_frozen_threshold": 0.2263,
+          "source_file": "results/final/final_numbers.json"
+        }
+      },
+      "geographic_applicability": [
+        "international_not_verified_for_India"
+      ],
+      "review_status": "source_verified",
+      "expert_reviewed": false,
+      "known_limitations": [
+        "Foliar and fruit symptoms are inconsistent from year to year (source statement).",
+        "Management in the source points to a separate Eutypa dieback guideline that has not been verified yet."
+      ],
+      "last_verified": "2026-10-14"
+    },
+    "COND-GRAPE-LEAF-BLIGHT-ISARIOPSIS": {
+      "names": [
+        "Leaf blight (Isariopsis leaf spot)"
+      ],
+      "condition_type": "infectious_disease",
+      "plants": [
+        "PLANT-GRAPE"
+      ],
+      "knowledge_base_information": "sourced",
+      "n_claims": 4,
+      "sources_verified": [
+        "SRC-UKY-GRAPE-LEAFSPOTS"
+      ],
+      "management_records": 2,
+      "diagnostic_records": 1,
+      "kb_text_retrieval": "eligible (unvalidated)",
+      "image_diagnosis": {
+        "status": "frozen_model_known_class",
+        "class_name": "Grape___Leaf_blight_(Isariopsis_Leaf_Spot)",
+        "note": "frozen_research_model_known_class: evaluated only on PlantVillage lab-style test images in the research project (Stage 3 known-test accuracy 99.24%); NOT validated on field photographs (PlantDoc known-disease accuracy about 32%) and NOT validated as an agricultural diagnostic"
+      },
+      "geographic_applicability": [
+        "international_not_verified_for_India"
+      ],
+      "review_status": "source_verified",
+      "expert_reviewed": false,
+      "known_limitations": [
+        "The source gives no species-specific symptoms; several leaf-spot fungi look alike and need a laboratory to tell apart.",
+        "The source says these leaf spots rarely cause yield loss in well-managed vineyards."
+      ],
+      "last_verified": "2026-10-15"
+    },
+    "COND-MAIZE-COMMON-RUST": {
+      "names": [
+        "Common rust"
+      ],
+      "condition_type": "infectious_disease",
+      "plants": [
+        "PLANT-MAIZE"
+      ],
+      "knowledge_base_information": "sourced",
+      "n_claims": 6,
+      "sources_verified": [
+        "SRC-TNAU-MAIZE-RUST"
+      ],
+      "management_records": 3,
+      "diagnostic_records": 1,
+      "kb_text_retrieval": "eligible (unvalidated)",
+      "image_diagnosis": {
+        "status": "frozen_model_known_class",
+        "class_name": "Corn_(maize)___Common_rust_",
+        "note": "frozen_research_model_known_class: evaluated only on PlantVillage lab-style test images in the research project (Stage 3 known-test accuracy 99.24%); NOT validated on field photographs (PlantDoc known-disease accuracy about 32%) and NOT validated as an agricultural diagnostic"
+      },
+      "geographic_applicability": [
+        "India_region"
+      ],
+      "review_status": "source_verified",
+      "expert_reviewed": false,
+      "known_limitations": [],
+      "last_verified": "2026-10-14"
+    },
+    "COND-MAIZE-GRAY-LEAF-SPOT": {
+      "names": [
+        "Gray leaf spot",
+        "Cercospora leaf spot"
+      ],
+      "condition_type": "infectious_disease",
+      "plants": [
+        "PLANT-MAIZE"
+      ],
+      "knowledge_base_information": "sourced",
+      "n_claims": 8,
+      "sources_verified": [
+        "SRC-CORNELL-MAIZE-GLS"
+      ],
+      "management_records": 2,
+      "diagnostic_records": 2,
+      "kb_text_retrieval": "eligible (unvalidated)",
+      "image_diagnosis": {
+        "status": "frozen_model_known_class",
+        "class_name": "Corn_(maize)___Cercospora_leaf_spot Gray_leaf_spot",
+        "note": "frozen_research_model_known_class: evaluated only on PlantVillage lab-style test images in the research project (Stage 3 known-test accuracy 99.24%); NOT validated on field photographs (PlantDoc known-disease accuracy about 32%) and NOT validated as an agricultural diagnostic"
+      },
+      "geographic_applicability": [
+        "international_not_verified_for_India"
+      ],
+      "review_status": "source_verified",
+      "expert_reviewed": false,
+      "known_limitations": [
+        "Only a US (New York) source verified so far."
+      ],
+      "last_verified": "2026-10-14"
+    },
+    "COND-MAIZE-NORTHERN-LEAF-BLIGHT": {
+      "names": [
+        "Northern corn leaf blight",
+        "Turcicum leaf blight",
+        "TLB",
+        "NLB"
+      ],
+      "condition_type": "infectious_disease",
+      "plants": [
+        "PLANT-MAIZE"
+      ],
+      "knowledge_base_information": "sourced",
+      "n_claims": 9,
+      "sources_verified": [
+        "SRC-CORNELL-MAIZE-NCLB",
+        "SRC-TNAU-MAIZE-LEAFBLIGHT",
+        "SRC-TNAU-MAIZE-TLB"
+      ],
+      "management_records": 4,
+      "diagnostic_records": 3,
+      "kb_text_retrieval": "eligible (unvalidated)",
+      "image_diagnosis": {
+        "status": "held_out_unknown_in_research",
+        "class_name": "Corn_(maize)___Northern_Leaf_Blight",
+        "note": "held_out_unknown_in_research: excluded from model training; the frozen model cannot name it and can only flag an image as potentially unfamiliar (OSR). Not a validated diagnosis",
+        "frozen_stage8_osr_reference": {
+          "detector": "Contrastive Energy (Stage 7 head)",
+          "auroc_vs_known": 0.9008,
+          "detection_at_frozen_threshold": 0.4944,
+          "source_file": "results/final/final_numbers.json"
+        }
+      },
+      "geographic_applicability": [
+        "India_region",
+        "international_not_verified_for_India"
+      ],
+      "review_status": "source_verified",
+      "expert_reviewed": false,
+      "known_limitations": [
+        "The TNAU 'Leaf Blight' page groups Exserohilum turcicum with Helminthosporium maydis.",
+        "Lesion size differs between sources (TNAU: 2.5-15 cm; Cornell: 1-6 inches)."
+      ],
+      "last_verified": "2026-10-14"
+    },
+    "COND-MANGO-ANTHRACNOSE": {
+      "names": [
+        "Anthracnose"
+      ],
+      "condition_type": "infectious_disease",
+      "plants": [
+        "PLANT-MANGO"
+      ],
+      "knowledge_base_information": "sourced",
+      "n_claims": 6,
+      "sources_verified": [
+        "SRC-TNAU-MANGO-ANTHRACNOSE-PH"
+      ],
+      "management_records": 0,
+      "diagnostic_records": 1,
+      "kb_text_retrieval": "eligible (unvalidated)",
+      "image_diagnosis": {
+        "status": "not_covered_by_frozen_model",
+        "note": "not_covered_by_frozen_model: no image-based diagnosis capability"
+      },
+      "geographic_applicability": [
+        "India_region"
+      ],
+      "review_status": "source_verified",
+      "expert_reviewed": false,
+      "known_limitations": [
+        "The verified page's management section refers to products registered in Australian states; it is NOT used.",
+        "Leaf symptoms are mentioned but not described in the verified source."
+      ],
+      "last_verified": "2026-10-14"
+    },
+    "COND-PEPPER-BACTERIAL-SPOT": {
+      "names": [
+        "Bacterial leaf spot (pepper / chilli)"
+      ],
+      "condition_type": "infectious_disease",
+      "plants": [
+        "PLANT-PEPPER-BELL"
+      ],
+      "knowledge_base_information": "sourced",
+      "n_claims": 8,
+      "sources_verified": [
+        "SRC-TNAU-CHILLI-BACTSPOT"
+      ],
+      "management_records": 2,
+      "diagnostic_records": 1,
+      "kb_text_retrieval": "eligible (unvalidated)",
+      "image_diagnosis": {
+        "status": "frozen_model_known_class",
+        "class_name": "Pepper,_bell___Bacterial_spot",
+        "note": "frozen_research_model_known_class: evaluated only on PlantVillage lab-style test images in the research project (Stage 3 known-test accuracy 99.24%); NOT validated on field photographs (PlantDoc known-disease accuracy about 32%) and NOT validated as an agricultural diagnostic"
+      },
+      "geographic_applicability": [
+        "India_region"
+      ],
+      "review_status": "source_verified",
+      "expert_reviewed": false,
+      "known_limitations": [
+        "The source describes chilli; bell pepper is the same species (Capsicum annuum), but bell-pepper-specific guidance was not found."
+      ],
+      "last_verified": "2026-10-15"
+    },
+    "COND-POTATO-EARLY-BLIGHT": {
+      "names": [
+        "Early blight (potato)"
+      ],
+      "condition_type": "infectious_disease",
+      "plants": [
+        "PLANT-POTATO"
+      ],
+      "knowledge_base_information": "sourced",
+      "n_claims": 7,
+      "sources_verified": [
+        "SRC-TNAU-POTATO-EARLYBLIGHT"
+      ],
+      "management_records": 4,
+      "diagnostic_records": 2,
+      "kb_text_retrieval": "eligible (unvalidated)",
+      "image_diagnosis": {
+        "status": "frozen_model_known_class",
+        "class_name": "Potato___Early_blight",
+        "note": "frozen_research_model_known_class: evaluated only on PlantVillage lab-style test images in the research project (Stage 3 known-test accuracy 99.24%); NOT validated on field photographs (PlantDoc known-disease accuracy about 32%) and NOT validated as an agricultural diagnostic"
+      },
+      "geographic_applicability": [
+        "India_region"
+      ],
+      "review_status": "source_verified",
+      "expert_reviewed": false,
+      "known_limitations": [
+        "Indian (Tamil Nadu) source; not expert-reviewed."
+      ],
+      "last_verified": "2026-10-15"
+    },
+    "COND-POTATO-LATE-BLIGHT": {
+      "names": [
+        "Late blight (potato)"
+      ],
+      "condition_type": "infectious_disease",
+      "plants": [
+        "PLANT-POTATO"
+      ],
+      "knowledge_base_information": "sourced",
+      "n_claims": 8,
+      "sources_verified": [
+        "SRC-TNAU-POTATO-LATEBLIGHT"
+      ],
+      "management_records": 3,
+      "diagnostic_records": 2,
+      "kb_text_retrieval": "eligible (unvalidated)",
+      "image_diagnosis": {
+        "status": "frozen_model_known_class",
+        "class_name": "Potato___Late_blight",
+        "note": "frozen_research_model_known_class: evaluated only on PlantVillage lab-style test images in the research project (Stage 3 known-test accuracy 99.24%); NOT validated on field photographs (PlantDoc known-disease accuracy about 32%) and NOT validated as an agricultural diagnostic"
+      },
+      "geographic_applicability": [
+        "India_region"
+      ],
+      "review_status": "source_verified",
+      "expert_reviewed": false,
+      "known_limitations": [
+        "Indian (Tamil Nadu) source; not expert-reviewed."
+      ],
+      "last_verified": "2026-10-15"
+    },
+    "COND-RICE-BLAST": {
+      "names": [
+        "Blast",
+        "Rice blast",
+        "Leaf blast",
+        "Neck blast"
+      ],
+      "condition_type": "infectious_disease",
+      "plants": [
+        "PLANT-RICE"
+      ],
+      "knowledge_base_information": "sourced",
+      "n_claims": 7,
+      "sources_verified": [
+        "SRC-TNAU-RICE-BLAST"
+      ],
+      "management_records": 0,
+      "diagnostic_records": 1,
+      "kb_text_retrieval": "eligible (unvalidated)",
+      "image_diagnosis": {
+        "status": "not_covered_by_frozen_model",
+        "note": "not_covered_by_frozen_model: no image-based diagnosis capability"
+      },
+      "geographic_applicability": [
+        "India_region"
+      ],
+      "review_status": "source_verified",
+      "expert_reviewed": false,
+      "known_limitations": [
+        "Spot size and shape vary between rice varieties (source statement).",
+        "Management is on a page section not yet verified."
+      ],
+      "last_verified": "2026-10-14"
+    },
+    "COND-TOMATO-BACTERIAL-CANKER": {
+      "names": [
+        "Bacterial stem and fruit canker",
+        "Bacterial canker"
+      ],
+      "condition_type": "infectious_disease",
+      "plants": [
+        "PLANT-TOMATO"
+      ],
+      "knowledge_base_information": "sourced",
+      "n_claims": 9,
+      "sources_verified": [
+        "SRC-TNAU-TOM-BACTCANKER"
+      ],
+      "management_records": 1,
+      "diagnostic_records": 1,
+      "kb_text_retrieval": "eligible (unvalidated)",
+      "image_diagnosis": {
+        "status": "not_covered_by_frozen_model",
+        "note": "not_covered_by_frozen_model: no image-based diagnosis capability"
+      },
+      "geographic_applicability": [
+        "India_region"
+      ],
+      "review_status": "source_verified",
+      "expert_reviewed": false,
+      "known_limitations": [
+        "Not one of the frozen model's classes; included as a tomato differential."
+      ],
+      "last_verified": "2026-10-14"
+    },
+    "COND-TOMATO-BACTERIAL-SPOT": {
+      "names": [
+        "Bacterial leaf spot (tomato)"
+      ],
+      "condition_type": "infectious_disease",
+      "plants": [
+        "PLANT-TOMATO"
+      ],
+      "knowledge_base_information": "sourced",
+      "n_claims": 9,
+      "sources_verified": [
+        "SRC-TNAU-TOM-BACTSPOT"
+      ],
+      "management_records": 2,
+      "diagnostic_records": 1,
+      "kb_text_retrieval": "eligible (unvalidated)",
+      "image_diagnosis": {
+        "status": "frozen_model_known_class",
+        "class_name": "Tomato___Bacterial_spot",
+        "note": "frozen_research_model_known_class: evaluated only on PlantVillage lab-style test images in the research project (Stage 3 known-test accuracy 99.24%); NOT validated on field photographs (PlantDoc known-disease accuracy about 32%) and NOT validated as an agricultural diagnostic"
+      },
+      "geographic_applicability": [
+        "India_region"
+      ],
+      "review_status": "source_verified",
+      "expert_reviewed": false,
+      "known_limitations": [
+        "Indian (Tamil Nadu) source; not expert-reviewed."
+      ],
+      "last_verified": "2026-10-15"
+    },
+    "COND-TOMATO-EARLY-BLIGHT": {
+      "names": [
+        "Early blight"
+      ],
+      "condition_type": "infectious_disease",
+      "plants": [
+        "PLANT-TOMATO"
+      ],
+      "knowledge_base_information": "sourced",
+      "n_claims": 9,
+      "sources_verified": [
+        "SRC-TNAU-TOM-EARLYBLIGHT"
+      ],
+      "management_records": 3,
+      "diagnostic_records": 2,
+      "kb_text_retrieval": "eligible (unvalidated)",
+      "image_diagnosis": {
+        "status": "frozen_model_known_class",
+        "class_name": "Tomato___Early_blight",
+        "note": "frozen_research_model_known_class: evaluated only on PlantVillage lab-style test images in the research project (Stage 3 known-test accuracy 99.24%); NOT validated on field photographs (PlantDoc known-disease accuracy about 32%) and NOT validated as an agricultural diagnostic"
+      },
+      "geographic_applicability": [
+        "India_region"
+      ],
+      "review_status": "source_verified",
+      "expert_reviewed": false,
+      "known_limitations": [
+        "Concentric rings are also described for target spot."
+      ],
+      "last_verified": "2026-10-14"
+    },
+    "COND-TOMATO-LATE-BLIGHT": {
+      "names": [
+        "Late blight"
+      ],
+      "condition_type": "infectious_disease",
+      "plants": [
+        "PLANT-TOMATO"
+      ],
+      "knowledge_base_information": "sourced",
+      "n_claims": 9,
+      "sources_verified": [
+        "SRC-TNAU-TOM-LATEBLIGHT"
+      ],
+      "management_records": 2,
+      "diagnostic_records": 2,
+      "kb_text_retrieval": "eligible (unvalidated)",
+      "image_diagnosis": {
+        "status": "frozen_model_known_class",
+        "class_name": "Tomato___Late_blight",
+        "note": "frozen_research_model_known_class: evaluated only on PlantVillage lab-style test images in the research project (Stage 3 known-test accuracy 99.24%); NOT validated on field photographs (PlantDoc known-disease accuracy about 32%) and NOT validated as an agricultural diagnostic"
+      },
+      "geographic_applicability": [
+        "India_region"
+      ],
+      "review_status": "source_verified",
+      "expert_reviewed": false,
+      "known_limitations": [],
+      "last_verified": "2026-10-14"
+    },
+    "COND-TOMATO-LEAF-MOLD": {
+      "names": [
+        "Leaf mould (tomato)"
+      ],
+      "condition_type": "infectious_disease",
+      "plants": [
+        "PLANT-TOMATO"
+      ],
+      "knowledge_base_information": "sourced",
+      "n_claims": 9,
+      "sources_verified": [
+        "SRC-CORNELL-TOM-LEAFMOLD"
+      ],
+      "management_records": 4,
+      "diagnostic_records": 2,
+      "kb_text_retrieval": "eligible (unvalidated)",
+      "image_diagnosis": {
+        "status": "frozen_model_known_class",
+        "class_name": "Tomato___Leaf_Mold",
+        "note": "frozen_research_model_known_class: evaluated only on PlantVillage lab-style test images in the research project (Stage 3 known-test accuracy 99.24%); NOT validated on field photographs (PlantDoc known-disease accuracy about 32%) and NOT validated as an agricultural diagnostic"
+      },
+      "geographic_applicability": [
+        "international_not_verified_for_India"
+      ],
+      "review_status": "source_verified",
+      "expert_reviewed": false,
+      "known_limitations": [
+        "US source written for greenhouses and high tunnels; not verified for India."
+      ],
+      "last_verified": "2026-10-15"
+    },
+    "COND-TOMATO-MAGNESIUM-DEFICIENCY": {
+      "names": [
+        "Magnesium deficiency"
+      ],
+      "condition_type": "nutrient_disorder",
+      "plants": [
+        "PLANT-TOMATO"
+      ],
+      "knowledge_base_information": "sourced",
+      "n_claims": 4,
+      "sources_verified": [
+        "SRC-TNAU-TOM-MG-DEF"
+      ],
+      "management_records": 1,
+      "diagnostic_records": 1,
+      "kb_text_retrieval": "eligible (unvalidated)",
+      "image_diagnosis": {
+        "status": "not_covered_by_frozen_model",
+        "note": "not_covered_by_frozen_model: no image-based diagnosis capability"
+      },
+      "geographic_applicability": [
+        "India_region"
+      ],
+      "review_status": "source_verified",
+      "expert_reviewed": false,
+      "known_limitations": [
+        "Leaf colour alone does not confirm a deficiency; a confirmatory soil/tissue test source is still pending in this knowledge base."
+      ],
+      "last_verified": "2026-10-14"
+    },
+    "COND-TOMATO-POTASSIUM-DEFICIENCY": {
+      "names": [
+        "Potassium deficiency"
+      ],
+      "condition_type": "nutrient_disorder",
+      "plants": [
+        "PLANT-TOMATO"
+      ],
+      "knowledge_base_information": "sourced",
+      "n_claims": 4,
+      "sources_verified": [
+        "SRC-TNAU-TOM-K-DEF"
+      ],
+      "management_records": 1,
+      "diagnostic_records": 1,
+      "kb_text_retrieval": "eligible (unvalidated)",
+      "image_diagnosis": {
+        "status": "not_covered_by_frozen_model",
+        "note": "not_covered_by_frozen_model: no image-based diagnosis capability"
+      },
+      "geographic_applicability": [
+        "India_region"
+      ],
+      "review_status": "source_verified",
+      "expert_reviewed": false,
+      "known_limitations": [
+        "Leaf colour alone does not confirm a deficiency; a confirmatory soil/tissue test source is still pending in this knowledge base."
+      ],
+      "last_verified": "2026-10-14"
+    },
+    "COND-TOMATO-RED-SPIDER-MITE": {
+      "names": [
+        "Red spider mite",
+        "Spider mites"
+      ],
+      "condition_type": "pest",
+      "plants": [
+        "PLANT-TOMATO"
+      ],
+      "knowledge_base_information": "sourced",
+      "n_claims": 4,
+      "sources_verified": [
+        "SRC-TNAU-TOM-SPIDERMITE"
+      ],
+      "management_records": 1,
+      "diagnostic_records": 1,
+      "kb_text_retrieval": "eligible (unvalidated)",
+      "image_diagnosis": {
+        "status": "frozen_model_known_class",
+        "class_name": "Tomato___Spider_mites Two-spotted_spider_mite",
+        "note": "frozen_research_model_known_class: evaluated only on PlantVillage lab-style test images in the research project (Stage 3 known-test accuracy 99.24%); NOT validated on field photographs (PlantDoc known-disease accuracy about 32%) and NOT validated as an agricultural diagnostic"
+      },
+      "geographic_applicability": [
+        "India_region"
+      ],
+      "review_status": "source_verified",
+      "expert_reviewed": false,
+      "known_limitations": [
+        "The frozen model's class is 'Two-spotted spider mite' (Tetranychus urticae); the verified TNAU page identifies only the genus Tetranychus."
+      ],
+      "last_verified": "2026-10-14"
+    },
+    "COND-TOMATO-SEPTORIA-LEAF-SPOT": {
+      "names": [
+        "Septoria leaf spot"
+      ],
+      "condition_type": "infectious_disease",
+      "plants": [
+        "PLANT-TOMATO"
+      ],
+      "knowledge_base_information": "sourced",
+      "n_claims": 9,
+      "sources_verified": [
+        "SRC-TNAU-TOM-SEPTORIA"
+      ],
+      "management_records": 3,
+      "diagnostic_records": 2,
+      "kb_text_retrieval": "eligible (unvalidated)",
+      "image_diagnosis": {
+        "status": "held_out_unknown_in_research",
+        "class_name": "Tomato___Septoria_leaf_spot",
+        "note": "held_out_unknown_in_research: excluded from model training; the frozen model cannot name it and can only flag an image as potentially unfamiliar (OSR). Not a validated diagnosis",
+        "frozen_stage8_osr_reference": {
+          "detector": "Contrastive Energy (Stage 7 head)",
+          "auroc_vs_known": 0.9783,
+          "detection_at_frozen_threshold": 0.9113,
+          "source_file": "results/final/final_numbers.json"
+        }
+      },
+      "geographic_applicability": [
+        "India_region"
+      ],
+      "review_status": "source_verified",
+      "expert_reviewed": false,
+      "known_limitations": [
+        "Distinction from other tomato leaf spots by photo alone is not established in this knowledge base."
+      ],
+      "last_verified": "2026-10-14"
+    },
+    "COND-TOMATO-TARGET-SPOT": {
+      "names": [
+        "Target spot",
+        "Corynespora leaf spot"
+      ],
+      "condition_type": "infectious_disease",
+      "plants": [
+        "PLANT-TOMATO"
+      ],
+      "knowledge_base_information": "sourced",
+      "n_claims": 12,
+      "sources_verified": [
+        "SRC-PPP-TOM-TARGETSPOT"
+      ],
+      "management_records": 6,
+      "diagnostic_records": 2,
+      "kb_text_retrieval": "eligible (unvalidated)",
+      "image_diagnosis": {
+        "status": "held_out_unknown_in_research",
+        "class_name": "Tomato___Target_Spot",
+        "note": "held_out_unknown_in_research: excluded from model training; the frozen model cannot name it and can only flag an image as potentially unfamiliar (OSR). Not a validated diagnosis",
+        "frozen_stage8_osr_reference": {
+          "detector": "Contrastive Energy (Stage 7 head)",
+          "auroc_vs_known": 0.9632,
+          "detection_at_frozen_threshold": 0.8184,
+          "source_file": "results/final/final_numbers.json"
+        }
+      },
+      "geographic_applicability": [
+        "international_not_verified_for_India"
+      ],
+      "review_status": "source_verified",
+      "expert_reviewed": false,
+      "known_limitations": [
+        "Only an international (Pacific islands) source has been verified so far; no Indian source yet.",
+        "Concentric rings are also described for tomato early blight; rings alone do not separate the two."
+      ],
+      "last_verified": "2026-10-14"
+    },
+    "COND-TOMATO-YELLOW-LEAF-CURL-VIRUS": {
+      "names": [
+        "Tomato leaf curl (leaf curl virus)"
+      ],
+      "condition_type": "infectious_disease",
+      "plants": [
+        "PLANT-TOMATO"
+      ],
+      "knowledge_base_information": "sourced",
+      "n_claims": 5,
+      "sources_verified": [
+        "SRC-TNAU-TOM-LEAFCURL"
+      ],
+      "management_records": 5,
+      "diagnostic_records": 2,
+      "kb_text_retrieval": "eligible (unvalidated)",
+      "image_diagnosis": {
+        "status": "frozen_model_known_class",
+        "class_name": "Tomato___Tomato_Yellow_Leaf_Curl_Virus",
+        "note": "frozen_research_model_known_class: evaluated only on PlantVillage lab-style test images in the research project (Stage 3 known-test accuracy 99.24%); NOT validated on field photographs (PlantDoc known-disease accuracy about 32%) and NOT validated as an agricultural diagnostic"
+      },
+      "geographic_applicability": [
+        "India_region"
+      ],
+      "review_status": "source_verified",
+      "expert_reviewed": false,
+      "known_limitations": [
+        "The research class is 'Tomato yellow leaf curl virus'; this Indian source describes tomato leaf curl virus (TLCV), a related whitefly-borne leaf-curl disease. The record matches them by symptoms; the exact virus needs a laboratory test.",
+        "Virus diseases cannot be cured in an infected plant; management prevents spread."
+      ],
+      "last_verified": "2026-10-15"
+    }
+  }
+}

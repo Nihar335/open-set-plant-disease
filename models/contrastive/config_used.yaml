@@ -1,0 +1,449 @@
+seed: 42
+paths:
+  raw: data/raw
+  downloads: data/raw/_downloads
+  processed: data/processed
+  splits: data/splits
+  models: models
+  results: results
+  figures: results/figures
+  tables: results/tables
+  metrics: results/metrics
+datasets:
+  plantvillage:
+    source: huggingface
+    repo: mohanty/PlantVillage
+    revision: 9e97599868962bd0079b8db4b7f1efa9185fa1e7
+    archive: data.zip
+    archive_size: 2184723441
+    archive_sha256: fba30c6a7965e49be94b47a62f8aff6cfb1c35c27f475f22092b56db41745e84
+    variant: color
+    metadata_files:
+    - leaf_grouping/leaf-map.json
+    - splits/color_train.txt
+    - splits/color_test.txt
+    license: CC BY-SA 3.0 (per maintainer HF card)
+    dir: data/raw/plantvillage
+    kaggle_fallback: abdallahalidev/plantvillage-dataset
+  plantdoc:
+    source: github
+    repo: pratikkayal/PlantDoc-Dataset
+    revision: 5467f6012d78d1c446145d5f582da6096f852ae8
+    license: CC BY 4.0
+    dir: data/raw/plantdoc
+  dtd:
+    source: url
+    url: https://thor.robots.ox.ac.uk/dtd/dtd-r1.0.1.tar.gz
+    archive_size: 625239812
+    license: research use (see https://www.robots.ox.ac.uk/~vgg/data/dtd/)
+    dir: data/raw/dtd
+plantdoc_class_map:
+  Apple Scab Leaf:
+    crop: Apple
+    disease: Apple_scab
+    pv: Apple___Apple_scab
+  Apple leaf:
+    crop: Apple
+    disease: healthy
+    pv: Apple___healthy
+  Apple rust leaf:
+    crop: Apple
+    disease: Cedar_apple_rust
+    pv: Apple___Cedar_apple_rust
+  Bell_pepper leaf:
+    crop: Pepper
+    disease: healthy
+    pv: Pepper,_bell___healthy
+  Bell_pepper leaf spot:
+    crop: Pepper
+    disease: Bacterial_spot
+    pv: Pepper,_bell___Bacterial_spot
+  Blueberry leaf:
+    crop: Blueberry
+    disease: healthy
+    pv: Blueberry___healthy
+  Cherry leaf:
+    crop: Cherry
+    disease: healthy
+    pv: Cherry_(including_sour)___healthy
+  Corn Gray leaf spot:
+    crop: Corn
+    disease: Gray_leaf_spot
+    pv: Corn_(maize)___Cercospora_leaf_spot Gray_leaf_spot
+  Corn leaf blight:
+    crop: Corn
+    disease: Northern_Leaf_Blight
+    pv: Corn_(maize)___Northern_Leaf_Blight
+  Corn rust leaf:
+    crop: Corn
+    disease: Common_rust
+    pv: Corn_(maize)___Common_rust_
+  Peach leaf:
+    crop: Peach
+    disease: healthy
+    pv: Peach___healthy
+  Potato leaf early blight:
+    crop: Potato
+    disease: Early_blight
+    pv: Potato___Early_blight
+  Potato leaf late blight:
+    crop: Potato
+    disease: Late_blight
+    pv: Potato___Late_blight
+  Raspberry leaf:
+    crop: Raspberry
+    disease: healthy
+    pv: Raspberry___healthy
+  Soyabean leaf:
+    crop: Soybean
+    disease: healthy
+    pv: Soybean___healthy
+  Squash Powdery mildew leaf:
+    crop: Squash
+    disease: Powdery_mildew
+    pv: Squash___Powdery_mildew
+  Strawberry leaf:
+    crop: Strawberry
+    disease: healthy
+    pv: Strawberry___healthy
+  Tomato Early blight leaf:
+    crop: Tomato
+    disease: Early_blight
+    pv: Tomato___Early_blight
+  Tomato Septoria leaf spot:
+    crop: Tomato
+    disease: Septoria_leaf_spot
+    pv: Tomato___Septoria_leaf_spot
+  Tomato leaf:
+    crop: Tomato
+    disease: healthy
+    pv: Tomato___healthy
+  Tomato leaf bacterial spot:
+    crop: Tomato
+    disease: Bacterial_spot
+    pv: Tomato___Bacterial_spot
+  Tomato leaf late blight:
+    crop: Tomato
+    disease: Late_blight
+    pv: Tomato___Late_blight
+  Tomato leaf mosaic virus:
+    crop: Tomato
+    disease: Tomato_mosaic_virus
+    pv: Tomato___Tomato_mosaic_virus
+  Tomato leaf yellow virus:
+    crop: Tomato
+    disease: Yellow_Leaf_Curl_Virus
+    pv: Tomato___Tomato_Yellow_Leaf_Curl_Virus
+  Tomato mold leaf:
+    crop: Tomato
+    disease: Leaf_Mold
+    pv: Tomato___Leaf_Mold
+  Tomato two spotted spider mites leaf:
+    crop: Tomato
+    disease: Spider_mites
+    pv: Tomato___Spider_mites Two-spotted_spider_mite
+  grape leaf:
+    crop: Grape
+    disease: healthy
+    pv: Grape___healthy
+  grape leaf black rot:
+    crop: Grape
+    disease: Black_rot
+    pv: Grape___Black_rot
+inspection:
+  num_workers: 8
+  phash_hamming_threshold: 6
+  border_px: 8
+  sample_grid_per_class: 4
+near_duplicates:
+  image_size: 224
+  batch_size: 32
+  num_workers: 6
+  top_k: 10
+  report_cosine: 0.95
+  merge_cosine: 0.98
+  merge_cosine_unmapped: 0.975
+osr_protocol:
+  version: 1
+  seed: 42
+  known_split_fractions:
+    train: 0.7
+    val: 0.15
+    test: 0.15
+  known_classes:
+  - Apple___Apple_scab
+  - Apple___Cedar_apple_rust
+  - Apple___healthy
+  - Corn_(maize)___Cercospora_leaf_spot Gray_leaf_spot
+  - Corn_(maize)___Common_rust_
+  - Corn_(maize)___healthy
+  - Grape___Black_rot
+  - Grape___Leaf_blight_(Isariopsis_Leaf_Spot)
+  - Grape___healthy
+  - Pepper,_bell___Bacterial_spot
+  - Pepper,_bell___healthy
+  - Potato___Early_blight
+  - Potato___Late_blight
+  - Potato___healthy
+  - Tomato___Bacterial_spot
+  - Tomato___Early_blight
+  - Tomato___Late_blight
+  - Tomato___Leaf_Mold
+  - Tomato___Spider_mites Two-spotted_spider_mite
+  - Tomato___Tomato_Yellow_Leaf_Curl_Virus
+  - Tomato___healthy
+  unknown_near:
+    Tomato___Septoria_leaf_spot:
+      resembles:
+      - Tomato___Bacterial_spot
+      - Tomato___Early_blight
+      why: small dark circular lesions with pale centres; easily read as bacterial
+        spot / early-blight spotting
+    Tomato___Target_Spot:
+      resembles:
+      - Tomato___Early_blight
+      why: brown lesions with concentric rings, the hallmark cue of early blight
+    Apple___Black_rot:
+      resembles:
+      - Apple___Apple_scab
+      - Apple___Cedar_apple_rust
+      why: 'frog-eye leaf spots: dark lesions on an apple leaf, like scab / rust spotting'
+    Grape___Esca_(Black_Measles):
+      resembles:
+      - Grape___Black_rot
+      - Grape___Leaf_blight_(Isariopsis_Leaf_Spot)
+      why: dark necrotic spotting and interveinal browning on grape leaves
+    Corn_(maize)___Northern_Leaf_Blight:
+      resembles:
+      - Corn_(maize)___Cercospora_leaf_spot Gray_leaf_spot
+      why: elongated tan necrotic lesions on a corn blade, like gray leaf spot
+  unknown_val:
+  - Tomato___Tomato_mosaic_virus
+  - Cherry_(including_sour)___Powdery_mildew
+  - Cherry_(including_sour)___healthy
+  unknown_far_crops:
+  - Blueberry
+  - Orange
+  - Peach
+  - Raspberry
+  - Soybean
+  - Squash
+  - Strawberry
+  far_balanced_per_class: 300
+  dtd_split_file: labels/test1.txt
+  plantvillage_exclude:
+    data/raw/plantvillage/color/Tomato___Late_blight/cb3bd866-dd84-4f7e-9226-b4a2a2c7f2ae___GH_HL Leaf 173.2.JPG: 'label_error:
+      healthy photo code (GH_HL) in a disease folder; SIFT-verified same leaf as a
+      Tomato___healthy image'
+    data/raw/plantvillage/color/Tomato___Late_blight/d674cbf6-0cdc-407a-97ea-c3f53f2c51e4___GH_HL Leaf 170.JPG: 'label_error:
+      healthy photo code (GH_HL) in a disease folder (the only other such file)'
+  plantdoc:
+    exclude_roles:
+    - unknown_val
+    drop_label_conflicts: true
+    dedupe_strong_duplicates: true
+    min_images_for_per_class_metrics: 10
+    caveats:
+      Corn rust leaf: file names show Southern corn rust mixed in; PlantVillage class
+        is Common rust
+      Corn leaf blight: file names show Southern corn leaf blight mixed in; both are
+        unseen diseases, so the unknown label stays valid
+      Tomato two spotted spider mites leaf: only 2 images
+same_leaf_verification:
+  saturation_min: 30
+  lowe_ratio: 0.75
+  ransac_px: 5.0
+  calibration_pairs: 1500
+  negative_min_leaf_gap: 20
+  max_false_positive_rate: 0.005
+baseline:
+  run_name: baseline
+  dataset:
+    train_manifest: data/splits/train.csv
+    val_manifest: data/splits/val.csv
+    test_manifest: data/splits/test.csv
+    class_mapping: data/splits/class_mapping.yaml
+    row_filter:
+      role:
+      - known
+      dataset:
+      - plantvillage
+  model:
+    architecture: resnet50
+    pretrained: true
+    num_classes: 21
+  training:
+    image_size: 224
+    resize: 256
+    batch_size: 64
+    num_workers: 6
+    seed: 42
+    deterministic: true
+    amp: true
+    optimizer: adamw
+    weight_decay: 0.0001
+    label_smoothing: 0.0
+    class_balancing: weighted_ce
+    class_weight_power: 0.5
+    phase_a:
+      epochs: 3
+      learning_rate: 0.001
+    phase_b:
+      unfreeze:
+      - layer3
+      - layer4
+      max_epochs: 20
+      learning_rate: 0.001
+      backbone_learning_rate: 0.0001
+      scheduler: cosine
+      warmup_epochs: 1
+    early_stopping:
+      monitor: val_macro_f1
+      patience: 5
+      min_delta: 0.0005
+  augmentation:
+    random_resized_crop_scale:
+    - 0.7
+    - 1.0
+    random_resized_crop_ratio:
+    - 0.9
+    - 1.11
+    horizontal_flip: true
+    vertical_flip: true
+    rotation: 15
+    rotation_fill:
+    - 124
+    - 116
+    - 104
+    color_jitter:
+      brightness: 0.2
+      contrast: 0.2
+      saturation: 0.15
+      hue: 0.0
+  evaluation:
+    test_set: full
+    strict_test: true
+    gradcam_examples: 8
+  hardware:
+    device: auto
+osr_msp:
+  checkpoint: models/baseline/best_model.pt
+  checkpoint_sha256: 2b5071fb192706065a9fec2d9df8c4949cf05b18040920ef5a2c856685d51a1d
+  stage3_config: models/baseline/config_used.yaml
+  inference_precision: fp32
+  selected_strategy: B
+  target_known_acceptance: 0.95
+  fixed_grid:
+  - 0.5
+  - 0.55
+  - 0.6
+  - 0.65
+  - 0.7
+  - 0.75
+  - 0.8
+  - 0.85
+  - 0.9
+  - 0.95
+  - 0.975
+  - 0.99
+  - 0.995
+  - 0.999
+  - 0.9999
+  ece_bins: 15
+  examples_per_unknown_class: 3
+  seed: 42
+osr_energy:
+  temperature_primary: 1.0
+  temperature_grid:
+  - 0.5
+  - 0.75
+  - 1.0
+  - 1.5
+  - 2.0
+  - 5.0
+  target_known_acceptance: 0.95
+  logits_val: results/predictions/cache/msp_logits_val.npz
+  logits_test: results/predictions/cache/msp_logits_test.npz
+  stage4_results: results/metrics/osr_msp_results.json
+  stage4_threshold: results/metrics/osr_msp_threshold.json
+  bootstrap_resamples: 1000
+  seed: 42
+feature_osr:
+  embeddings_dir: results/embeddings
+  extract_batch_size: 64
+  inference_precision: fp32
+  covariance: tied_ledoit_wolf
+  eig_floor_rel: 1.0e-08
+  target_known_acceptance: 0.95
+  stage5_results: results/metrics/osr_energy_results.json
+  stage5_threshold: results/metrics/osr_energy_threshold.json
+  pca_components: 50
+  tsne:
+    perplexity: 30
+    max_iter: 1000
+    seed: 42
+    per_class_sample: 150
+    input: pca50
+  umap: not_installed
+  knn_train_reference_per_class: 400
+  bootstrap_resamples: 1000
+  seed: 42
+probe_diagnostic:
+  pairs:
+  - - Grape___Esca_(Black_Measles)
+    - Grape___Black_rot
+  - - Corn_(maize)___Northern_Leaf_Blight
+    - Corn_(maize)___Cercospora_leaf_spot Gray_leaf_spot
+  controls:
+    known_pair:
+    - Grape___Black_rot
+    - Grape___Leaf_blight_(Isariopsis_Leaf_Spot)
+    random_half_class: Grape___Black_rot
+  model: logistic_regression
+  C: 0.1
+  cv: leaf_grouped_stratified_5fold
+  repeats: 5
+  bootstrap: 1000
+contrastive:
+  run_name: contrastive
+  init: imagenet
+  trainable:
+  - layer3
+  - layer4
+  projection:
+    hidden: 2048
+    out: 128
+  temperature: 0.07
+  classes_per_batch: 16
+  samples_per_class: 4
+  views: 2
+  epochs: 25
+  batches_per_epoch: 298
+  optimizer: adamw
+  lr_head: 0.001
+  lr_backbone: 0.0001
+  weight_decay: 0.0001
+  warmup_epochs: 1
+  amp: true
+  num_workers: 6
+  seed: 42
+  early_stopping:
+    monitor: val_nearest_centroid_macro_f1
+    patience: 5
+    min_delta: 0.0005
+  val_reference_per_class: 50
+  augmentation: same_as_stage3
+  evaluation_representation: backbone_2048_l2_normalised
+  linear_head:
+    C: 1.0
+    max_iter: 3000
+  scores:
+  - prototype_cosine
+  - mahalanobis_normalised
+  - msp_linear_head
+  - energy_linear_head
+  primary_score: prototype_cosine
+  comparison_grid: '{original, contrastive} x {prototype_cosine, mahalanobis_normalised},
+    same protocol'
+  target_known_acceptance: 0.95
+  bootstrap_resamples: 1000

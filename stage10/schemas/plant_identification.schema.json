@@ -1,0 +1,118 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://agrovaidya.invalid/stage10/schemas/plant_identification.schema.json",
+  "title": "Plant-identification result (M4 adapter contract; suggestion only, never a diagnosis, never a confirmed crop)",
+  "type": "object",
+  "required": ["status", "message_key", "message", "model", "vocabulary", "operating_point", "candidates", "abstention",
+               "requires_user_confirmation", "sets_confirmed_crop", "disease_assessment_performed", "evaluated_scope", "privacy",
+               "limitations"],
+  "properties": {
+    "status": {"enum": ["candidates", "unidentified", "insufficient_image", "not_run"]},
+    "message_key": {"type": "string", "pattern": "^plant_id\\.[a-z_]+$"},
+    "message": {"$ref": "common.schema.json#/$defs/localized_text"},
+    "model": {
+      "type": "object",
+      "required": ["name", "version", "weights_sha256", "licence", "runs_locally", "external_service"],
+      "properties": {
+        "name": {"type": "string", "minLength": 1},
+        "version": {"type": "string", "minLength": 1},
+        "weights_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+        "licence": {"type": "string", "minLength": 1},
+        "runs_locally": {"type": "boolean"},
+        "external_service": {"type": ["string", "null"]}
+      },
+      "additionalProperties": false
+    },
+    "vocabulary": {
+      "type": "object",
+      "required": ["id", "version", "n_taxa", "sha256"],
+      "properties": {
+        "id": {"type": "string"}, "version": {"type": "string"},
+        "n_taxa": {"type": "integer", "minimum": 1}, "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+      },
+      "additionalProperties": false
+    },
+    "operating_point": {
+      "type": "object",
+      "required": ["status", "threshold", "threshold_source", "operating_point_sha256"],
+      "properties": {
+        "status": {"enum": ["resolved", "unresolved", "absent"]},
+        "threshold": {"type": ["number", "null"], "minimum": 0, "maximum": 1},
+        "threshold_source": {"const": "development data only (protocol v2); never test data"},
+        "operating_point_sha256": {"type": ["string", "null"], "pattern": "^[0-9a-f]{64}$"}
+      },
+      "additionalProperties": false,
+      "allOf": [
+        {"if": {"properties": {"status": {"const": "resolved"}}},
+         "then": {"properties": {"threshold": {"type": "number"}, "operating_point_sha256": {"type": "string"}}}}
+      ]
+    },
+    "candidates": {
+      "type": "array",
+      "maxItems": 5,
+      "items": {
+        "type": "object",
+        "required": ["rank", "taxon_rank", "scientific_name", "common_names", "kb_plant_id", "score", "score_semantics",
+                     "score_is_calibrated_probability", "above_threshold", "limitations"],
+        "properties": {
+          "rank": {"type": "integer", "minimum": 1, "maximum": 5},
+          "taxon_rank": {"enum": ["species", "genus", "family", "crop_group"]},
+          "scientific_name": {"type": "string", "minLength": 1},
+          "common_names": {"$ref": "common.schema.json#/$defs/localized_text"},
+          "kb_plant_id": {"type": ["string", "null"]},
+          "score": {"type": "number", "minimum": 0, "maximum": 1},
+          "score_semantics": {"const": "softmax over the vocabulary taxa; ordinal match score, not a calibrated probability"},
+          "score_is_calibrated_probability": {"const": false},
+          "above_threshold": {"type": "boolean"},
+          "limitations": {"type": "array", "items": {"$ref": "common.schema.json#/$defs/localized_text"}}
+        },
+        "additionalProperties": false
+      }
+    },
+    "abstention": {
+      "type": "object",
+      "required": ["abstained", "reason"],
+      "properties": {
+        "abstained": {"type": "boolean"},
+        "reason": {"enum": ["below_threshold", "insufficient_image", "no_validated_operating_point", null]}
+      },
+      "additionalProperties": false
+    },
+    "requires_user_confirmation": {"const": true},
+    "sets_confirmed_crop": {"const": false},
+    "disease_assessment_performed": {"const": false},
+    "evaluated_scope": {
+      "type": "object",
+      "required": ["evaluation_id", "validated"],
+      "properties": {"evaluation_id": {"type": ["string", "null"]}, "validated": {"type": "boolean"}},
+      "additionalProperties": false,
+      "allOf": [{"if": {"properties": {"validated": {"const": true}}}, "then": {"properties": {"evaluation_id": {"type": "string"}}}}]
+    },
+    "privacy": {
+      "type": "object",
+      "required": ["image_left_device", "consent_reference"],
+      "properties": {"image_left_device": {"type": "boolean"}, "consent_reference": {"type": ["string", "null"]}},
+      "additionalProperties": false,
+      "allOf": [{"if": {"properties": {"image_left_device": {"const": true}}}, "then": {"properties": {"consent_reference": {"type": "string"}}}}]
+    },
+    "limitations": {"type": "array", "minItems": 1, "items": {"$ref": "common.schema.json#/$defs/localized_text"}}
+  },
+  "additionalProperties": false,
+  "allOf": [
+    {"if": {"properties": {"status": {"const": "candidates"}}},
+     "then": {"properties": {"candidates": {"minItems": 1},
+                             "abstention": {"properties": {"abstained": {"const": false}, "reason": {"const": null}}},
+                             "operating_point": {"properties": {"status": {"const": "resolved"}}}}}},
+    {"if": {"properties": {"status": {"const": "unidentified"}}},
+     "then": {"properties": {"candidates": {"maxItems": 0},
+                             "abstention": {"properties": {"abstained": {"const": true}, "reason": {"const": "below_threshold"}}}}}},
+    {"if": {"properties": {"status": {"const": "insufficient_image"}}},
+     "then": {"properties": {"candidates": {"maxItems": 0},
+                             "abstention": {"properties": {"abstained": {"const": true}, "reason": {"const": "insufficient_image"}}}}}},
+    {"if": {"properties": {"status": {"const": "not_run"}}},
+     "then": {"properties": {"candidates": {"maxItems": 0},
+                             "abstention": {"properties": {"abstained": {"const": true}, "reason": {"const": "no_validated_operating_point"}}}}}},
+    {"if": {"properties": {"model": {"properties": {"external_service": {"type": "string"}}}}},
+     "then": {"properties": {"privacy": {"properties": {"consent_reference": {"type": "string"}}}}}}
+  ]
+}

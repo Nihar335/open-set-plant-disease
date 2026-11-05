@@ -1,0 +1,25 @@
+{
+  "created_utc": "2026-10-07T22:26:33+00:00",
+  "protocol_config_sha256": "b9fd053ef97ebd4a94759c5376734a0d55d7164cfee57117e4b4a85865015690",
+  "inventory_sha256": "e6fe3cd64bf9746e7d290593ded485313ee15315ab2ef0f6bd092a1d7a648946",
+  "embedding_merge_cosine": 0.98,
+  "embedding_merge_cosine_unmapped": 0.975,
+  "same_leaf_pairs_sha256": "bbe63b4d4b694f720c39fea8e49847ee7c64f6d7b160e8d2f1f93f727fe0dc56",
+  "files": {
+    "experiment_A_test.csv": "d67d0202739346acf9057f6139be8c0910486bc22e5821bb3600ee48b6d13379",
+    "experiment_A_train.csv": "941d549b6ae8e1aacb58f328d7f4f5344ee67fb21c3d80bf2fafd66896ce3b00",
+    "experiment_A_val.csv": "088987183abd78f3b9e82c4e845de38a20bc77e5ce78c6e3364a9f41a0ea9ca3",
+    "experiment_B_test.csv": "acbd44944c1614de8d8ce88993b8480fd8daa147324881dbd2f5bb39cb9ce1bb",
+    "experiment_B_train.csv": "941d549b6ae8e1aacb58f328d7f4f5344ee67fb21c3d80bf2fafd66896ce3b00",
+    "experiment_B_val.csv": "088987183abd78f3b9e82c4e845de38a20bc77e5ce78c6e3364a9f41a0ea9ca3",
+    "experiment_C_test.csv": "0e88dfa9f1722b8e08f2c4cb05dc9b960d06d8cf7358d8801d8b29e59b126585",
+    "experiment_C_train.csv": "941d549b6ae8e1aacb58f328d7f4f5344ee67fb21c3d80bf2fafd66896ce3b00",
+    "experiment_C_val.csv": "088987183abd78f3b9e82c4e845de38a20bc77e5ce78c6e3364a9f41a0ea9ca3",
+    "manifest_all.csv": "9814417373bc7c943f3c3cb2fe3d5a433a923c36c7d8f73b8bd2b879fadd63bc",
+    "test.csv": "d02b4787c0f05fb31c75053e637574474784e3867effcd980c3eaa728d18e22e",
+    "train.csv": "941d549b6ae8e1aacb58f328d7f4f5344ee67fb21c3d80bf2fafd66896ce3b00",
+    "val.csv": "088987183abd78f3b9e82c4e845de38a20bc77e5ce78c6e3364a9f41a0ea9ca3",
+    "class_mapping.yaml": "636db9b9673c30eeb1d50bf146b276ef137bb3fc583b09b1c06cb11b2bd3c214"
+  },
+  "rule": "Changing any protocol file after the first test-set evaluation invalidates reported results."
+}

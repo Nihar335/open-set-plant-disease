@@ -1,0 +1,117 @@
+# Diagnostic methods. 'needs_source' methods are placeholders for planned sourcing: retrieval reports them only as
+# "source pending" and never as a recommendation backed by evidence.
+- diagnostic_id: DIAG-INSPECT-OLDER-LEAVES
+  method_type: field_observation
+  name: "Inspect lower/older leaves for spot pattern"
+  description: "Check the bottom leaves for small spots with yellow margins and larger spots with ring patterns; note where symptoms started."
+  features_checked: [FEAT-OLDER-LOWER-LEAVES-FIRST, FEAT-YELLOW-HALO, FEAT-CONCENTRIC-RINGS]
+  what_it_can_establish: "Whether the visible pattern matches descriptions of ring-forming leaf spots that start low in the canopy."
+  what_it_cannot_establish: "Which pathogen is present; several diseases share these signs (e.g. target spot and early blight)."
+  claims:
+    - {text: "Look for the disease on bottom leaves: tiny brown spots with yellow margins and larger ringed spots.", evidence: [{source_id: SRC-PPP-TOM-TARGETSPOT, passage: "Look for the disease on the bottom leaves."}, {source_id: SRC-PPP-TOM-TARGETSPOT, passage: "Look for larger spots up to 10 mm that have ring patterns."}]}
+  curation_status: sourced
+  review_status: source_verified
+- diagnostic_id: DIAG-HAND-LENS-PYCNIDIA
+  method_type: hand_lens
+  name: "Hand-lens check for black fruiting bodies in lesions"
+  description: "Examine lesion centres with a hand lens for tiny black specks (fungal fruiting bodies)."
+  features_checked: [FEAT-BLACK-SPECKS-IN-LESION]
+  what_it_can_establish: "Presence of structures consistent with fruiting bodies of fungi such as the apple or grape black-rot fungi."
+  what_it_cannot_establish: "The fungal species; fruiting bodies of other or secondary fungi can look similar."
+  claims:
+    - {text: "Black pycnidia in apple frogeye/black-rot spots can be seen easily with a hand lens.", evidence: [{source_id: SRC-PSU-APPLE-BLACKROT, passage: "can be viewed easily using a hand lens"}]}
+    - {text: "Tiny dark spore-producing structures form within grape black-rot leaf spots.", evidence: [{source_id: SRC-UMAINE-GRAPE-BLACKROT, passage: "two types of tiny, dark, spore-producing structures form within the spots"}]}
+  curation_status: sourced
+  review_status: source_verified
+- diagnostic_id: DIAG-MITE-INSPECTION
+  method_type: hand_lens
+  name: "Inspect leaves for mites and eggs"
+  description: "Look on affected leaves for small red adult mites, yellowish nymphs and masses of round eggs."
+  features_checked: [FEAT-BRONZING, FEAT-FINE-WEBBING]
+  what_it_can_establish: "Whether mites are present on bronzed or webbed leaves."
+  what_it_cannot_establish: "The mite species (the verified source identifies only the genus Tetranychus)."
+  claims:
+    - {text: "Adults are small and red; nymphs yellowish; eggs globular, laid in masses.", evidence: [{source_id: SRC-TNAU-TOM-SPIDERMITE, passage: "Adult: Red coloured small sized"}]}
+  curation_status: sourced
+  review_status: source_verified
+- diagnostic_id: DIAG-LEAF-UNDERSIDE
+  method_type: field_observation
+  name: "Check the leaf underside below lesions"
+  description: "Turn affected leaves over and look for white growth or dusty dark/green spore growth below the lesions."
+  features_checked: [FEAT-WHITE-GROWTH-UNDERSIDE, FEAT-DUSTY-SPORES-UNDERSIDE]
+  what_it_can_establish: "Whether sporulation consistent with downy mildew (white) or leaf blight (dusty fuzz) is visible."
+  what_it_cannot_establish: "The organism; laboratory examination is needed for identification."
+  claims:
+    - {text: "Grape downy mildew shows white growth on the lower surface.", evidence: [{source_id: SRC-TNAU-GRAPE-DOWNY, passage: "Correspondingly on the lower surface, white, powdery growth on leaves."}]}
+    - {text: "Maize leaf blight spores form on the underside below lesions (dusty green fuzz).", evidence: [{source_id: SRC-CORNELL-MAIZE-NCLB, passage: "Spores are produced on the underside of the leaf below the lesions"}]}
+  curation_status: sourced
+  review_status: source_verified
+- diagnostic_id: DIAG-WOOD-CROSS-SECTION
+  method_type: cross_section
+  name: "Cross-section of cane/spur below a symptomatic grape shoot"
+  description: "Cut across the cane, spur or cordon from which a symptomatic shoot originates and look for concentric rings of dark spots."
+  features_checked: [FEAT-DARK-SPOTS-WOOD-SECTION]
+  what_it_can_establish: "Wood symptoms described for Esca in the verified source."
+  what_it_cannot_establish: "Which trunk-disease fungus is present; other trunk diseases also discolour wood. Laboratory isolation is required for identification."
+  claims:
+    - {text: "Cross-sections from which symptomatic shoots originate reveal concentric rings of dark spots.", evidence: [{source_id: SRC-UCIPM-GRAPE-ESCA, passage: "Cross-sectional cuts through canes, spurs, cordons, or trunks from which symptomatic shoots originate will reveal concentric rings of dark spots."}]}
+  curation_status: sourced
+  review_status: source_verified
+- diagnostic_id: DIAG-LESION-SHAPE-VEINS
+  method_type: field_observation
+  name: "Check maize lesion shape against the leaf veins"
+  description: "Note whether lesions are rectangular and bounded by veins with blunt ends, or long cigar-shaped lesions tapering at the ends."
+  features_checked: [FEAT-VEIN-LIMITED-RECTANGULAR, FEAT-ELONGATED-CIGAR-LESIONS]
+  what_it_can_establish: "Which description (gray leaf spot vs northern leaf blight) the lesion shape matches."
+  what_it_cannot_establish: "A confirmed diagnosis; lesion shape can vary with hybrid and stage."
+  claims:
+    - {text: "Gray leaf spot lesions run parallel to veins and become rectangular with blunt ends.", evidence: [{source_id: SRC-CORNELL-MAIZE-GLS, passage: "rectangular in shape with blunt ends"}]}
+    - {text: "Northern corn leaf blight lesions are slender, oblong and taper at the ends.", evidence: [{source_id: SRC-CORNELL-MAIZE-NCLB, passage: "slender and oblong tapering at the ends"}]}
+  curation_status: sourced
+  review_status: source_verified
+- diagnostic_id: DIAG-APPLE-FRUIT-CUT
+  method_type: cross_section
+  name: "Cut through an apple fruit-rot lesion"
+  description: "Cut through the rot; black rot decay is not cone-shaped (unlike bitter rot) and usually there is one spot per fruit."
+  features_checked: [FEAT-FRUIT-LESIONS]
+  what_it_can_establish: "Whether the fruit rot matches the black-rot description rather than bitter rot."
+  what_it_cannot_establish: "Identity of the fungus without laboratory confirmation."
+  claims:
+    - {text: "Decayed flesh of black rot is not cone-shaped like bitter rot.", evidence: [{source_id: SRC-PSU-APPLE-BLACKROT, passage: "the decayed flesh will not be in the shape of a cone (like bitter rot)"}]}
+  curation_status: sourced
+  review_status: source_verified
+- diagnostic_id: DIAG-SOIL-TISSUE-TEST
+  method_type: soil_test
+  name: "Soil and/or plant-tissue nutrient analysis"
+  description: "Laboratory analysis of soil and/or leaf tissue to confirm or rule out a suspected nutrient deficiency before correction."
+  features_checked: [FEAT-INTERVEINAL-CHLOROSIS-GREEN-MARGINS, FEAT-MARGIN-SCORCH]
+  what_it_can_establish: "PENDING SOURCE — to be described from a verified Indian soil-testing source."
+  what_it_cannot_establish: "PENDING SOURCE."
+  claims: []
+  curation_status: needs_source
+  review_status: draft
+- diagnostic_id: DIAG-PATHOGEN-LAB-ID
+  method_type: laboratory_test
+  name: "Plant-pathology laboratory identification"
+  description: "Submission of affected tissue to a plant-pathology laboratory (e.g. via a KVK or state agricultural university) for microscopy, culture or molecular identification."
+  features_checked: []
+  what_it_can_establish: "PENDING SOURCE — to be described from a verified Indian diagnostic-service source."
+  what_it_cannot_establish: "PENDING SOURCE."
+  claims: []
+  curation_status: needs_source
+  review_status: draft
+- diagnostic_id: DIAG-WHITEFLY-CHECK
+  method_type: field_observation
+  name: Look for whiteflies
+  description: 'Turn over young leaves and shake the plant gently: tiny white flying insects (whiteflies) carry leaf-curl virus.'
+  features_checked:
+  - FEAT-LEAF-CURL
+  what_it_can_establish: Whether the insect that spreads leaf-curl virus is present.
+  what_it_cannot_establish: Whether the plant is infected, or which virus it has; that needs a laboratory test.
+  claims:
+  - text: Whiteflies spread tomato leaf curl virus.
+    evidence:
+    - source_id: SRC-TNAU-TOM-LEAFCURL
+      passage: 'Primary spread: Whiteflies.'
+  curation_status: sourced
+  review_status: source_verified

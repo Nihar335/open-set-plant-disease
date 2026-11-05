@@ -1,0 +1,6 @@
+{
+  "temperature": 0.8200000000000003,
+  "fitted_on": "validation (PlantVillage + PlantDoc), crop-restricted NLL",
+  "threshold": 0.85,
+  "checkpoint_epoch": 9
+}

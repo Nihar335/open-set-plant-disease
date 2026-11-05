@@ -1,0 +1,39 @@
+# Indian states and union territories with the coordinates used for the weather lookup.
+# The point is the state / UT capital (approximate, 2 decimals). Weather for a whole state is approximated by
+# its capital; the app says so in the report.
+- {name: Andhra Pradesh, capital: Amaravati, lat: 16.51, lon: 80.52}
+- {name: Arunachal Pradesh, capital: Itanagar, lat: 27.08, lon: 93.61}
+- {name: Assam, capital: Dispur, lat: 26.14, lon: 91.79}
+- {name: Bihar, capital: Patna, lat: 25.59, lon: 85.14}
+- {name: Chhattisgarh, capital: Raipur, lat: 21.25, lon: 81.63}
+- {name: Goa, capital: Panaji, lat: 15.49, lon: 73.83}
+- {name: Gujarat, capital: Gandhinagar, lat: 23.22, lon: 72.65}
+- {name: Haryana, capital: Chandigarh, lat: 30.73, lon: 76.78}
+- {name: Himachal Pradesh, capital: Shimla, lat: 31.10, lon: 77.17}
+- {name: Jharkhand, capital: Ranchi, lat: 23.34, lon: 85.31}
+- {name: Karnataka, capital: Bengaluru, lat: 12.97, lon: 77.59}
+- {name: Kerala, capital: Thiruvananthapuram, lat: 8.52, lon: 76.94}
+- {name: Madhya Pradesh, capital: Bhopal, lat: 23.26, lon: 77.41}
+- {name: Maharashtra, capital: Mumbai, lat: 19.08, lon: 72.88}
+- {name: Manipur, capital: Imphal, lat: 24.82, lon: 93.94}
+- {name: Meghalaya, capital: Shillong, lat: 25.58, lon: 91.89}
+- {name: Mizoram, capital: Aizawl, lat: 23.73, lon: 92.72}
+- {name: Nagaland, capital: Kohima, lat: 25.67, lon: 94.11}
+- {name: Odisha, capital: Bhubaneswar, lat: 20.30, lon: 85.82}
+- {name: Punjab, capital: Chandigarh, lat: 30.73, lon: 76.78}
+- {name: Rajasthan, capital: Jaipur, lat: 26.91, lon: 75.79}
+- {name: Sikkim, capital: Gangtok, lat: 27.33, lon: 88.61}
+- {name: Tamil Nadu, capital: Chennai, lat: 13.08, lon: 80.27}
+- {name: Telangana, capital: Hyderabad, lat: 17.39, lon: 78.49}
+- {name: Tripura, capital: Agartala, lat: 23.83, lon: 91.29}
+- {name: Uttar Pradesh, capital: Lucknow, lat: 26.85, lon: 80.95}
+- {name: Uttarakhand, capital: Dehradun, lat: 30.32, lon: 78.03}
+- {name: West Bengal, capital: Kolkata, lat: 22.57, lon: 88.36}
+- {name: Andaman and Nicobar Islands, capital: Sri Vijaya Puram (Port Blair), lat: 11.62, lon: 92.73}
+- {name: Chandigarh, capital: Chandigarh, lat: 30.73, lon: 76.78}
+- {name: Dadra and Nagar Haveli and Daman and Diu, capital: Daman, lat: 20.40, lon: 72.83}
+- {name: Delhi, capital: New Delhi, lat: 28.61, lon: 77.21}
+- {name: Jammu and Kashmir, capital: Srinagar, lat: 34.08, lon: 74.80}
+- {name: Ladakh, capital: Leh, lat: 34.15, lon: 77.58}
+- {name: Lakshadweep, capital: Kavaratti, lat: 10.57, lon: 72.64}
+- {name: Puducherry, capital: Puducherry, lat: 11.94, lon: 79.81}

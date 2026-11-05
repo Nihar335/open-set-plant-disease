@@ -1,0 +1,52 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://agrovaidya.invalid/stage10/schemas/plant_name_assessment.schema.json",
+  "title": "Workflow record for a plant-health assessment from a user-provided plant name (SC-M4-03); accompanies the plant_health_report",
+  "type": "object",
+  "required": ["workflow_version", "plant_selection", "routing", "disease_model_ran", "report_id", "report_type"],
+  "properties": {
+    "workflow_version": {"type": "string"},
+    "plant_selection": {
+      "type": "object",
+      "required": ["outcome", "plant_id", "plant_name", "entered_text", "matched_alias", "alias_kind", "entry_channel", "source",
+                   "independently_verified", "automatic_identification_used", "corrections"],
+      "properties": {
+        "outcome": {"enum": ["known_plant", "unlisted_name", "not_known"]},
+        "plant_id": {"type": ["string", "null"]},
+        "plant_name": {"type": ["string", "null"]},
+        "entered_text": {"type": ["string", "null"]},
+        "matched_alias": {"type": ["string", "null"]},
+        "alias_kind": {"enum": [null, "common_name", "synonym", "scientific_name", "plant_id", "local_name", "selected_from_list"]},
+        "entry_channel": {"enum": ["typed", "selected_from_list", "voice_transcript_confirmed"]},
+        "source": {"const": "user_supplied"},
+        "independently_verified": {"const": false},
+        "automatic_identification_used": {"const": false},
+        "corrections": {"type": "integer", "minimum": 0}
+      },
+      "additionalProperties": false,
+      "allOf": [
+        {"if": {"properties": {"outcome": {"const": "known_plant"}}}, "then": {"properties": {"plant_id": {"type": "string"}}},
+         "else": {"properties": {"plant_id": {"type": "null"}}}},
+        {"if": {"properties": {"outcome": {"const": "not_known"}}}, "then": {"properties": {"plant_name": {"type": "null"}}}}
+      ]
+    },
+    "routing": {
+      "type": "object",
+      "required": ["disease_model_supported", "invoke_disease_model", "reason", "knowledge_base_mode", "automatic_plant_identification"],
+      "properties": {
+        "disease_model_supported": {"type": "boolean"},
+        "invoke_disease_model": {"type": "boolean"},
+        "reason": {"type": "string"},
+        "knowledge_base_mode": {"enum": ["plant_specific", "general_investigation"]},
+        "automatic_plant_identification": {"type": "string", "pattern": "^disabled"}
+      },
+      "additionalProperties": false,
+      "if": {"properties": {"disease_model_supported": {"const": false}}},
+      "then": {"properties": {"invoke_disease_model": {"const": false}}}
+    },
+    "disease_model_ran": {"type": "boolean"},
+    "report_id": {"type": "string"},
+    "report_type": {"enum": ["known_disease", "unknown_investigation", "out_of_model_scope", "insufficient_image"]}
+  },
+  "additionalProperties": false
+}

@@ -1,0 +1,60 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://agrovaidya.invalid/stage10/schemas/plant_identity.schema.json",
+  "title": "Plant identity (user-confirmed crop is primary; model output is supporting evidence only)",
+  "type": "object",
+  "required": ["user_confirmation", "crop_confirmed_by_user", "model_supporting_evidence", "in_model_scope",
+               "identification_level", "common_name", "taxonomy", "species_level_claimed", "uncertainty"],
+  "properties": {
+    "user_confirmation": {"enum": ["confirmed", "not_provided", "unsure"]},
+    "crop_confirmed_by_user": {"type": ["string", "null"]},
+    "model_supporting_evidence": {
+      "type": "object",
+      "required": ["model_crop", "model_class", "agrees_with_user", "note"],
+      "properties": {
+        "model_crop": {"type": ["string", "null"]},
+        "model_class": {"type": ["string", "null"]},
+        "agrees_with_user": {"type": ["boolean", "null"]},
+        "note": {"$ref": "common.schema.json#/$defs/localized_text"}
+      },
+      "additionalProperties": false
+    },
+    "in_model_scope": {"type": "boolean", "description": "true only for the six crops of the frozen classifier"},
+    "identification_level": {"enum": ["species", "genus", "crop_common_name", "not_assessable"]},
+    "common_name": {"$ref": "common.schema.json#/$defs/localized_text"},
+    "taxonomy": {
+      "type": "object",
+      "required": ["kingdom", "family", "genus", "species"],
+      "properties": {
+        "kingdom": {"$ref": "common.schema.json#/$defs/sourced_value"},
+        "family": {"$ref": "common.schema.json#/$defs/sourced_value"},
+        "genus": {"$ref": "common.schema.json#/$defs/sourced_value"},
+        "species": {"$ref": "common.schema.json#/$defs/sourced_value"}
+      },
+      "additionalProperties": false
+    },
+    "species_level_claimed": {"type": "boolean"},
+    "variety_or_cultivar": {"type": ["string", "null"]},
+    "growth_stage": {"type": ["string", "null"]},
+    "alternatives": {"type": "array", "items": {"$ref": "common.schema.json#/$defs/localized_text"}},
+    "uncertainty": {"$ref": "common.schema.json#/$defs/uncertainty"}
+  },
+  "additionalProperties": false,
+  "allOf": [
+    {
+      "if": {"properties": {"species_level_claimed": {"const": true}}},
+      "then": {
+        "properties": {
+          "identification_level": {"const": "species"},
+          "taxonomy": {"properties": {"species": {
+            "properties": {"value": {"type": "string"}, "status": {"enum": ["observed", "inferred"]},
+                           "source_ids": {"minItems": 1}}}}}
+        }
+      }
+    },
+    {
+      "if": {"properties": {"in_model_scope": {"const": false}}},
+      "then": {"properties": {"model_supporting_evidence": {"properties": {"agrees_with_user": {"const": null}}}}}
+    }
+  ]
+}

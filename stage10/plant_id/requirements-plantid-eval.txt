@@ -1,0 +1,19 @@
+# Isolated evaluation environment for BioCLIP 2 (Milestone 4). NOT for the project environment (requirements.txt is unchanged).
+# Created 2026-10-14 as:  python -m venv --system-site-packages C:\Users\nihar\venvs\agrovaidya-plantid
+# Installed with --no-deps exactly the reviewed set below (licences checked on PyPI before install).
+# torch 2.5.1+cu121, torchvision 0.20.1+cu121, numpy, pillow, psutil, tqdm come from the base interpreter (not reinstalled).
+open_clip_torch==3.3.0      # MIT
+timm==1.0.30                # Apache-2.0
+huggingface_hub==2.2.0      # Apache-2.0
+safetensors==0.8.0          # Apache-2.0
+ftfy==6.3.1                 # Apache-2.0
+regex==2026.9.29            # Apache-2.0 AND CNRI-Python
+click==8.5.0                # dependency of huggingface_hub
+h11==0.16.0                 # dependency of httpcore2
+hf-xet==1.7.0               # dependency of huggingface_hub (Hugging Face xet storage client)
+httpcore2==2.13.1           # dependency of httpx2 (pydantic/httpx2)
+httpx2==2.13.1              # dependency of huggingface_hub 2.x (pydantic/httpx2)
+idna==3.20                  # dependency of httpx2
+truststore==0.10.5          # dependency of httpx2
+# Known venv-only conflict (recorded, accepted): base-site httpcore 1.0.7 requires h11<0.15, venv has h11 0.16.0.
+# The base environment still has h11 0.14.0; the BioCLIP stack uses httpx2/httpcore2, not httpcore 1.x.

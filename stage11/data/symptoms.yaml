@@ -1,0 +1,83 @@
+# Stage 11 symptom ontology.
+# These are the visible leaf symptoms the multi-task network predicts from the image (symptom head).
+# Order matters: the index of each entry is the output index of the symptom head. Append only.
+#
+# Supervision note: PlantVillage / PlantDoc have no per-image symptom annotations. The symptom head is trained with
+# weak labels: each training image inherits the symptom profile of its disease (diseases.yaml -> symptoms).
+# The head therefore learns "which visual patterns go with which symptom" across all diseases that share it,
+# which is what lets it describe photos whose disease mixes symptoms of several classes.
+- id: no_visible_symptoms
+  name: No visible symptoms
+  description: Leaf looks uniformly green with no spots, coatings or deformation.
+- id: general_yellowing
+  name: Yellowing (chlorosis)
+  description: Leaf or parts of it turn pale or yellow.
+- id: yellow_halo
+  name: Spots with yellow halo
+  description: Spots surrounded by a yellow ring of tissue.
+- id: brown_spots
+  name: Brown spots / lesions
+  description: Distinct brown, dead (necrotic) spots on the leaf blade.
+- id: dark_black_spots
+  name: Dark or black spots
+  description: Very dark brown to black spots or lesions.
+- id: concentric_rings
+  name: Concentric rings (target spots)
+  description: Lesions with rings inside them, like a target or bull's-eye.
+- id: many_small_spots
+  name: Many small spots / speckling
+  description: Numerous tiny spots scattered over the leaf.
+- id: water_soaked_lesions
+  name: Water-soaked lesions
+  description: Greasy, dark-green or translucent patches that look wet.
+- id: olive_velvety_lesions
+  name: Olive-green velvety lesions
+  description: Olive to dark-green patches with a velvety or sooty surface.
+- id: rust_pustules
+  name: Orange / rust-coloured pustules
+  description: Raised orange, brown or cinnamon powdery pustules or spots.
+- id: white_powdery_coating
+  name: White powdery coating
+  description: White to grey powder on the leaf surface that can be rubbed off.
+- id: fuzzy_mould_growth
+  name: Fuzzy mould growth
+  description: Velvety or downy grey, olive or white growth, usually on the leaf underside.
+- id: elongated_lesions
+  name: Long / rectangular lesions
+  description: Lesions that are long and narrow (cigar-shaped) or limited by veins into rectangles.
+- id: leaf_curling
+  name: Leaf curling / cupping
+  description: Leaves curl upward or downward, cup, or roll.
+- id: mosaic_mottling
+  name: Mosaic / mottling
+  description: Patchwork of light-green or yellow and dark-green areas.
+- id: leaf_distortion
+  name: Leaf distortion / small leaves
+  description: Leaves are puckered, narrow, fern-like, crinkled or much smaller than normal.
+- id: blotchy_asymmetric_mottle
+  name: Blotchy asymmetric mottle
+  description: Irregular yellow blotches that do not mirror each other across the midrib.
+- id: interveinal_stripes
+  name: Interveinal stripes (tiger stripes)
+  description: Yellow or red-brown bands between the veins with green tissue along the veins.
+- id: stippling_bronzing
+  name: Stippling / bronzing
+  description: Fine pale dots that merge into a dull bronze or greyish look.
+- id: webbing
+  name: Fine webbing
+  description: Silky webbing on the leaf, usually on the underside.
+- id: edge_scorch
+  name: Edge / margin browning
+  description: Browning or scorching that starts at the leaf margin or tip.
+- id: large_dead_areas
+  name: Large dead (blighted) areas
+  description: Big brown or black dead areas covering a large part of the leaf.
+- id: shot_holes
+  name: Shot holes
+  description: Small holes where dead spot centres have dropped out.
+- id: purple_red_margins
+  name: Purple / red spot margins
+  description: Spots with purple, reddish or dark-red borders.
+- id: vein_yellowing
+  name: Vein yellowing / vein clearing
+  description: Veins turn yellow or clear while the tissue between them stays green.

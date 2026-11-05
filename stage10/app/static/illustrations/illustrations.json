@@ -1,0 +1,140 @@
+{
+ "note": "Question diagrams; the questions without a diagram are answered by text, tap or voice.",
+ "items": [
+  {
+   "question_id": "Q-BLACK-SPECKS",
+   "file": "q-black-specks.svg",
+   "alt": "Diagram: a pale spot with tiny black dots inside, seen with a hand lens",
+   "caption": "Diagram - simplified, not a photo of your plant. Real symptoms vary.",
+   "sha256": "778bb89ec8c76428c670e4a20b3019c390e68698eb1e77aeca703e4c1e1d90a9",
+   "licence": {
+    "type": "project-original",
+    "statement": "Original schematic created for the AgroVaidya project on 2026-10-15 from basic SVG shapes; contains no third-party material. Rights held by the project owner; distributed only as part of AgroVaidya.",
+    "third_party_material": false
+   },
+   "created": "2026-10-15",
+   "author": "AgroVaidya project (generated in-repository)",
+   "accuracy_review": "pending: no plant-health expert has reviewed the diagrams (M8-09)"
+  },
+  {
+   "question_id": "Q-CONCENTRIC-RINGS",
+   "file": "q-concentric-rings.svg",
+   "alt": "Diagram: a leaf spot with rings inside, like a target",
+   "caption": "Diagram - simplified, not a photo of your plant. Real symptoms vary.",
+   "sha256": "451ed06b32982a9885a630542a938c228f77cb879c3ff86c25fb52f7e9e432dd",
+   "licence": {
+    "type": "project-original",
+    "statement": "Original schematic created for the AgroVaidya project on 2026-10-15 from basic SVG shapes; contains no third-party material. Rights held by the project owner; distributed only as part of AgroVaidya.",
+    "third_party_material": false
+   },
+   "created": "2026-10-15",
+   "author": "AgroVaidya project (generated in-repository)",
+   "accuracy_review": "pending: no plant-health expert has reviewed the diagrams (M8-09)"
+  },
+  {
+   "question_id": "Q-FRUIT",
+   "file": "q-fruit.svg",
+   "alt": "Diagram: a round fruit with dark sunken spots",
+   "caption": "Diagram - simplified, not a photo of your plant. Real symptoms vary.",
+   "sha256": "4a112da0eb345e497f36d01ddaab44ebf8f6980c4db62e2c936f8c8e1557f7b4",
+   "licence": {
+    "type": "project-original",
+    "statement": "Original schematic created for the AgroVaidya project on 2026-10-15 from basic SVG shapes; contains no third-party material. Rights held by the project owner; distributed only as part of AgroVaidya.",
+    "third_party_material": false
+   },
+   "created": "2026-10-15",
+   "author": "AgroVaidya project (generated in-repository)",
+   "accuracy_review": "pending: no plant-health expert has reviewed the diagrams (M8-09)"
+  },
+  {
+   "question_id": "Q-INTERVEINAL",
+   "file": "q-interveinal.svg",
+   "alt": "Diagram: left, yellowing between the veins with green veins; right, leaf tips and edges brown and dry",
+   "caption": "Diagram - simplified, not a photo of your plant. Real symptoms vary.",
+   "sha256": "9f7578e3c4d97d59f20032a0b65d57167f62dc31c0b8c92401ffb04d4077522c",
+   "licence": {
+    "type": "project-original",
+    "statement": "Original schematic created for the AgroVaidya project on 2026-10-15 from basic SVG shapes; contains no third-party material. Rights held by the project owner; distributed only as part of AgroVaidya.",
+    "third_party_material": false
+   },
+   "created": "2026-10-15",
+   "author": "AgroVaidya project (generated in-repository)",
+   "accuracy_review": "pending: no plant-health expert has reviewed the diagrams (M8-09)"
+  },
+  {
+   "question_id": "Q-LEAF-AGE",
+   "file": "q-leaf-age.svg",
+   "alt": "Diagram: a plant whose lower, older leaves have spots while the young upper leaves are clean",
+   "caption": "Diagram - simplified, not a photo of your plant. Real symptoms vary.",
+   "sha256": "885f62b7d5f5e18962f131d3f15b4bdf0995598583f52f81485b3d070a27f7f0",
+   "licence": {
+    "type": "project-original",
+    "statement": "Original schematic created for the AgroVaidya project on 2026-10-15 from basic SVG shapes; contains no third-party material. Rights held by the project owner; distributed only as part of AgroVaidya.",
+    "third_party_material": false
+   },
+   "created": "2026-10-15",
+   "author": "AgroVaidya project (generated in-repository)",
+   "accuracy_review": "pending: no plant-health expert has reviewed the diagrams (M8-09)"
+  },
+  {
+   "question_id": "Q-LESION-SHAPE",
+   "file": "q-lesion-shape.svg",
+   "alt": "Diagram of lesion shapes: round, cigar-shaped, rectangular between veins, and stripes",
+   "caption": "Diagram - simplified, not a photo of your plant. Real symptoms vary.",
+   "sha256": "fa2ac5e71d2d1ac1506b2b40b11f0bf38b680758f9eb2293c3d9755e111aecbe",
+   "licence": {
+    "type": "project-original",
+    "statement": "Original schematic created for the AgroVaidya project on 2026-10-15 from basic SVG shapes; contains no third-party material. Rights held by the project owner; distributed only as part of AgroVaidya.",
+    "third_party_material": false
+   },
+   "created": "2026-10-15",
+   "author": "AgroVaidya project (generated in-repository)",
+   "accuracy_review": "pending: no plant-health expert has reviewed the diagrams (M8-09)"
+  },
+  {
+   "question_id": "Q-UNDERSIDE-GROWTH",
+   "file": "q-underside-growth.svg",
+   "alt": "Diagram: the underside of a leaf with a white, fuzzy patch below a spot",
+   "caption": "Diagram - simplified, not a photo of your plant. Real symptoms vary.",
+   "sha256": "6d973761bf7c2c7fbeb1e0e8a20c8eaf2a9af9ca55fa45a79f97898074b9b2a6",
+   "licence": {
+    "type": "project-original",
+    "statement": "Original schematic created for the AgroVaidya project on 2026-10-15 from basic SVG shapes; contains no third-party material. Rights held by the project owner; distributed only as part of AgroVaidya.",
+    "third_party_material": false
+   },
+   "created": "2026-10-15",
+   "author": "AgroVaidya project (generated in-repository)",
+   "accuracy_review": "pending: no plant-health expert has reviewed the diagrams (M8-09)"
+  },
+  {
+   "question_id": "Q-WEBBING-BRONZING",
+   "file": "q-webbing-bronzing.svg",
+   "alt": "Diagram: a reddish-brown leaf with fine threads of webbing",
+   "caption": "Diagram - simplified, not a photo of your plant. Real symptoms vary.",
+   "sha256": "e34eb22d473ffc6f383191eb90fc4f531f45cb0b475bbbb460282592bd4a8b40",
+   "licence": {
+    "type": "project-original",
+    "statement": "Original schematic created for the AgroVaidya project on 2026-10-15 from basic SVG shapes; contains no third-party material. Rights held by the project owner; distributed only as part of AgroVaidya.",
+    "third_party_material": false
+   },
+   "created": "2026-10-15",
+   "author": "AgroVaidya project (generated in-repository)",
+   "accuracy_review": "pending: no plant-health expert has reviewed the diagrams (M8-09)"
+  },
+  {
+   "question_id": "Q-YELLOW-HALO",
+   "file": "q-yellow-halo.svg",
+   "alt": "Diagram: a dark leaf spot with a yellow ring around it",
+   "caption": "Diagram - simplified, not a photo of your plant. Real symptoms vary.",
+   "sha256": "3cbfcf0bc684338d26a27f8237a461d859b2eba8c891f6159ce25f8f3b7e7f67",
+   "licence": {
+    "type": "project-original",
+    "statement": "Original schematic created for the AgroVaidya project on 2026-10-15 from basic SVG shapes; contains no third-party material. Rights held by the project owner; distributed only as part of AgroVaidya.",
+    "third_party_material": false
+   },
+   "created": "2026-10-15",
+   "author": "AgroVaidya project (generated in-repository)",
+   "accuracy_review": "pending: no plant-health expert has reviewed the diagrams (M8-09)"
+  }
+ ]
+}

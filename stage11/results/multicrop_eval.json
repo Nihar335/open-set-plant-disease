@@ -1,0 +1,1455 @@
+{
+ "created": "2026-10-23T14:38:01",
+ "checkpoint": "models/stage11/best.pt (v2, epoch 10)",
+ "calibration": {
+  "temperature": 0.8000000000000003,
+  "beta": 0.0,
+  "m0": 0.9416,
+  "threshold": 0.8,
+  "fitted_on": "validation only",
+  "checkpoint_epoch": 10
+ },
+ "threshold": 0.8,
+ "by_source": {
+  "lab": {
+   "n": 5524,
+   "top1": 0.9954742939898624,
+   "top3": 0.9998189717595944,
+   "ece_p_crop": 0.0032417537465119347,
+   "false_crop_conflict": 0.0005430847212165098,
+   "v2": {
+    "named": 0.9938450398262129,
+    "named_acc": 0.9979963570127505,
+    "known_rejected": 0.0061549601737871384,
+    "unknown_top3_has_true": 0.9705882352941176
+   },
+   "v3": {
+    "named": 0.7626719768283853,
+    "named_acc": 0.9973890339425587,
+    "known_rejected": 0.23732802317161472,
+    "unknown_top3_has_true": 0.9992372234935164
+   }
+  },
+  "field": {
+   "n": 225,
+   "top1": 0.8355555555555556,
+   "top3": 0.96,
+   "ece_p_crop": 0.10954277753829955,
+   "false_crop_conflict": 0.1688888888888889,
+   "v2": {
+    "named": 0.7377777777777778,
+    "named_acc": 0.8734939759036144,
+    "known_rejected": 0.26222222222222225,
+    "unknown_top3_has_true": 0.8813559322033898
+   },
+   "v3": {
+    "named": 0.6266666666666667,
+    "named_acc": 0.851063829787234,
+    "known_rejected": 0.3733333333333333,
+    "unknown_top3_has_true": 0.9166666666666666
+   }
+  },
+  "apple_field": {
+   "n": 1919,
+   "top1": 0.982803543512246,
+   "top3": 0.9984366857738406,
+   "ece_p_crop": 0.0054427882139107715,
+   "false_crop_conflict": 0.0,
+   "v2": {
+    "named": 0.9822824387701928,
+    "named_acc": 0.9888594164456234,
+    "known_rejected": 0.017717561229807166,
+    "unknown_top3_has_true": 1.0
+   },
+   "v3": {
+    "named": 0.9822824387701928,
+    "named_acc": 0.9888594164456234,
+    "known_rejected": 0.017717561229807166,
+    "unknown_top3_has_true": 1.0
+   }
+  }
+ },
+ "per_crop": {
+  "apple": {
+   "coverage_level": "diagnosable",
+   "lab": {
+    "n": 301,
+    "top1": 0.9966777408637874,
+    "top3": 1.0,
+    "ece_p_crop": 0.006320551978393251,
+    "false_crop_conflict": 0.0,
+    "v2": {
+     "named": 0.9867109634551495,
+     "named_acc": 1.0,
+     "known_rejected": 0.013289036544850474,
+     "unknown_top3_has_true": 1.0
+    },
+    "v3": {
+     "named": 0.9867109634551495,
+     "named_acc": 1.0,
+     "known_rejected": 0.013289036544850474,
+     "unknown_top3_has_true": 1.0
+    }
+   },
+   "field": {
+    "n": 29,
+    "top1": 0.8275862068965517,
+    "top3": 0.9310344827586207,
+    "ece_p_crop": 0.12200600319895252,
+    "false_crop_conflict": 0.1724137931034483,
+    "v2": {
+     "named": 0.7586206896551724,
+     "named_acc": 0.9090909090909091,
+     "known_rejected": 0.24137931034482762,
+     "unknown_top3_has_true": 0.7142857142857143
+    },
+    "v3": {
+     "named": 0.7586206896551724,
+     "named_acc": 0.9090909090909091,
+     "known_rejected": 0.24137931034482762,
+     "unknown_top3_has_true": 0.7142857142857143
+    }
+   },
+   "apple_field": {
+    "n": 1919,
+    "top1": 0.982803543512246,
+    "top3": 0.9984366857738406,
+    "ece_p_crop": 0.0054427882139107715,
+    "false_crop_conflict": 0.0,
+    "v2": {
+     "named": 0.9822824387701928,
+     "named_acc": 0.9888594164456234,
+     "known_rejected": 0.017717561229807166,
+     "unknown_top3_has_true": 1.0
+    },
+    "v3": {
+     "named": 0.9822824387701928,
+     "named_acc": 0.9888594164456234,
+     "known_rejected": 0.017717561229807166,
+     "unknown_top3_has_true": 1.0
+    }
+   }
+  },
+  "bell pepper": {
+   "coverage_level": "diagnosable",
+   "lab": {
+    "n": 370,
+    "top1": 0.9972972972972973,
+    "top3": 1.0,
+    "ece_p_crop": 0.005184149903220099,
+    "false_crop_conflict": 0.002702702702702703,
+    "v2": {
+     "named": 0.9918918918918919,
+     "named_acc": 0.997275204359673,
+     "known_rejected": 0.008108108108108136,
+     "unknown_top3_has_true": 1.0
+    },
+    "v3": {
+     "named": 0.9918918918918919,
+     "named_acc": 0.997275204359673,
+     "known_rejected": 0.008108108108108136,
+     "unknown_top3_has_true": 1.0
+    }
+   },
+   "field": {
+    "n": 17,
+    "top1": 0.8235294117647058,
+    "top3": 1.0,
+    "ece_p_crop": 0.1532740838387433,
+    "false_crop_conflict": 0.17647058823529413,
+    "v2": {
+     "named": 0.6470588235294118,
+     "named_acc": 0.8181818181818182,
+     "known_rejected": 0.3529411764705882,
+     "unknown_top3_has_true": 1.0
+    },
+    "v3": {
+     "named": 0.6470588235294118,
+     "named_acc": 0.8181818181818182,
+     "known_rejected": 0.3529411764705882,
+     "unknown_top3_has_true": 1.0
+    }
+   }
+  },
+  "blueberry": {
+   "coverage_level": "limited",
+   "lab": {
+    "n": 145,
+    "top1": 1.0,
+    "top3": 1.0,
+    "ece_p_crop": 0.0,
+    "false_crop_conflict": 0.0,
+    "v2": {
+     "named": 1.0,
+     "named_acc": 1.0,
+     "known_rejected": 0.0,
+     "unknown_top3_has_true": null
+    },
+    "v3": {
+     "named": 0.0,
+     "named_acc": null,
+     "known_rejected": 1.0,
+     "unknown_top3_has_true": 1.0
+    }
+   },
+   "field": {
+    "n": 10,
+    "top1": 1.0,
+    "top3": 1.0,
+    "ece_p_crop": 0.0,
+    "false_crop_conflict": 0.4,
+    "v2": {
+     "named": 0.6,
+     "named_acc": 1.0,
+     "known_rejected": 0.4,
+     "unknown_top3_has_true": 1.0
+    },
+    "v3": {
+     "named": 0.0,
+     "named_acc": null,
+     "known_rejected": 1.0,
+     "unknown_top3_has_true": 1.0
+    }
+   }
+  },
+  "cherry": {
+   "coverage_level": "diagnosable",
+   "lab": {
+    "n": 271,
+    "top1": 1.0,
+    "top3": 1.0,
+    "ece_p_crop": 0.0005637407302856445,
+    "false_crop_conflict": 0.0,
+    "v2": {
+     "named": 1.0,
+     "named_acc": 1.0,
+     "known_rejected": 0.0,
+     "unknown_top3_has_true": null
+    },
+    "v3": {
+     "named": 1.0,
+     "named_acc": 1.0,
+     "known_rejected": 0.0,
+     "unknown_top3_has_true": null
+    }
+   },
+   "field": {
+    "n": 10,
+    "top1": 1.0,
+    "top3": 1.0,
+    "ece_p_crop": 0.03167020082473755,
+    "false_crop_conflict": 0.5,
+    "v2": {
+     "named": 0.6,
+     "named_acc": 1.0,
+     "known_rejected": 0.4,
+     "unknown_top3_has_true": 1.0
+    },
+    "v3": {
+     "named": 0.5,
+     "named_acc": 1.0,
+     "known_rejected": 0.5,
+     "unknown_top3_has_true": 1.0
+    }
+   }
+  },
+  "citrus": {
+   "coverage_level": "limited",
+   "lab": {
+    "n": 454,
+    "top1": 1.0,
+    "top3": 1.0,
+    "ece_p_crop": 0.0,
+    "false_crop_conflict": 0.0,
+    "v2": {
+     "named": 1.0,
+     "named_acc": 1.0,
+     "known_rejected": 0.0,
+     "unknown_top3_has_true": null
+    },
+    "v3": {
+     "named": 0.0,
+     "named_acc": null,
+     "known_rejected": 1.0,
+     "unknown_top3_has_true": 1.0
+    }
+   }
+  },
+  "grape": {
+   "coverage_level": "diagnosable",
+   "lab": {
+    "n": 384,
+    "top1": 1.0,
+    "top3": 1.0,
+    "ece_p_crop": 0.0024852872205277285,
+    "false_crop_conflict": 0.0,
+    "v2": {
+     "named": 0.9973958333333334,
+     "named_acc": 1.0,
+     "known_rejected": 0.0026041666666666297,
+     "unknown_top3_has_true": 1.0
+    },
+    "v3": {
+     "named": 0.9973958333333334,
+     "named_acc": 1.0,
+     "known_rejected": 0.0026041666666666297,
+     "unknown_top3_has_true": 1.0
+    }
+   },
+   "field": {
+    "n": 20,
+    "top1": 1.0,
+    "top3": 1.0,
+    "ece_p_crop": 0.0049454569816589355,
+    "false_crop_conflict": 0.0,
+    "v2": {
+     "named": 1.0,
+     "named_acc": 1.0,
+     "known_rejected": 0.0,
+     "unknown_top3_has_true": null
+    },
+    "v3": {
+     "named": 1.0,
+     "named_acc": 1.0,
+     "known_rejected": 0.0,
+     "unknown_top3_has_true": null
+    }
+   }
+  },
+  "maize": {
+   "coverage_level": "diagnosable",
+   "lab": {
+    "n": 374,
+    "top1": 0.9679144385026738,
+    "top3": 1.0,
+    "ece_p_crop": 0.025609966506932463,
+    "false_crop_conflict": 0.0,
+    "v2": {
+     "named": 0.9786096256684492,
+     "named_acc": 0.9781420765027322,
+     "known_rejected": 0.021390374331550777,
+     "unknown_top3_has_true": 1.0
+    },
+    "v3": {
+     "named": 0.9786096256684492,
+     "named_acc": 0.9781420765027322,
+     "known_rejected": 0.021390374331550777,
+     "unknown_top3_has_true": 1.0
+    }
+   },
+   "field": {
+    "n": 23,
+    "top1": 0.6086956521739131,
+    "top3": 0.9565217391304348,
+    "ece_p_crop": 0.3901175390119138,
+    "false_crop_conflict": 0.0,
+    "v2": {
+     "named": 0.9565217391304348,
+     "named_acc": 0.5909090909090909,
+     "known_rejected": 0.04347826086956519,
+     "unknown_top3_has_true": 1.0
+    },
+    "v3": {
+     "named": 0.9565217391304348,
+     "named_acc": 0.5909090909090909,
+     "known_rejected": 0.04347826086956519,
+     "unknown_top3_has_true": 1.0
+    }
+   }
+  },
+  "peach": {
+   "coverage_level": "diagnosable",
+   "lab": {
+    "n": 236,
+    "top1": 1.0,
+    "top3": 1.0,
+    "ece_p_crop": 0.0005813837051391602,
+    "false_crop_conflict": 0.0,
+    "v2": {
+     "named": 1.0,
+     "named_acc": 1.0,
+     "known_rejected": 0.0,
+     "unknown_top3_has_true": null
+    },
+    "v3": {
+     "named": 1.0,
+     "named_acc": 1.0,
+     "known_rejected": 0.0,
+     "unknown_top3_has_true": null
+    }
+   },
+   "field": {
+    "n": 9,
+    "top1": 1.0,
+    "top3": 1.0,
+    "ece_p_crop": 0.056172721915774874,
+    "false_crop_conflict": 0.2222222222222222,
+    "v2": {
+     "named": 0.7777777777777778,
+     "named_acc": 1.0,
+     "known_rejected": 0.2222222222222222,
+     "unknown_top3_has_true": 1.0
+    },
+    "v3": {
+     "named": 0.7777777777777778,
+     "named_acc": 1.0,
+     "known_rejected": 0.2222222222222222,
+     "unknown_top3_has_true": 1.0
+    }
+   }
+  },
+  "potato": {
+   "coverage_level": "diagnosable",
+   "lab": {
+    "n": 184,
+    "top1": 1.0,
+    "top3": 1.0,
+    "ece_p_crop": 0.0018855929374694824,
+    "false_crop_conflict": 0.005434782608695652,
+    "v2": {
+     "named": 0.9945652173913043,
+     "named_acc": 1.0,
+     "known_rejected": 0.005434782608695676,
+     "unknown_top3_has_true": 1.0
+    },
+    "v3": {
+     "named": 0.9945652173913043,
+     "named_acc": 1.0,
+     "known_rejected": 0.005434782608695676,
+     "unknown_top3_has_true": 1.0
+    }
+   },
+   "field": {
+    "n": 12,
+    "top1": 0.75,
+    "top3": 1.0,
+    "ece_p_crop": 0.2753034432729085,
+    "false_crop_conflict": 0.25,
+    "v2": {
+     "named": 0.6666666666666666,
+     "named_acc": 0.625,
+     "known_rejected": 0.33333333333333337,
+     "unknown_top3_has_true": 1.0
+    },
+    "v3": {
+     "named": 0.6666666666666666,
+     "named_acc": 0.625,
+     "known_rejected": 0.33333333333333337,
+     "unknown_top3_has_true": 1.0
+    }
+   }
+  },
+  "raspberry": {
+   "coverage_level": "limited",
+   "field": {
+    "n": 7,
+    "top1": 1.0,
+    "top3": 1.0,
+    "ece_p_crop": 0.0,
+    "false_crop_conflict": 0.0,
+    "v2": {
+     "named": 1.0,
+     "named_acc": 1.0,
+     "known_rejected": 0.0,
+     "unknown_top3_has_true": null
+    },
+    "v3": {
+     "named": 0.0,
+     "named_acc": null,
+     "known_rejected": 1.0,
+     "unknown_top3_has_true": 1.0
+    }
+   }
+  },
+  "soybean": {
+   "coverage_level": "limited",
+   "lab": {
+    "n": 494,
+    "top1": 1.0,
+    "top3": 1.0,
+    "ece_p_crop": 0.0,
+    "false_crop_conflict": 0.0,
+    "v2": {
+     "named": 1.0,
+     "named_acc": 1.0,
+     "known_rejected": 0.0,
+     "unknown_top3_has_true": null
+    },
+    "v3": {
+     "named": 0.0,
+     "named_acc": null,
+     "known_rejected": 1.0,
+     "unknown_top3_has_true": 1.0
+    }
+   },
+   "field": {
+    "n": 8,
+    "top1": 1.0,
+    "top3": 1.0,
+    "ece_p_crop": 0.0,
+    "false_crop_conflict": 0.5,
+    "v2": {
+     "named": 0.5,
+     "named_acc": 1.0,
+     "known_rejected": 0.5,
+     "unknown_top3_has_true": 1.0
+    },
+    "v3": {
+     "named": 0.0,
+     "named_acc": null,
+     "known_rejected": 1.0,
+     "unknown_top3_has_true": 1.0
+    }
+   }
+  },
+  "squash": {
+   "coverage_level": "limited",
+   "lab": {
+    "n": 184,
+    "top1": 1.0,
+    "top3": 1.0,
+    "ece_p_crop": 0.0,
+    "false_crop_conflict": 0.0,
+    "v2": {
+     "named": 1.0,
+     "named_acc": 1.0,
+     "known_rejected": 0.0,
+     "unknown_top3_has_true": null
+    },
+    "v3": {
+     "named": 0.0,
+     "named_acc": null,
+     "known_rejected": 1.0,
+     "unknown_top3_has_true": 1.0
+    }
+   },
+   "field": {
+    "n": 6,
+    "top1": 1.0,
+    "top3": 1.0,
+    "ece_p_crop": 0.0,
+    "false_crop_conflict": 0.0,
+    "v2": {
+     "named": 1.0,
+     "named_acc": 1.0,
+     "known_rejected": 0.0,
+     "unknown_top3_has_true": null
+    },
+    "v3": {
+     "named": 0.0,
+     "named_acc": null,
+     "known_rejected": 1.0,
+     "unknown_top3_has_true": 1.0
+    }
+   }
+  },
+  "strawberry": {
+   "coverage_level": "diagnosable",
+   "lab": {
+    "n": 164,
+    "top1": 1.0,
+    "top3": 1.0,
+    "ece_p_crop": 0.0008038878440856934,
+    "false_crop_conflict": 0.0,
+    "v2": {
+     "named": 1.0,
+     "named_acc": 1.0,
+     "known_rejected": 0.0,
+     "unknown_top3_has_true": null
+    },
+    "v3": {
+     "named": 1.0,
+     "named_acc": 1.0,
+     "known_rejected": 0.0,
+     "unknown_top3_has_true": null
+    }
+   },
+   "field": {
+    "n": 8,
+    "top1": 1.0,
+    "top3": 1.0,
+    "ece_p_crop": 0.0006935596466064453,
+    "false_crop_conflict": 0.0,
+    "v2": {
+     "named": 1.0,
+     "named_acc": 1.0,
+     "known_rejected": 0.0,
+     "unknown_top3_has_true": null
+    },
+    "v3": {
+     "named": 1.0,
+     "named_acc": 1.0,
+     "known_rejected": 0.0,
+     "unknown_top3_has_true": null
+    }
+   }
+  },
+  "tomato": {
+   "coverage_level": "diagnosable",
+   "lab": {
+    "n": 1963,
+    "top1": 0.9943963321446765,
+    "top3": 0.999490575649516,
+    "ece_p_crop": 0.0072664398504530235,
+    "false_crop_conflict": 0.0005094243504839531,
+    "v2": {
+     "named": 0.9913397860417728,
+     "named_acc": 0.998972250770812,
+     "known_rejected": 0.008660213958227247,
+     "unknown_top3_has_true": 0.9411764705882353
+    },
+    "v3": {
+     "named": 0.9913397860417728,
+     "named_acc": 0.998972250770812,
+     "known_rejected": 0.008660213958227247,
+     "unknown_top3_has_true": 0.9411764705882353
+    }
+   },
+   "field": {
+    "n": 66,
+    "top1": 0.7424242424242424,
+    "top3": 0.9090909090909091,
+    "ece_p_crop": 0.16635901187405444,
+    "false_crop_conflict": 0.18181818181818182,
+    "v2": {
+     "named": 0.5909090909090909,
+     "named_acc": 0.8717948717948718,
+     "known_rejected": 0.40909090909090906,
+     "unknown_top3_has_true": 0.8148148148148148
+    },
+    "v3": {
+     "named": 0.5757575757575758,
+     "named_acc": 0.868421052631579,
+     "known_rejected": 0.4242424242424242,
+     "unknown_top3_has_true": 0.8214285714285714
+    }
+   }
+  }
+ },
+ "per_disease_field": {
+  "field:apple_scab": {
+   "n": 10,
+   "top1": 0.9,
+   "top3": 0.9,
+   "ece_p_crop": 0.08755704164505006,
+   "false_crop_conflict": 0.2,
+   "v2": {
+    "named": 0.8,
+    "named_acc": 1.0,
+    "known_rejected": 0.19999999999999996,
+    "unknown_top3_has_true": 0.5
+   },
+   "v3": {
+    "named": 0.8,
+    "named_acc": 1.0,
+    "known_rejected": 0.19999999999999996,
+    "unknown_top3_has_true": 0.5
+   }
+  },
+  "field:apple_cedar_rust": {
+   "n": 10,
+   "top1": 0.7,
+   "top3": 0.9,
+   "ece_p_crop": 0.13979935646057132,
+   "false_crop_conflict": 0.1,
+   "v2": {
+    "named": 0.7,
+    "named_acc": 0.8571428571428571,
+    "known_rejected": 0.30000000000000004,
+    "unknown_top3_has_true": 0.6666666666666666
+   },
+   "v3": {
+    "named": 0.7,
+    "named_acc": 0.8571428571428571,
+    "known_rejected": 0.30000000000000004,
+    "unknown_top3_has_true": 0.6666666666666666
+   }
+  },
+  "field:apple_healthy": {
+   "n": 9,
+   "top1": 0.8888888888888888,
+   "top3": 1.0,
+   "ece_p_crop": 0.1907585528161791,
+   "false_crop_conflict": 0.2222222222222222,
+   "v2": {
+    "named": 0.7777777777777778,
+    "named_acc": 0.8571428571428571,
+    "known_rejected": 0.2222222222222222,
+    "unknown_top3_has_true": 1.0
+   },
+   "v3": {
+    "named": 0.7777777777777778,
+    "named_acc": 0.8571428571428571,
+    "known_rejected": 0.2222222222222222,
+    "unknown_top3_has_true": 1.0
+   }
+  },
+  "field:blueberry_healthy": {
+   "n": 10,
+   "top1": 1.0,
+   "top3": 1.0,
+   "ece_p_crop": 0.0,
+   "false_crop_conflict": 0.4,
+   "v2": {
+    "named": 0.6,
+    "named_acc": 1.0,
+    "known_rejected": 0.4,
+    "unknown_top3_has_true": 1.0
+   },
+   "v3": {
+    "named": 0.0,
+    "named_acc": null,
+    "known_rejected": 1.0,
+    "unknown_top3_has_true": 1.0
+   }
+  },
+  "field:raspberry_healthy": {
+   "n": 7,
+   "top1": 1.0,
+   "top3": 1.0,
+   "ece_p_crop": 0.0,
+   "false_crop_conflict": 0.0,
+   "v2": {
+    "named": 1.0,
+    "named_acc": 1.0,
+    "known_rejected": 0.0,
+    "unknown_top3_has_true": null
+   },
+   "v3": {
+    "named": 0.0,
+    "named_acc": null,
+    "known_rejected": 1.0,
+    "unknown_top3_has_true": 1.0
+   }
+  },
+  "field:soybean_healthy": {
+   "n": 8,
+   "top1": 1.0,
+   "top3": 1.0,
+   "ece_p_crop": 0.0,
+   "false_crop_conflict": 0.5,
+   "v2": {
+    "named": 0.5,
+    "named_acc": 1.0,
+    "known_rejected": 0.5,
+    "unknown_top3_has_true": 1.0
+   },
+   "v3": {
+    "named": 0.0,
+    "named_acc": null,
+    "known_rejected": 1.0,
+    "unknown_top3_has_true": 1.0
+   }
+  },
+  "field:cherry_healthy": {
+   "n": 10,
+   "top1": 1.0,
+   "top3": 1.0,
+   "ece_p_crop": 0.03167020082473755,
+   "false_crop_conflict": 0.5,
+   "v2": {
+    "named": 0.6,
+    "named_acc": 1.0,
+    "known_rejected": 0.4,
+    "unknown_top3_has_true": 1.0
+   },
+   "v3": {
+    "named": 0.5,
+    "named_acc": 1.0,
+    "known_rejected": 0.5,
+    "unknown_top3_has_true": 1.0
+   }
+  },
+  "field:peach_healthy": {
+   "n": 9,
+   "top1": 1.0,
+   "top3": 1.0,
+   "ece_p_crop": 0.056172721915774874,
+   "false_crop_conflict": 0.2222222222222222,
+   "v2": {
+    "named": 0.7777777777777778,
+    "named_acc": 1.0,
+    "known_rejected": 0.2222222222222222,
+    "unknown_top3_has_true": 1.0
+   },
+   "v3": {
+    "named": 0.7777777777777778,
+    "named_acc": 1.0,
+    "known_rejected": 0.2222222222222222,
+    "unknown_top3_has_true": 1.0
+   }
+  },
+  "field:strawberry_healthy": {
+   "n": 8,
+   "top1": 1.0,
+   "top3": 1.0,
+   "ece_p_crop": 0.0006935596466064453,
+   "false_crop_conflict": 0.0,
+   "v2": {
+    "named": 1.0,
+    "named_acc": 1.0,
+    "known_rejected": 0.0,
+    "unknown_top3_has_true": null
+   },
+   "v3": {
+    "named": 1.0,
+    "named_acc": 1.0,
+    "known_rejected": 0.0,
+    "unknown_top3_has_true": null
+   }
+  },
+  "field:corn_gray_leaf_spot": {
+   "n": 3,
+   "top1": 0.3333333333333333,
+   "top3": 1.0,
+   "ece_p_crop": 0.629551351070404,
+   "false_crop_conflict": 0.0,
+   "v2": {
+    "named": 1.0,
+    "named_acc": 0.3333333333333333,
+    "known_rejected": 0.0,
+    "unknown_top3_has_true": null
+   },
+   "v3": {
+    "named": 1.0,
+    "named_acc": 0.3333333333333333,
+    "known_rejected": 0.0,
+    "unknown_top3_has_true": null
+   }
+  },
+  "field:corn_common_rust": {
+   "n": 10,
+   "top1": 0.8,
+   "top3": 0.9,
+   "ece_p_crop": 0.24088895320892337,
+   "false_crop_conflict": 0.0,
+   "v2": {
+    "named": 0.9,
+    "named_acc": 0.7777777777777778,
+    "known_rejected": 0.09999999999999998,
+    "unknown_top3_has_true": 1.0
+   },
+   "v3": {
+    "named": 0.9,
+    "named_acc": 0.7777777777777778,
+    "known_rejected": 0.09999999999999998,
+    "unknown_top3_has_true": 1.0
+   }
+  },
+  "field:corn_northern_leaf_blight": {
+   "n": 10,
+   "top1": 0.5,
+   "top3": 1.0,
+   "ece_p_crop": 0.4812675714492798,
+   "false_crop_conflict": 0.0,
+   "v2": {
+    "named": 1.0,
+    "named_acc": 0.5,
+    "known_rejected": 0.0,
+    "unknown_top3_has_true": null
+   },
+   "v3": {
+    "named": 1.0,
+    "named_acc": 0.5,
+    "known_rejected": 0.0,
+    "unknown_top3_has_true": null
+   }
+  },
+  "field:grape_black_rot": {
+   "n": 8,
+   "top1": 1.0,
+   "top3": 1.0,
+   "ece_p_crop": 0.005054831504821777,
+   "false_crop_conflict": 0.0,
+   "v2": {
+    "named": 1.0,
+    "named_acc": 1.0,
+    "known_rejected": 0.0,
+    "unknown_top3_has_true": null
+   },
+   "v3": {
+    "named": 1.0,
+    "named_acc": 1.0,
+    "known_rejected": 0.0,
+    "unknown_top3_has_true": null
+   }
+  },
+  "field:grape_healthy": {
+   "n": 12,
+   "top1": 1.0,
+   "top3": 1.0,
+   "ece_p_crop": 0.004872560501098633,
+   "false_crop_conflict": 0.0,
+   "v2": {
+    "named": 1.0,
+    "named_acc": 1.0,
+    "known_rejected": 0.0,
+    "unknown_top3_has_true": null
+   },
+   "v3": {
+    "named": 1.0,
+    "named_acc": 1.0,
+    "known_rejected": 0.0,
+    "unknown_top3_has_true": null
+   }
+  },
+  "field:pepper_bacterial_spot": {
+   "n": 9,
+   "top1": 1.0,
+   "top3": 1.0,
+   "ece_p_crop": 0.049089312553405755,
+   "false_crop_conflict": 0.3333333333333333,
+   "v2": {
+    "named": 0.5555555555555556,
+    "named_acc": 1.0,
+    "known_rejected": 0.4444444444444444,
+    "unknown_top3_has_true": 1.0
+   },
+   "v3": {
+    "named": 0.5555555555555556,
+    "named_acc": 1.0,
+    "known_rejected": 0.4444444444444444,
+    "unknown_top3_has_true": 1.0
+   }
+  },
+  "field:pepper_healthy": {
+   "n": 8,
+   "top1": 0.625,
+   "top3": 1.0,
+   "ece_p_crop": 0.283071331679821,
+   "false_crop_conflict": 0.0,
+   "v2": {
+    "named": 0.75,
+    "named_acc": 0.6666666666666666,
+    "known_rejected": 0.25,
+    "unknown_top3_has_true": 1.0
+   },
+   "v3": {
+    "named": 0.75,
+    "named_acc": 0.6666666666666666,
+    "known_rejected": 0.25,
+    "unknown_top3_has_true": 1.0
+   }
+  },
+  "field:potato_early_blight": {
+   "n": 7,
+   "top1": 0.5714285714285714,
+   "top3": 1.0,
+   "ece_p_crop": 0.4617506095341274,
+   "false_crop_conflict": 0.2857142857142857,
+   "v2": {
+    "named": 0.7142857142857143,
+    "named_acc": 0.4,
+    "known_rejected": 0.2857142857142857,
+    "unknown_top3_has_true": 1.0
+   },
+   "v3": {
+    "named": 0.7142857142857143,
+    "named_acc": 0.4,
+    "known_rejected": 0.2857142857142857,
+    "unknown_top3_has_true": 1.0
+   }
+  },
+  "field:potato_late_blight": {
+   "n": 5,
+   "top1": 1.0,
+   "top3": 1.0,
+   "ece_p_crop": 0.021766054630279544,
+   "false_crop_conflict": 0.2,
+   "v2": {
+    "named": 0.6,
+    "named_acc": 1.0,
+    "known_rejected": 0.4,
+    "unknown_top3_has_true": 1.0
+   },
+   "v3": {
+    "named": 0.6,
+    "named_acc": 1.0,
+    "known_rejected": 0.4,
+    "unknown_top3_has_true": 1.0
+   }
+  },
+  "field:squash_powdery_mildew": {
+   "n": 6,
+   "top1": 1.0,
+   "top3": 1.0,
+   "ece_p_crop": 0.0,
+   "false_crop_conflict": 0.0,
+   "v2": {
+    "named": 1.0,
+    "named_acc": 1.0,
+    "known_rejected": 0.0,
+    "unknown_top3_has_true": null
+   },
+   "v3": {
+    "named": 0.0,
+    "named_acc": null,
+    "known_rejected": 1.0,
+    "unknown_top3_has_true": 1.0
+   }
+  },
+  "field:tomato_bacterial_spot": {
+   "n": 8,
+   "top1": 0.375,
+   "top3": 1.0,
+   "ece_p_crop": 0.5578315332531929,
+   "false_crop_conflict": 0.25,
+   "v2": {
+    "named": 0.625,
+    "named_acc": 0.4,
+    "known_rejected": 0.375,
+    "unknown_top3_has_true": 1.0
+   },
+   "v3": {
+    "named": 0.625,
+    "named_acc": 0.4,
+    "known_rejected": 0.375,
+    "unknown_top3_has_true": 1.0
+   }
+  },
+  "field:tomato_early_blight": {
+   "n": 9,
+   "top1": 0.8888888888888888,
+   "top3": 0.8888888888888888,
+   "ece_p_crop": 0.13748511009746128,
+   "false_crop_conflict": 0.2222222222222222,
+   "v2": {
+    "named": 0.5555555555555556,
+    "named_acc": 1.0,
+    "known_rejected": 0.4444444444444444,
+    "unknown_top3_has_true": 0.75
+   },
+   "v3": {
+    "named": 0.5555555555555556,
+    "named_acc": 1.0,
+    "known_rejected": 0.4444444444444444,
+    "unknown_top3_has_true": 0.75
+   }
+  },
+  "field:tomato_late_blight": {
+   "n": 10,
+   "top1": 1.0,
+   "top3": 1.0,
+   "ece_p_crop": 0.1385591268539429,
+   "false_crop_conflict": 0.3,
+   "v2": {
+    "named": 0.7,
+    "named_acc": 1.0,
+    "known_rejected": 0.30000000000000004,
+    "unknown_top3_has_true": 1.0
+   },
+   "v3": {
+    "named": 0.7,
+    "named_acc": 1.0,
+    "known_rejected": 0.30000000000000004,
+    "unknown_top3_has_true": 1.0
+   }
+  },
+  "field:tomato_leaf_mold": {
+   "n": 6,
+   "top1": 0.8333333333333334,
+   "top3": 0.8333333333333334,
+   "ece_p_crop": 0.20177420973777768,
+   "false_crop_conflict": 0.16666666666666666,
+   "v2": {
+    "named": 0.5,
+    "named_acc": 1.0,
+    "known_rejected": 0.5,
+    "unknown_top3_has_true": 0.6666666666666666
+   },
+   "v3": {
+    "named": 0.5,
+    "named_acc": 1.0,
+    "known_rejected": 0.5,
+    "unknown_top3_has_true": 0.6666666666666666
+   }
+  },
+  "field:tomato_septoria_leaf_spot": {
+   "n": 10,
+   "top1": 0.9,
+   "top3": 1.0,
+   "ece_p_crop": 0.10544524192810059,
+   "false_crop_conflict": 0.0,
+   "v2": {
+    "named": 0.8,
+    "named_acc": 1.0,
+    "known_rejected": 0.19999999999999996,
+    "unknown_top3_has_true": 1.0
+   },
+   "v3": {
+    "named": 0.8,
+    "named_acc": 1.0,
+    "known_rejected": 0.19999999999999996,
+    "unknown_top3_has_true": 1.0
+   }
+  },
+  "field:tomato_yellow_leaf_curl_virus": {
+   "n": 5,
+   "top1": 0.8,
+   "top3": 1.0,
+   "ece_p_crop": 0.16000316739082338,
+   "false_crop_conflict": 0.0,
+   "v2": {
+    "named": 0.8,
+    "named_acc": 1.0,
+    "known_rejected": 0.19999999999999996,
+    "unknown_top3_has_true": 1.0
+   },
+   "v3": {
+    "named": 0.8,
+    "named_acc": 1.0,
+    "known_rejected": 0.19999999999999996,
+    "unknown_top3_has_true": 1.0
+   }
+  },
+  "field:tomato_mosaic_virus": {
+   "n": 10,
+   "top1": 0.5,
+   "top3": 0.8,
+   "ece_p_crop": 0.3793281495571137,
+   "false_crop_conflict": 0.2,
+   "v2": {
+    "named": 0.2,
+    "named_acc": 0.5,
+    "known_rejected": 0.8,
+    "unknown_top3_has_true": 0.875
+   },
+   "v3": {
+    "named": 0.2,
+    "named_acc": 0.5,
+    "known_rejected": 0.8,
+    "unknown_top3_has_true": 0.875
+   }
+  },
+  "field:tomato_healthy": {
+   "n": 8,
+   "top1": 0.625,
+   "top3": 0.75,
+   "ece_p_crop": 0.33089539781212807,
+   "false_crop_conflict": 0.25,
+   "v2": {
+    "named": 0.625,
+    "named_acc": 0.8,
+    "known_rejected": 0.375,
+    "unknown_top3_has_true": 0.3333333333333333
+   },
+   "v3": {
+    "named": 0.5,
+    "named_acc": 0.75,
+    "known_rejected": 0.5,
+    "unknown_top3_has_true": 0.5
+   }
+  },
+  "apple_field:apple_scab": {
+   "n": 537,
+   "top1": 0.9906890130353817,
+   "top3": 1.0,
+   "ece_p_crop": 0.0115499306102483,
+   "false_crop_conflict": 0.0,
+   "v2": {
+    "named": 0.9795158286778398,
+    "named_acc": 0.9923954372623575,
+    "known_rejected": 0.020484171322160183,
+    "unknown_top3_has_true": 1.0
+   },
+   "v3": {
+    "named": 0.9795158286778398,
+    "named_acc": 0.9923954372623575,
+    "known_rejected": 0.020484171322160183,
+    "unknown_top3_has_true": 1.0
+   }
+  },
+  "apple_field:apple_black_rot": {
+   "n": 313,
+   "top1": 0.9808306709265175,
+   "top3": 0.9968051118210862,
+   "ece_p_crop": 0.004942455611670773,
+   "false_crop_conflict": 0.0,
+   "v2": {
+    "named": 0.9840255591054313,
+    "named_acc": 0.9902597402597403,
+    "known_rejected": 0.015974440894568676,
+    "unknown_top3_has_true": 1.0
+   },
+   "v3": {
+    "named": 0.9840255591054313,
+    "named_acc": 0.9902597402597403,
+    "known_rejected": 0.015974440894568676,
+    "unknown_top3_has_true": 1.0
+   }
+  },
+  "apple_field:apple_cedar_rust": {
+   "n": 235,
+   "top1": 0.9574468085106383,
+   "top3": 1.0,
+   "ece_p_crop": 0.030529470139361425,
+   "false_crop_conflict": 0.0,
+   "v2": {
+    "named": 0.9787234042553191,
+    "named_acc": 0.9695652173913043,
+    "known_rejected": 0.021276595744680882,
+    "unknown_top3_has_true": 1.0
+   },
+   "v3": {
+    "named": 0.9787234042553191,
+    "named_acc": 0.9695652173913043,
+    "known_rejected": 0.021276595744680882,
+    "unknown_top3_has_true": 1.0
+   }
+  },
+  "apple_field:apple_alternaria_leaf_spot": {
+   "n": 225,
+   "top1": 0.9688888888888889,
+   "top3": 0.9911111111111112,
+   "ece_p_crop": 0.017771675851610026,
+   "false_crop_conflict": 0.0,
+   "v2": {
+    "named": 0.9866666666666667,
+    "named_acc": 0.9774774774774775,
+    "known_rejected": 0.013333333333333308,
+    "unknown_top3_has_true": 1.0
+   },
+   "v3": {
+    "named": 0.9866666666666667,
+    "named_acc": 0.9774774774774775,
+    "known_rejected": 0.013333333333333308,
+    "unknown_top3_has_true": 1.0
+   }
+  },
+  "apple_field:apple_marssonina_blotch": {
+   "n": 41,
+   "top1": 1.0,
+   "top3": 1.0,
+   "ece_p_crop": 0.0037931203842163086,
+   "false_crop_conflict": 0.0,
+   "v2": {
+    "named": 1.0,
+    "named_acc": 1.0,
+    "known_rejected": 0.0,
+    "unknown_top3_has_true": null
+   },
+   "v3": {
+    "named": 1.0,
+    "named_acc": 1.0,
+    "known_rejected": 0.0,
+    "unknown_top3_has_true": null
+   }
+  },
+  "apple_field:apple_grey_spot": {
+   "n": 28,
+   "top1": 0.9642857142857143,
+   "top3": 1.0,
+   "ece_p_crop": 0.051281545843396864,
+   "false_crop_conflict": 0.0,
+   "v2": {
+    "named": 0.9285714285714286,
+    "named_acc": 1.0,
+    "known_rejected": 0.0714285714285714,
+    "unknown_top3_has_true": 1.0
+   },
+   "v3": {
+    "named": 0.9285714285714286,
+    "named_acc": 1.0,
+    "known_rejected": 0.0714285714285714,
+    "unknown_top3_has_true": 1.0
+   }
+  },
+  "apple_field:apple_powdery_mildew": {
+   "n": 115,
+   "top1": 0.991304347826087,
+   "top3": 1.0,
+   "ece_p_crop": 0.014468483302904213,
+   "false_crop_conflict": 0.0,
+   "v2": {
+    "named": 0.991304347826087,
+    "named_acc": 0.9912280701754386,
+    "known_rejected": 0.008695652173912993,
+    "unknown_top3_has_true": 1.0
+   },
+   "v3": {
+    "named": 0.991304347826087,
+    "named_acc": 0.9912280701754386,
+    "known_rejected": 0.008695652173912993,
+    "unknown_top3_has_true": 1.0
+   }
+  },
+  "apple_field:apple_mosaic": {
+   "n": 217,
+   "top1": 1.0,
+   "top3": 1.0,
+   "ece_p_crop": 0.004172563552856445,
+   "false_crop_conflict": 0.0,
+   "v2": {
+    "named": 1.0,
+    "named_acc": 1.0,
+    "known_rejected": 0.0,
+    "unknown_top3_has_true": null
+   },
+   "v3": {
+    "named": 1.0,
+    "named_acc": 1.0,
+    "known_rejected": 0.0,
+    "unknown_top3_has_true": null
+   }
+  },
+  "apple_field:apple_healthy": {
+   "n": 208,
+   "top1": 0.9855769230769231,
+   "top3": 1.0,
+   "ece_p_crop": 0.00868008113824404,
+   "false_crop_conflict": 0.0,
+   "v2": {
+    "named": 0.9663461538461539,
+    "named_acc": 0.9950248756218906,
+    "known_rejected": 0.033653846153846145,
+    "unknown_top3_has_true": 1.0
+   },
+   "v3": {
+    "named": 0.9663461538461539,
+    "named_acc": 0.9950248756218906,
+    "known_rejected": 0.033653846153846145,
+    "unknown_top3_has_true": 1.0
+   }
+  }
+ },
+ "wrong_crop_claims": {
+  "lab": {
+   "pairs": 71812,
+   "v2_named": 8.355149557177074e-05,
+   "v3_named": 4.177574778588537e-05
+  },
+  "field": {
+   "pairs": 2925,
+   "v2_named": 0.012991452991452991,
+   "v3_named": 0.008205128205128205
+  }
+ },
+ "ood": {
+  "dtd_texture": {
+   "n_photos": 1861,
+   "per_claimed_crop": {
+    "apple": {
+     "v2_named": 0.03331542181622783,
+     "v3_named": 0.03277807630306287
+    },
+    "bell pepper": {
+     "v2_named": 0.018807092960773777,
+     "v3_named": 0.017195056421278884
+    },
+    "blueberry": {
+     "v2_named": 0.05588393336915637,
+     "v3_named": 0.0
+    },
+    "cherry": {
+     "v2_named": 0.019881783987103708,
+     "v3_named": 0.014508328855454057
+    },
+    "citrus": {
+     "v2_named": 0.0016120365394948952,
+     "v3_named": 0.0
+    },
+    "grape": {
+     "v2_named": 0.023643202579258463,
+     "v3_named": 0.022568511552928532
+    },
+    "maize": {
+     "v2_named": 0.15583019881783988,
+     "v3_named": 0.15421816227834498
+    },
+    "peach": {
+     "v2_named": 0.08866200967221924,
+     "v3_named": 0.07522837184309511
+    },
+    "potato": {
+     "v2_named": 0.04782375067168189,
+     "v3_named": 0.042987641053197204
+    },
+    "raspberry": {
+     "v2_named": 0.043524986566362174,
+     "v3_named": 0.0
+    },
+    "soybean": {
+     "v2_named": 0.026329930145083287,
+     "v3_named": 0.0
+    },
+    "squash": {
+     "v2_named": 0.04191295002686728,
+     "v3_named": 0.0
+    },
+    "strawberry": {
+     "v2_named": 0.004836109618484685,
+     "v3_named": 0.004298764105319721
+    },
+    "tomato": {
+     "v2_named": 0.06663084363245567,
+     "v3_named": 0.06663084363245567
+    }
+   },
+   "v2_named": 0.0449067321716435,
+   "v3_named": 0.030743839717509786
+  },
+  "unsupported_plant": {
+   "n_photos": 270,
+   "per_claimed_crop": {
+    "apple": {
+     "v2_named": 0.040740740740740744,
+     "v3_named": 0.037037037037037035
+    },
+    "bell pepper": {
+     "v2_named": 0.037037037037037035,
+     "v3_named": 0.025925925925925925
+    },
+    "blueberry": {
+     "v2_named": 0.1,
+     "v3_named": 0.0
+    },
+    "cherry": {
+     "v2_named": 0.13333333333333333,
+     "v3_named": 0.1259259259259259
+    },
+    "citrus": {
+     "v2_named": 0.0,
+     "v3_named": 0.0
+    },
+    "grape": {
+     "v2_named": 0.014814814814814815,
+     "v3_named": 0.014814814814814815
+    },
+    "maize": {
+     "v2_named": 0.0962962962962963,
+     "v3_named": 0.0962962962962963
+    },
+    "peach": {
+     "v2_named": 0.1259259259259259,
+     "v3_named": 0.1111111111111111
+    },
+    "potato": {
+     "v2_named": 0.003703703703703704,
+     "v3_named": 0.003703703703703704
+    },
+    "raspberry": {
+     "v2_named": 0.1111111111111111,
+     "v3_named": 0.0
+    },
+    "soybean": {
+     "v2_named": 0.02962962962962963,
+     "v3_named": 0.0
+    },
+    "squash": {
+     "v2_named": 0.014814814814814815,
+     "v3_named": 0.0
+    },
+    "strawberry": {
+     "v2_named": 0.02962962962962963,
+     "v3_named": 0.025925925925925925
+    },
+    "tomato": {
+     "v2_named": 0.05185185185185185,
+     "v3_named": 0.05185185185185185
+    }
+   },
+   "v2_named": 0.05634920634920636,
+   "v3_named": 0.03518518518518519
+  }
+ }
+}

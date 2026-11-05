@@ -1,0 +1,162 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://agrovaidya.invalid/stage10/schemas/plant_health_report.schema.json",
+  "title": "AgroVaidya plant health report (structured, authoritative object; prose and PDF are rendered from it)",
+  "type": "object",
+  "required": ["schema_version", "report_id", "created_at", "report_type", "language", "region", "image_metadata", "plant_identity",
+               "model_prediction", "osr_status", "visible_symptoms", "candidate_diagnoses", "differential_diagnosis",
+               "recommended_tests", "treatment_guidance", "nutrition_guidance", "soil_guidance", "immediate_actions",
+               "follow_up_plan", "evidence_sources", "uncertainty", "safety_warnings", "disclaimer", "review_status", "generator",
+               "content_keys"],
+  "properties": {
+    "schema_version": {"const": "1.0.0"},
+    "report_id": {"type": "string", "pattern": "^AV-[0-9]{8}-[A-Za-z0-9]{6,}$"},
+    "created_at": {"type": "string", "format": "date-time"},
+    "report_type": {"enum": ["known_disease", "unknown_investigation", "out_of_model_scope", "insufficient_image"]},
+    "language": {"$ref": "common.schema.json#/$defs/language_code"},
+    "region": {
+      "type": "object", "required": ["country", "state", "district"],
+      "properties": {"country": {"const": "IN"}, "state": {"type": ["string", "null"]}, "district": {"type": ["string", "null"]}},
+      "additionalProperties": false
+    },
+    "image_metadata": {
+      "type": "object", "required": ["sha256", "width", "height", "format", "quality_gate"],
+      "properties": {
+        "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+        "width": {"type": "integer", "minimum": 1}, "height": {"type": "integer", "minimum": 1},
+        "format": {"enum": ["JPEG", "PNG"]},
+        "quality_gate": {
+          "type": "object", "required": ["passed", "issues"],
+          "properties": {"passed": {"type": "boolean"}, "issues": {"type": "array", "items": {"type": "string"}}},
+          "additionalProperties": false
+        }
+      },
+      "additionalProperties": false
+    },
+    "plant_identity": {"$ref": "plant_identity.schema.json"},
+    "model_prediction": {
+      "type": "object",
+      "required": ["ran", "predicted_class", "predicted_crop", "top3", "softmax_is_calibrated", "model_versions"],
+      "properties": {
+        "ran": {"type": "boolean"},
+        "predicted_class": {"type": ["string", "null"]},
+        "predicted_crop": {"type": ["string", "null"]},
+        "top3": {"type": "array", "maxItems": 3,
+                 "items": {"type": "object", "required": ["class", "softmax"],
+                           "properties": {"class": {"type": "string"}, "softmax": {"type": "number", "minimum": 0, "maximum": 1}},
+                           "additionalProperties": false}},
+        "softmax_is_calibrated": {"const": false},
+        "model_versions": {
+          "type": "object", "required": ["stage3_checkpoint_sha256", "contrastive_checkpoint_sha256", "linear_head_sha256"],
+          "properties": {"stage3_checkpoint_sha256": {"type": "string"}, "contrastive_checkpoint_sha256": {"type": "string"},
+                         "linear_head_sha256": {"type": "string"}},
+          "additionalProperties": false
+        }
+      },
+      "additionalProperties": false
+    },
+    "osr_status": {
+      "type": "object",
+      "required": ["decision", "score_name", "score", "frozen_threshold", "rule", "percentile_known_validation", "message", "interpretation_note"],
+      "properties": {
+        "decision": {"enum": ["known", "unknown", "not_run"]},
+        "score_name": {"const": "contrastive_energy"},
+        "score": {"type": ["number", "null"]},
+        "frozen_threshold": {"type": ["number", "null"]},
+        "rule": {"const": "accept as known iff score <= frozen_threshold (95% known-validation acceptance; Stage 7)"},
+        "percentile_known_validation": {"type": ["number", "null"], "minimum": 0, "maximum": 1},
+        "borderline_display": {"type": "boolean"},
+        "other_scores": {
+          "type": "object",
+          "properties": {"msp": {"type": "number"}, "msp_says_unknown": {"type": "boolean"}, "energy": {"type": "number"},
+                         "energy_says_unknown": {"type": "boolean"}},
+          "additionalProperties": false
+        },
+        "message": {"$ref": "common.schema.json#/$defs/localized_text"},
+        "interpretation_note": {"$ref": "common.schema.json#/$defs/localized_text"}
+      },
+      "additionalProperties": false
+    },
+    "visible_symptoms": {"type": "array", "items": {"$ref": "symptom_observation.schema.json"}},
+    "candidate_diagnoses": {"type": "array", "maxItems": 3, "items": {"$ref": "disease_candidate.schema.json"}},
+    "insufficient_evidence_statement": {"$ref": "common.schema.json#/$defs/localized_text"},
+    "differential_diagnosis": {
+      "type": "object", "required": ["rows"],
+      "properties": {
+        "rows": {"type": "array", "items": {
+          "type": "object", "required": ["finding", "per_candidate"],
+          "properties": {
+            "finding": {"enum": ["crop_compatibility", "observed_symptoms_explained", "missing_expected_signs",
+                                 "environmental_compatibility", "distinguishing_test", "other"]},
+            "finding_label": {"$ref": "common.schema.json#/$defs/localized_text"},
+            "per_candidate": {"type": "object",
+                              "propertyNames": {"pattern": "^CAND-[0-9]+$"},
+                              "additionalProperties": {
+                                "type": "object", "required": ["assessment", "note", "source_ids"],
+                                "properties": {"assessment": {"enum": ["supports", "conflicts", "neutral", "unknown"]},
+                                               "note": {"$ref": "common.schema.json#/$defs/localized_text"},
+                                               "source_ids": {"$ref": "common.schema.json#/$defs/source_ids"}},
+                                "additionalProperties": false}}
+          },
+          "additionalProperties": false}}
+      },
+      "additionalProperties": false
+    },
+    "recommended_tests": {"type": "array", "items": {"$ref": "agricultural_recommendation.schema.json"}},
+    "treatment_guidance": {"type": "array", "items": {"$ref": "agricultural_recommendation.schema.json"}},
+    "nutrition_guidance": {"type": "array", "items": {"$ref": "agricultural_recommendation.schema.json"}},
+    "soil_guidance": {"type": "array", "items": {"$ref": "agricultural_recommendation.schema.json"}},
+    "immediate_actions": {"type": "array", "items": {"$ref": "agricultural_recommendation.schema.json"}},
+    "follow_up_plan": {
+      "type": "object", "required": ["enabled", "suggested_interval_days", "what_to_record"],
+      "properties": {"enabled": {"type": "boolean"}, "suggested_interval_days": {"type": ["integer", "null"], "minimum": 1},
+                     "what_to_record": {"type": "array", "items": {"$ref": "common.schema.json#/$defs/localized_text"}}},
+      "additionalProperties": false
+    },
+    "evidence_sources": {"type": "array", "items": {"$ref": "common.schema.json#/$defs/source_record"}},
+    "uncertainty": {"$ref": "common.schema.json#/$defs/uncertainty"},
+    "safety_warnings": {"type": "array", "minItems": 1, "items": {"$ref": "common.schema.json#/$defs/localized_text"}},
+    "disclaimer": {"$ref": "common.schema.json#/$defs/localized_text"},
+    "review_status": {
+      "type": "object", "required": ["expert_review", "translation_review"],
+      "properties": {
+        "expert_review": {"enum": ["pending", "reviewed"]},
+        "translation_review": {"type": "object", "propertyNames": {"pattern": "^[a-z]{2,3}$"},
+                               "additionalProperties": {"enum": ["pending_fluent_speaker_review", "reviewed", "not_applicable"]}}
+      },
+      "additionalProperties": false
+    },
+    "content_keys": {
+      "description": "language-independent identity of fixed texts (Milestone 3 finding D-6): JSON pointer of a localized_text in this report -> message-catalogue key and parameters",
+      "type": "array",
+      "items": {"type": "object", "required": ["path", "key", "params"],
+                "properties": {"path": {"type": "string", "pattern": "^(/[^/]+)+$"}, "key": {"type": "string", "pattern": "^[a-z][a-z0-9_]*$"},
+                               "params": {"type": "object", "additionalProperties": {"type": ["string", "number", "boolean", "null"]}}},
+                "additionalProperties": false}
+    },
+    "generator": {
+      "type": "object", "required": ["name", "version", "mode", "llm_used", "knowledge_base_version"],
+      "properties": {"name": {"type": "string"}, "version": {"type": "string"}, "mode": {"enum": ["deterministic_template", "llm_assisted"]},
+                     "llm_used": {"type": "boolean"},
+                     "knowledge_base_version": {"type": "string", "pattern": "^[0-9]+[.][0-9]+[.][0-9]+$",
+                                                "description": "stage10/knowledge_base/KB_VERSION.yaml kb_version used to build the report (added Milestone 3, defect D-1)"}},
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false,
+  "allOf": [
+    {"if": {"properties": {"report_type": {"const": "known_disease"}}},
+     "then": {"properties": {"osr_status": {"properties": {"decision": {"const": "known"}}},
+                             "model_prediction": {"properties": {"ran": {"const": true}, "predicted_class": {"type": "string"}}},
+                             "plant_identity": {"properties": {"in_model_scope": {"const": true}}}}}},
+    {"if": {"properties": {"report_type": {"const": "unknown_investigation"}}},
+     "then": {"properties": {"osr_status": {"properties": {"decision": {"enum": ["unknown", "not_run"]}}}}}},
+    {"if": {"properties": {"report_type": {"const": "out_of_model_scope"}}},
+     "then": {"properties": {"plant_identity": {"properties": {"in_model_scope": {"const": false}}}}}},
+    {"if": {"properties": {"report_type": {"enum": ["unknown_investigation", "out_of_model_scope"]},
+                           "candidate_diagnoses": {"maxItems": 0}}},
+     "then": {"required": ["insufficient_evidence_statement"]}},
+    {"if": {"properties": {"generator": {"properties": {"mode": {"const": "deterministic_template"}}}}},
+     "then": {"properties": {"generator": {"properties": {"llm_used": {"const": false}}}}}}
+  ]
+}

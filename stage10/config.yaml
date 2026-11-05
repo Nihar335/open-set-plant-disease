@@ -1,0 +1,116 @@
+# AgroVaidya Plant Health Intelligence — Stage 10 extension configuration.
+# The root config.yaml is FROZEN (Stages 1-9) and must not be edited; every Stage-10 setting lives here.
+# No secrets in this file: API keys (if an optional LLM provider is ever enabled) come from environment variables.
+version: 1
+schema_version: "1.0.0"
+
+frozen_model:                         # reused, never modified (see stage10/BASELINE_AUDIT.md)
+  predictor: src/inference/predictor.py::OSRPredictor
+  decision_score: contrastive_energy  # Stage-7 linear head; frozen threshold read from results/metrics/contrastive_thresholds.json
+  threshold_source: results/metrics/contrastive_thresholds.json#thresholds/contrastive::energy_linear_head
+  supported_crops: [Apple, Corn, Grape, Pepper bell, Potato, Tomato]
+  softmax_is_calibrated: false        # never displayed as a probability of correctness
+  borderline_display:                 # NOT a threshold: a display-only band from frozen known-validation percentiles
+    enabled: false                    # stays off until defined and documented in a later milestone
+
+language:
+  default: en
+  supported: [en, hi]                 # localization-ready: add codes + catalogues later
+  requires_fluent_review: [hi]        # Hindi marked "pending fluent-speaker review" until reviewed
+  keep_english_source: true
+  # Interface languages (SC-M5-02, owner decision 2026-10-15; narrowed by the owner to six): English, Hindi, Bengali, Telugu, Marathi, Tamil. Every
+  # non-English catalogue is a machine-made DRAFT until a fluent speaker reviews it (shown on screen). Report-engine
+  # text above stays en/hi; other languages show the interface and knowledge-base draft tables in stage10/app/i18n/.
+  ui_languages:
+    - {code: en, native: English, english: English, dir: ltr}
+    - {code: hi, native: "हिन्दी", english: Hindi, dir: ltr}
+    - {code: bn, native: "বাংলা", english: Bengali, dir: ltr}
+    - {code: te, native: "తెలుగు", english: Telugu, dir: ltr}
+    - {code: mr, native: "मराठी", english: Marathi, dir: ltr}
+    - {code: ta, native: "தமிழ்", english: Tamil, dir: ltr}
+
+region:
+  country: IN
+  granularity: state_or_district      # never request precise location
+  default_region: null
+
+candidates:
+  max_candidates: 3
+  allow_fewer: true                   # never pad to 3
+  min_supporting_findings: 2          # placeholder minimum evidence; to be justified in the retrieval milestone
+  require_crop_compatibility: true
+  ranking_score_is_probability: false
+  validation_status: unvalidated      # until evaluated on independent data
+  retrieval:                          # text/feature-based KB retrieval (Milestone 2); weights are a-priori, NOT tuned on data
+    method: kb_symptom_match
+    weights: {distinguishing: 2.0, typical: 1.0, occasional: 0.5, environment: 0.5}
+    conflict_penalty: {distinguishing: 2.0, typical: 1.0, occasional: 0.0}
+    min_supporting_symptom_features: 2   # symptom (non-environment) features observed AND described for the condition
+    min_score_exclusive: 0.0             # candidates whose conflicts cancel their support are dropped
+    exclude_stub_records: true
+    require_plant_compatibility: true    # if the plant is known, only conditions sourced for that plant are eligible
+    max_questions: 4
+
+image_quality:
+  max_upload_mb: 10
+  allowed_formats: [jpeg, png]
+  min_side_px: 224
+  blur_laplacian_var_min: 27.3        # M5-A2: P1 of 400 Stage 1-9 VALIDATION images (stage10/vision/quality_calibration.json)
+  brightness_range: [20.6, 185.1]     # M5-A2: [P0.5, P99.5] of the same images; lab photos -> re-check on field photos
+
+knowledge_base:
+  path: stage10/knowledge_base
+  require_source_for_consequential: true
+  allow_pesticide_dose: false         # doses only if a registered-label / official source is attached AND expert-reviewed
+  allow_fertilizer_prescription: false
+  expert_review_required: true
+
+llm:
+  enabled: false                      # deterministic template generator only (Milestone 1 decision)
+  provider: null
+  model: null
+  api_key_env: null
+  request_timeout_s: 30
+  max_requests_per_report: 0
+  send_images_externally: false
+  requires_user_consent: true
+
+storage:
+  followups_enabled: false            # opt-in; implemented in a later milestone
+  path: results/stage10/followups
+  retention_days: null                # user-deletable; no automatic retention policy yet
+
+pdf:
+  library: fpdf2                      # approved: fpdf2 + uharfbuzz (installed in the PDF milestone, pinned then)
+  text_shaping: true
+  font_regular_candidates: ["C:/Windows/Fonts/Nirmala.ttc"]
+
+data_guards:
+  forbidden_manifest: data/splits/test.csv   # paths listed here may never be opened by Stage-10 code
+  forbidden_roles_note: all unknown_near, unknown_far_*, PlantDoc and DTD images are final-test only
+
+outputs:
+  dir: results/stage10
+
+speech:                               # M5-B2 / M5-E1: LOCAL/OFFLINE speech (owner directive 2026-10-15; SPEECH_DECISION.md)
+  mode: local                         # disabled | local | external  (external needs per-session consent + owner approval; none approved)
+  worker_python: C:/Users/nihar/venvs/agrovaidya-speech/Scripts/python.exe   # isolated environment (vosk, kokoro-onnx)
+  stt_languages: [en, hi]             # engines installed and working; NOT verified (WER on farmer speech + usability pending)
+  tts_languages: [en, hi]             # Hindi voice quality NOT reviewed by a native speaker (draft)
+  language_status:
+    en: "available - not verified: farmer-speech WER and usability tests pending"
+    hi: "available - draft: not reviewed by a fluent Hindi speaker; farmer-speech WER pending"
+  models:                             # chosen from measured comparison (stage10/app/speech/model_comparison.json); reversible
+    stt_en: vosk-model-en-in-0.5      # Indian-English acoustic model (1 GB); FLEURS en_us WER 38.6% (US accents: accent fit unverified)
+    stt_hi: vosk-model-hi-0.22        # FLEURS hi_in WER 13.0% (vs 17.4% small); 3.2 GB RAM; ~20 s first load (warm-up on consent)
+    stt_en_names: vosk-model-small-en-in-0.4   # closed plant-name vocabulary needs a small model (large models ignore grammars)
+    stt_hi_names: vosk-model-small-hi-0.22
+    tts: kokoro-v1.0.int8.onnx        # int8 Kokoro-82M, CPU
+  max_audio_seconds: 30
+  max_audio_bytes: 2000000
+  accepted_audio_types: [audio/wav]   # the browser records 16 kHz mono PCM WAV (no external decoder needed)
+  min_confidence: 0.6                 # PROVISIONAL mean word confidence gate (reversible); owner decision D6 sets the final gate
+  max_tts_chars: 2000
+  consent_version: speech-consent-v1
+  retain_audio: false                 # audio is never written to disk or logs
+  external_provider: null             # none approved

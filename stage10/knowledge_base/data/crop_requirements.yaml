@@ -1,0 +1,262 @@
+# Crop growing requirements (temperature, soil, which nutrients). Claim text is our wording and never states a dose;
+# passages are verbatim from the cached sources (checked by kb.py). Nothing here is expert-reviewed. null = not sourced yet.
+- crop_requirement_id: CROPREQ-TOMATO
+  plant_id: PLANT-TOMATO
+  temperature:
+    text: 'Warm-season crop: best fruit colour and quality at 21–24 °C; above 32 °C fruit set suffers; below 10 °C growth slows; cannot stand
+      frost.'
+    evidence:
+    - source_id: SRC-VIKAS-TOMATO
+      passage: Tomato is a warm season crop.
+    - source_id: SRC-VIKAS-TOMATO
+      passage: Temperatures above 32 o C adversely affects the fruit set and development.
+    - source_id: SRC-VIKAS-TOMATO
+      passage: The plants cannot withstand frost and high humidity.
+  soil:
+    text: Grows on sandy to heavy clay soils; ideal are well-drained sandy or red loam soils rich in organic matter, pH 6.0–7.0.
+    evidence:
+    - source_id: SRC-VIKAS-TOMATO
+      passage: well-drained, sandy or red loam soils rich in organic matter with a pH range of 6.0-7.0 are considered as ideal.
+  nutrients:
+    needed:
+    - organic_manure
+    - nitrogen
+    - phosphorus
+    - potassium
+    claim:
+      text: Well-decomposed farmyard manure plus nitrogen, phosphorus and potassium; the amount depends on soil fertility and manure used.
+      evidence:
+      - source_id: SRC-VIKAS-TOMATO
+        passage: The fertilizer dose depends upon the fertility of soil and amount of organic manure applied to the crop.
+      - source_id: SRC-VIKAS-TOMATO
+        passage: application of 120 kg N, 80 kg P 2 O 5 and 50 kg K 2 O per hectare is recommended
+  notes: []
+  geographic_applicability: India_specific
+  review_status: source_verified
+- crop_requirement_id: CROPREQ-POTATO
+  plant_id: PLANT-POTATO
+  temperature:
+    text: 'Needs moderately cool weather: leaf growth is best near 24 °C and tuber growth near 20 °C; grown in winter in the plains and summer
+      in the hills.'
+    evidence:
+    - source_id: SRC-VIKAS-POTATO
+      passage: The vegetative growth of the plant is best at a temperature of 24°C while tuber development is favoured at 20°C.
+    - source_id: SRC-VIKAS-POTATO
+      passage: potato is grown as a summer crop in the hills and as a winter crop in the tropical and subtropical regions.
+  soil:
+    text: Loose loamy or sandy loam soils rich in organic matter with good drainage; ideal pH 5.2–6.4; not saline or alkaline soils.
+    evidence:
+    - source_id: SRC-VIKAS-POTATO
+      passage: Loamy and sandy loam soils, rich in organic matter with good drainage and aeration are most suitable for cultivation of potato
+        crop.
+    - source_id: SRC-VIKAS-POTATO
+      passage: The soil with pH range of 5.2-6.4 is considered to be ideal.
+    - source_id: SRC-VIKAS-POTATO
+      passage: The potato can be grown almost on any type of soil except saline and alkaline soils.
+  nutrients:
+    needed:
+    - organic_manure
+    - nitrogen
+    - phosphorus
+    - potassium
+    claim:
+      text: 'High nutrient need: organic manure (or green manure) plus nitrogen, phosphorus and potassium; the amount depends on soil, region
+        and variety.'
+      evidence:
+      - source_id: SRC-VIKAS-POTATO
+        passage: Nutrient requirement of potato crop is quit high
+      - source_id: SRC-VIKAS-POTATO
+        passage: A fertilizer dose of 180-240 kg N, 60-90 kg P 2 O 5
+  notes: []
+  geographic_applicability: India_specific
+  review_status: source_verified
+- crop_requirement_id: CROPREQ-PEPPER-BELL
+  plant_id: PLANT-PEPPER-BELL
+  temperature:
+    text: Needs a long, warm, frost-free season; in southern India it is grown in winter at about 21 °C at night and 27 °C by day (stated for
+      paprika, the same species).
+    evidence:
+    - source_id: SRC-TNAU-CPG-HORTI-2020
+      passage: Long, warm growing season, frost free for 4-5 months is ideal.
+    - source_id: SRC-TNAU-CPG-HORTI-2020
+      passage: In tropical southern India the crop is raised during winter months (August – December) with temperature of 21ºC at night & 27 ºC
+        in day.
+  soil:
+    text: Well-drained sandy loam soil; ideal pH 6–7 with low salinity.
+    evidence:
+    - source_id: SRC-TNAU-CPG-HORTI-2020
+      passage: Well drained sandy loam soils having good percolation is most suitable to grow capsicum.
+    - source_id: SRC-TNAU-CPG-HORTI-2020
+      passage: The soil pH of 6 to 7 and EC < 1 mmhos/cm is ideal for growing capsicums.
+  nutrients:
+    needed:
+    - organic_manure
+    - nitrogen
+    - phosphorus
+    - potassium
+    claim:
+      text: Nitrogen, phosphorus and potassium (NPK), with compost or farmyard manure.
+      evidence:
+      - source_id: SRC-TNAU-CPG-HORTI-2020
+        passage: Basal 50 kg/ha NPK with straight fertilizers
+      - source_id: SRC-TNAU-CPG-HORTI-2020
+        passage: Add FYM 20 to 25 t/ha before last ploughing.
+  notes:
+  - Temperature passage comes from the paprika section of the guide (Capsicum annuum, the same species as bell pepper).
+  geographic_applicability: India_region
+  review_status: source_verified
+- crop_requirement_id: CROPREQ-APPLE
+  plant_id: PLANT-APPLE
+  temperature:
+    text: 'Temperate fruit: average summer temperature about 21–24 °C during growth, with an uninterrupted winter rest; grown at high altitude
+      in India.'
+    evidence:
+    - source_id: SRC-VIKAS-APPLE
+      passage: The average summer temperature should be around 21-24 o C during active growth period.
+    - source_id: SRC-VIKAS-APPLE
+      passage: Apple succeeds best in regions where the trees experience uninterrupted rest in winter
+  soil:
+    text: Well-drained loam soil, pH 5.5–6.5, free of hard layers and waterlogging; avoid heavy clay.
+    evidence:
+    - source_id: SRC-VIKAS-APPLE
+      passage: Apples grow best on a well-drained, loam soils having a depth of 45 cm and a pH range of pH 5.5-6.5.
+    - source_id: SRC-VIKAS-APPLE
+      passage: Soils with heavy clay or compact subsoil are to be avoided.
+  nutrients:
+    needed:
+    - organic_manure
+    - nitrogen
+    - phosphorus
+    - potassium
+    - zinc
+    - boron
+    - manganese
+    - calcium
+    claim:
+      text: Farmyard manure with nitrogen, phosphorus and potassium; some trees show zinc, boron, manganese or calcium deficiency.
+      evidence:
+      - source_id: SRC-VIKAS-APPLE
+        passage: Farmyard manure @ 10 kg./ year age of tree is applied along with other fertilizers.
+      - source_id: SRC-VIKAS-APPLE
+        passage: On some trees deficiency of zinc, boron, manganese and calcium may be observed
+  notes: []
+  geographic_applicability: India_specific
+  review_status: source_verified
+- crop_requirement_id: CROPREQ-GRAPE
+  plant_id: PLANT-GRAPE
+  temperature:
+    text: The source gives no ideal growing range; it notes vines become active once minimum temperatures rise above 15 °C (February–March planting).
+    evidence:
+    - source_id: SRC-VIKAS-GRAPES
+      passage: the minimum temperature starts rising above 15 0 C that helps in enhancing the physiological activity of the plant.
+  soil:
+    text: Well-drained, rich loamy soil, pH 6.5–7.0, low water table, low salinity, at least 1 m deep.
+    evidence:
+    - source_id: SRC-VIKAS-GRAPES
+      passage: The crop performs best in well-drained rich loamy soil with a pH of 6.5 - 7.0 with low water table with EC less than 1.0.
+    - source_id: SRC-VIKAS-GRAPES
+      passage: Soil depth should be at least 1 m.
+  nutrients:
+    needed:
+    - nitrogen
+    - phosphorus
+    - potassium
+    claim:
+      text: Nitrogen, phosphorus and potassium per vine; amounts differ by variety and region.
+      evidence:
+      - source_id: SRC-VIKAS-GRAPES
+        passage: Manures and fertilizers (Kg per vine) Variety Region N P 2 O 5 K 2 O
+  notes:
+  - No ideal growing-temperature range was found in the sources checked.
+  geographic_applicability: India_specific
+  review_status: source_verified
+- crop_requirement_id: CROPREQ-MANGO
+  plant_id: PLANT-MANGO
+  temperature:
+    text: 'Tropical crop: ideal 24–27 °C in the growing season with high humidity; frost kills young trees and sudden cold damages small fruit.'
+    evidence:
+    - source_id: SRC-VIKAS-MANGO
+      passage: Mango is essentially a tropical crop and the ideal temperature for mango cultivation is 24–27 o C during the growing season
+    - source_id: SRC-VIKAS-MANGO
+      passage: small developing fruits are damaged if the temperature suddenly falls below 4.5 o C
+  soil:
+    text: Many soils if deep with no hard pan; pH below 8.5; low salinity; water table below 3 m.
+    evidence:
+    - source_id: SRC-VIKAS-MANGO
+      passage: Mango can be grown in a wide variety of soils provided the soil is deep without any hard pan
+    - source_id: SRC-VIKAS-MANGO
+      passage: Soil should have a pH less than 8.5 upto the depth of 60 cm and the water table should be below 3 metres.
+  nutrients:
+    needed:
+    - organic_manure
+    - nitrogen
+    - phosphorus
+    - potassium
+    claim:
+      text: Farmyard manure plus nitrogen (urea or CAN), phosphorus (superphosphate) and potassium (muriate of potash), increasing with tree age.
+      evidence:
+      - source_id: SRC-VIKAS-MANGO
+        passage: 100 kg FYM, 500 g urea, 1000 g superphosphate and 1000 g muriate of potash
+  notes: []
+  geographic_applicability: India_specific
+  review_status: source_verified
+- crop_requirement_id: CROPREQ-MAIZE
+  plant_id: PLANT-MAIZE
+  temperature:
+    text: 'Tropical and subtropical crop: optimum about 21–32 °C; suitable 21–23 °C for germination and 30–32 °C for growth.'
+    evidence:
+    - source_id: SRC-TNAU-CPG-AGRI-2020
+      passage: suitable temperature for germination and growth is 21 - 23 and 30 - 32°C, respectively.
+  soil: null
+  nutrients:
+    needed:
+    - nitrogen
+    - phosphorus
+    - potassium
+    - zinc
+    - iron
+    - sulphur
+    claim:
+      text: Nitrogen, phosphorus and potassium, best based on a soil test; zinc in zinc-deficient soils; iron and sulphur on calcareous soils.
+      evidence:
+      - source_id: SRC-TNAU-CPG-AGRI-2020
+        passage: If soil test recommendation is not available adopt a blanket recommendation of 135:62.5:50 Kg/NPK ha-1
+      - source_id: SRC-TNAU-CPG-AGRI-2020
+        passage: Apply zinc sulphate @ 37.5 kg ha-1 for hybrid maize and 25 kg ha-1 for varieties can be followed in Zn deficient soils.
+      - source_id: SRC-TNAU-CPG-AGRI-2020
+        passage: Apply 50 kg FeSO4 + 12.5 t FYM ha-1 along with 40 kg S as elemental sulphur for calcareous soils.
+  notes:
+  - No soil-type or pH recommendation for maize was found in the sources checked.
+  geographic_applicability: India_region
+  review_status: source_verified
+- crop_requirement_id: CROPREQ-RICE
+  plant_id: PLANT-RICE
+  temperature:
+    text: 'Hot, humid tropical crop: optimum 21–36 °C for growth, 25–29 °C at flowering and 20–25 °C at grain formation.'
+    evidence:
+    - source_id: SRC-TNAU-CPG-AGRI-2020
+      passage: Optimum temperature for growth, flowering and grain formation is 21 - 36, 25 - 29 and 20 - 25, respectively.
+  soil:
+    text: Alluvial, sandy clay and clayey soils; yield is high at pH 5–6.5 and poor below 5 or above 9.
+    evidence:
+    - source_id: SRC-TNAU-ORG-PADDY
+      passage: In paddy cultivation, the yield will be high when the pH of the soil is between 5 and 6.5.
+    - source_id: SRC-TNAU-ORG-PADDY
+      passage: Alluvial soil, sandy clay and clayey soils are suitable for paddy cultivation.
+  nutrients:
+    needed:
+    - organic_manure
+    - nitrogen
+    - phosphorus
+    - potassium
+    - zinc
+    claim:
+      text: Manure based on a soil test for nitrogen, phosphorus and potassium; zinc where soils need it.
+      evidence:
+      - source_id: SRC-TNAU-ORG-PADDY
+        passage: Manure can be applied based on the nitrogen, potassium and phosphorus content of the soil.
+      - source_id: SRC-TNAU-CPG-AGRI-2020
+        passage: Mix 37.5 kg of zinc sulphate per ha with sand
+  notes: []
+  geographic_applicability: India_region
+  review_status: source_verified

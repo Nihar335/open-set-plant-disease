@@ -1,0 +1,73 @@
+# AgroVaidya Milestone 4 exploratory pilot: acquisition configuration (owner approval 2026-10-14: P1 + P2; P3 conditional, test-only).
+# Images are stored OUTSIDE the frozen research directories, under stage10_local/plant_id_pilot/.
+# No external identification API is used. Nothing here scores any image.
+version: 1
+storage_root: stage10_local/plant_id_pilot          # relative to the repository root
+stored_max_side_px: 1024                             # evaluation copies are downscaled; original bytes are hashed, then discarded
+min_side_px: 224                                     # images smaller than the model input on their short side are excluded
+near_duplicate_dhash_max_distance: 4                 # 64-bit difference hash; <= this many differing bits = same picture
+prohibited_md5_manifest: data/splits/manifest_all.csv   # ALL Stage 1-9 images (incl. held-out test, PlantDoc, hard unknowns, DTD)
+
+gbif:                                                # blocks P1 and P2
+  dataset_key: 50c9509d-22c7-4a22-a47d-8c48425ef4a7  # iNaturalist Research-grade Observations
+  country: IN
+  event_date: "2025-01-01,2026-10-14"                # observations on/after 2025-01-01 (after the BioCLIP 2 GBIF snapshot 2024-05-01 and EOL access Aug 2024)
+  occurrence_licences: [CC0_1_0, CC_BY_4_0]
+  media_licence_uris:                                # the MEDIA (photo) licence must be one of these
+    - http://creativecommons.org/publicdomain/zero/1.0/
+    - http://creativecommons.org/licenses/by/4.0/
+  allowed_image_hosts: [inaturalist-open-data.s3.amazonaws.com]
+  image_size_variant: medium                         # iNaturalist derivative of the same photo (longest side 500 px)
+  max_records_scanned_per_taxon: 300
+  one_image_per_observation: true
+  max_images_per_photographer_per_taxon: 2
+  split:
+    unit: photographer                               # the same photographer never appears in two splits, across all taxa
+    salt: agrovaidya-m4-pilot-v1
+    dev_fraction: 0.4                                # remaining photographers form the SEALED split
+
+blocks:
+  P1:
+    role: in_vocabulary_tree_garden_crops
+    max_images_per_taxon: 15
+    taxa:                                            # GBIF backbone accepted usageKey (species/match, 2026-10-14)
+      Mangifera indica: 3190638
+      Cocos nucifera: 2735117
+      Carica papaya: 2874484
+      Psidium guajava: 5420380
+      Sesamum indicum: 3172622
+      Momordica charantia: 2874581
+      Solanum lycopersicum: 2930137
+      Solanum melongena: 2930617
+  P2:
+    role: unsupported_out_of_vocabulary
+    max_images_per_taxon: 10
+    taxa:
+      Lantana camara: 2925303
+      Parthenium hysterophorus: 3086784
+      Calotropis gigantea: 3579089
+      Azadirachta indica: 3190474
+      Ficus religiosa: 5361935
+      Prosopis juliflora: 5358460
+  P3:
+    role: in_vocabulary_field_crops_leaf_images_TEST_ONLY
+    max_images_per_taxon: 30
+    split: sealed_only                               # never used for development, prompts, thresholds or preprocessing
+    datasets:
+      Triticum aestivum:
+        mendeley_id: 8335wpvd7r
+        include_folders: ["1. Seedling & Plant", "2. Wheat Flowers", "3. Plant with Fruit"]   # whole-plant views; grain-only folders excluded
+      Zea mays:
+        mendeley_id: 34gb2gr7p2
+        include_folders: ["Helathy", "Magnessium", "Nitrogen", "Phosphorous", "Pottasium"]    # folder spellings as published
+      Cajanus cajan:
+        mendeley_id: bd553pdtny
+        archive: PPLD.zip
+      Vigna mungo:
+        mendeley_id: zfcv9fmrgv
+        archive: BPLD Dataset.zip
+      Abelmoschus esculentus:
+        mendeley_id: nh7zk4hv8z
+        include_extensions: [jpg, jpeg]                 # annotation JSON and readme excluded
+
+exclude_name_patterns: ["(?i)aug", "(?i)augment", "(?i)mask", "(?i)segment", "(?i)flip", "(?i)rotat"]

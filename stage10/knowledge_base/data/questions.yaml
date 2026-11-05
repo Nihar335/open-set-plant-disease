@@ -1,0 +1,81 @@
+# Guided questions. Each option sets features to observed-present (true) or observed-absent (false).
+# Every question has a "not_sure" option that sets nothing. Questions never assert facts about diseases; the link between
+# a feature and a condition comes only from sourced condition records.
+- question_id: Q-CONCENTRIC-RINGS
+  text: "Do the spots show concentric rings (a target or bull's-eye pattern)?"
+  options:
+    - {option_id: "yes", label: "Yes", sets: {FEAT-CONCENTRIC-RINGS: true}}
+    - {option_id: "no", label: "No", sets: {FEAT-CONCENTRIC-RINGS: false}}
+    - {option_id: not_sure, label: "Not sure / I don't know", sets: {}}
+- question_id: Q-YELLOW-HALO
+  text: "Is there a yellow halo or yellow margin around the spots?"
+  options:
+    - {option_id: "yes", label: "Yes", sets: {FEAT-YELLOW-HALO: true}}
+    - {option_id: "no", label: "No", sets: {FEAT-YELLOW-HALO: false}}
+    - {option_id: not_sure, label: "Not sure / I don't know", sets: {}}
+- question_id: Q-LESION-SHAPE
+  text: "Which best describes the shape of the leaf lesions?"
+  options:
+    - {option_id: round_irregular, label: "Round or irregular spots", sets: {}}
+    - {option_id: cigar, label: "Long cigar/spindle-shaped lesions", sets: {FEAT-ELONGATED-CIGAR-LESIONS: true, FEAT-VEIN-LIMITED-RECTANGULAR: false}}
+    - {option_id: rectangular, label: "Rectangular, boxed in by the leaf veins", sets: {FEAT-VEIN-LIMITED-RECTANGULAR: true, FEAT-ELONGATED-CIGAR-LESIONS: false}}
+    - {option_id: stripes, label: "Stripes between the veins", sets: {FEAT-INTERVEINAL-STRIPING: true}}
+    - {option_id: not_sure, label: "Not sure / I don't know", sets: {}}
+- question_id: Q-UNDERSIDE-GROWTH
+  text: "Look at the underside of an affected leaf. Is there white growth, or dusty dark/green growth below the lesions?"
+  options:
+    - {option_id: white, label: "White growth", sets: {FEAT-WHITE-GROWTH-UNDERSIDE: true}}
+    - {option_id: dusty_dark, label: "Dusty dark or green growth", sets: {FEAT-DUSTY-SPORES-UNDERSIDE: true}}
+    - {option_id: none, label: "No visible growth", sets: {FEAT-WHITE-GROWTH-UNDERSIDE: false, FEAT-DUSTY-SPORES-UNDERSIDE: false}}
+    - {option_id: not_sure, label: "Not sure / did not check", sets: {}}
+- question_id: Q-BLACK-SPECKS
+  text: "With a hand lens, do you see tiny black dots inside the spots?"
+  options:
+    - {option_id: "yes", label: "Yes", sets: {FEAT-BLACK-SPECKS-IN-LESION: true}}
+    - {option_id: "no", label: "No", sets: {FEAT-BLACK-SPECKS-IN-LESION: false}}
+    - {option_id: not_sure, label: "Not sure / no hand lens", sets: {}}
+- question_id: Q-LEAF-AGE
+  text: "Where did the symptoms start?"
+  options:
+    - {option_id: older_lower, label: "On older/lower leaves first", sets: {FEAT-OLDER-LOWER-LEAVES-FIRST: true}}
+    - {option_id: young_upper, label: "On young/upper leaves first", sets: {FEAT-OLDER-LOWER-LEAVES-FIRST: false}}
+    - {option_id: not_sure, label: "Not sure / I don't know", sets: {}}
+- question_id: Q-WEATHER
+  text: "What has the weather been like in the past 1-2 weeks?"
+  options:
+    - {option_id: cool_wet, label: "Cool and wet", sets: {FEAT-ENV-COOL-WET: true, FEAT-ENV-HIGH-HUMIDITY-WET: true}}
+    - {option_id: warm_humid, label: "Warm and humid or warm and rainy", sets: {FEAT-ENV-WARM-HUMID: true, FEAT-ENV-HIGH-HUMIDITY-WET: true}}
+    - {option_id: dry, label: "Mostly dry", sets: {FEAT-ENV-HIGH-HUMIDITY-WET: false}}
+    - {option_id: not_sure, label: "Not sure / I don't know", sets: {}}
+- question_id: Q-WEBBING-BRONZING
+  text: "Are the leaves bronzed (reddish-brown), with fine webbing?"
+  options:
+    - {option_id: both, label: "Bronzing and webbing", sets: {FEAT-BRONZING: true, FEAT-FINE-WEBBING: true}}
+    - {option_id: bronzing_only, label: "Bronzing only", sets: {FEAT-BRONZING: true}}
+    - {option_id: neither, label: "Neither", sets: {FEAT-BRONZING: false, FEAT-FINE-WEBBING: false}}
+    - {option_id: not_sure, label: "Not sure / I don't know", sets: {}}
+- question_id: Q-SINGLE-SHOOT
+  text: "(Grapevine) Are symptoms confined to one shoot, or to shoots coming from the same spur or cane?"
+  options:
+    - {option_id: "yes", label: "Yes", sets: {FEAT-SINGLE-SHOOT-OR-CANE: true}}
+    - {option_id: "no", label: "No, spread across the vine", sets: {FEAT-SINGLE-SHOOT-OR-CANE: false}}
+    - {option_id: not_sure, label: "Not sure / I don't know", sets: {}}
+- question_id: Q-WOOD-SECTION
+  text: "(Woody plants) If a cane/spur under a symptomatic shoot is cut across, are there dark spots or rings in the wood?"
+  options:
+    - {option_id: "yes", label: "Yes", sets: {FEAT-DARK-SPOTS-WOOD-SECTION: true}}
+    - {option_id: "no", label: "No", sets: {FEAT-DARK-SPOTS-WOOD-SECTION: false}}
+    - {option_id: not_checked, label: "Not checked / not sure", sets: {}}
+- question_id: Q-INTERVEINAL
+  text: "Is the yellowing between the veins while the leaf margins stay green, or are the leaf tips and margins scorched?"
+  options:
+    - {option_id: interveinal, label: "Yellow between veins, margins green", sets: {FEAT-INTERVEINAL-CHLOROSIS-GREEN-MARGINS: true}}
+    - {option_id: margin_scorch, label: "Tips/margins scorched", sets: {FEAT-MARGIN-SCORCH: true}}
+    - {option_id: neither, label: "Neither", sets: {FEAT-INTERVEINAL-CHLOROSIS-GREEN-MARGINS: false, FEAT-MARGIN-SCORCH: false}}
+    - {option_id: not_sure, label: "Not sure / I don't know", sets: {}}
+- question_id: Q-FRUIT
+  text: "Are fruits affected?"
+  options:
+    - {option_id: "yes", label: "Yes, spots or rot on fruit", sets: {FEAT-FRUIT-LESIONS: true}}
+    - {option_id: "no", label: "No", sets: {FEAT-FRUIT-LESIONS: false}}
+    - {option_id: not_sure, label: "No fruit yet / not sure", sets: {}}

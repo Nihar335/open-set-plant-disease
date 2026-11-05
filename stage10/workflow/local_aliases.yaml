@@ -1,0 +1,36 @@
+# Reviewed local-language plant-name aliases (M5-C2). Used by stage10/workflow/plant_name.py alongside the knowledge base.
+#
+# An entry is used ONLY when review_status is "reviewed", it names a reviewer and a review date, and it has either at
+# least one knowledge-base source_id or editorial: true (a plain-language name agreed by the reviewer).
+# Entries with any other status are kept for review but are NEVER used for matching.
+# A name that maps to more than one plant becomes "ambiguous" and the user must choose; nothing is guessed.
+# No entry exists yet: local names need sourced synonyms and fluent-speaker review (M6-02). Do not add machine translations.
+version: 1
+aliases:
+# Example shape (not active):
+# - alias: "..."            # as written by speakers, in its script
+#   lang: hi                # ISO 639-1
+#   plant_id: PLANT-...
+#   source_ids: [SRC-...]   # or editorial: true
+#   review_status: reviewed # draft | reviewed
+#   reviewer: "Name, role"
+#   reviewed_on: 2026-01-01
+- alias: "टमाटर"
+  lang: hi
+  plant_id: PLANT-TOMATO
+  reference: {url: "https://www.wikidata.org/wiki/Q23501", retrieved: "2026-10-15", licence: "CC0 (Wikidata)", item_taxon_name: "Solanum lycopersicum", sha256: "db9a7af457e26a90371572c2de85fe51fb8b096ca291e90b45921645072fb752"}
+  review_status: draft            # NOT used for matching until a fluent Hindi reviewer approves it
+- alias: "आलू"
+  lang: hi
+  plant_id: PLANT-POTATO
+  reference: {url: "https://www.wikidata.org/wiki/Q10998", retrieved: "2026-10-15", licence: "CC0 (Wikidata)", item_taxon_name: "Solanum tuberosum", sha256: "5af081448ff1182f50a667e77f7b44642011f69a9e940aa5a008ed8f4a124236"}
+  review_status: draft            # NOT used for matching until a fluent Hindi reviewer approves it
+- alias: "आम"
+  lang: hi
+  plant_id: PLANT-MANGO
+  reference: {url: "https://www.wikidata.org/wiki/Q3919027", retrieved: "2026-10-15", licence: "CC0 (Wikidata)", item_taxon_name: "Mangifera indica", sha256: "01987c515ae94bead49da763f6f3ca092362b2a88b3d7921fa94e7d2ddbfc2b8"}
+  review_status: draft            # NOT used for matching until a fluent Hindi reviewer approves it
+  note: "Reviewer note: आम also means 'common/ordinary' in Hindi; check whether speech or typing can confuse it."
+# No sourced Hindi name found yet (2026-10-15, Wikidata): PLANT-APPLE, PLANT-GRAPE (no Hindi label on the species item),
+# PLANT-MAIZE (search did not return the taxon item), PLANT-PEPPER-BELL (no Hindi label), PLANT-RICE (label is only a
+# transliteration of "Oryza sativa", not a common name). These need a sourced name and fluent review.

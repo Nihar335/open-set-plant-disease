@@ -1,0 +1,87 @@
+# ---- data (reproduced by scripts/download_dataset.py) ----
+data/raw/
+data/processed/
+!data/splits/
+# ---- local-only stores: too large for GitHub, and they hold third-party
+# ---- models and images, some licensed for internal evaluation only (CC BY-NC) ----
+stage10_local/
+stage11_local/
+# ---- credentials: never commit ----
+kaggle.json
+.kaggle/
+.env
+# ---- model weights / large artefacts ----
+# Trained weights in models/ are tracked through Git LFS (see .gitattributes).
+*.pt
+!models/**/*.pt
+*.pth
+*.ckpt
+*.npy
+*.npz
+!models/contrastive/linear_head.npz
+# ---- python / tooling ----
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.ipynb_checkpoints/
+.pytest_cache/
+.vscode/
+.idea/
+.claude/
+*.log
+
+# ---- reports and documents: kept on this PC, not published ----
+/*.pdf
+/*.docx
+/*.md
+!/README.md
+/paper/
+
+# ---- results/ holds generated output: publish only what the apps load ----
+/results/*
+!/results/metrics/
+/results/metrics/*
+!/results/metrics/osr_msp_threshold.json
+!/results/metrics/osr_energy_threshold.json
+!/results/metrics/contrastive_thresholds.json
+!/results/metrics/contrastive_environment.json
+!/results/metrics/fusion_normalisation.npz
+!/results/final/
+/results/final/*
+!/results/final/final_numbers.json
+
+# ---- Stage 10: code and configuration only ----
+/stage10/**/*.md
+!/stage10/**/README.md
+!/stage10/workflow/VOICE_INPUT_CONTRACT.md
+/stage10/project_tracker.json
+/stage10/app/speech/*.json
+/stage10/plant_id/pilot/**
+!/stage10/plant_id/pilot/**/
+!/stage10/plant_id/pilot/**/*.py
+!/stage10/plant_id/pilot/**/*.yaml
+!/stage10/plant_id/pilot/vocabulary_v1.json
+/stage10/plant_id/d2/**
+!/stage10/plant_id/d2/**/
+!/stage10/plant_id/d2/**/*.py
+!/stage10/plant_id/d2/**/*.yaml
+!/stage10/plant_id/d2/protocol_v2_operating_point.json
+/stage10/plant_id/protocol_v3/**
+!/stage10/plant_id/protocol_v3/**/
+!/stage10/plant_id/protocol_v3/**/*.py
+!/stage10/plant_id/protocol_v3/**/*.yaml
+/stage10/plant_id/dataset_approval/**
+!/stage10/plant_id/dataset_approval/**/
+!/stage10/plant_id/dataset_approval/**/*.py
+!/stage10/plant_id/dataset_approval/**/*.yaml
+
+# ---- Stage 11: code, data the app reads, and training indexes only ----
+/stage11/results/*
+!/stage11/results/multicrop_eval.json
+!/stage11/results/crop_coverage.json
+!/stage11/results/image_index.csv
+!/stage11/results/extra_index.csv
+!/stage11/results/val_threshold_eval.json
+/stage11/audit/*
+!/stage11/audit/*.py

@@ -1,0 +1,12 @@
+# AgroVaidya Milestone 5 app: Python packages it uses (all were already installed in the project environment;
+# nothing new was downloaded). Versions as verified on 2026-10-15. The root requirements.txt (Stages 1-9) is unchanged.
+Flask==3.0.2
+Werkzeug==3.0.1
+Pillow==11.1.0
+numpy==1.26.4
+opencv-python==4.9.0.80
+PyYAML
+jsonschema
+referencing
+# plus the frozen Stage 1-9 inference stack (torch 2.5.1, torchvision) used by the disease model
+# Frontend: no npm packages. Node.js (>= 18) is needed only to run the frontend unit tests.

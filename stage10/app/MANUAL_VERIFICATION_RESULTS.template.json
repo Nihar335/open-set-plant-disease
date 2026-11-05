@@ -1,0 +1,175 @@
+{
+ "how_to_use": "Copy to MANUAL_VERIFICATION_RESULTS.json and fill in. No personal data, no photos of people, no voice recordings.",
+ "tester_role": "",
+ "date": "",
+ "device": "",
+ "os": "",
+ "browser": "",
+ "screen_reader": "",
+ "room_noise": "",
+ "results": {
+  "M1-1": {
+   "result": "not_run",
+   "notes": ""
+  },
+  "M1-2": {
+   "result": "not_run",
+   "notes": ""
+  },
+  "M1-3": {
+   "result": "not_run",
+   "notes": ""
+  },
+  "M1-4": {
+   "result": "not_run",
+   "notes": ""
+  },
+  "M1-5": {
+   "result": "not_run",
+   "notes": ""
+  },
+  "M1-6": {
+   "result": "not_run",
+   "notes": ""
+  },
+  "M2-1": {
+   "result": "not_run",
+   "notes": ""
+  },
+  "M2-2": {
+   "result": "not_run",
+   "notes": ""
+  },
+  "M2-3": {
+   "result": "not_run",
+   "notes": ""
+  },
+  "M2-4": {
+   "result": "not_run",
+   "notes": ""
+  },
+  "M2-5": {
+   "result": "not_run",
+   "notes": ""
+  },
+  "M2-6": {
+   "result": "not_run",
+   "notes": ""
+  },
+  "M2-7": {
+   "result": "not_run",
+   "notes": ""
+  },
+  "M2-8": {
+   "result": "not_run",
+   "notes": ""
+  },
+  "M2-9": {
+   "result": "not_run",
+   "notes": ""
+  },
+  "M2-10": {
+   "result": "not_run",
+   "notes": ""
+  },
+  "M2-11": {
+   "result": "not_run",
+   "notes": ""
+  },
+  "M3-1": {
+   "result": "not_run",
+   "notes": ""
+  },
+  "M3-2": {
+   "result": "not_run",
+   "notes": ""
+  },
+  "M3-3": {
+   "result": "not_run",
+   "notes": ""
+  },
+  "M3-4": {
+   "result": "not_run",
+   "notes": ""
+  },
+  "M3-5": {
+   "result": "not_run",
+   "notes": ""
+  },
+  "M3-6": {
+   "result": "not_run",
+   "notes": ""
+  },
+  "M4-1": {
+   "result": "not_run",
+   "notes": ""
+  },
+  "M4-2": {
+   "result": "not_run",
+   "notes": ""
+  },
+  "M4-3": {
+   "result": "not_run",
+   "notes": ""
+  },
+  "M4-4": {
+   "result": "not_run",
+   "notes": ""
+  },
+  "M4-5": {
+   "result": "not_run",
+   "notes": ""
+  },
+  "M4-6": {
+   "result": "not_run",
+   "notes": ""
+  },
+  "M4-7": {
+   "result": "not_run",
+   "notes": ""
+  },
+  "M4-8": {
+   "result": "not_run",
+   "notes": ""
+  },
+  "M5-1": {
+   "result": "not_run",
+   "notes": ""
+  },
+  "M5-2": {
+   "result": "not_run",
+   "notes": ""
+  },
+  "M5-3": {
+   "result": "not_run",
+   "notes": ""
+  },
+  "M5-4": {
+   "result": "not_run",
+   "notes": ""
+  },
+  "M5-5": {
+   "result": "not_run",
+   "notes": ""
+  },
+  "M5-6": {
+   "result": "not_run",
+   "notes": ""
+  },
+  "M5-7": {
+   "result": "not_run",
+   "notes": ""
+  }
+ },
+ "hindi_review": {
+  "reviewer_role": "",
+  "date": "",
+  "plant_names": {
+   "टमाटर": "",
+   "आलू": "",
+   "आम": ""
+  },
+  "tts_pronunciation_rating_1_to_5": null,
+  "stt_phrases_correct_of_10": null
+ }
+}

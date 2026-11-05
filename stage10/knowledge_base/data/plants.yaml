@@ -1,0 +1,279 @@
+# Plant records. Taxonomy from GBIF Backbone (exact passages from the cached API response). Common names and
+# synonyms are editorial search aliases, not botanical claims. 'Lycopersicon esculentum' is a commonly used older name
+# (editorial alias for lookup only; not asserted as a GBIF synonym).
+- plant_id: PLANT-TOMATO
+  common_names:
+  - name: Tomato
+    lang: en
+    review: editorial
+  scientific_name: Solanum lycopersicum L.
+  taxonomy:
+    kingdom: Plantae
+    family: Solanaceae
+    genus: Solanum
+    species: Solanum lycopersicum
+    status: ACCEPTED
+    database_key: GBIF:2930137
+    evidence:
+    - source_id: SRC-GBIF-SOLANUM-LYCOPERSICUM
+      passage: '"scientificName": "Solanum lycopersicum L."'
+    - source_id: SRC-GBIF-SOLANUM-LYCOPERSICUM
+      passage: '"status": "ACCEPTED"'
+    - source_id: SRC-GBIF-SOLANUM-LYCOPERSICUM
+      passage: '"family": "Solanaceae"'
+    - source_id: SRC-GBIF-SOLANUM-LYCOPERSICUM
+      passage: '"genus": "Solanum"'
+    - source_id: SRC-GBIF-SOLANUM-LYCOPERSICUM
+      passage: '"kingdom": "Plantae"'
+  synonyms:
+  - tomato
+  - Solanum lycopersicum
+  - Lycopersicon esculentum
+  crop_categories:
+  - vegetable
+  frozen_model_scope: true
+  frozen_model_crop_label: Tomato
+  review_status: source_verified
+- plant_id: PLANT-APPLE
+  common_names:
+  - name: Apple
+    lang: en
+    review: editorial
+  scientific_name: Malus domestica (Suckow) Borkh.
+  taxonomy:
+    kingdom: Plantae
+    family: Rosaceae
+    genus: Malus
+    species: Malus domestica
+    status: ACCEPTED
+    database_key: GBIF:3001244
+    evidence:
+    - source_id: SRC-GBIF-MALUS-DOMESTICA
+      passage: '"scientificName": "Malus domestica (Suckow) Borkh."'
+    - source_id: SRC-GBIF-MALUS-DOMESTICA
+      passage: '"status": "ACCEPTED"'
+    - source_id: SRC-GBIF-MALUS-DOMESTICA
+      passage: '"family": "Rosaceae"'
+    - source_id: SRC-GBIF-MALUS-DOMESTICA
+      passage: '"genus": "Malus"'
+    - source_id: SRC-GBIF-MALUS-DOMESTICA
+      passage: '"kingdom": "Plantae"'
+  synonyms:
+  - apple
+  - Malus domestica
+  crop_categories:
+  - fruit_tree
+  frozen_model_scope: true
+  frozen_model_crop_label: Apple
+  review_status: source_verified
+- plant_id: PLANT-GRAPE
+  common_names:
+  - name: Grape
+    lang: en
+    review: editorial
+  - name: Grapevine
+    lang: en
+    review: editorial
+  scientific_name: Vitis vinifera L.
+  taxonomy:
+    kingdom: Plantae
+    family: Vitaceae
+    genus: Vitis
+    species: Vitis vinifera
+    status: ACCEPTED
+    database_key: GBIF:5372392
+    evidence:
+    - source_id: SRC-GBIF-VITIS-VINIFERA
+      passage: '"scientificName": "Vitis vinifera L."'
+    - source_id: SRC-GBIF-VITIS-VINIFERA
+      passage: '"status": "ACCEPTED"'
+    - source_id: SRC-GBIF-VITIS-VINIFERA
+      passage: '"family": "Vitaceae"'
+    - source_id: SRC-GBIF-VITIS-VINIFERA
+      passage: '"genus": "Vitis"'
+    - source_id: SRC-GBIF-VITIS-VINIFERA
+      passage: '"kingdom": "Plantae"'
+  synonyms:
+  - grape
+  - grapevine
+  - Vitis vinifera
+  crop_categories:
+  - fruit_vine
+  frozen_model_scope: true
+  frozen_model_crop_label: Grape
+  review_status: source_verified
+- plant_id: PLANT-MAIZE
+  common_names:
+  - name: Maize
+    lang: en
+    review: editorial
+  - name: Corn
+    lang: en
+    review: editorial
+  scientific_name: Zea mays L.
+  taxonomy:
+    kingdom: Plantae
+    family: Poaceae
+    genus: Zea
+    species: Zea mays
+    status: ACCEPTED
+    database_key: GBIF:5290052
+    evidence:
+    - source_id: SRC-GBIF-ZEA-MAYS
+      passage: '"scientificName": "Zea mays L."'
+    - source_id: SRC-GBIF-ZEA-MAYS
+      passage: '"status": "ACCEPTED"'
+    - source_id: SRC-GBIF-ZEA-MAYS
+      passage: '"family": "Poaceae"'
+    - source_id: SRC-GBIF-ZEA-MAYS
+      passage: '"genus": "Zea"'
+    - source_id: SRC-GBIF-ZEA-MAYS
+      passage: '"kingdom": "Plantae"'
+  synonyms:
+  - maize
+  - corn
+  - Zea mays
+  - Corn (maize)
+  crop_categories:
+  - cereal
+  frozen_model_scope: true
+  frozen_model_crop_label: Corn
+  review_status: source_verified
+- plant_id: PLANT-PEPPER-BELL
+  common_names:
+  - name: Bell pepper
+    lang: en
+    review: editorial
+  - name: Capsicum
+    lang: en
+    review: editorial
+  scientific_name: Capsicum annuum L.
+  taxonomy:
+    kingdom: Plantae
+    family: Solanaceae
+    genus: Capsicum
+    species: Capsicum annuum
+    status: ACCEPTED
+    database_key: GBIF:2932944
+    evidence:
+    - source_id: SRC-GBIF-CAPSICUM-ANNUUM
+      passage: '"scientificName": "Capsicum annuum L."'
+    - source_id: SRC-GBIF-CAPSICUM-ANNUUM
+      passage: '"status": "ACCEPTED"'
+    - source_id: SRC-GBIF-CAPSICUM-ANNUUM
+      passage: '"family": "Solanaceae"'
+    - source_id: SRC-GBIF-CAPSICUM-ANNUUM
+      passage: '"genus": "Capsicum"'
+    - source_id: SRC-GBIF-CAPSICUM-ANNUUM
+      passage: '"kingdom": "Plantae"'
+  synonyms:
+  - bell pepper
+  - pepper bell
+  - sweet pepper
+  - capsicum
+  - Capsicum annuum
+  crop_categories:
+  - vegetable
+  frozen_model_scope: true
+  frozen_model_crop_label: Pepper bell
+  review_status: source_verified
+- plant_id: PLANT-POTATO
+  common_names:
+  - name: Potato
+    lang: en
+    review: editorial
+  scientific_name: Solanum tuberosum L.
+  taxonomy:
+    kingdom: Plantae
+    family: Solanaceae
+    genus: Solanum
+    species: Solanum tuberosum
+    status: ACCEPTED
+    database_key: GBIF:2930262
+    evidence:
+    - source_id: SRC-GBIF-SOLANUM-TUBEROSUM
+      passage: '"scientificName": "Solanum tuberosum L."'
+    - source_id: SRC-GBIF-SOLANUM-TUBEROSUM
+      passage: '"status": "ACCEPTED"'
+    - source_id: SRC-GBIF-SOLANUM-TUBEROSUM
+      passage: '"family": "Solanaceae"'
+    - source_id: SRC-GBIF-SOLANUM-TUBEROSUM
+      passage: '"genus": "Solanum"'
+    - source_id: SRC-GBIF-SOLANUM-TUBEROSUM
+      passage: '"kingdom": "Plantae"'
+  synonyms:
+  - potato
+  - Solanum tuberosum
+  crop_categories:
+  - vegetable
+  frozen_model_scope: true
+  frozen_model_crop_label: Potato
+  review_status: source_verified
+- plant_id: PLANT-MANGO
+  common_names:
+  - name: Mango
+    lang: en
+    review: editorial
+  scientific_name: Mangifera indica L.
+  taxonomy:
+    kingdom: Plantae
+    family: Anacardiaceae
+    genus: Mangifera
+    species: Mangifera indica
+    status: ACCEPTED
+    database_key: GBIF:3190638
+    evidence:
+    - source_id: SRC-GBIF-MANGIFERA-INDICA
+      passage: '"scientificName": "Mangifera indica L."'
+    - source_id: SRC-GBIF-MANGIFERA-INDICA
+      passage: '"status": "ACCEPTED"'
+    - source_id: SRC-GBIF-MANGIFERA-INDICA
+      passage: '"family": "Anacardiaceae"'
+    - source_id: SRC-GBIF-MANGIFERA-INDICA
+      passage: '"genus": "Mangifera"'
+    - source_id: SRC-GBIF-MANGIFERA-INDICA
+      passage: '"kingdom": "Plantae"'
+  synonyms:
+  - mango
+  - Mangifera indica
+  crop_categories:
+  - fruit_tree
+  frozen_model_scope: false
+  frozen_model_crop_label: null
+  review_status: source_verified
+- plant_id: PLANT-RICE
+  common_names:
+  - name: Rice
+    lang: en
+    review: editorial
+  - name: Paddy
+    lang: en
+    review: editorial
+  scientific_name: Oryza sativa L.
+  taxonomy:
+    kingdom: Plantae
+    family: Poaceae
+    genus: Oryza
+    species: Oryza sativa
+    status: ACCEPTED
+    database_key: GBIF:2703459
+    evidence:
+    - source_id: SRC-GBIF-ORYZA-SATIVA
+      passage: '"scientificName": "Oryza sativa L."'
+    - source_id: SRC-GBIF-ORYZA-SATIVA
+      passage: '"status": "ACCEPTED"'
+    - source_id: SRC-GBIF-ORYZA-SATIVA
+      passage: '"family": "Poaceae"'
+    - source_id: SRC-GBIF-ORYZA-SATIVA
+      passage: '"genus": "Oryza"'
+    - source_id: SRC-GBIF-ORYZA-SATIVA
+      passage: '"kingdom": "Plantae"'
+  synonyms:
+  - rice
+  - paddy
+  - Oryza sativa
+  crop_categories:
+  - cereal
+  frozen_model_scope: false
+  frozen_model_crop_label: null
+  review_status: source_verified

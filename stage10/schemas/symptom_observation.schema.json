@@ -1,0 +1,53 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://agrovaidya.invalid/stage10/schemas/symptom_observation.schema.json",
+  "title": "One symptom observation, with explicit provenance",
+  "type": "object",
+  "required": ["symptom_id", "symptom_type", "label", "evidence_status", "origin", "input_channel", "location", "confidence", "image_quality_limitations"],
+  "properties": {
+    "symptom_id": {"type": "string", "pattern": "^SYM-[0-9]+$"},
+    "symptom_type": {"enum": ["chlorosis", "necrosis", "lesion_circular", "lesion_irregular", "lesion_elongated", "spots", "pustules",
+                              "mold_like_growth", "curling_deformation", "wilting", "holes_chewing", "interveinal_discoloration",
+                              "mosaic_pattern", "stunting", "halo", "concentric_rings", "other"]},
+    "label": {"$ref": "common.schema.json#/$defs/localized_text"},
+    "evidence_status": {"$ref": "common.schema.json#/$defs/evidence_status"},
+    "origin": {"enum": ["image_analysis", "user_report", "model_inference", "knowledge_base_typical"],
+               "description": "knowledge_base_typical = typical of a disease according to sources; it is never an observation of this plant"},
+    "input_channel": {"enum": ["image_analysis", "symptom_checklist", "guided_question_answer", "typed_text_confirmed",
+                               "voice_transcript_confirmed", "knowledge_base", "model_output"],
+                      "description": "how the observation was obtained (Milestone 3 finding D-5). Unconfirmed text/voice interpretations have no value here and therefore cannot become observations."},
+    "location": {
+      "type": "object",
+      "required": ["plant_part", "bbox"],
+      "properties": {
+        "plant_part": {"enum": ["leaf_upper", "leaf_lower", "leaf_unspecified", "stem", "fruit", "root", "whole_plant", "unknown"]},
+        "bbox": {
+          "description": "normalised [x0, y0, x1, y1] in image coordinates, or null",
+          "type": ["array", "null"], "items": {"type": "number", "minimum": 0, "maximum": 1}, "minItems": 4, "maxItems": 4
+        }
+      },
+      "additionalProperties": false
+    },
+    "affected_area_fraction": {"type": ["number", "null"], "minimum": 0, "maximum": 1},
+    "measurement_method": {"type": ["string", "null"]},
+    "visual_evidence": {"oneOf": [{"type": "null"}, {"$ref": "common.schema.json#/$defs/localized_text"}]},
+    "confidence": {"$ref": "common.schema.json#/$defs/qualitative_level"},
+    "image_quality_limitations": {"type": "array", "items": {"type": "string"}}
+  },
+  "additionalProperties": false,
+  "allOf": [
+    {"if": {"properties": {"origin": {"const": "image_analysis"}}}, "then": {"properties": {"input_channel": {"const": "image_analysis"}}}},
+    {"if": {"properties": {"origin": {"const": "user_report"}}},
+     "then": {"properties": {"input_channel": {"enum": ["symptom_checklist", "guided_question_answer", "typed_text_confirmed", "voice_transcript_confirmed"]}}}},
+    {"if": {"properties": {"origin": {"const": "knowledge_base_typical"}}}, "then": {"properties": {"input_channel": {"const": "knowledge_base"}}}},
+    {"if": {"properties": {"origin": {"const": "model_inference"}}}, "then": {"properties": {"input_channel": {"const": "model_output"}}}},
+    {"if": {"properties": {"origin": {"const": "knowledge_base_typical"}}},
+     "then": {"properties": {"evidence_status": {"enum": ["unverified", "not_assessable"]},
+                             "location": {"properties": {"bbox": {"const": null}}},
+                             "affected_area_fraction": {"const": null}}}},
+    {"if": {"properties": {"origin": {"const": "model_inference"}}},
+     "then": {"properties": {"evidence_status": {"not": {"const": "observed"}}}}},
+    {"if": {"required": ["affected_area_fraction"], "properties": {"affected_area_fraction": {"type": "number"}}},
+     "then": {"required": ["measurement_method"], "properties": {"measurement_method": {"type": "string", "minLength": 1}}}}
+  ]
+}

@@ -1,0 +1,713 @@
+# Verified sources (fetched and read in full on the access date). Generated from results/stage10/source_cache metadata.
+- source_id: SRC-CORNELL-MAIZE-GLS
+  title: Gray Leaf Spot (Diseases of Corn)
+  publisher_or_author: Cornell University CALS Field Crops
+  url: https://cals.cornell.edu/field-crops/corn/diseases-corn/gray-leaf-spot
+  accessed_on: '2026-10-14'
+  published_or_updated: null
+  source_type: university_extension_international
+  geographic_relevance: international_not_verified_for_India
+  language: en
+  license_or_terms: Cornell copyright; short passages quoted
+  verification:
+    method: fetched_and_read_full_text
+    bytes_sha256: 3bf4b48dbf770a1a51caa4d06fd82c347bde7607a0722e5835fc597735b605b7
+    cache_file: results/stage10/source_cache/SRC-CORNELL-MAIZE-GLS.txt
+  review_status: source_verified
+  limitations: New York context
+- source_id: SRC-CORNELL-MAIZE-NCLB
+  title: Northern Corn Leaf Blight (Diseases of Corn)
+  publisher_or_author: Cornell University CALS Field Crops
+  url: https://cals.cornell.edu/field-crops/corn/diseases-of-corn/northern-corn-leaf-blight
+  accessed_on: '2026-10-14'
+  published_or_updated: null
+  source_type: university_extension_international
+  geographic_relevance: international_not_verified_for_India
+  language: en
+  license_or_terms: Cornell copyright; short passages quoted
+  verification:
+    method: fetched_and_read_full_text
+    bytes_sha256: 0da5ae3e8cad89ac03fd976f333f1bc875a8b0794cc3a1c79173df658cacab7b
+    cache_file: results/stage10/source_cache/SRC-CORNELL-MAIZE-NCLB.txt
+  review_status: source_verified
+  limitations: page spells the pathogen 'Exerohilum turcicum' (spelling differs from Exserohilum)
+- source_id: SRC-GBIF-CAPSICUM-ANNUUM
+  title: 'GBIF Backbone Taxonomy species match: Capsicum annuum'
+  publisher_or_author: GBIF Secretariat (GBIF API v1)
+  url: https://api.gbif.org/v1/species/match?name=Capsicum%20annuum&kingdom=Plantae
+  accessed_on: '2026-10-14'
+  published_or_updated: null
+  source_type: taxonomic_database
+  geographic_relevance: global
+  language: en
+  license_or_terms: GBIF Backbone Taxonomy data (GBIF API); open data, cite GBIF Secretariat. Verify licence of the backbone dataset before redistribution
+  verification:
+    method: fetched_and_read_full_text
+    bytes_sha256: 7f9cbe961dd46af16b29d299e40922301c13f5e8d19d92161be02f9a2873664c
+    cache_file: results/stage10/source_cache/SRC-GBIF-CAPSICUM-ANNUUM.txt
+  review_status: source_verified
+  limitations: aggregated backbone taxonomy; POWO could not be fetched programmatically (bot challenge), so GBIF is used
+- source_id: SRC-GBIF-MALUS-DOMESTICA
+  title: 'GBIF Backbone Taxonomy species match: Malus domestica'
+  publisher_or_author: GBIF Secretariat (GBIF API v1)
+  url: https://api.gbif.org/v1/species/match?name=Malus%20domestica&kingdom=Plantae
+  accessed_on: '2026-10-14'
+  published_or_updated: null
+  source_type: taxonomic_database
+  geographic_relevance: global
+  language: en
+  license_or_terms: GBIF Backbone Taxonomy data (GBIF API); open data, cite GBIF Secretariat. Verify licence of the backbone dataset before redistribution
+  verification:
+    method: fetched_and_read_full_text
+    bytes_sha256: f2440545df75094d665fa462ecaa234ca9506e73033b7ffbcb740f645a1a4d47
+    cache_file: results/stage10/source_cache/SRC-GBIF-MALUS-DOMESTICA.txt
+  review_status: source_verified
+  limitations: aggregated backbone taxonomy; POWO could not be fetched programmatically (bot challenge), so GBIF is used
+- source_id: SRC-GBIF-MANGIFERA-INDICA
+  title: 'GBIF Backbone Taxonomy species match: Mangifera indica'
+  publisher_or_author: GBIF Secretariat (GBIF API v1)
+  url: https://api.gbif.org/v1/species/match?name=Mangifera%20indica&kingdom=Plantae
+  accessed_on: '2026-10-14'
+  published_or_updated: null
+  source_type: taxonomic_database
+  geographic_relevance: global
+  language: en
+  license_or_terms: GBIF Backbone Taxonomy data (GBIF API); open data, cite GBIF Secretariat. Verify licence of the backbone dataset before redistribution
+  verification:
+    method: fetched_and_read_full_text
+    bytes_sha256: 3f9aae66e74d69352821e856e5a9a7950c635673100960ebbd231fb8720e7d6b
+    cache_file: results/stage10/source_cache/SRC-GBIF-MANGIFERA-INDICA.txt
+  review_status: source_verified
+  limitations: aggregated backbone taxonomy; POWO could not be fetched programmatically (bot challenge), so GBIF is used
+- source_id: SRC-GBIF-ORYZA-SATIVA
+  title: 'GBIF Backbone Taxonomy species match: Oryza sativa'
+  publisher_or_author: GBIF Secretariat (GBIF API v1)
+  url: https://api.gbif.org/v1/species/match?name=Oryza%20sativa&kingdom=Plantae
+  accessed_on: '2026-10-14'
+  published_or_updated: null
+  source_type: taxonomic_database
+  geographic_relevance: global
+  language: en
+  license_or_terms: GBIF Backbone Taxonomy data (GBIF API); open data, cite GBIF Secretariat. Verify licence of the backbone dataset before redistribution
+  verification:
+    method: fetched_and_read_full_text
+    bytes_sha256: 639a18b228ff14fff7b8b04fcf5cef54562a345c0f08fae2cc19fee8741896d8
+    cache_file: results/stage10/source_cache/SRC-GBIF-ORYZA-SATIVA.txt
+  review_status: source_verified
+  limitations: aggregated backbone taxonomy; POWO could not be fetched programmatically (bot challenge), so GBIF is used
+- source_id: SRC-GBIF-SOLANUM-LYCOPERSICUM
+  title: 'GBIF Backbone Taxonomy species match: Solanum lycopersicum'
+  publisher_or_author: GBIF Secretariat (GBIF API v1)
+  url: https://api.gbif.org/v1/species/match?name=Solanum%20lycopersicum&kingdom=Plantae
+  accessed_on: '2026-10-14'
+  published_or_updated: null
+  source_type: taxonomic_database
+  geographic_relevance: global
+  language: en
+  license_or_terms: GBIF Backbone Taxonomy data (GBIF API); open data, cite GBIF Secretariat. Verify licence of the backbone dataset before redistribution
+  verification:
+    method: fetched_and_read_full_text
+    bytes_sha256: 1712e5700584197f1fc8b3421fd88982ca53842909306941d13562c11259c444
+    cache_file: results/stage10/source_cache/SRC-GBIF-SOLANUM-LYCOPERSICUM.txt
+  review_status: source_verified
+  limitations: aggregated backbone taxonomy; POWO could not be fetched programmatically (bot challenge), so GBIF is used
+- source_id: SRC-GBIF-SOLANUM-TUBEROSUM
+  title: 'GBIF Backbone Taxonomy species match: Solanum tuberosum'
+  publisher_or_author: GBIF Secretariat (GBIF API v1)
+  url: https://api.gbif.org/v1/species/match?name=Solanum%20tuberosum&kingdom=Plantae
+  accessed_on: '2026-10-14'
+  published_or_updated: null
+  source_type: taxonomic_database
+  geographic_relevance: global
+  language: en
+  license_or_terms: GBIF Backbone Taxonomy data (GBIF API); open data, cite GBIF Secretariat. Verify licence of the backbone dataset before redistribution
+  verification:
+    method: fetched_and_read_full_text
+    bytes_sha256: 231e0ad4d649d5895cb0516bdd91882b61d54a81226e12a32a9385623efcc0e3
+    cache_file: results/stage10/source_cache/SRC-GBIF-SOLANUM-TUBEROSUM.txt
+  review_status: source_verified
+  limitations: aggregated backbone taxonomy; POWO could not be fetched programmatically (bot challenge), so GBIF is used
+- source_id: SRC-GBIF-VITIS-VINIFERA
+  title: 'GBIF Backbone Taxonomy species match: Vitis vinifera'
+  publisher_or_author: GBIF Secretariat (GBIF API v1)
+  url: https://api.gbif.org/v1/species/match?name=Vitis%20vinifera&kingdom=Plantae
+  accessed_on: '2026-10-14'
+  published_or_updated: null
+  source_type: taxonomic_database
+  geographic_relevance: global
+  language: en
+  license_or_terms: GBIF Backbone Taxonomy data (GBIF API); open data, cite GBIF Secretariat. Verify licence of the backbone dataset before redistribution
+  verification:
+    method: fetched_and_read_full_text
+    bytes_sha256: 3d1af44b3f0d3dc24ef87a399f0aea9493246399499090544d1e27959b791309
+    cache_file: results/stage10/source_cache/SRC-GBIF-VITIS-VINIFERA.txt
+  review_status: source_verified
+  limitations: aggregated backbone taxonomy; POWO could not be fetched programmatically (bot challenge), so GBIF is used
+- source_id: SRC-GBIF-ZEA-MAYS
+  title: 'GBIF Backbone Taxonomy species match: Zea mays'
+  publisher_or_author: GBIF Secretariat (GBIF API v1)
+  url: https://api.gbif.org/v1/species/match?name=Zea%20mays&kingdom=Plantae
+  accessed_on: '2026-10-14'
+  published_or_updated: null
+  source_type: taxonomic_database
+  geographic_relevance: global
+  language: en
+  license_or_terms: GBIF Backbone Taxonomy data (GBIF API); open data, cite GBIF Secretariat. Verify licence of the backbone dataset before redistribution
+  verification:
+    method: fetched_and_read_full_text
+    bytes_sha256: 5fa8981e9cbde70053ecaecf040baca60137ad15d868c46587de4b33247d989a
+    cache_file: results/stage10/source_cache/SRC-GBIF-ZEA-MAYS.txt
+  review_status: source_verified
+  limitations: aggregated backbone taxonomy; POWO could not be fetched programmatically (bot challenge), so GBIF is used
+- source_id: SRC-PPP-TOM-TARGETSPOT
+  title: Target spot, leaf spot (Corynespora cassiicola) on tomato, Fact Sheet 163
+  publisher_or_author: Pacific Pests, Pathogens & Weeds (G. Jackson; ACIAR-supported), Lucidcentral
+  url: https://apps.lucidcentral.org/ppp/text/web_full/entities/tomato_target_spot_163.htm
+  accessed_on: '2026-10-14'
+  published_or_updated: null
+  source_type: international_organization
+  geographic_relevance: international_not_verified_for_India
+  language: en
+  license_or_terms: Lucidcentral fact sheet terms; short passages quoted
+  verification:
+    method: fetched_and_read_full_text
+    bytes_sha256: ad29fa48097e4f22ca2d5c186ac88da003a9cfcf04055ab66a077c64e137b17c
+    cache_file: results/stage10/source_cache/SRC-PPP-TOM-TARGETSPOT.txt
+  review_status: source_verified
+  limitations: Pacific islands context; resistant line and products not verified for India
+- source_id: SRC-PSU-APPLE-BLACKROT
+  title: Pome Fruit Disease - Black Rot and Frogeye Leaf Spot
+  publisher_or_author: Penn State Extension (K. A. Peter)
+  url: https://extension.psu.edu/pome-fruit-disease-black-rot-and-frogeye-leaf-spot
+  accessed_on: '2026-10-14'
+  published_or_updated: 'Updated: June 26, 2024'
+  source_type: university_extension_international
+  geographic_relevance: international_not_verified_for_India
+  language: en
+  license_or_terms: Penn State Extension copyright; short passages quoted
+  verification:
+    method: fetched_and_read_full_text
+    bytes_sha256: 6a80fd9f1a97b35dd82fe8f90d00be851278d8955ae83e7cf402f527beb03deb
+    cache_file: results/stage10/source_cache/SRC-PSU-APPLE-BLACKROT.txt
+  review_status: source_verified
+  limitations: eastern-USA context; product statements not verified for Indian registration
+- source_id: SRC-TNAU-APPLE-SCAB-PH
+  title: 'Post Harvest Diseases: Apple scab: Venturia inaequalis'
+  publisher_or_author: TNAU Agritech Portal, Tamil Nadu Agricultural University (Coimbatore)
+  url: https://agritech.tnau.ac.in/crop_protection/crop_diseases_postharvest_apple_4.html
+  accessed_on: '2026-10-14'
+  published_or_updated: null
+  source_type: state_agricultural_university
+  geographic_relevance: India_region
+  language: en
+  license_or_terms: Copyright TNAU (All Rights Reserved); facts paraphrased and short passages quoted for verification only
+  verification:
+    method: fetched_and_read_full_text
+    bytes_sha256: b51fcd08ee6b64ff59d0b2b8961b4af4cd58d9f046270c23618834bdc14392ee
+    cache_file: results/stage10/source_cache/SRC-TNAU-APPLE-SCAB-PH.txt
+  review_status: source_verified
+  limitations: post-harvest fruit focus; image sources are international
+- source_id: SRC-TNAU-GRAPE-DOWNY
+  title: 'Downy mildew: Plasmopara viticola (Grapes)'
+  publisher_or_author: TNAU Agritech Portal, Tamil Nadu Agricultural University (Coimbatore)
+  url: https://agritech.tnau.ac.in/crop_protection/grapes_diseases_1.html
+  accessed_on: '2026-10-14'
+  published_or_updated: null
+  source_type: state_agricultural_university
+  geographic_relevance: India_region
+  language: en
+  license_or_terms: Copyright TNAU (All Rights Reserved); facts paraphrased and short passages quoted for verification only
+  verification:
+    method: fetched_and_read_full_text
+    bytes_sha256: d2a984c782500fafc6294b5cc98d64ce0099dba9f0f241f38bcda73293c335a6
+    cache_file: results/stage10/source_cache/SRC-TNAU-GRAPE-DOWNY.txt
+  review_status: source_verified
+  limitations: older page (copyright 2015 footer); chemical concentrations withheld
+- source_id: SRC-TNAU-MAIZE-LEAFBLIGHT
+  title: 'Leaf Blight: Exserohilum turcicum & Helminthosporium maydis (Maize)'
+  publisher_or_author: TNAU Agritech Portal, Tamil Nadu Agricultural University (Coimbatore)
+  url: https://agritech.tnau.ac.in/crop_protection/maize_disease_new/maize_2.html
+  accessed_on: '2026-10-14'
+  published_or_updated: null
+  source_type: state_agricultural_university
+  geographic_relevance: India_region
+  language: en
+  license_or_terms: Copyright TNAU (All Rights Reserved); facts paraphrased and short passages quoted for verification only
+  verification:
+    method: fetched_and_read_full_text
+    bytes_sha256: c0a1ab277c02c9bd600c52f6db642f7879a6d79f9c3f55febac34e72aa8c277e
+    cache_file: results/stage10/source_cache/SRC-TNAU-MAIZE-LEAFBLIGHT.txt
+  review_status: source_verified
+  limitations: page combines two leaf-blight pathogens; chemical doses withheld
+- source_id: SRC-TNAU-MAIZE-RUST
+  title: 'Common Rust: Puccinia sorghi (Maize)'
+  publisher_or_author: TNAU Agritech Portal, Tamil Nadu Agricultural University (Coimbatore)
+  url: https://agritech.tnau.ac.in/crop_protection/maize_disease_new/maize_4.html
+  accessed_on: '2026-10-14'
+  published_or_updated: null
+  source_type: state_agricultural_university
+  geographic_relevance: India_region
+  language: en
+  license_or_terms: Copyright TNAU (All Rights Reserved); facts paraphrased and short passages quoted for verification only
+  verification:
+    method: fetched_and_read_full_text
+    bytes_sha256: f9b2f8de803c1fa309b928cf86491d30140e54ed154b951a02b925e5a3c73b77
+    cache_file: results/stage10/source_cache/SRC-TNAU-MAIZE-RUST.txt
+  review_status: source_verified
+  limitations: chemical doses withheld
+- source_id: SRC-TNAU-MAIZE-TLB
+  title: 'Turcicum Leaf Blight (TLB): Exserohilum turcicum (Maize)'
+  publisher_or_author: TNAU Agritech Portal, Tamil Nadu Agricultural University (Coimbatore)
+  url: https://agritech.tnau.ac.in/crop_protection/maize_disease/maize_4.html
+  accessed_on: '2026-10-14'
+  published_or_updated: null
+  source_type: state_agricultural_university
+  geographic_relevance: India_region
+  language: en
+  license_or_terms: Copyright TNAU (All Rights Reserved); facts paraphrased and short passages quoted for verification only
+  verification:
+    method: fetched_and_read_full_text
+    bytes_sha256: c1f1b60daa74838321b75c1b7806f3dfd8f61d228ca659018a2040cef494712b
+    cache_file: results/stage10/source_cache/SRC-TNAU-MAIZE-TLB.txt
+  review_status: source_verified
+  limitations: older page (copyright 2015 footer); chemical dose withheld
+- source_id: SRC-TNAU-MANGO-ANTHRACNOSE-PH
+  title: 'Post Harvest Diseases: Mango Anthracnose: Colletotrichum gloeosporioides'
+  publisher_or_author: TNAU Agritech Portal, Tamil Nadu Agricultural University (Coimbatore)
+  url: https://agritech.tnau.ac.in/crop_protection/crop_prot_postharvest_mango_1.html
+  accessed_on: '2026-10-14'
+  published_or_updated: null
+  source_type: state_agricultural_university
+  geographic_relevance: India_region
+  language: en
+  license_or_terms: Copyright TNAU (All Rights Reserved); facts paraphrased and short passages quoted for verification only
+  verification:
+    method: fetched_and_read_full_text
+    bytes_sha256: 190bde6cabe78f7b65d9111d9d08ea1969727a6cfb51578f6603137a3bf2c5b2
+    cache_file: results/stage10/source_cache/SRC-TNAU-MANGO-ANTHRACNOSE-PH.txt
+  review_status: source_verified
+  limitations: 'management text refers to products registered in Australian states (Queensland, NT, WA, NSW): management NOT used; page also shows
+    ''250°C'' (apparent typo for temperature)'
+- source_id: SRC-TNAU-RICE-BLAST
+  title: 'Rice Blast: Magnaporthe oryzae (Syn: P. grisea, Magnaporthe grisea)'
+  publisher_or_author: TNAU Agritech Portal, Tamil Nadu Agricultural University (Coimbatore)
+  url: https://agritech.tnau.ac.in/crop_protection/rice_diseases/rice_1.html
+  accessed_on: '2026-10-14'
+  published_or_updated: null
+  source_type: state_agricultural_university
+  geographic_relevance: India_region
+  language: en
+  license_or_terms: Copyright TNAU (All Rights Reserved); facts paraphrased and short passages quoted for verification only
+  verification:
+    method: fetched_and_read_full_text
+    bytes_sha256: 7b5228f64a790bcb9aff4d79de98c601904c9754e774a4b5c2b54efe64a9ceaa
+    cache_file: results/stage10/source_cache/SRC-TNAU-RICE-BLAST.txt
+  review_status: source_verified
+  limitations: cached page section contains symptoms only; management is on a separate tab not fetched
+- source_id: SRC-TNAU-TOM-BACTCANKER
+  title: 'Bacterial stem and fruit canker: Clavibacter michiganensis subsp. michiganensis (Tomato)'
+  publisher_or_author: TNAU Agritech Portal, Tamil Nadu Agricultural University (Coimbatore)
+  url: https://agritech.tnau.ac.in/crop_protection/tomato_diseases_9.html
+  accessed_on: '2026-10-14'
+  published_or_updated: Updated on Jun 2023 (page)
+  source_type: state_agricultural_university
+  geographic_relevance: India_region
+  language: en
+  license_or_terms: Copyright TNAU (All Rights Reserved); facts paraphrased and short passages quoted for verification only
+  verification:
+    method: fetched_and_read_full_text
+    bytes_sha256: c0f9e4229c90f3f2f96c5a70d0703062f451a1057fcf694a74868a2d496c6fe0
+    cache_file: results/stage10/source_cache/SRC-TNAU-TOM-BACTCANKER.txt
+  review_status: source_verified
+  limitations: URL tomato_diseases_9.html is linked as 'Leaf Curl' on the TNAU index but the page content is bacterial canker
+- source_id: SRC-TNAU-TOM-EARLYBLIGHT
+  title: 'Early Blight: Alternaria solani (Tomato)'
+  publisher_or_author: TNAU Agritech Portal, Tamil Nadu Agricultural University (Coimbatore)
+  url: https://agritech.tnau.ac.in/crop_protection/tomato_diseases_2.html
+  accessed_on: '2026-10-14'
+  published_or_updated: Updated on Jun 2023 (page)
+  source_type: state_agricultural_university
+  geographic_relevance: India_region
+  language: en
+  license_or_terms: Copyright TNAU (All Rights Reserved); facts paraphrased and short passages quoted for verification only
+  verification:
+    method: fetched_and_read_full_text
+    bytes_sha256: 5e9d9e96f115cae1af07269e633ff79e6c8831ed6726eaef304483af179e1df8
+    cache_file: results/stage10/source_cache/SRC-TNAU-TOM-EARLYBLIGHT.txt
+  review_status: source_verified
+  limitations: chemical doses withheld by policy
+- source_id: SRC-TNAU-TOM-K-DEF
+  title: Deficiencies and Disorders - Tomato - Potassium
+  publisher_or_author: TNAU Agritech Portal, Tamil Nadu Agricultural University (Coimbatore)
+  url: https://agritech.tnau.ac.in/horticulture/plant_nutri/tomato_pota.html
+  accessed_on: '2026-10-14'
+  published_or_updated: Updated on Jan 2023 (page)
+  source_type: state_agricultural_university
+  geographic_relevance: India_region
+  language: en
+  license_or_terms: Copyright TNAU (All Rights Reserved); facts paraphrased and short passages quoted for verification only
+  verification:
+    method: fetched_and_read_full_text
+    bytes_sha256: 8366b956a0a552e2ccc2fbdbe78b3fe8639486d411ac85c0cd9eb48e44342c16
+    cache_file: results/stage10/source_cache/SRC-TNAU-TOM-K-DEF.txt
+  review_status: source_verified
+  limitations: corrective rates on page withheld by policy
+- source_id: SRC-TNAU-TOM-LATEBLIGHT
+  title: 'Late blight: Phytophthora infestans (Tomato)'
+  publisher_or_author: TNAU Agritech Portal, Tamil Nadu Agricultural University (Coimbatore)
+  url: https://agritech.tnau.ac.in/crop_protection/tomato_diseases_8.html
+  accessed_on: '2026-10-14'
+  published_or_updated: Updated on Jan 2023 (page)
+  source_type: state_agricultural_university
+  geographic_relevance: India_region
+  language: en
+  license_or_terms: Copyright TNAU (All Rights Reserved); facts paraphrased and short passages quoted for verification only
+  verification:
+    method: fetched_and_read_full_text
+    bytes_sha256: c4433d62ef0efdc4046ace5e71f02a9a90882af286b6b149650e390e5737a3d4
+    cache_file: results/stage10/source_cache/SRC-TNAU-TOM-LATEBLIGHT.txt
+  review_status: source_verified
+  limitations: chemical doses withheld by policy
+- source_id: SRC-TNAU-TOM-MG-DEF
+  title: Deficiencies and Disorders - Tomato - Magnesium
+  publisher_or_author: TNAU Agritech Portal, Tamil Nadu Agricultural University (Coimbatore)
+  url: https://agritech.tnau.ac.in/horticulture/plant_nutri/tomato_magnes.html
+  accessed_on: '2026-10-14'
+  published_or_updated: Updated on Jan 2023 (page)
+  source_type: state_agricultural_university
+  geographic_relevance: India_region
+  language: en
+  license_or_terms: Copyright TNAU (All Rights Reserved); facts paraphrased and short passages quoted for verification only
+  verification:
+    method: fetched_and_read_full_text
+    bytes_sha256: 330e244b22b517efe452114950a96c97dac3309422f1f571aace4050ee274408
+    cache_file: results/stage10/source_cache/SRC-TNAU-TOM-MG-DEF.txt
+  review_status: source_verified
+  limitations: corrective rates on page withheld by policy; deficiency must be confirmed by testing
+- source_id: SRC-TNAU-TOM-SEPTORIA
+  title: 'Septoria Leaf Spot: Septoria lycopersici (Tomato)'
+  publisher_or_author: TNAU Agritech Portal, Tamil Nadu Agricultural University (Coimbatore)
+  url: https://agritech.tnau.ac.in/crop_protection/tomato_diseases_4.html
+  accessed_on: '2026-10-14'
+  published_or_updated: Updated on Jun 2023 (page); cites Crop production guide – Horticulture 2020
+  source_type: state_agricultural_university
+  geographic_relevance: India_region
+  language: en
+  license_or_terms: Copyright TNAU (All Rights Reserved); facts paraphrased and short passages quoted for verification only
+  verification:
+    method: fetched_and_read_full_text
+    bytes_sha256: d4f68ff25c0ad42d440b79a91a2f8fa81831ccb47fea9b1e7c9b8159dfadd803
+    cache_file: results/stage10/source_cache/SRC-TNAU-TOM-SEPTORIA.txt
+  review_status: source_verified
+  limitations: Tamil Nadu focus; chemical doses on page are withheld by Stage-10 policy
+- source_id: SRC-TNAU-TOM-SPIDERMITE
+  title: 'Red spider mite: Tetranychus spp (Tomato)'
+  publisher_or_author: TNAU Agritech Portal, Tamil Nadu Agricultural University (Coimbatore)
+  url: https://agritech.tnau.ac.in/crop_protection/tomato/tomato_7.html
+  accessed_on: '2026-10-14'
+  published_or_updated: null
+  source_type: state_agricultural_university
+  geographic_relevance: India_region
+  language: en
+  license_or_terms: Copyright TNAU (All Rights Reserved); facts paraphrased and short passages quoted for verification only
+  verification:
+    method: fetched_and_read_full_text
+    bytes_sha256: 58fc4345a70046081eb25f3ec6008864e8796d7d63b01638c36a8768c31a8ef8
+    cache_file: results/stage10/source_cache/SRC-TNAU-TOM-SPIDERMITE.txt
+  review_status: source_verified
+  limitations: genus-level identification only; chemical dose withheld
+- source_id: SRC-UCIPM-GRAPE-ESCA
+  title: Esca (Black Measles) — Grape Pest Management Guidelines
+  publisher_or_author: UC IPM, University of California Agriculture and Natural Resources
+  url: https://ipm.ucanr.edu/agriculture/grape/esca-black-measles/
+  accessed_on: '2026-10-14'
+  published_or_updated: 'Text Updated: 12/14'
+  source_type: university_extension_international
+  geographic_relevance: international_not_verified_for_India
+  language: en
+  license_or_terms: UC IPM use permissions apply; short passages quoted for verification
+  verification:
+    method: fetched_and_read_full_text
+    bytes_sha256: 4c969a9ce4e4fa842b4cd2f3532ddfea274a082153710a2842750f4c14d46e5d
+    cache_file: results/stage10/source_cache/SRC-UCIPM-GRAPE-ESCA.txt
+  review_status: source_verified
+  limitations: California context (season timing, cultivars) not verified for India
+- source_id: SRC-UMAINE-GRAPE-BLACKROT
+  title: 'Black Rot of Grape, Pest Management Fact Sheet #5106 (B. A. Watt)'
+  publisher_or_author: University of Maine Cooperative Extension
+  url: https://extension.umaine.edu/ipm/ipddl/publications/5106e/
+  accessed_on: '2026-10-14'
+  published_or_updated: © 2004, 2010, 2013
+  source_type: university_extension_international
+  geographic_relevance: international_not_verified_for_India
+  language: en
+  license_or_terms: UMaine Extension copyright; short passages quoted
+  verification:
+    method: fetched_and_read_full_text
+    bytes_sha256: 3e80f65b13ec3be437e221f4c35d0f3b33c893b57fc9172abebfdfea0051e789
+    cache_file: results/stage10/source_cache/SRC-UMAINE-GRAPE-BLACKROT.txt
+  review_status: source_verified
+  limitations: Maine (USA) climate context
+- source_id: SRC-TNAU-POTATO-LATEBLIGHT
+  title: 'Late blight of potato: Phytophthora infestans'
+  publisher_or_author: TNAU Agritech Portal, Tamil Nadu Agricultural University (Coimbatore)
+  url: https://agritech.tnau.ac.in/crop_protection/crop_prot_crop%20diseases_veg_potato_1.html
+  accessed_on: '2026-10-15'
+  published_or_updated: Not shown (page copyright 2015)
+  source_type: state_agricultural_university
+  geographic_relevance: India_region
+  language: en
+  license_or_terms: Copyright the publisher (all rights reserved); facts paraphrased and short passages quoted for verification only
+  verification:
+    method: fetched_and_read_full_text
+    bytes_sha256: bf229807eed4aa2ab5e6adf00071c9192106a75ee33f56dc1111e5edfabdedf2
+    cache_file: results/stage10/source_cache/SRC-TNAU-POTATO-LATEBLIGHT.txt
+  review_status: source_verified
+  limitations: chemical doses withheld by policy; the page spells the pathogen 'Phytopthora'; page date not shown (copyright 2015)
+- source_id: SRC-TNAU-POTATO-EARLYBLIGHT
+  title: 'Early blight: Alternaria solani (Potato)'
+  publisher_or_author: TNAU Agritech Portal, Tamil Nadu Agricultural University (Coimbatore)
+  url: https://agritech.tnau.ac.in/crop_protection/crop_prot_crop%20diseases_veg_potato_2.html
+  accessed_on: '2026-10-15'
+  published_or_updated: Not shown (page copyright 2015)
+  source_type: state_agricultural_university
+  geographic_relevance: India_region
+  language: en
+  license_or_terms: Copyright the publisher (all rights reserved); facts paraphrased and short passages quoted for verification only
+  verification:
+    method: fetched_and_read_full_text
+    bytes_sha256: 022d3131df7fc42bf1e27ab41bb3773956bf68c10a0ea7b9a6a561966c0d0a35
+    cache_file: results/stage10/source_cache/SRC-TNAU-POTATO-EARLYBLIGHT.txt
+  review_status: source_verified
+  limitations: chemical doses withheld by policy; page date not shown (copyright 2015)
+- source_id: SRC-TNAU-TOM-LEAFCURL
+  title: 'Leaf curl: Tomato leaf curl virus'
+  publisher_or_author: TNAU Agritech Portal, Tamil Nadu Agricultural University (Coimbatore)
+  url: https://agritech.tnau.ac.in/crop_protection/tomato_diseases_6.html
+  accessed_on: '2026-10-15'
+  published_or_updated: Updated on Jun 2023 (page)
+  source_type: state_agricultural_university
+  geographic_relevance: India_region
+  language: en
+  license_or_terms: Copyright the publisher (all rights reserved); facts paraphrased and short passages quoted for verification only
+  verification:
+    method: fetched_and_read_full_text
+    bytes_sha256: 0868d1d74dc6c87d4db367f32f49b785d940a78d39214fb66ee2ca76efdcf6a4
+    cache_file: results/stage10/source_cache/SRC-TNAU-TOM-LEAFCURL.txt
+  review_status: source_verified
+  limitations: insecticide doses withheld by policy; the TNAU tomato index links 'Leaf Curl' to a different page (tomato_diseases_9); this page
+    (tomato_diseases_6) is the leaf-curl page. Describes tomato leaf curl virus, not the 'yellow leaf curl' virus named by the research dataset
+    class.
+- source_id: SRC-TNAU-TOM-BACTSPOT
+  title: 'Bacterial leaf spot: Xanthomonas axonopodis pv. vesicatoria (Tomato)'
+  publisher_or_author: TNAU Agritech Portal, Tamil Nadu Agricultural University (Coimbatore)
+  url: https://agritech.tnau.ac.in/crop_protection/tomato_diseases_11.html
+  accessed_on: '2026-10-15'
+  published_or_updated: Updated on Jun 2023 (page)
+  source_type: state_agricultural_university
+  geographic_relevance: India_region
+  language: en
+  license_or_terms: Copyright the publisher (all rights reserved); facts paraphrased and short passages quoted for verification only
+  verification:
+    method: fetched_and_read_full_text
+    bytes_sha256: 4817797f4f1ce35213ad867414577ce9721f93b198580add971f62563c1c2dff
+    cache_file: results/stage10/source_cache/SRC-TNAU-TOM-BACTSPOT.txt
+  review_status: source_verified
+  limitations: antibiotic doses withheld by policy; the TNAU tomato index mislabels this page's link
+- source_id: SRC-TNAU-CHILLI-BACTSPOT
+  title: 'Bacterial leaf spot: Xanthomonas campestris pv. vesicatoria (Chilli)'
+  publisher_or_author: TNAU Agritech Portal, Tamil Nadu Agricultural University (Coimbatore)
+  url: https://agritech.tnau.ac.in/crop_protection/chilli_diseases_4.html
+  accessed_on: '2026-10-15'
+  published_or_updated: Updated on Jun, 2023 (page)
+  source_type: state_agricultural_university
+  geographic_relevance: India_region
+  language: en
+  license_or_terms: Copyright the publisher (all rights reserved); facts paraphrased and short passages quoted for verification only
+  verification:
+    method: fetched_and_read_full_text
+    bytes_sha256: 9a0f1c1aab469eee0d60ce08e527fad9422f4d3e02ac967ddb1f76cda3b1e957
+    cache_file: results/stage10/source_cache/SRC-TNAU-CHILLI-BACTSPOT.txt
+  review_status: source_verified
+  limitations: describes chilli; applied to bell pepper only because both are Capsicum annuum (editorial inference, not stated by the source);
+    doses withheld by policy; 'Bacterial cozen' is the source's typo for ooze
+- source_id: SRC-CORNELL-TOM-LEAFMOLD
+  title: Tomato Leaf Mold
+  publisher_or_author: Cornell Vegetable Program, Cornell University (USA)
+  url: https://vegetables.cornell.edu/crops/tomatoes/tomato-leaf-mold/
+  accessed_on: '2026-10-15'
+  published_or_updated: Not shown
+  source_type: university_extension_international
+  geographic_relevance: international_not_verified_for_India
+  language: en
+  license_or_terms: Copyright the publisher (all rights reserved); facts paraphrased and short passages quoted for verification only
+  verification:
+    method: fetched_and_read_full_text
+    bytes_sha256: 466da06683b3e0f579283a879d5908f801079d305df39712bac965aa8cd801a6
+    cache_file: results/stage10/source_cache/SRC-CORNELL-TOM-LEAFMOLD.txt
+  review_status: source_verified
+  limitations: written for New York State greenhouses and high tunnels; named products and varieties are US-specific; the page spells 'Passlora'
+    once
+- source_id: SRC-CLEMSON-APPLE-CAR
+  title: Cedar-Apple Rust
+  publisher_or_author: Clemson Cooperative Extension Home & Garden Information Center (South Carolina, USA)
+  url: https://hgic.clemson.edu/factsheet/cedar-apple-rust/
+  accessed_on: '2026-10-15'
+  published_or_updated: Originally published 05/20
+  source_type: university_extension_international
+  geographic_relevance: international_not_verified_for_India
+  language: en
+  license_or_terms: Copyright the publisher (all rights reserved); facts paraphrased and short passages quoted for verification only
+  verification:
+    method: fetched_and_read_full_text
+    bytes_sha256: 628994f9977c94449dfa1a7bd7321fc325e94f6404dd16bc45ea40842bb17efd
+    cache_file: results/stage10/source_cache/SRC-CLEMSON-APPLE-CAR.txt
+  review_status: source_verified
+  limitations: South Carolina recommendations; the disease needs a juniper/red-cedar alternate host, and its occurrence in India is not established
+    by this source; some characters on the page are garbled in the extracted text and are not quoted
+- source_id: SRC-UKY-GRAPE-LEAFSPOTS
+  title: Leaf Spots of Grapes (Scouting Guide for Problems of Fruit)
+  publisher_or_author: University of Kentucky Department of Plant Pathology (USA)
+  url: https://fruitscout.mgcafe.uky.edu/leaf-spots-grapes
+  accessed_on: '2026-10-15'
+  published_or_updated: Not shown
+  source_type: university_extension_international
+  geographic_relevance: international_not_verified_for_India
+  language: en
+  license_or_terms: Copyright the publisher (all rights reserved); facts paraphrased and short passages quoted for verification only
+  verification:
+    method: fetched_and_read_full_text
+    bytes_sha256: 8ae99275786cebef3ee6e36ba8839d723e937043a04fb2663b0432b02db3600e
+    cache_file: results/stage10/source_cache/SRC-UKY-GRAPE-LEAFSPOTS.txt
+  review_status: source_verified
+  limitations: 'very short page: groups Isariopsis/Pseudocercospora with other leaf-spot fungi, gives no species-specific symptoms; spells ''Ppseudocercospora'''
+- source_id: SRC-TNAU-CPG-AGRI-2020
+  title: Crop Production Guide - Agriculture 2020 (Tamil Nadu)
+  publisher_or_author: Directorate of Agriculture, Tamil Nadu and Tamil Nadu Agricultural University (via TNAU Agritech)
+  url: https://agritech.tnau.ac.in/pdf/AGRICULTURE.pdf
+  accessed_on: '2026-10-15'
+  published_or_updated: '2020'
+  source_type: state_agricultural_university
+  geographic_relevance: India_region
+  language: en
+  license_or_terms: Copyright the publisher; facts paraphrased and short passages quoted for verification only
+  verification:
+    method: fetched_and_read_full_text
+    bytes_sha256: adbb66a8efc7bc24cb6b4afc99782519cf41d8b1ca0414c486db6627d7bc5c7f
+    cache_file: results/stage10/source_cache/SRC-TNAU-CPG-AGRI-2020.txt
+  review_status: source_verified
+  limitations: PDF text layer extracted with PyMuPDF; fertiliser doses withheld by policy; Tamil Nadu recommendations
+- source_id: SRC-TNAU-CPG-HORTI-2020
+  title: Crop Production Guide - Horticulture Crops 2020 (Tamil Nadu)
+  publisher_or_author: Department of Horticulture, Tamil Nadu and Tamil Nadu Agricultural University (via TNAU Agritech)
+  url: https://agritech.tnau.ac.in/pdf/HORTICULTURE.pdf
+  accessed_on: '2026-10-15'
+  published_or_updated: '2020'
+  source_type: state_agricultural_university
+  geographic_relevance: India_region
+  language: en
+  license_or_terms: Copyright the publisher; facts paraphrased and short passages quoted for verification only
+  verification:
+    method: fetched_and_read_full_text
+    bytes_sha256: 39c5b8a2ef5579c7de426f89a8232ac9c4be48919a2afbe47fcaf8e53217f693
+    cache_file: results/stage10/source_cache/SRC-TNAU-CPG-HORTI-2020.txt
+  review_status: source_verified
+  limitations: PDF text layer extracted with PyMuPDF; doses withheld by policy; the capsicum temperature passage is from the paprika section (same
+    species, Capsicum annuum)
+- source_id: SRC-TNAU-ORG-PADDY
+  title: 'Organic Farming Practices: Paddy - Climate and Varieties'
+  publisher_or_author: TNAU Agritech Portal, Tamil Nadu Agricultural University (Coimbatore)
+  url: https://agritech.tnau.ac.in/org_farm/orgfarm_prac_agri_paddy_climate.html
+  accessed_on: '2026-10-15'
+  published_or_updated: Not shown
+  source_type: state_agricultural_university
+  geographic_relevance: India_region
+  language: en
+  license_or_terms: Copyright the publisher; facts paraphrased and short passages quoted for verification only
+  verification:
+    method: fetched_and_read_full_text
+    bytes_sha256: 02b44e52b009e0bd48821f163afdfce77aaffb98df5e6f5a91ebbf21e447e0ed
+    cache_file: results/stage10/source_cache/SRC-TNAU-ORG-PADDY.txt
+  review_status: source_verified
+  limitations: organic-farming page; some characters garbled in the extracted text are not quoted
+- source_id: SRC-VIKAS-TOMATO
+  title: Tomato (package of practices)
+  publisher_or_author: Vikaspedia (Government of India portal, Ministry of Electronics & IT / C-DAC)
+  url: https://agriculture.vikaspedia.in/viewcontent/agriculture/crop-production/package-of-practices/vegetables-1/tomato-1?lgn=en
+  accessed_on: '2026-10-15'
+  published_or_updated: Not shown
+  source_type: government_india
+  geographic_relevance: India_specific
+  language: en
+  license_or_terms: Copyright the publisher; facts paraphrased and short passages quoted for verification only
+  verification:
+    method: fetched_and_read_full_text
+    bytes_sha256: 4591ee0e0b3bc08ac8345638a03faad9dc790c44c19a9d2d2bb88c11520c1ea1
+    cache_file: results/stage10/source_cache/SRC-VIKAS-TOMATO.txt
+  review_status: source_verified
+  limitations: national summary; fertiliser doses withheld by policy
+- source_id: SRC-VIKAS-POTATO
+  title: Potato (package of practices)
+  publisher_or_author: Vikaspedia (Government of India portal, Ministry of Electronics & IT / C-DAC)
+  url: https://agriculture.vikaspedia.in/viewcontent/agriculture/crop-production/package-of-practices/vegetables-1/potato?lgn=en
+  accessed_on: '2026-10-15'
+  published_or_updated: Not shown
+  source_type: government_india
+  geographic_relevance: India_specific
+  language: en
+  license_or_terms: Copyright the publisher; facts paraphrased and short passages quoted for verification only
+  verification:
+    method: fetched_and_read_full_text
+    bytes_sha256: b8b3df8ab051f14839be06ea80c1ae14b751f3978a2972c65d03a3bc21d6354b
+    cache_file: results/stage10/source_cache/SRC-VIKAS-POTATO.txt
+  review_status: source_verified
+  limitations: national summary; fertiliser doses withheld by policy
+- source_id: SRC-VIKAS-APPLE
+  title: Apple production techniques
+  publisher_or_author: Vikaspedia (Government of India portal, Ministry of Electronics & IT / C-DAC)
+  url: https://agriculture.vikaspedia.in/viewcontent/agriculture/crop-production/package-of-practices/fruits-1/apple-1/apple?lgn=en
+  accessed_on: '2026-10-15'
+  published_or_updated: Not shown
+  source_type: government_india
+  geographic_relevance: India_specific
+  language: en
+  license_or_terms: Copyright the publisher; facts paraphrased and short passages quoted for verification only
+  verification:
+    method: fetched_and_read_full_text
+    bytes_sha256: ba5d1ac7d04b47f79d7cc19d0ed09646eaefa31487043af24f84feced1236cbd
+    cache_file: results/stage10/source_cache/SRC-VIKAS-APPLE.txt
+  review_status: source_verified
+  limitations: Himalayan apple-growing regions; fertiliser doses withheld by policy
+- source_id: SRC-VIKAS-GRAPES
+  title: Grapes (package of practices)
+  publisher_or_author: Vikaspedia (Government of India portal, Ministry of Electronics & IT / C-DAC)
+  url: https://agriculture.vikaspedia.in/viewcontent/agriculture/crop-production/package-of-practices/fruits-1/jamun-1?lgn=en
+  accessed_on: '2026-10-15'
+  published_or_updated: Not shown
+  source_type: government_india
+  geographic_relevance: India_specific
+  language: en
+  license_or_terms: Copyright the publisher; facts paraphrased and short passages quoted for verification only
+  verification:
+    method: fetched_and_read_full_text
+    bytes_sha256: fdc4cadeb4405b8a9ef4e08b39e26a915c6c461c5167d8230685238ff98abc81
+    cache_file: results/stage10/source_cache/SRC-VIKAS-GRAPES.txt
+  review_status: source_verified
+  limitations: the page URL slug reads 'jamun-1' but the content is about grapes; it gives no ideal growing temperature range, only a planting-season
+    temperature
+- source_id: SRC-VIKAS-MANGO
+  title: 'Mango Cultivation: Varieties, Package of Practices, and Post-Harvest Management'
+  publisher_or_author: Vikaspedia (Government of India portal, Ministry of Electronics & IT / C-DAC)
+  url: https://agriculture.vikaspedia.in/viewcontent/agriculture/crop-production/package-of-practices/fruits-1/mango-1/mango-cultivation-varieties,-package-of-practices,-and-post-harvest-management?lgn=en
+  accessed_on: '2026-10-15'
+  published_or_updated: Not shown
+  source_type: government_india
+  geographic_relevance: India_specific
+  language: en
+  license_or_terms: Copyright the publisher; facts paraphrased and short passages quoted for verification only
+  verification:
+    method: fetched_and_read_full_text
+    bytes_sha256: e95bada72e6cc090e13d5b39c7053ec21343eccd9b4f71dc1c0fbde9fced420f
+    cache_file: results/stage10/source_cache/SRC-VIKAS-MANGO.txt
+  review_status: source_verified
+  limitations: fertiliser doses withheld by policy

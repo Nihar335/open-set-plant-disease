@@ -1,0 +1,58 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://agrovaidya.invalid/stage10/schemas/agricultural_recommendation.schema.json",
+  "title": "One recommendation (test, management, crop care, nutrition, action)",
+  "type": "object",
+  "required": ["recommendation_id", "category", "subcategory", "text", "consequential", "source_ids", "applies_to",
+               "geographic_applicability", "dose", "expert_review_status"],
+  "properties": {
+    "recommendation_id": {"type": "string", "pattern": "^REC-[0-9]+$"},
+    "category": {"enum": ["general_crop_requirement", "disease_management", "diagnostic_test", "suspected_nutrient_issue",
+                          "confirmed_nutrient_deficiency", "immediate_action", "follow_up", "escalation"]},
+    "subcategory": {"enum": ["cultural", "sanitation", "resistant_variety", "biological", "chemical", "irrigation", "drainage", "soil",
+                             "nutrition", "fertilizer", "monitoring", "photography", "laboratory_test", "field_test", "consult_expert", "other"]},
+    "text": {"$ref": "common.schema.json#/$defs/localized_text"},
+    "consequential": {"type": "boolean", "description": "true if acting on it could cause harm or cost if wrong (chemicals, fertilizers, removal of plants, etc.)"},
+    "source_ids": {"$ref": "common.schema.json#/$defs/source_ids"},
+    "applies_to": {
+      "type": "object", "required": ["crop", "disease_id", "region"],
+      "properties": {"crop": {"type": ["string", "null"]}, "disease_id": {"type": ["string", "null"]}, "region": {"type": ["string", "null"]}},
+      "additionalProperties": false
+    },
+    "geographic_applicability": {"enum": ["India_specific", "international_verified_for_India", "international_not_verified_for_India", "general"]},
+    "dose": {
+      "oneOf": [
+        {"type": "null"},
+        {"type": "object", "required": ["amount", "unit", "basis", "source_id", "official_label_or_recommendation"],
+         "properties": {"amount": {"type": "string", "minLength": 1}, "unit": {"type": "string", "minLength": 1},
+                        "basis": {"type": "string", "minLength": 1}, "source_id": {"$ref": "common.schema.json#/$defs/source_id"},
+                        "official_label_or_recommendation": {"const": true}},
+         "additionalProperties": false}
+      ]
+    },
+    "depends_on": {"type": "array", "items": {"type": "string"}},
+    "risk_notes": {"type": "array", "items": {"$ref": "common.schema.json#/$defs/localized_text"}},
+    "safety_notes": {"type": "array", "items": {"$ref": "common.schema.json#/$defs/localized_text"}},
+    "verification_test": {"$ref": "common.schema.json#/$defs/localized_text"},
+    "confirmation_evidence": {
+      "type": "object", "required": ["test_type", "result_reference"],
+      "properties": {"test_type": {"type": "string", "minLength": 1}, "result_reference": {"type": "string", "minLength": 1}},
+      "additionalProperties": false
+    },
+    "what_it_can_establish": {"$ref": "common.schema.json#/$defs/localized_text"},
+    "what_it_cannot_establish": {"$ref": "common.schema.json#/$defs/localized_text"},
+    "expert_review_status": {"enum": ["pending", "reviewed"]}
+  },
+  "additionalProperties": false,
+  "allOf": [
+    {"if": {"properties": {"consequential": {"const": true}}}, "then": {"properties": {"source_ids": {"minItems": 1}}}},
+    {"if": {"properties": {"subcategory": {"enum": ["chemical", "fertilizer"]}}},
+     "then": {"description": "chemical/fertilizer advice is always consequential and carries safety notes",
+              "required": ["safety_notes"],
+              "properties": {"consequential": {"const": true}, "safety_notes": {"minItems": 1}}}},
+    {"if": {"properties": {"category": {"const": "suspected_nutrient_issue"}}}, "then": {"required": ["verification_test"]}},
+    {"if": {"properties": {"category": {"const": "confirmed_nutrient_deficiency"}}}, "then": {"required": ["confirmation_evidence"]}},
+    {"if": {"properties": {"category": {"const": "diagnostic_test"}}}, "then": {"required": ["what_it_can_establish", "what_it_cannot_establish"]}},
+    {"if": {"properties": {"dose": {"type": "object"}}, "required": ["dose"]}, "then": {"properties": {"consequential": {"const": true}, "source_ids": {"minItems": 1}}}}
+  ]
+}

@@ -1,0 +1,84 @@
+# Stage 11 botanical-name dataset: common / local names -> accepted scientific (biological) name and family.
+# model_crop: the crop key used by the disease model (diseases.yaml `crop`); null = no training photos for this plant,
+#   the app then relies on symptom detection + database-only diseases.
+# aliases: English synonyms and common Hindi / Indian-language names (transliterated); used for name matching.
+# Scientific names follow the accepted names in Plants of the World Online / GBIF backbone (curated, not
+#   verified record-by-record).
+- {common_name: Tomato, scientific_name: Solanum lycopersicum L., family: Solanaceae, model_crop: tomato, aliases: [tamatar, thakkali, tomatoes, lycopersicon esculentum]}
+- {common_name: Potato, scientific_name: Solanum tuberosum L., family: Solanaceae, model_crop: potato, aliases: [aloo, alu, urulaikizhangu, bangaladumpa, batata, potatoes]}
+- {common_name: Bell pepper, scientific_name: Capsicum annuum L., family: Solanaceae, model_crop: bell pepper, aliases: [capsicum, shimla mirch, simla mirch, sweet pepper, pepper, bell peppers]}
+- {common_name: Chilli, scientific_name: Capsicum annuum L., family: Solanaceae, model_crop: chilli, aliases: [chili, chilli pepper, hot pepper, mirchi, hari mirch, mirapakaya, milagai]}
+- {common_name: Brinjal, scientific_name: Solanum melongena L., family: Solanaceae, model_crop: brinjal, aliases: [eggplant, aubergine, baingan, vankaya, kathirikai, vange]}
+- {common_name: Apple, scientific_name: Malus domestica (Suckow) Borkh., family: Rosaceae, model_crop: apple, aliases: [seb, saib, apples]}
+- {common_name: Grape, scientific_name: Vitis vinifera L., family: Vitaceae, model_crop: grape, aliases: [angoor, angur, draksha, grapes, grapevine, vine]}
+- {common_name: Maize, scientific_name: Zea mays L., family: Poaceae, model_crop: maize, aliases: [corn, makka, makki, bhutta, mokkajonna, makka cholam]}
+- {common_name: Orange, scientific_name: Citrus sinensis (L.) Osbeck, family: Rutaceae, model_crop: citrus, aliases: [sweet orange, mosambi, santra, narangi, oranges]}
+- {common_name: Mandarin, scientific_name: Citrus reticulata Blanco, family: Rutaceae, model_crop: citrus, aliases: [nagpur orange, kinnow, santara, tangerine]}
+- {common_name: Lemon, scientific_name: Citrus limon (L.) Osbeck, family: Rutaceae, model_crop: citrus, aliases: [nimbu, nimboo, elumichai]}
+- {common_name: Acid lime, scientific_name: Citrus aurantiifolia (Christm.) Swingle, family: Rutaceae, model_crop: citrus, aliases: [lime, kagzi nimbu, key lime]}
+- {common_name: Peach, scientific_name: Prunus persica (L.) Batsch, family: Rosaceae, model_crop: peach, aliases: [aadu, aru, peaches]}
+- {common_name: Cherry, scientific_name: Prunus avium (L.) L., family: Rosaceae, model_crop: cherry, aliases: [sweet cherry, sour cherry, gilas, cherries]}
+- {common_name: Strawberry, scientific_name: Fragaria × ananassa (Duchesne ex Weston) Duchesne ex Rozier, family: Rosaceae, model_crop: strawberry, aliases: [strawberries]}
+- {common_name: Blueberry, scientific_name: Vaccinium corymbosum L., family: Ericaceae, model_crop: blueberry, aliases: [blueberries, highbush blueberry]}
+- {common_name: Raspberry, scientific_name: Rubus idaeus L., family: Rosaceae, model_crop: raspberry, aliases: [raspberries, rasbhari]}
+- {common_name: Soybean, scientific_name: Glycine max (L.) Merr., family: Fabaceae, model_crop: soybean, aliases: [soyabean, soya, soy, bhatt]}
+- {common_name: Squash, scientific_name: Cucurbita pepo L., family: Cucurbitaceae, model_crop: squash, aliases: [zucchini, summer squash, marrow, courgette]}
+- {common_name: Pumpkin, scientific_name: Cucurbita moschata Duchesne, family: Cucurbitaceae, model_crop: squash, aliases: [kaddu, sitaphal, poosanikai, gummadi]}
+- {common_name: Cucumber, scientific_name: Cucumis sativus L., family: Cucurbitaceae, model_crop: cucurbits, aliases: [kheera, khira, dosakaya, vellarikai]}
+- {common_name: Bottle gourd, scientific_name: Lagenaria siceraria (Molina) Standl., family: Cucurbitaceae, model_crop: cucurbits, aliases: [lauki, ghiya, sorakaya, suraikkai]}
+- {common_name: Bitter gourd, scientific_name: Momordica charantia L., family: Cucurbitaceae, model_crop: cucurbits, aliases: [karela, kakarakaya, pavakkai]}
+- {common_name: Watermelon, scientific_name: Citrullus lanatus (Thunb.) Matsum. & Nakai, family: Cucurbitaceae, model_crop: cucurbits, aliases: [tarbooz, tarbuj]}
+- {common_name: Muskmelon, scientific_name: Cucumis melo L., family: Cucurbitaceae, model_crop: cucurbits, aliases: [kharbuja, melon, cantaloupe]}
+- {common_name: Rice, scientific_name: Oryza sativa L., family: Poaceae, model_crop: rice, aliases: [paddy, dhan, chawal, vari, nellu, bhat]}
+- {common_name: Wheat, scientific_name: Triticum aestivum L., family: Poaceae, model_crop: wheat, aliases: [gehun, gehu, godhuma, kanak]}
+- {common_name: Cotton, scientific_name: Gossypium hirsutum L., family: Malvaceae, model_crop: cotton, aliases: [kapas, narma, patti, upland cotton]}
+- {common_name: Okra, scientific_name: Abelmoschus esculentus (L.) Moench, family: Malvaceae, model_crop: okra, aliases: [bhindi, ladies finger, lady finger, bendakaya, vendakkai]}
+- {common_name: Banana, scientific_name: Musa × paradisiaca L., family: Musaceae, model_crop: banana, aliases: [kela, plantain, vazhai, arati]}
+- {common_name: Groundnut, scientific_name: Arachis hypogaea L., family: Fabaceae, model_crop: groundnut, aliases: [peanut, moongphali, mungfali, verusenaga, verkadalai]}
+- {common_name: Mango, scientific_name: Mangifera indica L., family: Anacardiaceae, model_crop: mango, aliases: [aam, mamidi, maambazham, mangoes]}
+- {common_name: Onion, scientific_name: Allium cepa L., family: Amaryllidaceae, model_crop: onion, aliases: [pyaz, pyaj, kanda, ulli, vengayam]}
+- {common_name: Mustard, scientific_name: Brassica juncea (L.) Czern., family: Brassicaceae, model_crop: mustard, aliases: [sarson, rai, indian mustard, rapeseed mustard]}
+- {common_name: Papaya, scientific_name: Carica papaya L., family: Caricaceae, model_crop: papaya, aliases: [papita, boppayi, pappali]}
+- {common_name: Sugarcane, scientific_name: Saccharum officinarum L., family: Poaceae, model_crop: null, aliases: [ganna, kabbu, karumbu, us]}
+- {common_name: Sorghum, scientific_name: Sorghum bicolor (L.) Moench, family: Poaceae, model_crop: null, aliases: [jowar, jonna, cholam]}
+- {common_name: Pearl millet, scientific_name: Cenchrus americanus (L.) Morrone, family: Poaceae, model_crop: null, aliases: [bajra, sajjalu, kambu, pennisetum glaucum]}
+- {common_name: Finger millet, scientific_name: Eleusine coracana (L.) Gaertn., family: Poaceae, model_crop: null, aliases: [ragi, nachni, mandua]}
+- {common_name: Chickpea, scientific_name: Cicer arietinum L., family: Fabaceae, model_crop: null, aliases: [chana, gram, bengal gram, kadalai]}
+- {common_name: Pigeon pea, scientific_name: Cajanus cajan (L.) Millsp., family: Fabaceae, model_crop: null, aliases: [arhar, tur, toor, red gram, kandi]}
+- {common_name: Green gram, scientific_name: Vigna radiata (L.) R.Wilczek, family: Fabaceae, model_crop: null, aliases: [moong, mung bean, pesalu, pasi payaru]}
+- {common_name: Black gram, scientific_name: Vigna mungo (L.) Hepper, family: Fabaceae, model_crop: null, aliases: [urad, urd, minumulu, ulundu]}
+- {common_name: Lentil, scientific_name: Lens culinaris Medik., family: Fabaceae, model_crop: null, aliases: [masoor, masur]}
+- {common_name: Cowpea, scientific_name: Vigna unguiculata (L.) Walp., family: Fabaceae, model_crop: null, aliases: [lobia, chawli, black-eyed pea]}
+- {common_name: Sunflower, scientific_name: Helianthus annuus L., family: Asteraceae, model_crop: null, aliases: [surajmukhi]}
+- {common_name: Sesame, scientific_name: Sesamum indicum L., family: Pedaliaceae, model_crop: null, aliases: [til, gingelly, ellu, nuvvulu]}
+- {common_name: Castor, scientific_name: Ricinus communis L., family: Euphorbiaceae, model_crop: null, aliases: [arandi, erandi, amudam]}
+- {common_name: Cabbage, scientific_name: Brassica oleracea var. capitata L., family: Brassicaceae, model_crop: null, aliases: [patta gobhi, band gobhi]}
+- {common_name: Cauliflower, scientific_name: Brassica oleracea var. botrytis L., family: Brassicaceae, model_crop: null, aliases: [phool gobhi, gobi]}
+- {common_name: Carrot, scientific_name: Daucus carota subsp. sativus (Hoffm.) Arcang., family: Apiaceae, model_crop: null, aliases: [gajar]}
+- {common_name: Radish, scientific_name: Raphanus sativus L., family: Brassicaceae, model_crop: null, aliases: [mooli, mullangi]}
+- {common_name: Spinach, scientific_name: Spinacia oleracea L., family: Amaranthaceae, model_crop: null, aliases: [palak]}
+- {common_name: Garlic, scientific_name: Allium sativum L., family: Amaryllidaceae, model_crop: null, aliases: [lahsun, lasun, vellulli, poondu]}
+- {common_name: Ginger, scientific_name: Zingiber officinale Roscoe, family: Zingiberaceae, model_crop: null, aliases: [adrak, allam, inji]}
+- {common_name: Turmeric, scientific_name: Curcuma longa L., family: Zingiberaceae, model_crop: null, aliases: [haldi, pasupu, manjal]}
+- {common_name: Coriander, scientific_name: Coriandrum sativum L., family: Apiaceae, model_crop: null, aliases: [dhaniya, cilantro, kothamalli]}
+- {common_name: Guava, scientific_name: Psidium guajava L., family: Myrtaceae, model_crop: null, aliases: [amrood, jama, koyya]}
+- {common_name: Pomegranate, scientific_name: Punica granatum L., family: Lythraceae, model_crop: null, aliases: [anar, danimma, mathulai]}
+- {common_name: Coconut, scientific_name: Cocos nucifera L., family: Arecaceae, model_crop: null, aliases: [nariyal, thengai, kobbari]}
+- {common_name: Arecanut, scientific_name: Areca catechu L., family: Arecaceae, model_crop: null, aliases: [supari, betel nut, adike, pakku]}
+- {common_name: Tea, scientific_name: Camellia sinensis (L.) Kuntze, family: Theaceae, model_crop: null, aliases: [chai, chaay]}
+- {common_name: Coffee, scientific_name: Coffea arabica L., family: Rubiaceae, model_crop: null, aliases: [arabica coffee, kaapi]}
+- {common_name: Black pepper, scientific_name: Piper nigrum L., family: Piperaceae, model_crop: null, aliases: [kali mirch, milagu, miriyalu]}
+- {common_name: Cardamom, scientific_name: Elettaria cardamomum (L.) Maton, family: Zingiberaceae, model_crop: null, aliases: [elaichi, elakkai, yelakulu]}
+- {common_name: Jute, scientific_name: Corchorus olitorius L., family: Malvaceae, model_crop: null, aliases: [pat, patsan]}
+- {common_name: Tobacco, scientific_name: Nicotiana tabacum L., family: Solanaceae, model_crop: null, aliases: [tambaku, pogaku]}
+- {common_name: Rose, scientific_name: Rosa × hybrida (hort.), family: Rosaceae, model_crop: null, aliases: [gulab, roja]}
+- {common_name: Marigold, scientific_name: Tagetes erecta L., family: Asteraceae, model_crop: null, aliases: [genda, banti, chendumalli]}
+- {common_name: Cashew, scientific_name: Anacardium occidentale L., family: Anacardiaceae, model_crop: null, aliases: [kaju, jeedi, mundhiri]}
+- {common_name: Sapota, scientific_name: Manilkara zapota (L.) P.Royen, family: Sapotaceae, model_crop: null, aliases: [chikoo, chiku, sapodilla]}
+- {common_name: Jackfruit, scientific_name: Artocarpus heterophyllus Lam., family: Moraceae, model_crop: null, aliases: [kathal, panasa, pala]}
+- {common_name: Pear, scientific_name: Pyrus communis L., family: Rosaceae, model_crop: null, aliases: [nashpati, babbugosha]}
+- {common_name: Plum, scientific_name: Prunus domestica L., family: Rosaceae, model_crop: null, aliases: [aloo bukhara, alubukhara]}
+- {common_name: Sweet potato, scientific_name: Ipomoea batatas (L.) Lam., family: Convolvulaceae, model_crop: null, aliases: [shakarkandi, genasu, sakkaraivalli]}
+- {common_name: Cassava, scientific_name: Manihot esculenta Crantz, family: Euphorbiaceae, model_crop: null, aliases: [tapioca, kappa, maravalli kizhangu]}
+- {common_name: French bean, scientific_name: Phaseolus vulgaris L., family: Fabaceae, model_crop: null, aliases: [beans, rajma, green beans, kidney bean]}
+- {common_name: Pea, scientific_name: Pisum sativum L., family: Fabaceae, model_crop: null, aliases: [matar, mattar, batani]}

@@ -1,0 +1,6 @@
+# Keep every file byte-for-byte: frozen artifacts are checked by SHA-256,
+# so line-ending conversion would make them fail verification.
+* -text
+
+# Trained weights exceed normal git limits.
+models/**/*.pt filter=lfs diff=lfs merge=lfs -text

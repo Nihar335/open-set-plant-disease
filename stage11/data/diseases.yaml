@@ -1,0 +1,782 @@
+# Stage 11 disease database.
+#
+# Two kinds of entries:
+#   * image-trained: model_class is set -> the CNN was trained on photos of this class (PlantVillage folder name),
+#     plantdoc lists the PlantDoc field-photo folders mapped onto it.
+#   * database-only: model_class is null -> no training photos. These are reached only through
+#     symptom matching (symptom head output vs the symptom profile below) and are never reported at
+#     >= 85% confidence.
+#
+# symptoms: symptom-id -> weight (1.0 hallmark, 0.6 common, 0.3 sometimes). Ids come from symptoms.yaml.
+#   The profiles of image-trained classes are also the weak labels for the symptom head during training.
+# weather: favourable conditions. temp = optimum air temperature range in deg C; humidity = high (>80% RH),
+#   moderate (60-80%), low (<60%), any; rain = wet (rain / leaf wetness favours it), dry (dry weather favours it), any.
+# tests: ids from diagnostic_tests.yaml, in the recommended order.
+# Provenance: curated from standard plant-pathology references (APS disease compendia, university extension
+#   factsheets, TNAU Agritech portal). Curated by the project team; NOT expert-reviewed.
+# Management notes are cultural practices only. Chemical products and doses are deliberately omitted: ask the
+#   local KVK / agriculture officer for products registered in India (CIBRC).
+
+# ---------------------------------------------------------------- Apple
+- key: apple_scab
+  crop: apple
+  name: Apple scab
+  model_class: Apple___Apple_scab
+  plantdoc: [Apple Scab Leaf]
+  pathogen: Venturia inaequalis
+  pathogen_type: fungus
+  symptoms: {olive_velvety_lesions: 1.0, dark_black_spots: 0.6, leaf_distortion: 0.3, general_yellowing: 0.3}
+  weather: {temp: [13, 24], humidity: high, rain: wet}
+  tests: [hand_lens_spores, moist_chamber, spore_microscopy]
+  look_alikes: [apple_black_rot]
+  management: Rake and destroy fallen leaves, prune for air flow, plant scab-resistant varieties.
+- key: apple_black_rot
+  crop: apple
+  name: Black rot (frog-eye leaf spot)
+  model_class: Apple___Black_rot
+  extra: [AppleLeaf9 Frogeye leaf spot]
+  plantdoc: []
+  pathogen: Botryosphaeria obtusa (syn. Diplodia seriata)
+  pathogen_type: fungus
+  symptoms: {brown_spots: 1.0, purple_red_margins: 1.0, concentric_rings: 0.6, many_small_spots: 0.3, general_yellowing: 0.3}
+  weather: {temp: [20, 30], humidity: high, rain: wet}
+  tests: [hand_lens_spores, moist_chamber, culture_isolation]
+  look_alikes: [apple_alternaria_leaf_spot, apple_cedar_rust, apple_scab]
+  management: Remove mummified fruit and dead wood / cankers, prune infected branches.
+- key: apple_cedar_rust
+  crop: apple
+  name: Apple rust (cedar apple rust)
+  model_class: Apple___Cedar_apple_rust
+  extra: [AppleLeaf9 Rust]
+  plantdoc: [Apple rust leaf]
+  pathogen: Gymnosporangium juniperi-virginianae / G. yamadae
+  pathogen_type: fungus
+  symptoms: {rust_pustules: 1.0, yellow_halo: 0.6, brown_spots: 0.3}
+  weather: {temp: [13, 24], humidity: high, rain: wet}
+  tests: [hand_lens_spores, spore_microscopy]
+  look_alikes: [apple_black_rot, apple_alternaria_leaf_spot]
+  management: Remove nearby juniper / cedar hosts where possible; plant resistant varieties.
+- key: apple_alternaria_leaf_spot
+  crop: apple
+  name: Alternaria leaf spot / blotch
+  model_class: AppleLeaf9 Alternaria leaf spot + Kashmir Alternaria
+  extra: [AppleLeaf9 Alternaria leaf spot, Kashmir Alternaria]
+  plantdoc: []
+  pathogen: Alternaria mali (A. alternata apple pathotype)
+  pathogen_type: fungus
+  symptoms: {brown_spots: 1.0, many_small_spots: 0.6, purple_red_margins: 0.6, concentric_rings: 0.6, general_yellowing: 0.3, large_dead_areas: 0.3}
+  weather: {temp: [25, 30], humidity: high, rain: wet}
+  tests: [hand_lens_spores, moist_chamber, spore_microscopy]
+  look_alikes: [apple_black_rot, apple_marssonina_blotch]
+  management: Collect and destroy fallen leaves, prune for air flow and light, avoid excess nitrogen, keep orchard floor weed-free.
+- key: apple_marssonina_blotch
+  crop: apple
+  name: Marssonina leaf blotch (brown spot)
+  model_class: AppleLeaf9 Brown spot
+  extra: [AppleLeaf9 Brown spot]
+  plantdoc: []
+  pathogen: Diplocarpon mali (anamorph Marssonina coronaria)
+  pathogen_type: fungus
+  symptoms: {dark_black_spots: 1.0, brown_spots: 0.6, general_yellowing: 0.6, large_dead_areas: 0.3}
+  weather: {temp: [20, 25], humidity: high, rain: wet}
+  tests: [moist_chamber, spore_microscopy, culture_isolation]
+  look_alikes: [apple_alternaria_leaf_spot, apple_scab]
+  management: Collect and destroy fallen leaves in autumn, prune for air flow, avoid prolonged leaf wetness; it causes early leaf fall in rainy summers.
+- key: apple_grey_spot
+  crop: apple
+  name: Grey leaf spot
+  model_class: AppleLeaf9 Grey spot
+  extra: [AppleLeaf9 Grey spot]
+  plantdoc: []
+  pathogen: Phyllosticta spp. / Pestalotiopsis spp.
+  pathogen_type: fungus
+  symptoms: {many_small_spots: 1.0, brown_spots: 0.6, purple_red_margins: 0.3}
+  weather: {temp: [20, 28], humidity: high, rain: wet}
+  tests: [hand_lens_spores, spore_microscopy, culture_isolation]
+  look_alikes: [apple_alternaria_leaf_spot, apple_black_rot]
+  management: Remove fallen leaves, improve air flow; usually controlled by the routine orchard spray programme.
+- key: apple_powdery_mildew
+  crop: apple
+  name: Powdery mildew
+  model_class: AppleLeaf9 Powdery mildew
+  extra: [AppleLeaf9 Powdery mildew]
+  plantdoc: []
+  pathogen: Podosphaera leucotricha
+  pathogen_type: fungus
+  symptoms: {white_powdery_coating: 1.0, leaf_curling: 0.6, leaf_distortion: 0.6}
+  weather: {temp: [10, 25], humidity: moderate, rain: dry}
+  tests: [rub_test_powdery, hand_lens_spores]
+  look_alikes: []
+  management: Prune out white (infected) shoots and buds in winter and spring, keep the canopy open.
+- key: apple_mosaic
+  crop: apple
+  name: Apple mosaic
+  model_class: AppleLeaf9 Mosaic + Kashmir Apple_Mosaic
+  extra: [AppleLeaf9 Mosaic, Kashmir Apple_Mosaic]
+  plantdoc: []
+  pathogen: Apple mosaic virus (ApMV; spread by grafting with infected budwood)
+  pathogen_type: virus
+  symptoms: {mosaic_mottling: 1.0, vein_yellowing: 0.6, general_yellowing: 0.3}
+  weather: {temp: [15, 30], humidity: any, rain: any}
+  tests: [elisa_virus, pcr_virus]
+  look_alikes: []
+  management: No cure. Use certified virus-free rootstocks and budwood; keep tree vigour with balanced nutrition.
+- key: apple_healthy
+  crop: apple
+  name: Healthy
+  model_class: Apple___healthy
+  plantdoc: [Apple leaf]
+  pathogen: null
+  pathogen_type: none
+  symptoms: {no_visible_symptoms: 1.0}
+  weather: null
+  tests: []
+  look_alikes: []
+  management: No disease detected. Keep monitoring weekly.
+
+# ---------------------------------------------------------------- Blueberry / Raspberry / Soybean / Cherry / Peach / Strawberry
+- key: blueberry_healthy
+  crop: blueberry
+  name: Healthy
+  model_class: Blueberry___healthy
+  plantdoc: [Blueberry leaf]
+  pathogen: null
+  pathogen_type: none
+  symptoms: {no_visible_symptoms: 1.0}
+  weather: null
+  tests: []
+  look_alikes: []
+  management: No disease detected. Keep monitoring weekly.
+- key: raspberry_healthy
+  crop: raspberry
+  name: Healthy
+  model_class: Raspberry___healthy
+  plantdoc: [Raspberry leaf]
+  pathogen: null
+  pathogen_type: none
+  symptoms: {no_visible_symptoms: 1.0}
+  weather: null
+  tests: []
+  look_alikes: []
+  management: No disease detected. Keep monitoring weekly.
+- key: soybean_healthy
+  crop: soybean
+  name: Healthy
+  model_class: Soybean___healthy
+  plantdoc: [Soyabean leaf]
+  pathogen: null
+  pathogen_type: none
+  symptoms: {no_visible_symptoms: 1.0}
+  weather: null
+  tests: []
+  look_alikes: []
+  management: No disease detected. Keep monitoring weekly.
+- key: cherry_powdery_mildew
+  crop: cherry
+  name: Powdery mildew
+  model_class: Cherry_(including_sour)___Powdery_mildew
+  plantdoc: []
+  pathogen: Podosphaera clandestina
+  pathogen_type: fungus
+  symptoms: {white_powdery_coating: 1.0, leaf_curling: 0.6, leaf_distortion: 0.3}
+  weather: {temp: [15, 27], humidity: high, rain: dry}
+  tests: [rub_test_powdery, hand_lens_spores, spore_microscopy]
+  look_alikes: []
+  management: Prune for air flow and sunlight, avoid excess nitrogen, remove water shoots.
+- key: cherry_healthy
+  crop: cherry
+  name: Healthy
+  model_class: Cherry_(including_sour)___healthy
+  plantdoc: [Cherry leaf]
+  pathogen: null
+  pathogen_type: none
+  symptoms: {no_visible_symptoms: 1.0}
+  weather: null
+  tests: []
+  look_alikes: []
+  management: No disease detected. Keep monitoring weekly.
+- key: peach_bacterial_spot
+  crop: peach
+  name: Bacterial spot
+  model_class: Peach___Bacterial_spot
+  plantdoc: []
+  pathogen: Xanthomonas arboricola pv. pruni
+  pathogen_type: bacterium
+  symptoms: {many_small_spots: 1.0, shot_holes: 1.0, water_soaked_lesions: 0.6, purple_red_margins: 0.6, general_yellowing: 0.6}
+  weather: {temp: [24, 30], humidity: high, rain: wet}
+  tests: [bacterial_ooze, culture_isolation, koh_string_test, pcr_bacteria]
+  look_alikes: []
+  management: Plant tolerant varieties, avoid sandy wind-exposed sites, keep trees well nourished.
+- key: peach_healthy
+  crop: peach
+  name: Healthy
+  model_class: Peach___healthy
+  plantdoc: [Peach leaf]
+  pathogen: null
+  pathogen_type: none
+  symptoms: {no_visible_symptoms: 1.0}
+  weather: null
+  tests: []
+  look_alikes: []
+  management: No disease detected. Keep monitoring weekly.
+- key: strawberry_leaf_scorch
+  crop: strawberry
+  name: Leaf scorch
+  model_class: Strawberry___Leaf_scorch
+  plantdoc: []
+  pathogen: Diplocarpon earlianum
+  pathogen_type: fungus
+  symptoms: {purple_red_margins: 1.0, many_small_spots: 1.0, edge_scorch: 0.6, large_dead_areas: 0.6}
+  weather: {temp: [20, 27], humidity: high, rain: wet}
+  tests: [xylem_scorch_check, hand_lens_spores, moist_chamber]
+  look_alikes: []
+  management: Remove old infected leaves after harvest, avoid overhead watering, renew beds regularly.
+- key: strawberry_healthy
+  crop: strawberry
+  name: Healthy
+  model_class: Strawberry___healthy
+  plantdoc: [Strawberry leaf]
+  pathogen: null
+  pathogen_type: none
+  symptoms: {no_visible_symptoms: 1.0}
+  weather: null
+  tests: []
+  look_alikes: []
+  management: No disease detected. Keep monitoring weekly.
+
+# ---------------------------------------------------------------- Maize
+- key: corn_gray_leaf_spot
+  crop: maize
+  name: Gray leaf spot (Cercospora leaf spot)
+  model_class: Corn_(maize)___Cercospora_leaf_spot Gray_leaf_spot
+  plantdoc: [Corn Gray leaf spot]
+  pathogen: Cercospora zeae-maydis
+  pathogen_type: fungus
+  symptoms: {elongated_lesions: 1.0, brown_spots: 0.6, large_dead_areas: 0.3}
+  weather: {temp: [22, 30], humidity: high, rain: wet}
+  tests: [hand_lens_spores, moist_chamber, spore_microscopy]
+  look_alikes: [corn_northern_leaf_blight]
+  management: Rotate away from maize for a season, bury residue, grow tolerant hybrids.
+- key: corn_common_rust
+  crop: maize
+  name: Common rust
+  model_class: Corn_(maize)___Common_rust_
+  plantdoc: [Corn rust leaf]
+  pathogen: Puccinia sorghi
+  pathogen_type: fungus
+  symptoms: {rust_pustules: 1.0, many_small_spots: 0.6, general_yellowing: 0.3}
+  weather: {temp: [16, 25], humidity: high, rain: any}
+  tests: [hand_lens_spores, spore_microscopy]
+  look_alikes: []
+  management: Grow resistant hybrids; sow early so that crop escapes peak spore load.
+- key: corn_northern_leaf_blight
+  crop: maize
+  name: Northern / Turcicum leaf blight
+  model_class: Corn_(maize)___Northern_Leaf_Blight
+  plantdoc: [Corn leaf blight]
+  pathogen: Exserohilum turcicum
+  pathogen_type: fungus
+  symptoms: {elongated_lesions: 1.0, large_dead_areas: 0.6, brown_spots: 0.6}
+  weather: {temp: [18, 27], humidity: high, rain: wet}
+  tests: [moist_chamber, underside_growth_check, spore_microscopy]
+  look_alikes: [corn_gray_leaf_spot]
+  management: Grow resistant hybrids, rotate crops, plough under infected residue.
+- key: corn_healthy
+  crop: maize
+  name: Healthy
+  model_class: Corn_(maize)___healthy
+  plantdoc: []
+  pathogen: null
+  pathogen_type: none
+  symptoms: {no_visible_symptoms: 1.0}
+  weather: null
+  tests: []
+  look_alikes: []
+  management: No disease detected. Keep monitoring weekly.
+
+# ---------------------------------------------------------------- Grape
+- key: grape_black_rot
+  crop: grape
+  name: Black rot
+  model_class: Grape___Black_rot
+  plantdoc: [grape leaf black rot]
+  pathogen: Guignardia bidwellii
+  pathogen_type: fungus
+  symptoms: {brown_spots: 1.0, dark_black_spots: 0.6, purple_red_margins: 0.3}
+  weather: {temp: [20, 30], humidity: high, rain: wet}
+  tests: [hand_lens_spores, moist_chamber, spore_microscopy]
+  look_alikes: [grape_leaf_blight, grape_esca]
+  management: Remove mummified berries and infected canes, open the canopy for air flow.
+- key: grape_esca
+  crop: grape
+  name: Esca (black measles)
+  model_class: Grape___Esca_(Black_Measles)
+  plantdoc: []
+  pathogen: Phaeomoniella chlamydospora and Phaeoacremonium spp. (trunk-disease complex)
+  pathogen_type: fungus
+  symptoms: {interveinal_stripes: 1.0, edge_scorch: 0.6, brown_spots: 0.3, general_yellowing: 0.6}
+  weather: {temp: [25, 35], humidity: any, rain: any}
+  tests: [wood_cross_section, culture_isolation]
+  look_alikes: [grape_black_rot]
+  management: Prune in dry weather, protect large pruning wounds, remove dead arms and badly infected vines.
+- key: grape_leaf_blight
+  crop: grape
+  name: Leaf blight (Isariopsis leaf spot)
+  model_class: Grape___Leaf_blight_(Isariopsis_Leaf_Spot)
+  plantdoc: []
+  pathogen: Pseudocercospora vitis (syn. Isariopsis clavispora)
+  pathogen_type: fungus
+  symptoms: {brown_spots: 1.0, dark_black_spots: 0.6, large_dead_areas: 0.6, fuzzy_mould_growth: 0.3}
+  weather: {temp: [24, 30], humidity: high, rain: wet}
+  tests: [underside_growth_check, moist_chamber, spore_microscopy]
+  look_alikes: [grape_black_rot]
+  management: Remove and destroy fallen infected leaves; keep the canopy open.
+- key: grape_healthy
+  crop: grape
+  name: Healthy
+  model_class: Grape___healthy
+  plantdoc: [grape leaf]
+  pathogen: null
+  pathogen_type: none
+  symptoms: {no_visible_symptoms: 1.0}
+  weather: null
+  tests: []
+  look_alikes: []
+  management: No disease detected. Keep monitoring weekly.
+
+# ---------------------------------------------------------------- Citrus
+- key: citrus_greening
+  crop: citrus
+  name: Citrus greening (Huanglongbing)
+  model_class: Orange___Haunglongbing_(Citrus_greening)
+  plantdoc: []
+  pathogen: Candidatus Liberibacter asiaticus (spread by the Asian citrus psyllid)
+  pathogen_type: bacterium
+  symptoms: {blotchy_asymmetric_mottle: 1.0, general_yellowing: 1.0, vein_yellowing: 0.6, leaf_distortion: 0.3}
+  weather: {temp: [25, 32], humidity: any, rain: any}
+  tests: [iodine_starch_test, vector_check, soil_and_tissue_test, qpcr_hlb]
+  look_alikes: []
+  management: Use certified disease-free nursery plants, control psyllids, remove confirmed infected trees.
+
+# ---------------------------------------------------------------- Pepper
+- key: pepper_bacterial_spot
+  crop: bell pepper
+  name: Bacterial spot
+  model_class: Pepper,_bell___Bacterial_spot
+  plantdoc: [Bell_pepper leaf spot]
+  pathogen: Xanthomonas euvesicatoria (and related Xanthomonas spp.)
+  pathogen_type: bacterium
+  symptoms: {water_soaked_lesions: 1.0, brown_spots: 1.0, many_small_spots: 0.6, general_yellowing: 0.6, yellow_halo: 0.3}
+  weather: {temp: [24, 30], humidity: high, rain: wet}
+  tests: [bacterial_ooze, culture_isolation, koh_string_test, pcr_bacteria]
+  look_alikes: []
+  management: Use disease-free seed and transplants, avoid overhead irrigation, rotate 2–3 years away from pepper/tomato.
+- key: pepper_healthy
+  crop: bell pepper
+  name: Healthy
+  model_class: Pepper,_bell___healthy
+  plantdoc: [Bell_pepper leaf]
+  pathogen: null
+  pathogen_type: none
+  symptoms: {no_visible_symptoms: 1.0}
+  weather: null
+  tests: []
+  look_alikes: []
+  management: No disease detected. Keep monitoring weekly.
+
+# ---------------------------------------------------------------- Potato
+- key: potato_early_blight
+  crop: potato
+  name: Early blight
+  model_class: Potato___Early_blight
+  plantdoc: [Potato leaf early blight]
+  pathogen: Alternaria solani
+  pathogen_type: fungus
+  symptoms: {brown_spots: 1.0, concentric_rings: 1.0, general_yellowing: 0.6, yellow_halo: 0.3}
+  weather: {temp: [24, 29], humidity: high, rain: any}
+  tests: [visual_pattern_check, moist_chamber, spore_microscopy]
+  look_alikes: [potato_late_blight]
+  management: Remove lower infected leaves, keep plants well nourished, rotate crops, avoid late-evening irrigation.
+- key: potato_late_blight
+  crop: potato
+  name: Late blight
+  model_class: Potato___Late_blight
+  plantdoc: [Potato leaf late blight]
+  pathogen: Phytophthora infestans
+  pathogen_type: oomycete
+  symptoms: {large_dead_areas: 1.0, water_soaked_lesions: 1.0, dark_black_spots: 0.6, fuzzy_mould_growth: 0.6}
+  weather: {temp: [10, 24], humidity: high, rain: wet}
+  tests: [underside_growth_check, moist_chamber, oomycete_strip]
+  look_alikes: [potato_early_blight]
+  management: Act immediately — spreads within days in cool wet weather. Remove infected plants, use healthy seed tubers, earth up tubers, contact KVK for a spray schedule.
+- key: potato_healthy
+  crop: potato
+  name: Healthy
+  model_class: Potato___healthy
+  plantdoc: []
+  pathogen: null
+  pathogen_type: none
+  symptoms: {no_visible_symptoms: 1.0}
+  weather: null
+  tests: []
+  look_alikes: []
+  management: No disease detected. Keep monitoring weekly, especially in cool humid weather (late blight risk).
+
+# ---------------------------------------------------------------- Squash
+- key: squash_powdery_mildew
+  crop: squash
+  name: Powdery mildew
+  model_class: Squash___Powdery_mildew
+  plantdoc: [Squash Powdery mildew leaf]
+  pathogen: Podosphaera xanthii / Golovinomyces cichoracearum
+  pathogen_type: fungus
+  symptoms: {white_powdery_coating: 1.0, general_yellowing: 0.6}
+  weather: {temp: [20, 27], humidity: high, rain: dry}
+  tests: [rub_test_powdery, hand_lens_spores]
+  look_alikes: []
+  management: Grow tolerant varieties, space plants for air flow, remove heavily infected old leaves.
+
+# ---------------------------------------------------------------- Tomato
+- key: tomato_bacterial_spot
+  crop: tomato
+  name: Bacterial spot
+  model_class: Tomato___Bacterial_spot
+  plantdoc: [Tomato leaf bacterial spot]
+  pathogen: Xanthomonas spp. (X. vesicatoria, X. euvesicatoria, X. perforans, X. gardneri)
+  pathogen_type: bacterium
+  symptoms: {many_small_spots: 1.0, dark_black_spots: 0.6, water_soaked_lesions: 0.6, yellow_halo: 0.6, general_yellowing: 0.3}
+  weather: {temp: [24, 30], humidity: high, rain: wet}
+  tests: [bacterial_ooze, culture_isolation, koh_string_test, pcr_bacteria]
+  look_alikes: [tomato_septoria_leaf_spot, tomato_target_spot]
+  management: Use clean seed and transplants, avoid working with wet plants, rotate away from tomato/pepper.
+- key: tomato_early_blight
+  crop: tomato
+  name: Early blight
+  model_class: Tomato___Early_blight
+  plantdoc: [Tomato Early blight leaf]
+  pathogen: Alternaria solani / Alternaria linariae
+  pathogen_type: fungus
+  symptoms: {brown_spots: 1.0, concentric_rings: 1.0, yellow_halo: 0.6, general_yellowing: 0.6, large_dead_areas: 0.3}
+  weather: {temp: [24, 29], humidity: high, rain: any}
+  tests: [visual_pattern_check, hand_lens_spores, moist_chamber, spore_microscopy]
+  look_alikes: [tomato_target_spot, tomato_septoria_leaf_spot]
+  management: Remove lower infected leaves, mulch to stop soil splash, stake plants, rotate crops.
+- key: tomato_late_blight
+  crop: tomato
+  name: Late blight
+  model_class: Tomato___Late_blight
+  plantdoc: [Tomato leaf late blight]
+  pathogen: Phytophthora infestans
+  pathogen_type: oomycete
+  symptoms: {large_dead_areas: 1.0, water_soaked_lesions: 1.0, dark_black_spots: 0.6, fuzzy_mould_growth: 0.6}
+  weather: {temp: [10, 24], humidity: high, rain: wet}
+  tests: [underside_growth_check, moist_chamber, oomycete_strip]
+  look_alikes: [tomato_early_blight]
+  management: Act immediately. Remove and destroy infected plants, avoid overhead irrigation, contact KVK for a spray schedule.
+- key: tomato_leaf_mold
+  crop: tomato
+  name: Leaf mould
+  model_class: Tomato___Leaf_Mold
+  plantdoc: [Tomato mold leaf]
+  pathogen: Passalora fulva (syn. Fulvia fulva)
+  pathogen_type: fungus
+  symptoms: {general_yellowing: 1.0, fuzzy_mould_growth: 1.0, olive_velvety_lesions: 0.6}
+  weather: {temp: [21, 25], humidity: high, rain: any}
+  tests: [underside_growth_check, hand_lens_spores, spore_microscopy]
+  look_alikes: []
+  management: Reduce humidity (ventilate polyhouses), avoid wetting leaves, remove infected leaves.
+- key: tomato_septoria_leaf_spot
+  crop: tomato
+  name: Septoria leaf spot
+  model_class: Tomato___Septoria_leaf_spot
+  plantdoc: [Tomato Septoria leaf spot]
+  pathogen: Septoria lycopersici
+  pathogen_type: fungus
+  symptoms: {many_small_spots: 1.0, brown_spots: 0.6, dark_black_spots: 0.3, general_yellowing: 0.6}
+  weather: {temp: [20, 25], humidity: high, rain: wet}
+  tests: [hand_lens_spores, moist_chamber, spore_microscopy]
+  look_alikes: [tomato_bacterial_spot, tomato_early_blight]
+  management: Remove lower infected leaves, mulch, avoid overhead watering, rotate crops.
+- key: tomato_spider_mites
+  crop: tomato
+  name: Two-spotted spider mite damage
+  model_class: Tomato___Spider_mites Two-spotted_spider_mite
+  plantdoc: [Tomato two spotted spider mites leaf]
+  pathogen: Tetranychus urticae (mite pest)
+  pathogen_type: mite
+  symptoms: {stippling_bronzing: 1.0, webbing: 0.6, general_yellowing: 0.6, many_small_spots: 0.3}
+  weather: {temp: [27, 35], humidity: low, rain: dry}
+  tests: [mite_paper_tap, hand_lens_spores]
+  look_alikes: []
+  management: Spray water on the leaf underside, remove heavily infested leaves, conserve predatory mites, avoid dusty field edges.
+- key: tomato_target_spot
+  crop: tomato
+  name: Target spot
+  model_class: Tomato___Target_Spot
+  plantdoc: []
+  pathogen: Corynespora cassiicola
+  pathogen_type: fungus
+  symptoms: {brown_spots: 1.0, concentric_rings: 0.6, yellow_halo: 0.6, many_small_spots: 0.3}
+  weather: {temp: [20, 28], humidity: high, rain: wet}
+  tests: [hand_lens_spores, moist_chamber, spore_microscopy]
+  look_alikes: [tomato_early_blight, tomato_bacterial_spot]
+  management: Remove lower leaves and crop debris, improve air flow, rotate crops.
+- key: tomato_yellow_leaf_curl_virus
+  crop: tomato
+  name: Tomato yellow leaf curl virus
+  model_class: Tomato___Tomato_Yellow_Leaf_Curl_Virus
+  plantdoc: [Tomato leaf yellow virus]
+  pathogen: Tomato yellow leaf curl virus (begomovirus, spread by whitefly Bemisia tabaci)
+  pathogen_type: virus
+  symptoms: {leaf_curling: 1.0, general_yellowing: 1.0, leaf_distortion: 0.6}
+  weather: {temp: [25, 32], humidity: any, rain: dry}
+  tests: [vector_check, pcr_virus]
+  look_alikes: [tomato_mosaic_virus]
+  management: Use resistant hybrids and nets in the nursery, control whiteflies, uproot infected plants early.
+- key: tomato_mosaic_virus
+  crop: tomato
+  name: Tomato mosaic virus
+  model_class: Tomato___Tomato_mosaic_virus
+  plantdoc: [Tomato leaf mosaic virus]
+  pathogen: Tomato mosaic virus (tobamovirus, spread by contact and seed)
+  pathogen_type: virus
+  symptoms: {mosaic_mottling: 1.0, leaf_distortion: 0.6, general_yellowing: 0.3}
+  weather: {temp: [20, 30], humidity: any, rain: any}
+  tests: [elisa_virus, pcr_virus]
+  look_alikes: [tomato_yellow_leaf_curl_virus]
+  management: Use certified seed, wash hands and tools (milk or soap) when handling plants, remove infected plants.
+- key: tomato_healthy
+  crop: tomato
+  name: Healthy
+  model_class: Tomato___healthy
+  plantdoc: [Tomato leaf]
+  pathogen: null
+  pathogen_type: none
+  symptoms: {no_visible_symptoms: 1.0}
+  weather: null
+  tests: []
+  look_alikes: []
+  management: No disease detected. Keep monitoring weekly.
+
+# ================================================================ Database-only diseases (no training photos)
+# Reached only by symptom matching for the user's plant; confidence is capped below 85%.
+- key: rice_blast
+  crop: rice
+  name: Blast
+  model_class: null
+  pathogen: Magnaporthe oryzae (Pyricularia oryzae)
+  pathogen_type: fungus
+  symptoms: {brown_spots: 1.0, elongated_lesions: 0.6, purple_red_margins: 0.3, large_dead_areas: 0.3}
+  weather: {temp: [24, 28], humidity: high, rain: wet}
+  tests: [hand_lens_spores, moist_chamber, spore_microscopy]
+  look_alikes: [rice_brown_spot]
+  management: Avoid excess nitrogen, use resistant varieties, keep bunds weed-free.
+- key: rice_brown_spot
+  crop: rice
+  name: Brown spot
+  model_class: null
+  pathogen: Bipolaris oryzae (Cochliobolus miyabeanus)
+  pathogen_type: fungus
+  symptoms: {brown_spots: 1.0, many_small_spots: 0.6, yellow_halo: 0.6}
+  weather: {temp: [25, 30], humidity: high, rain: wet}
+  tests: [soil_and_tissue_test, moist_chamber, spore_microscopy]
+  look_alikes: [rice_blast]
+  management: Correct soil nutrient deficiencies (often potassium / silicon), use treated healthy seed.
+- key: rice_bacterial_leaf_blight
+  crop: rice
+  name: Bacterial leaf blight
+  model_class: null
+  pathogen: Xanthomonas oryzae pv. oryzae
+  pathogen_type: bacterium
+  symptoms: {edge_scorch: 1.0, general_yellowing: 0.6, large_dead_areas: 0.6, water_soaked_lesions: 0.6}
+  weather: {temp: [25, 34], humidity: high, rain: wet}
+  tests: [bacterial_ooze, culture_isolation, pcr_bacteria]
+  look_alikes: []
+  management: Use resistant varieties, avoid excess nitrogen, drain field water from infected plots.
+- key: wheat_leaf_rust
+  crop: wheat
+  name: Brown (leaf) rust
+  model_class: null
+  pathogen: Puccinia triticina
+  pathogen_type: fungus
+  symptoms: {rust_pustules: 1.0, many_small_spots: 0.6}
+  weather: {temp: [15, 25], humidity: high, rain: any}
+  tests: [hand_lens_spores, spore_microscopy]
+  look_alikes: [wheat_yellow_rust]
+  management: Grow resistant varieties recommended for your zone; sow on time.
+- key: wheat_yellow_rust
+  crop: wheat
+  name: Yellow (stripe) rust
+  model_class: null
+  pathogen: Puccinia striiformis f. sp. tritici
+  pathogen_type: fungus
+  symptoms: {rust_pustules: 1.0, elongated_lesions: 1.0, general_yellowing: 0.6}
+  weather: {temp: [10, 18], humidity: high, rain: any}
+  tests: [hand_lens_spores, spore_microscopy]
+  look_alikes: [wheat_leaf_rust]
+  management: Grow resistant varieties, report early patches to the agriculture department.
+- key: cotton_leaf_curl
+  crop: cotton
+  name: Cotton leaf curl disease
+  model_class: null
+  pathogen: Cotton leaf curl begomoviruses (spread by whitefly)
+  pathogen_type: virus
+  symptoms: {leaf_curling: 1.0, leaf_distortion: 0.6, vein_yellowing: 0.3}
+  weather: {temp: [25, 35], humidity: any, rain: dry}
+  tests: [vector_check, pcr_virus]
+  look_alikes: []
+  management: Grow tolerant hybrids, control whiteflies, remove weed hosts and infected plants.
+- key: chilli_leaf_curl
+  crop: chilli
+  name: Chilli leaf curl
+  model_class: null
+  pathogen: Chilli leaf curl begomoviruses (whitefly); thrips / mites cause similar curl
+  pathogen_type: virus
+  symptoms: {leaf_curling: 1.0, leaf_distortion: 1.0, general_yellowing: 0.3}
+  weather: {temp: [25, 35], humidity: any, rain: dry}
+  tests: [vector_check, mite_paper_tap, pcr_virus]
+  look_alikes: []
+  management: Raise seedlings under insect net, control whiteflies and thrips, uproot infected plants.
+- key: chilli_anthracnose_leaf_spot
+  crop: chilli
+  name: Cercospora / anthracnose leaf spot
+  model_class: null
+  pathogen: Cercospora capsici / Colletotrichum spp.
+  pathogen_type: fungus
+  symptoms: {brown_spots: 1.0, concentric_rings: 0.6, yellow_halo: 0.3}
+  weather: {temp: [24, 30], humidity: high, rain: wet}
+  tests: [hand_lens_spores, moist_chamber, spore_microscopy]
+  look_alikes: []
+  management: Use healthy seed, remove infected leaves and fruit, rotate crops.
+- key: okra_yellow_vein_mosaic
+  crop: okra
+  name: Yellow vein mosaic
+  model_class: null
+  pathogen: Bhendi yellow vein mosaic virus (begomovirus, whitefly)
+  pathogen_type: virus
+  symptoms: {vein_yellowing: 1.0, mosaic_mottling: 0.6, general_yellowing: 0.6}
+  weather: {temp: [25, 35], humidity: any, rain: dry}
+  tests: [vector_check, pcr_virus]
+  look_alikes: []
+  management: Grow resistant varieties, control whiteflies, uproot infected plants early.
+- key: banana_sigatoka
+  crop: banana
+  name: Sigatoka leaf spot
+  model_class: null
+  pathogen: Pseudocercospora musae / P. fijiensis
+  pathogen_type: fungus
+  symptoms: {elongated_lesions: 1.0, brown_spots: 0.6, yellow_halo: 0.6, large_dead_areas: 0.3}
+  weather: {temp: [25, 30], humidity: high, rain: wet}
+  tests: [hand_lens_spores, spore_microscopy]
+  look_alikes: []
+  management: Remove and destroy infected leaves, improve drainage, avoid dense planting.
+- key: groundnut_tikka
+  crop: groundnut
+  name: Tikka (early / late leaf spot)
+  model_class: null
+  pathogen: Cercospora arachidicola / Nothopassalora personata
+  pathogen_type: fungus
+  symptoms: {brown_spots: 1.0, dark_black_spots: 0.6, yellow_halo: 0.6}
+  weather: {temp: [25, 30], humidity: high, rain: wet}
+  tests: [hand_lens_spores, moist_chamber, spore_microscopy]
+  look_alikes: []
+  management: Rotate crops, remove volunteer plants and crop residue.
+- key: mango_powdery_mildew
+  crop: mango
+  name: Powdery mildew
+  model_class: null
+  pathogen: Erysiphe quercicola (Oidium mangiferae)
+  pathogen_type: fungus
+  symptoms: {white_powdery_coating: 1.0, leaf_distortion: 0.3}
+  weather: {temp: [20, 27], humidity: moderate, rain: dry}
+  tests: [rub_test_powdery, hand_lens_spores]
+  look_alikes: []
+  management: Prune for air flow; monitor closely during flowering in cool, cloudy weather.
+- key: mango_anthracnose
+  crop: mango
+  name: Anthracnose
+  model_class: null
+  pathogen: Colletotrichum gloeosporioides
+  pathogen_type: fungus
+  symptoms: {dark_black_spots: 1.0, brown_spots: 0.6, large_dead_areas: 0.3, shot_holes: 0.3}
+  weather: {temp: [24, 32], humidity: high, rain: wet}
+  tests: [moist_chamber, spore_microscopy]
+  look_alikes: []
+  management: Prune and destroy infected twigs and leaves, avoid overhead irrigation.
+- key: citrus_canker
+  crop: citrus
+  name: Citrus canker
+  model_class: null
+  pathogen: Xanthomonas citri subsp. citri
+  pathogen_type: bacterium
+  symptoms: {brown_spots: 1.0, yellow_halo: 1.0, water_soaked_lesions: 0.3}
+  weather: {temp: [25, 35], humidity: high, rain: wet}
+  tests: [bacterial_ooze, culture_isolation, pcr_bacteria]
+  look_alikes: []
+  management: Prune infected twigs in dry weather, use windbreaks, use disease-free nursery plants.
+- key: cucurbit_downy_mildew
+  crop: cucurbits
+  name: Downy mildew
+  model_class: null
+  pathogen: Pseudoperonospora cubensis
+  pathogen_type: oomycete
+  symptoms: {general_yellowing: 1.0, fuzzy_mould_growth: 1.0, brown_spots: 0.6}
+  weather: {temp: [15, 25], humidity: high, rain: wet}
+  tests: [underside_growth_check, moist_chamber]
+  look_alikes: [squash_powdery_mildew]
+  management: Wide spacing, drip instead of overhead irrigation, remove infected leaves.
+- key: brinjal_little_leaf
+  crop: brinjal
+  name: Little leaf
+  model_class: null
+  pathogen: Phytoplasma (spread by leafhoppers)
+  pathogen_type: phytoplasma
+  symptoms: {leaf_distortion: 1.0, general_yellowing: 0.6}
+  weather: {temp: [25, 35], humidity: any, rain: any}
+  tests: [vector_check, pcr_bacteria]
+  look_alikes: []
+  management: Uproot infected plants early, control leafhoppers, remove weed hosts.
+- key: onion_purple_blotch
+  crop: onion
+  name: Purple blotch
+  model_class: null
+  pathogen: Alternaria porri
+  pathogen_type: fungus
+  symptoms: {purple_red_margins: 1.0, elongated_lesions: 0.6, concentric_rings: 0.6}
+  weather: {temp: [21, 30], humidity: high, rain: wet}
+  tests: [hand_lens_spores, moist_chamber, spore_microscopy]
+  look_alikes: []
+  management: Rotate crops, avoid dense planting, remove infected leaves.
+- key: mustard_alternaria_blight
+  crop: mustard
+  name: Alternaria blight
+  model_class: null
+  pathogen: Alternaria brassicae
+  pathogen_type: fungus
+  symptoms: {brown_spots: 1.0, concentric_rings: 1.0, yellow_halo: 0.6}
+  weather: {temp: [12, 25], humidity: high, rain: wet}
+  tests: [hand_lens_spores, moist_chamber, spore_microscopy]
+  look_alikes: []
+  management: Sow on time, use healthy seed, remove lower infected leaves.
+- key: papaya_ringspot
+  crop: papaya
+  name: Papaya ringspot
+  model_class: null
+  pathogen: Papaya ringspot virus (aphid-borne)
+  pathogen_type: virus
+  symptoms: {mosaic_mottling: 1.0, leaf_distortion: 1.0, general_yellowing: 0.3}
+  weather: {temp: [20, 32], humidity: any, rain: any}
+  tests: [vector_check, elisa_virus, pcr_virus]
+  look_alikes: []
+  management: Raise seedlings under net, grow a barrier crop, remove infected plants early.
+- key: generic_nutrient_deficiency
+  crop: any
+  name: Nutrient deficiency (non-infectious)
+  model_class: null
+  pathogen: Not a pathogen — nitrogen, potassium, magnesium, iron or zinc imbalance
+  pathogen_type: abiotic
+  symptoms: {general_yellowing: 1.0, vein_yellowing: 0.6, edge_scorch: 0.6, blotchy_asymmetric_mottle: 0.3}
+  weather: null
+  tests: [visual_pattern_check, soil_and_tissue_test]
+  look_alikes: []
+  management: Get a soil test (Soil Health Card) before adding any fertiliser.

@@ -1,0 +1,65 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://agrovaidya.invalid/stage10/schemas/common.schema.json",
+  "title": "AgroVaidya Stage 10 — shared definitions",
+  "$defs": {
+    "evidence_status": {
+      "description": "observed = directly visible in the image or explicitly reported by the user; inferred = supported interpretation; unverified = needs more evidence; not_assessable = cannot be determined from the available information.",
+      "enum": ["observed", "inferred", "unverified", "not_assessable"]
+    },
+    "qualitative_level": {
+      "description": "Qualitative confidence. Never a calibrated probability.",
+      "enum": ["high", "moderate", "low", "not_assessable"]
+    },
+    "language_code": {"type": "string", "pattern": "^[a-z]{2,3}$"},
+    "source_id": {"type": "string", "pattern": "^SRC-[A-Z0-9][A-Z0-9-]*$"},
+    "source_ids": {"type": "array", "items": {"$ref": "#/$defs/source_id"}, "uniqueItems": true},
+    "localized_text": {
+      "description": "English is mandatory (authoritative source text); other languages are translations.",
+      "type": "object",
+      "required": ["en"],
+      "properties": {"en": {"type": "string", "minLength": 1}},
+      "patternProperties": {"^[a-z]{2,3}$": {"type": "string", "minLength": 1}},
+      "additionalProperties": false
+    },
+    "sourced_value": {
+      "type": "object",
+      "required": ["value", "status", "source_ids"],
+      "properties": {
+        "value": {"type": ["string", "null"]},
+        "status": {"$ref": "#/$defs/evidence_status"},
+        "source_ids": {"$ref": "#/$defs/source_ids"}
+      },
+      "additionalProperties": false
+    },
+    "uncertainty": {
+      "type": "object",
+      "required": ["level", "statements"],
+      "properties": {
+        "level": {"$ref": "#/$defs/qualitative_level"},
+        "statements": {"type": "array", "items": {"$ref": "#/$defs/localized_text"}}
+      },
+      "additionalProperties": false
+    },
+    "source_record": {
+      "type": "object",
+      "required": ["source_id", "title", "publisher_or_author", "url_or_doi", "accessed_on", "claims_supported", "geographic_relevance", "source_type"],
+      "properties": {
+        "source_id": {"$ref": "#/$defs/source_id"},
+        "title": {"type": "string", "minLength": 1},
+        "publisher_or_author": {"type": "string", "minLength": 1},
+        "url_or_doi": {"type": "string", "minLength": 1},
+        "published_or_updated": {"type": ["string", "null"]},
+        "accessed_on": {"type": "string", "format": "date"},
+        "claims_supported": {"type": "array", "items": {"type": "string", "minLength": 1}, "minItems": 1},
+        "geographic_relevance": {"enum": ["India", "India_region", "international", "global", "not_stated"]},
+        "source_type": {"enum": ["icar", "state_agricultural_university", "kvk", "government_india", "international_organization",
+                                 "peer_reviewed", "botanical_authority", "official_pesticide_label", "other", "test_fixture",
+                                 "university_extension_international", "taxonomic_database"]},
+        "limitations": {"type": ["string", "null"]},
+        "license_or_terms": {"type": ["string", "null"]}
+      },
+      "additionalProperties": false
+    }
+  }
+}

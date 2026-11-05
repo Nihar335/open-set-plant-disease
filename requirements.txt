@@ -1,0 +1,21 @@
+# Install PyTorch matching your CUDA first (RTX 4050 -> CUDA 12.x wheels):
+#   pip install torch==2.5.1 torchvision==0.20.1 --index-url https://download.pytorch.org/whl/cu121
+torch>=2.3
+torchvision>=0.18
+numpy>=1.26,<2.0
+pandas>=2.1
+scikit-learn>=1.4
+scipy>=1.11
+opencv-python>=4.9
+pillow>=10.0
+matplotlib>=3.8
+seaborn>=0.13
+pyyaml>=6.0
+requests>=2.31
+tqdm>=4.66
+# optional: only needed for the Kaggle fallback download
+# kaggle>=1.6
+pytest>=8.0                 # tests/ (leakage validator negative tests)
+# Stage-9 research demo (demo/app.py). Version actually tested; installing it also upgraded
+# typing_extensions to 4.16.0 and added streamlit's own dependencies (altair, pyarrow, pydeck, ...).
+streamlit==1.65.0

@@ -1,0 +1,394 @@
+# =============================================================================
+# Open-Set Recognition for Plant Disease Classification — master config
+# All paths are relative to the project root. Later phases append sections
+# (osr_split, model, training, osr, evaluation) — nothing is hard-coded in code.
+# =============================================================================
+
+seed: 42
+
+paths:
+  raw: data/raw
+  downloads: data/raw/_downloads        # temporary archives (deleted after verified extraction)
+  processed: data/processed
+  splits: data/splits
+  models: models
+  results: results
+  figures: results/figures
+  tables: results/tables
+  metrics: results/metrics
+
+# -----------------------------------------------------------------------------
+# Dataset sources — pinned revisions so the download is bit-for-bit reproducible.
+# -----------------------------------------------------------------------------
+datasets:
+  plantvillage:
+    # Maintainer's (Mohanty / EPFL) Hugging Face release. Public, no credentials.
+    # Ships the official leaf-grouping map -> lets us split by physical leaf.
+    source: huggingface
+    repo: mohanty/PlantVillage
+    revision: 9e97599868962bd0079b8db4b7f1efa9185fa1e7
+    archive: data.zip
+    archive_size: 2184723441
+    archive_sha256: fba30c6a7965e49be94b47a62f8aff6cfb1c35c27f475f22092b56db41745e84
+    variant: color                       # only raw/color is extracted (grayscale/segmented skipped)
+    metadata_files:
+      - leaf_grouping/leaf-map.json
+      - splits/color_train.txt
+      - splits/color_test.txt
+    license: CC BY-SA 3.0 (per maintainer HF card)
+    dir: data/raw/plantvillage
+    # Optional fallback (needs Kaggle credentials, see README). Not the default.
+    kaggle_fallback: abdallahalidev/plantvillage-dataset
+
+  plantdoc:
+    source: github
+    repo: pratikkayal/PlantDoc-Dataset
+    revision: 5467f6012d78d1c446145d5f582da6096f852ae8
+    license: CC BY 4.0
+    dir: data/raw/plantdoc
+
+  dtd:
+    # Describable Textures Dataset — non-plant "far-unknown" images.
+    source: url
+    url: https://thor.robots.ox.ac.uk/dtd/dtd-r1.0.1.tar.gz
+    archive_size: 625239812
+    license: research use (see https://www.robots.ox.ac.uk/~vgg/data/dtd/)
+    dir: data/raw/dtd
+
+# -----------------------------------------------------------------------------
+# PlantDoc folder -> (crop, disease, PlantVillage-equivalent class or null).
+# Folder names copied verbatim from the repo tree at the pinned revision.
+# This is a *vocabulary* mapping only; known/unknown roles are decided in Phase 3.
+# -----------------------------------------------------------------------------
+plantdoc_class_map:
+  "Apple Scab Leaf":                       {crop: Apple,      disease: Apple_scab,             pv: "Apple___Apple_scab"}
+  "Apple leaf":                            {crop: Apple,      disease: healthy,                pv: "Apple___healthy"}
+  "Apple rust leaf":                       {crop: Apple,      disease: Cedar_apple_rust,       pv: "Apple___Cedar_apple_rust"}
+  "Bell_pepper leaf":                      {crop: Pepper,     disease: healthy,                pv: "Pepper,_bell___healthy"}
+  "Bell_pepper leaf spot":                 {crop: Pepper,     disease: Bacterial_spot,         pv: "Pepper,_bell___Bacterial_spot"}
+  "Blueberry leaf":                        {crop: Blueberry,  disease: healthy,                pv: "Blueberry___healthy"}
+  "Cherry leaf":                           {crop: Cherry,     disease: healthy,                pv: "Cherry_(including_sour)___healthy"}
+  "Corn Gray leaf spot":                   {crop: Corn,       disease: Gray_leaf_spot,         pv: "Corn_(maize)___Cercospora_leaf_spot Gray_leaf_spot"}
+  "Corn leaf blight":                      {crop: Corn,       disease: Northern_Leaf_Blight,   pv: "Corn_(maize)___Northern_Leaf_Blight"}
+  "Corn rust leaf":                        {crop: Corn,       disease: Common_rust,            pv: "Corn_(maize)___Common_rust_"}
+  "Peach leaf":                            {crop: Peach,      disease: healthy,                pv: "Peach___healthy"}
+  "Potato leaf early blight":              {crop: Potato,     disease: Early_blight,           pv: "Potato___Early_blight"}
+  "Potato leaf late blight":               {crop: Potato,     disease: Late_blight,            pv: "Potato___Late_blight"}
+  "Raspberry leaf":                        {crop: Raspberry,  disease: healthy,                pv: "Raspberry___healthy"}
+  "Soyabean leaf":                         {crop: Soybean,    disease: healthy,                pv: "Soybean___healthy"}
+  "Squash Powdery mildew leaf":            {crop: Squash,     disease: Powdery_mildew,         pv: "Squash___Powdery_mildew"}
+  "Strawberry leaf":                       {crop: Strawberry, disease: healthy,                pv: "Strawberry___healthy"}
+  "Tomato Early blight leaf":              {crop: Tomato,     disease: Early_blight,           pv: "Tomato___Early_blight"}
+  "Tomato Septoria leaf spot":             {crop: Tomato,     disease: Septoria_leaf_spot,     pv: "Tomato___Septoria_leaf_spot"}
+  "Tomato leaf":                           {crop: Tomato,     disease: healthy,                pv: "Tomato___healthy"}
+  "Tomato leaf bacterial spot":            {crop: Tomato,     disease: Bacterial_spot,         pv: "Tomato___Bacterial_spot"}
+  "Tomato leaf late blight":               {crop: Tomato,     disease: Late_blight,            pv: "Tomato___Late_blight"}
+  "Tomato leaf mosaic virus":              {crop: Tomato,     disease: Tomato_mosaic_virus,    pv: "Tomato___Tomato_mosaic_virus"}
+  "Tomato leaf yellow virus":              {crop: Tomato,     disease: Yellow_Leaf_Curl_Virus, pv: "Tomato___Tomato_Yellow_Leaf_Curl_Virus"}
+  "Tomato mold leaf":                      {crop: Tomato,     disease: Leaf_Mold,              pv: "Tomato___Leaf_Mold"}
+  "Tomato two spotted spider mites leaf":  {crop: Tomato,     disease: Spider_mites,           pv: "Tomato___Spider_mites Two-spotted_spider_mite"}
+  "grape leaf":                            {crop: Grape,      disease: healthy,                pv: "Grape___healthy"}
+  "grape leaf black rot":                  {crop: Grape,      disease: Black_rot,              pv: "Grape___Black_rot"}
+
+# -----------------------------------------------------------------------------
+# Phase 2 — dataset inspection
+# -----------------------------------------------------------------------------
+inspection:
+  num_workers: 8
+  phash_hamming_threshold: 6      # weak L3 candidates only (reported, never merged). Phase-2 visual audit:
+                                  # on PlantVillage, Hamming 2-6 pairs are different leaves (uniform composition).
+  border_px: 8                    # border width used for background statistics
+  sample_grid_per_class: 4
+
+# -----------------------------------------------------------------------------
+# Stage 2 — Level-4 near-duplicate audit (scripts/find_near_duplicates.py)
+# -----------------------------------------------------------------------------
+near_duplicates:
+  image_size: 224
+  batch_size: 32            # x8 D4 views per batch on the GPU
+  num_workers: 6
+  top_k: 10
+  report_cosine: 0.95       # pairs at/above this are written for review
+  merge_cosine: 0.98        # pairs at/above are kept in the SAME split (never deleted). Calibrated in Stage 2:
+                            # 312 cross-leaf-group PlantVillage pairs >=0.98, only 10 between two leaf-map-matched
+                            # images (likely false positives); the rest involve images the leaf map does not cover.
+                            # Largest merged group = 17 images. Set to null to disable.
+  merge_cosine_unmapped: 0.975  # same-class pairs where >=1 image has NO leaf-map id (metadata gives no grouping):
+                                # residual same-leaf re-shots of smooth healthy leaves survive SIFT. 0.975 is the
+                                # lowest threshold before single-linkage chaining (0.97 -> one Grape-healthy group
+                                # = 17.7% of the class). Residual risk is measured via the strict_test flag.
+
+# -----------------------------------------------------------------------------
+# Stage 2 — Open-set protocol (frozen before any model is trained).
+# Class IDs = position in `known_classes` (explicit; never directory order).
+# Unknown classes are ENTIRE classes and never appear in training.
+# -----------------------------------------------------------------------------
+osr_protocol:
+  version: 1
+  seed: 42
+  known_split_fractions: {train: 0.70, val: 0.15, test: 0.15}   # by physical-leaf group, per class
+
+  known_classes:                       # 21 classes, 6 crops
+    - "Apple___Apple_scab"
+    - "Apple___Cedar_apple_rust"
+    - "Apple___healthy"
+    - "Corn_(maize)___Cercospora_leaf_spot Gray_leaf_spot"
+    - "Corn_(maize)___Common_rust_"
+    - "Corn_(maize)___healthy"
+    - "Grape___Black_rot"
+    - "Grape___Leaf_blight_(Isariopsis_Leaf_Spot)"
+    - "Grape___healthy"
+    - "Pepper,_bell___Bacterial_spot"
+    - "Pepper,_bell___healthy"
+    - "Potato___Early_blight"
+    - "Potato___Late_blight"
+    - "Potato___healthy"
+    - "Tomato___Bacterial_spot"
+    - "Tomato___Early_blight"
+    - "Tomato___Late_blight"
+    - "Tomato___Leaf_Mold"
+    - "Tomato___Spider_mites Two-spotted_spider_mite"
+    - "Tomato___Tomato_Yellow_Leaf_Curl_Virus"
+    - "Tomato___healthy"
+
+  unknown_near:                        # Experiment B: new disease on a KNOWN crop (test only)
+    "Tomato___Septoria_leaf_spot":          {resembles: ["Tomato___Bacterial_spot", "Tomato___Early_blight"], why: "small dark circular lesions with pale centres; easily read as bacterial spot / early-blight spotting"}
+    "Tomato___Target_Spot":                 {resembles: ["Tomato___Early_blight"], why: "brown lesions with concentric rings, the hallmark cue of early blight"}
+    "Apple___Black_rot":                    {resembles: ["Apple___Apple_scab", "Apple___Cedar_apple_rust"], why: "frog-eye leaf spots: dark lesions on an apple leaf, like scab / rust spotting"}
+    "Grape___Esca_(Black_Measles)":         {resembles: ["Grape___Black_rot", "Grape___Leaf_blight_(Isariopsis_Leaf_Spot)"], why: "dark necrotic spotting and interveinal browning on grape leaves"}
+    "Corn_(maize)___Northern_Leaf_Blight":  {resembles: ["Corn_(maize)___Cercospora_leaf_spot Gray_leaf_spot"], why: "elongated tan necrotic lesions on a corn blade, like gray leaf spot"}
+
+  unknown_val:                         # validation-unknown: ONLY for the few OSR settings that need unknowns
+    - "Tomato___Tomato_mosaic_virus"
+    - "Cherry_(including_sour)___Powdery_mildew"
+    - "Cherry_(including_sour)___healthy"
+
+  unknown_far_crops: [Blueberry, Orange, Peach, Raspberry, Soybean, Squash, Strawberry]   # Experiment A (test only)
+  far_balanced_per_class: 300          # A also reported on a 300/class subset so Orange/Soybean don't dominate
+  dtd_split_file: labels/test1.txt     # DTD partition-1 test list = non-plant far unknowns (Experiment A2)
+
+  plantvillage_exclude:                # explicit, evidence-backed exclusions (files stay on disk)
+    "data/raw/plantvillage/color/Tomato___Late_blight/cb3bd866-dd84-4f7e-9226-b4a2a2c7f2ae___GH_HL Leaf 173.2.JPG": "label_error: healthy photo code (GH_HL) in a disease folder; SIFT-verified same leaf as a Tomato___healthy image"
+    "data/raw/plantvillage/color/Tomato___Late_blight/d674cbf6-0cdc-407a-97ea-c3f53f2c51e4___GH_HL Leaf 170.JPG": "label_error: healthy photo code (GH_HL) in a disease folder (the only other such file)"
+
+  plantdoc:                            # Experiment C (test only; never used for training/tuning)
+    exclude_roles: [unknown_val]       # Tomato mosaic / Cherry: their classes are used for validation
+    drop_label_conflicts: true         # same image (strong duplicate) filed under two different classes
+    dedupe_strong_duplicates: true     # keep one copy of identical images (both folders become test)
+    min_images_for_per_class_metrics: 10
+    caveats:
+      "Corn rust leaf": "file names show Southern corn rust mixed in; PlantVillage class is Common rust"
+      "Corn leaf blight": "file names show Southern corn leaf blight mixed in; both are unseen diseases, so the unknown label stays valid"
+      "Tomato two spotted spider mites leaf": "only 2 images"
+
+# -----------------------------------------------------------------------------
+# Stage 2 — Level-4b same-leaf geometric verification (scripts/verify_same_leaf.py)
+# -----------------------------------------------------------------------------
+same_leaf_verification:
+  saturation_min: 30              # HSV saturation: leaf pixels only (the grey board is excluded)
+  lowe_ratio: 0.75
+  ransac_px: 5.0
+  calibration_pairs: 1500         # per side, sampled from leaf-map ground truth
+  negative_min_leaf_gap: 20       # same-class pairs this many leaf ids apart are treated as different leaves
+  max_false_positive_rate: 0.005  # threshold = smallest inlier count with FPR <= this on calibration negatives
+
+# -----------------------------------------------------------------------------
+# Stage 3 — closed-set baseline (scripts/train_baseline.py, scripts/evaluate_baseline.py)
+# Reads ONLY the locked manifests; rows are filtered to known PlantVillage classes.
+# Unknown / validation-unknown / PlantDoc / DTD rows are never loaded for training or selection.
+# -----------------------------------------------------------------------------
+baseline:
+  run_name: baseline               # outputs: models/<run_name>/, results/*/<run_name>_*; refuses to overwrite
+  dataset:
+    train_manifest: data/splits/train.csv
+    val_manifest: data/splits/val.csv
+    test_manifest: data/splits/test.csv
+    class_mapping: data/splits/class_mapping.yaml
+    row_filter: {role: [known], dataset: [plantvillage]}   # closed-set: known classes only
+  model:
+    architecture: resnet50         # torchvision; fallback resnet18 if memory/time is a problem
+    pretrained: true               # torchvision IMAGENET1K_V2 weights
+    num_classes: 21                # must equal len(osr_protocol.known_classes); asserted at start-up
+  training:
+    image_size: 224
+    resize: 256                    # eval: resize shorter side to 256 -> center crop 224
+    batch_size: 64
+    num_workers: 6
+    seed: 42
+    deterministic: true            # cudnn deterministic, benchmark off
+    amp: true                      # mixed precision on CUDA
+    optimizer: adamw
+    weight_decay: 0.0001
+    label_smoothing: 0.0
+    class_balancing: weighted_ce   # weighted_ce | sampler | none (see Stage-3 report for the choice)
+    class_weight_power: 0.5        # w_c ∝ (1/n_c)^power, normalised to mean 1 over classes (n_c from TRAIN only)
+    phase_a:                       # head only, backbone frozen (BatchNorm statistics frozen too)
+      epochs: 3
+      learning_rate: 0.001
+    phase_b:                       # unfreeze layer3 + layer4 (+ head)
+      unfreeze: [layer3, layer4]
+      max_epochs: 20
+      learning_rate: 0.001         # head
+      backbone_learning_rate: 0.0001
+      scheduler: cosine            # cosine decay over max_epochs, per step
+      warmup_epochs: 1
+    early_stopping:
+      monitor: val_macro_f1        # known-class validation only
+      patience: 5
+      min_delta: 0.0005
+  augmentation:                    # train only; val/test are deterministic
+    random_resized_crop_scale: [0.70, 1.0]
+    random_resized_crop_ratio: [0.90, 1.11]
+    horizontal_flip: true
+    vertical_flip: true            # detached leaves on a board have no canonical orientation
+    rotation: 15                   # degrees
+    rotation_fill: [124, 116, 104] # ~ImageNet mean (RGB 0-255) instead of black corners
+    color_jitter: {brightness: 0.2, contrast: 0.2, saturation: 0.15, hue: 0.0}   # no hue shift: colour is a symptom
+  evaluation:
+    test_set: full                 # full known-class test
+    strict_test: true              # also report the strict subset (sensitivity analysis)
+    gradcam_examples: 8            # preliminary examples from known VALIDATION images (not used for any decision)
+  hardware:
+    device: auto                   # cuda if available else cpu
+
+# -----------------------------------------------------------------------------
+# Stage 4 — MSP open-set baseline (scripts/osr_msp.py). Frozen Stage-3 model; no training.
+# Threshold is selected on VALIDATION only (step `select`), frozen to a file, then the test
+# sets are scored once (step `evaluate`).
+# -----------------------------------------------------------------------------
+osr_msp:
+  checkpoint: models/baseline/best_model.pt
+  checkpoint_sha256: 2b5071fb192706065a9fec2d9df8c4949cf05b18040920ef5a2c856685d51a1d   # recorded at Stage-4 start
+  stage3_config: models/baseline/config_used.yaml   # preprocessing is taken from here, unchanged
+  inference_precision: fp32        # Stage 3 used AMP; fp32 avoids fp16-quantised logits creating score ties
+  # threshold selection (known VALIDATION only; Stage-2 rule "thresholds from known-val")
+  selected_strategy: B             # A = fixed grid (characterisation), B = validation percentile, C = error-aware
+  target_known_acceptance: 0.95    # strategy B: accept 95% of known validation images (TPR95 convention)
+  fixed_grid: [0.50, 0.55, 0.60, 0.65, 0.70, 0.75, 0.80, 0.85, 0.90, 0.95, 0.975, 0.99, 0.995, 0.999, 0.9999]
+  ece_bins: 15
+  examples_per_unknown_class: 3    # closed-set failure demo: seeded random sample per unknown class
+  seed: 42
+
+# -----------------------------------------------------------------------------
+# Stage 5 — Energy-based OSR (scripts/osr_energy.py). Same frozen model, SAME cached logits as Stage 4.
+# Pre-registered before any energy value was computed:
+#   primary   : T = 1.0 (Liu et al. 2020 default; uses no unknown images)
+#   secondary : T* = argmax over temperature_grid of AUROC(known-val vs validation-unknown); Stage-2 protocol
+#               allows validation-unknowns for settings such as temperature. Reported as a labelled variant.
+#   threshold : accept as known iff E <= tau, tau = energy accepting 95% of KNOWN validation (same rule as MSP)
+# -----------------------------------------------------------------------------
+osr_energy:
+  temperature_primary: 1.0
+  temperature_grid: [0.5, 0.75, 1.0, 1.5, 2.0, 5.0]
+  target_known_acceptance: 0.95
+  logits_val: results/predictions/cache/msp_logits_val.npz     # written by Stage 4 (frozen model, fp32)
+  logits_test: results/predictions/cache/msp_logits_test.npz
+  stage4_results: results/metrics/osr_msp_results.json
+  stage4_threshold: results/metrics/osr_msp_threshold.json
+  bootstrap_resamples: 1000      # paired, stratified (known / unknown resampled separately), same draws for MSP & Energy
+  seed: 42
+
+# -----------------------------------------------------------------------------
+# Stage 6 — feature-space analysis + Mahalanobis OSR (scripts/feature_osr.py). Frozen Stage-3 model.
+# Pre-registered before any embedding was extracted:
+#   representation : 2048-d penultimate features (global-average-pooled layer4), raw (no normalisation)
+#   class statistics: per-class means + ONE shared (tied) covariance, KNOWN TRAINING embeddings only
+#   covariance     : Ledoit-Wolf shrinkage of the class-centred training features; inverted via symmetric
+#                    eigendecomposition with eigenvalues floored at eig_floor_rel * max eigenvalue
+#   score          : min over the 21 classes of the squared Mahalanobis distance (higher = more unknown)
+#   threshold      : accept as known iff score <= tau, tau accepts 95% of KNOWN validation (same rule as MSP/Energy)
+# -----------------------------------------------------------------------------
+feature_osr:
+  embeddings_dir: results/embeddings
+  extract_batch_size: 64
+  inference_precision: fp32
+  covariance: tied_ledoit_wolf
+  eig_floor_rel: 1.0e-8
+  target_known_acceptance: 0.95
+  stage5_results: results/metrics/osr_energy_results.json
+  stage5_threshold: results/metrics/osr_energy_threshold.json
+  pca_components: 50            # PCA fitted on KNOWN TRAINING embeddings only
+  tsne: {perplexity: 30, max_iter: 1000, seed: 42, per_class_sample: 150, input: pca50}
+  umap: not_installed           # not added as a dependency (Stage-6 instruction)
+  knn_train_reference_per_class: 400   # train images per class used for 1-NN analyses (seeded subsample)
+  bootstrap_resamples: 1000
+  seed: 42
+
+# -----------------------------------------------------------------------------
+# Stage 7 — representation learning (SupCon) for OSR. Pre-registered before any training.
+# Training data: 21 KNOWN classes from data/splits/train.csv only. Model selection: known validation only.
+# -----------------------------------------------------------------------------
+probe_diagnostic:                  # Part B — "Diagnostic representation probe — not an OSR method"
+  pairs:
+    - ["Grape___Esca_(Black_Measles)", "Grape___Black_rot"]
+    - ["Corn_(maize)___Northern_Leaf_Blight", "Corn_(maize)___Cercospora_leaf_spot Gray_leaf_spot"]
+  controls:                        # sanity: known-vs-known (should separate) and random halves of one class (should be ~0.5)
+    known_pair: ["Grape___Black_rot", "Grape___Leaf_blight_(Isariopsis_Leaf_Spot)"]
+    random_half_class: "Grape___Black_rot"
+  model: logistic_regression       # StandardScaler + L2 logistic regression, C fixed (not tuned)
+  C: 0.1
+  cv: leaf_grouped_stratified_5fold   # StratifiedGroupKFold on split_group_id / leaf_group_id: no leaf in train+eval fold
+  repeats: 5                       # different fold seeds; CI over repeats + bootstrap of out-of-fold predictions
+  bootstrap: 1000
+
+contrastive:
+  run_name: contrastive
+  init: imagenet                   # torchvision IMAGENET1K_V2 — NOT the Stage-3 checkpoint (primary experiment)
+  trainable: [layer3, layer4]      # same trainable capacity as Stage-3 phase B; stem/layer1/layer2 + their BN frozen
+  projection: {hidden: 2048, out: 128}   # MLP 2048->2048->128, L2-normalised output; REMOVED for evaluation
+  temperature: 0.07                # Khosla et al. 2020 default; not tuned
+  classes_per_batch: 16            # P
+  samples_per_class: 4             # K  -> 64 images, 2 views each = 128 views per step
+  views: 2
+  epochs: 25
+  batches_per_epoch: 298           # ~ len(train) / (P*K)
+  optimizer: adamw
+  lr_head: 0.001
+  lr_backbone: 0.0001
+  weight_decay: 0.0001
+  warmup_epochs: 1
+  amp: true
+  num_workers: 6
+  seed: 42
+  early_stopping: {monitor: val_nearest_centroid_macro_f1, patience: 5, min_delta: 0.0005}
+  val_reference_per_class: 50      # train images/class used as centroids for the per-epoch VALIDATION metric
+  augmentation: same_as_stage3     # rotation 15 (grey fill), RRC scale 0.7-1.0, h/v flips, jitter b0.2 c0.2 s0.15 h0
+  evaluation_representation: backbone_2048_l2_normalised   # projection head removed
+  linear_head: {C: 1.0, max_iter: 3000}   # multinomial logistic regression on frozen TRAIN embeddings (for MSP/Energy + known accuracy)
+  scores: [prototype_cosine, mahalanobis_normalised, msp_linear_head, energy_linear_head]
+  primary_score: prototype_cosine  # 1 - max cosine similarity to the 21 train prototypes
+  comparison_grid: "{original, contrastive} x {prototype_cosine, mahalanobis_normalised}, same protocol"
+  target_known_acceptance: 0.95
+  bootstrap_resamples: 1000
+
+# ---------------------------------------------------------------- Stage 8: class-agnostic score fusion
+# Pre-registered before any Stage-8 test scoring. Everything below is fitted on KNOWN data only:
+# train (prototypes / Mahalanobis / linear head, exactly as Stages 6-7) and known VALIDATION
+# (score normalisation, redundancy analysis, thresholds). No unknown image or label of any split is used.
+osr_fusion:
+  candidate_signals:            # name: [representation, raw score, direction]
+    orig_msp:              [original, max softmax probability (Stage 3 head), lower_is_unknown]
+    orig_energy:           [original, energy T=1 (Stage 3 head), higher_is_unknown]
+    orig_mahalanobis:      [original, tied Ledoit-Wolf Mahalanobis on raw 2048-d features (Stage 6), higher_is_unknown]
+    contrastive_prototype: [contrastive, 1 - max cosine to train prototypes (Stage 7), higher_is_unknown]
+    contrastive_mahalanobis: [contrastive, Mahalanobis on L2-normalised features (Stage 7), higher_is_unknown]
+    contrastive_energy:    [contrastive, energy of the Stage-7 linear head, higher_is_unknown]
+  normalisation: known_validation_ecdf_midrank     # percentile among known-validation images; 0..1
+  redundancy:
+    statistic: spearman_on_known_validation
+    linkage: complete            # a cluster = signals whose pairwise |rho| are ALL >= threshold
+    threshold: 0.8
+    representative: lowest_mean_abs_rho_to_signals_outside_cluster   # unsupervised; maximises complementarity
+  fusions:
+    fusion_mean: "A: mean of normalised scores of the cluster representatives (equal weights)"
+    fusion_max: "B: max of normalised scores of the cluster representatives"
+    fusion_cluster_weighted: "C: all candidates; each redundancy cluster gets weight 1/n_clusters, split equally inside the cluster"
+    fusion_valunk_weighted: "D (secondary, protocol-permitted): weights over the cluster representatives from a simplex grid (step 0.1) maximising AUROC known-validation vs VALIDATION-UNKNOWN classes (Tomato mosaic, Cherry x2; DATASET_CARD 'small settings that need unknowns'); never test data"
+  weighting_note: no validation-only criterion targets novelty without unknown labels, so no weights are learned; C only removes double counting of redundant signals
+  primary: fusion_mean
+  closed_set_predictor: stage3_classifier
+  target_known_acceptance: 0.95
+  bootstrap_resamples: 1000
+  seed: 42
+  qualitative_examples_per_category: 2
+  oracle: {grid_step: 0.1, label: "ORACLE ANALYSIS — NOT PART OF THE DEPLOYABLE OSR METHOD"}

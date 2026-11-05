@@ -1,0 +1,2063 @@
+# Condition records (infectious diseases, pests, nutrient disorders). Every claim carries verbatim evidence passages
+# from sources in sources.yaml (checked automatically against the cached source text). Claim 'text' is our paraphrase.
+# Look-alike basis 'research_protocol_pairing' = pairing chosen in the frozen research protocol (config.yaml osr_protocol),
+# not a source statement. review_status 'source_verified' means claims were checked against the source; NO record is
+# expert-reviewed yet.
+# ----------------------------------------------------------------------------------------------------- TOMATO
+# ----------------------------------------------------------------------------------------------------- APPLE
+# ----------------------------------------------------------------------------------------------------- GRAPE
+# ----------------------------------------------------------------------------------------------------- MAIZE
+# ----------------------------------------------------------------------------------------------------- MANGO, RICE (outside the frozen model)
+# ----------------------------------------------------------------------------------------------------- STUBS (frozen-model classes not yet sourced)
+
+- condition_id: COND-TOMATO-SEPTORIA-LEAF-SPOT
+  condition_type: infectious_disease
+  cause_category: fungal
+  common_names:
+  - Septoria leaf spot
+  scientific_cause:
+    name: Septoria lycopersici
+    claim:
+      text: Caused by the fungus Septoria lycopersici.
+      evidence:
+      - source_id: SRC-TNAU-TOM-SEPTORIA
+        passage: 'Septoria Leaf Spot: Septoria lycopersici'
+  affected_plants:
+  - plant_id: PLANT-TOMATO
+    claim:
+      text: Recorded on tomato.
+      evidence:
+      - source_id: SRC-TNAU-TOM-SEPTORIA
+        passage: 'Vegetables:: Tomato Septoria Leaf Spot'
+  features:
+  - feature_id: FEAT-GREY-TAN-CENTRE-DARK-MARGIN
+    role: distinguishing
+    claim:
+      text: Small round to irregular leaf spots with a grey centre and dark margin.
+      evidence:
+      - source_id: SRC-TNAU-TOM-SEPTORIA
+        passage: Small, round to irregular spots with grey centre and dark margin on leaves.
+  - feature_id: FEAT-RAPID-BLIGHT-DEFOLIATION
+    role: typical
+    claim:
+      text: Spots coalesce, leaves blight and complete defoliation can follow.
+      evidence:
+      - source_id: SRC-TNAU-TOM-SEPTORIA
+        passage: Spots coalesce and leaves are blighted. Complete defoliation.
+  - feature_id: FEAT-STEM-LESIONS
+    role: occasional
+    claim:
+      text: Stems and flowers can also be affected.
+      evidence:
+      - source_id: SRC-TNAU-TOM-SEPTORIA
+        passage: Stems and flowers are affected.
+  - feature_id: FEAT-LEAF-SPOTS
+    role: typical
+    claim:
+      text: Small round to irregular leaf spots.
+      evidence:
+      - source_id: SRC-TNAU-TOM-SEPTORIA
+        passage: Small, round to irregular spots with grey centre and dark margin on leaves.
+  favourable_conditions:
+  - feature_id: FEAT-ENV-HIGH-HUMIDITY-WET
+    role: typical
+    claim:
+      text: Favoured by high humidity.
+      evidence:
+      - source_id: SRC-TNAU-TOM-SEPTORIA
+        passage: Favourable conditions High humidity
+  - feature_id: FEAT-ENV-RAIN-SPLASH-WIND
+    role: typical
+    claim:
+      text: Secondary spread by conidia through rain splash or wind.
+      evidence:
+      - source_id: SRC-TNAU-TOM-SEPTORIA
+        passage: 'Secondary spread: Conidia through rain splash or wind'
+  spread_and_survival:
+  - text: Survives in infected plant debris.
+    evidence:
+    - source_id: SRC-TNAU-TOM-SEPTORIA
+      passage: 'Survival: Infected plant debris'
+  look_alikes:
+  - condition_id: COND-TOMATO-BACTERIAL-SPOT
+    basis: research_protocol_pairing
+  - condition_id: COND-TOMATO-EARLY-BLIGHT
+    basis: research_protocol_pairing
+  diagnostic_ids:
+  - DIAG-INSPECT-OLDER-LEAVES
+  - DIAG-PATHOGEN-LAB-ID
+  management_ids:
+  - MGMT-SEPTORIA-SANITATION
+  - MGMT-SEPTORIA-BIOLOGICAL-SEED
+  - MGMT-SEPTORIA-CHEMICAL
+  curability:
+    status: not_documented
+  geographic_applicability:
+  - India_region
+  known_uncertainties:
+  - Distinction from other tomato leaf spots by photo alone is not established in this knowledge base.
+  research_role: held_out_hard_unknown
+  frozen_model_class: null
+  curation_status: sourced
+  review_status: source_verified
+  last_verified: '2026-10-14'
+- condition_id: COND-TOMATO-TARGET-SPOT
+  condition_type: infectious_disease
+  cause_category: fungal
+  common_names:
+  - Target spot
+  - Corynespora leaf spot
+  scientific_cause:
+    name: Corynespora cassiicola
+    claim:
+      text: Caused by the fungus Corynespora cassiicola.
+      evidence:
+      - source_id: SRC-PPP-TOM-TARGETSPOT
+        passage: Common Name Target spot, leaf spot Scientific Name Corynespora cassiicola
+  affected_plants:
+  - plant_id: PLANT-TOMATO
+    claim:
+      text: Hosts include tomato (also papaya, cucumber, legumes).
+      evidence:
+      - source_id: SRC-PPP-TOM-TARGETSPOT
+        passage: Hosts Tomato, papaya
+  features:
+  - feature_id: FEAT-OLDER-LOWER-LEAVES-FIRST
+    role: typical
+    claim:
+      text: Starts on older leaves and spreads upwards.
+      evidence:
+      - source_id: SRC-PPP-TOM-TARGETSPOT
+        passage: The disease starts on the older leaves and spreads upwards.
+  - feature_id: FEAT-YELLOW-HALO
+    role: typical
+    claim:
+      text: First signs are tiny irregular spots with a yellow margin.
+      evidence:
+      - source_id: SRC-PPP-TOM-TARGETSPOT
+        passage: irregular-shaped spots (less than 1 mm) with a yellow margin
+  - feature_id: FEAT-CONCENTRIC-RINGS
+    role: distinguishing
+    claim:
+      text: Some spots enlarge and show characteristic rings (hence 'target spot').
+      evidence:
+      - source_id: SRC-PPP-TOM-TARGETSPOT
+        passage: Some of the spots enlarge up to 10 mm and show characteristics rings
+  - feature_id: FEAT-RAPID-BLIGHT-DEFOLIATION
+    role: typical
+    claim:
+      text: Rapid spread causes leaves to yellow, collapse and die.
+      evidence:
+      - source_id: SRC-PPP-TOM-TARGETSPOT
+        passage: causing the leaves to turn yellow, collapse and die
+  - feature_id: FEAT-STEM-LESIONS
+    role: occasional
+    claim:
+      text: Long, thin spots can occur on stems.
+      evidence:
+      - source_id: SRC-PPP-TOM-TARGETSPOT
+        passage: Spots also occur on the stems. They are long and thin.
+  - feature_id: FEAT-FRUIT-LESIONS
+    role: occasional
+    claim:
+      text: Small light-brown fruit spots with dark margins may occur.
+      evidence:
+      - source_id: SRC-PPP-TOM-TARGETSPOT
+        passage: Small light brown spots with dark margins may also occur on the fruit.
+  - feature_id: FEAT-LEAF-SPOTS
+    role: typical
+    claim:
+      text: Leaf spots; the larger ones have rings inside.
+      evidence:
+      - source_id: SRC-PPP-TOM-TARGETSPOT
+        passage: The larger spots have rings or circles inside them.
+  favourable_conditions:
+  - feature_id: FEAT-ENV-WARM-HUMID
+    role: typical
+    claim:
+      text: Warm, wet conditions favour the disease.
+      evidence:
+      - source_id: SRC-PPP-TOM-TARGETSPOT
+        passage: Warm wet conditions favour the disease
+  - feature_id: FEAT-ENV-RAIN-SPLASH-WIND
+    role: typical
+    claim:
+      text: Spores spread by wind-blown rain.
+      evidence:
+      - source_id: SRC-PPP-TOM-TARGETSPOT
+        passage: The spores are spread by wind-blown rain
+  spread_and_survival:
+  - text: Inoculum comes from other crops and remains of the previous crop.
+    evidence:
+    - source_id: SRC-PPP-TOM-TARGETSPOT
+      passage: The source of the fungus is from other crops, the remains of the previous crop
+  look_alikes:
+  - condition_id: COND-TOMATO-EARLY-BLIGHT
+    basis: research_protocol_pairing
+  diagnostic_ids:
+  - DIAG-INSPECT-OLDER-LEAVES
+  - DIAG-PATHOGEN-LAB-ID
+  management_ids:
+  - MGMT-TARGETSPOT-NO-OVERHEAD-IRRIGATION
+  - MGMT-TARGETSPOT-REMOVE-LOWER-LEAVES
+  - MGMT-TARGETSPOT-ROTATION
+  - MGMT-TARGETSPOT-WEEDS
+  - MGMT-TARGETSPOT-TOLERANT-LINE
+  - MGMT-TARGETSPOT-CHEMICAL
+  curability:
+    status: not_documented
+  geographic_applicability:
+  - international_not_verified_for_India
+  known_uncertainties:
+  - Only an international (Pacific islands) source has been verified so far; no Indian source yet.
+  - Concentric rings are also described for tomato early blight; rings alone do not separate the two.
+  research_role: held_out_hard_unknown
+  frozen_model_class: null
+  curation_status: sourced
+  review_status: source_verified
+  last_verified: '2026-10-14'
+- condition_id: COND-TOMATO-EARLY-BLIGHT
+  condition_type: infectious_disease
+  cause_category: fungal
+  common_names:
+  - Early blight
+  scientific_cause:
+    name: Alternaria solani
+    claim:
+      text: Caused by Alternaria solani.
+      evidence:
+      - source_id: SRC-TNAU-TOM-EARLYBLIGHT
+        passage: 'Early Blight: Alternaria solani'
+  affected_plants:
+  - plant_id: PLANT-TOMATO
+    claim:
+      text: Recorded on tomato.
+      evidence:
+      - source_id: SRC-TNAU-TOM-EARLYBLIGHT
+        passage: 'Vegetables:: Tomato Early Blight'
+  features:
+  - feature_id: FEAT-CONCENTRIC-RINGS
+    role: distinguishing
+    claim:
+      text: Brown spots with concentric rings in a bull's-eye pattern.
+      evidence:
+      - source_id: SRC-TNAU-TOM-EARLYBLIGHT
+        passage: Brown spots with concentric rings in a bull's eye pattern with yellow margin.
+  - feature_id: FEAT-YELLOW-HALO
+    role: typical
+    claim:
+      text: Spots have a yellow margin.
+      evidence:
+      - source_id: SRC-TNAU-TOM-EARLYBLIGHT
+        passage: Brown spots with concentric rings in a bull's eye pattern with yellow margin.
+  - feature_id: FEAT-FRUIT-LESIONS
+    role: occasional
+    claim:
+      text: Fruit can be infected through the calyx or stem attachment, showing brown concentric rings.
+      evidence:
+      - source_id: SRC-TNAU-TOM-EARLYBLIGHT
+        passage: Fruit gets infected through calyx or stem attachment.
+  - feature_id: FEAT-LEAF-SPOTS
+    role: typical
+    claim:
+      text: Brown spots on the leaves.
+      evidence:
+      - source_id: SRC-TNAU-TOM-EARLYBLIGHT
+        passage: Brown spots with concentric rings in a bull's eye pattern with yellow margin.
+  favourable_conditions:
+  - feature_id: FEAT-ENV-WARM-HUMID
+    role: typical
+    claim:
+      text: Favoured by warm, humid, rainy and wet weather.
+      evidence:
+      - source_id: SRC-TNAU-TOM-EARLYBLIGHT
+        passage: Warm, humid (24-29 degree C), rainy and wet weather.
+  - feature_id: FEAT-ENV-RAIN-SPLASH-WIND
+    role: typical
+    claim:
+      text: Conidia are carried by rain and wind.
+      evidence:
+      - source_id: SRC-TNAU-TOM-EARLYBLIGHT
+        passage: 'Secondary spread: Conidia carried through rain, wind borne'
+  spread_and_survival:
+  - text: Survives in infected plant debris; primary spread through infected seed.
+    evidence:
+    - source_id: SRC-TNAU-TOM-EARLYBLIGHT
+      passage: 'Primary spread: Infected seed'
+  look_alikes:
+  - condition_id: COND-TOMATO-TARGET-SPOT
+    basis: shared_kb_features
+  diagnostic_ids:
+  - DIAG-INSPECT-OLDER-LEAVES
+  - DIAG-PATHOGEN-LAB-ID
+  management_ids:
+  - MGMT-EARLYBLIGHT-DEBRIS
+  - MGMT-EARLYBLIGHT-ROTATION
+  - MGMT-EARLYBLIGHT-CHEMICAL
+  curability:
+    status: not_documented
+  geographic_applicability:
+  - India_region
+  known_uncertainties:
+  - Concentric rings are also described for target spot.
+  research_role: frozen_model_known_class
+  frozen_model_class: Tomato___Early_blight
+  curation_status: sourced
+  review_status: source_verified
+  last_verified: '2026-10-14'
+- condition_id: COND-TOMATO-LATE-BLIGHT
+  condition_type: infectious_disease
+  cause_category: oomycete
+  common_names:
+  - Late blight
+  scientific_cause:
+    name: Phytophthora infestans
+    claim:
+      text: Caused by Phytophthora infestans.
+      evidence:
+      - source_id: SRC-TNAU-TOM-LATEBLIGHT
+        passage: 'Late blight: Phytophthora infestans'
+  affected_plants:
+  - plant_id: PLANT-TOMATO
+    claim:
+      text: Recorded on tomato.
+      evidence:
+      - source_id: SRC-TNAU-TOM-LATEBLIGHT
+        passage: 'Vegetables:: Tomato Late blight'
+  features:
+  - feature_id: FEAT-WATER-SOAKED-LESIONS
+    role: distinguishing
+    claim:
+      text: Water-soaked black lesions on leaves and stems.
+      evidence:
+      - source_id: SRC-TNAU-TOM-LATEBLIGHT
+        passage: Water-soaked black lesions on leaves and stems
+  - feature_id: FEAT-RAPID-BLIGHT-DEFOLIATION
+    role: typical
+    claim:
+      text: Lesions expand rapidly and the whole leaf becomes necrotic.
+      evidence:
+      - source_id: SRC-TNAU-TOM-LATEBLIGHT
+        passage: Lesions expand rapidly and the entire leaf becomes necrotic.
+  - feature_id: FEAT-WHITE-GROWTH-UNDERSIDE
+    role: distinguishing
+    claim:
+      text: White sporulation on leaves.
+      evidence:
+      - source_id: SRC-TNAU-TOM-LATEBLIGHT
+        passage: White sporulation (sporangia and sporangiophores) on leaves.
+  - feature_id: FEAT-STEM-LESIONS
+    role: typical
+    claim:
+      text: Lesions also occur on stems.
+      evidence:
+      - source_id: SRC-TNAU-TOM-LATEBLIGHT
+        passage: Water-soaked black lesions on leaves and stems
+  - feature_id: FEAT-LEAF-SPOTS
+    role: typical
+    claim:
+      text: Black lesions on leaves and stems.
+      evidence:
+      - source_id: SRC-TNAU-TOM-LATEBLIGHT
+        passage: Water-soaked black lesions on leaves and stems
+  favourable_conditions:
+  - feature_id: FEAT-ENV-COOL-WET
+    role: typical
+    claim:
+      text: Cool nights, warm days and extended wet conditions favour it.
+      evidence:
+      - source_id: SRC-TNAU-TOM-LATEBLIGHT
+        passage: Cool nights, warm days and extended wet conditions from rain and fog
+  spread_and_survival:
+  - text: Survives in infected debris; secondary spread by wind.
+    evidence:
+    - source_id: SRC-TNAU-TOM-LATEBLIGHT
+      passage: 'Secondary spread: Wind'
+  look_alikes: []
+  diagnostic_ids:
+  - DIAG-LEAF-UNDERSIDE
+  - DIAG-PATHOGEN-LAB-ID
+  management_ids:
+  - MGMT-LATEBLIGHT-DRAINAGE-ROTATION
+  - MGMT-LATEBLIGHT-CHEMICAL
+  curability:
+    status: not_documented
+  geographic_applicability:
+  - India_region
+  known_uncertainties: []
+  research_role: frozen_model_known_class
+  frozen_model_class: Tomato___Late_blight
+  curation_status: sourced
+  review_status: source_verified
+  last_verified: '2026-10-14'
+- condition_id: COND-TOMATO-BACTERIAL-CANKER
+  condition_type: infectious_disease
+  cause_category: bacterial
+  common_names:
+  - Bacterial stem and fruit canker
+  - Bacterial canker
+  scientific_cause:
+    name: Clavibacter michiganensis subsp. michiganensis
+    claim:
+      text: Caused by Clavibacter michiganensis subsp. michiganensis.
+      evidence:
+      - source_id: SRC-TNAU-TOM-BACTCANKER
+        passage: 'Bacterial stem and fruit canker: Clavibacter michiganensis sub sp. michiganensis'
+  affected_plants:
+  - plant_id: PLANT-TOMATO
+    claim:
+      text: Recorded on tomato.
+      evidence:
+      - source_id: SRC-TNAU-TOM-BACTCANKER
+        passage: 'Vegetables:: Tomato Bacterial stem and fruit canker'
+  features:
+  - feature_id: FEAT-FRUIT-SPOTS-WHITE-HALO
+    role: distinguishing
+    claim:
+      text: Small water-soaked fruit spots with a white halo.
+      evidence:
+      - source_id: SRC-TNAU-TOM-BACTCANKER
+        passage: Small, water soaked spots with white halo on fruits.
+  - feature_id: FEAT-WILTING
+    role: typical
+    claim:
+      text: Wilting of leaves and shoots; streaks on stems and petioles.
+      evidence:
+      - source_id: SRC-TNAU-TOM-BACTCANKER
+        passage: Wilting of leaves and shoots, streaks on stems and petioles.
+  - feature_id: FEAT-STEM-LESIONS
+    role: typical
+    claim:
+      text: Cankers develop and crack, with bacterial ooze.
+      evidence:
+      - source_id: SRC-TNAU-TOM-BACTCANKER
+        passage: Cankers develop and form cracks slimy bacterial ooze through cracks.
+  - feature_id: FEAT-MARGIN-SCORCH
+    role: occasional
+    claim:
+      text: Blister-like spots at leaf margins turn brown.
+      evidence:
+      - source_id: SRC-TNAU-TOM-BACTCANKER
+        passage: White blister like spots in the margins of leaves and turn brown.
+  - feature_id: FEAT-LEAF-SPOTS
+    role: occasional
+    claim:
+      text: Spots on leaves, stems and fruit.
+      evidence:
+      - source_id: SRC-TNAU-TOM-BACTCANKER
+        passage: Spots on leaves, stems and fruits
+  favourable_conditions:
+  - feature_id: FEAT-ENV-HIGH-HUMIDITY-WET
+    role: typical
+    claim:
+      text: High humidity, persistent dew, moist weather with intermittent showers.
+      evidence:
+      - source_id: SRC-TNAU-TOM-BACTCANKER
+        passage: Moist weather with intermittent showers
+  spread_and_survival:
+  - text: Primary spread through infected plant debris and seed; secondary by rain splash.
+    evidence:
+    - source_id: SRC-TNAU-TOM-BACTCANKER
+      passage: 'Primary spread: Infected plant debris and seed'
+  look_alikes: []
+  diagnostic_ids:
+  - DIAG-PATHOGEN-LAB-ID
+  management_ids:
+  - MGMT-BACTCANKER-SANITATION
+  curability:
+    status: not_documented
+  geographic_applicability:
+  - India_region
+  known_uncertainties:
+  - Not one of the frozen model's classes; included as a tomato differential.
+  research_role: not_in_research_protocol
+  frozen_model_class: null
+  curation_status: sourced
+  review_status: source_verified
+  last_verified: '2026-10-14'
+- condition_id: COND-TOMATO-RED-SPIDER-MITE
+  condition_type: pest
+  cause_category: mite
+  common_names:
+  - Red spider mite
+  - Spider mites
+  scientific_cause:
+    name: Tetranychus spp.
+    claim:
+      text: Red spider mites of the genus Tetranychus.
+      evidence:
+      - source_id: SRC-TNAU-TOM-SPIDERMITE
+        passage: 'Red spider mite: Tetranychus spp'
+  affected_plants:
+  - plant_id: PLANT-TOMATO
+    claim:
+      text: Recorded on tomato.
+      evidence:
+      - source_id: SRC-TNAU-TOM-SPIDERMITE
+        passage: Infestation on tomato
+  features:
+  - feature_id: FEAT-BRONZING
+    role: distinguishing
+    claim:
+      text: Affected leaves become reddish-brown and bronzy.
+      evidence:
+      - source_id: SRC-TNAU-TOM-SPIDERMITE
+        passage: Affected leaves become reddish brown and bronzy
+  - feature_id: FEAT-FINE-WEBBING
+    role: distinguishing
+    claim:
+      text: Severe infestations produce silken webbing; leaves wither and dry.
+      evidence:
+      - source_id: SRC-TNAU-TOM-SPIDERMITE
+        passage: Severe infestation larvae silken webbing on the leaves, wither and dry
+  favourable_conditions: []
+  spread_and_survival: []
+  look_alikes: []
+  diagnostic_ids:
+  - DIAG-MITE-INSPECTION
+  management_ids:
+  - MGMT-SPIDERMITE-CHEMICAL
+  curability:
+    status: not_documented
+  geographic_applicability:
+  - India_region
+  known_uncertainties:
+  - The frozen model's class is 'Two-spotted spider mite' (Tetranychus urticae); the verified TNAU page identifies only the genus Tetranychus.
+  research_role: frozen_model_known_class
+  frozen_model_class: Tomato___Spider_mites Two-spotted_spider_mite
+  curation_status: sourced
+  review_status: source_verified
+  last_verified: '2026-10-14'
+- condition_id: COND-TOMATO-MAGNESIUM-DEFICIENCY
+  condition_type: nutrient_disorder
+  cause_category: nutrient_deficiency
+  common_names:
+  - Magnesium deficiency
+  scientific_cause: null
+  affected_plants:
+  - plant_id: PLANT-TOMATO
+    claim:
+      text: Described for tomato.
+      evidence:
+      - source_id: SRC-TNAU-TOM-MG-DEF
+        passage: Deficiencies and Disorders - Tomato
+  features:
+  - feature_id: FEAT-INTERVEINAL-CHLOROSIS-GREEN-MARGINS
+    role: distinguishing
+    claim:
+      text: Interveinal areas turn yellow while leaf margins stay green.
+      evidence:
+      - source_id: SRC-TNAU-TOM-MG-DEF
+        passage: Interveinal areas became yellow or greenish yellow while leaf margins remained green.
+  - feature_id: FEAT-OLDER-LOWER-LEAVES-FIRST
+    role: typical
+    claim:
+      text: Starts on older leaves; yellowing progresses from the base to the top of the plant.
+      evidence:
+      - source_id: SRC-TNAU-TOM-MG-DEF
+        passage: Yellowing progressed from base to the top of the plant.
+  - feature_id: FEAT-LEAF-YELLOWING
+    role: typical
+    claim:
+      text: Areas between the veins turn yellow.
+      evidence:
+      - source_id: SRC-TNAU-TOM-MG-DEF
+        passage: Interveinal areas became yellow or greenish yellow while leaf margins remained green.
+  favourable_conditions: []
+  spread_and_survival: []
+  look_alikes:
+  - condition_id: COND-TOMATO-POTASSIUM-DEFICIENCY
+    basis: shared_kb_features
+  diagnostic_ids:
+  - DIAG-SOIL-TISSUE-TEST
+  management_ids:
+  - MGMT-MG-CORRECTION
+  curability:
+    status: correctable_if_confirmed
+  geographic_applicability:
+  - India_region
+  known_uncertainties:
+  - Leaf colour alone does not confirm a deficiency; a confirmatory soil/tissue test source is still pending in this knowledge base.
+  research_role: not_in_research_protocol
+  frozen_model_class: null
+  curation_status: sourced
+  review_status: source_verified
+  last_verified: '2026-10-14'
+- condition_id: COND-TOMATO-POTASSIUM-DEFICIENCY
+  condition_type: nutrient_disorder
+  cause_category: nutrient_deficiency
+  common_names:
+  - Potassium deficiency
+  scientific_cause: null
+  affected_plants:
+  - plant_id: PLANT-TOMATO
+    claim:
+      text: Described for tomato.
+      evidence:
+      - source_id: SRC-TNAU-TOM-K-DEF
+        passage: Deficiencies and Disorders - Tomato
+  features:
+  - feature_id: FEAT-MARGIN-SCORCH
+    role: distinguishing
+    claim:
+      text: Leaf tips and margins scorch and turn upwards.
+      evidence:
+      - source_id: SRC-TNAU-TOM-K-DEF
+        passage: The tips and margins underwent scorching and turned upwards
+  - feature_id: FEAT-OLDER-LOWER-LEAVES-FIRST
+    role: typical
+    claim:
+      text: Symptoms appear first in the oldest leaves.
+      evidence:
+      - source_id: SRC-TNAU-TOM-K-DEF
+        passage: K deficiency symptoms appeared first in the oldest leaves.
+  - feature_id: FEAT-LEAF-YELLOWING
+    role: typical
+    claim:
+      text: Older leaves yellow and curl, then fall.
+      evidence:
+      - source_id: SRC-TNAU-TOM-K-DEF
+        passage: Chlorosis and necrosis then spread to younger leaves with defoliation of yellowed and curled older leaves.
+  favourable_conditions: []
+  spread_and_survival: []
+  look_alikes:
+  - condition_id: COND-TOMATO-MAGNESIUM-DEFICIENCY
+    basis: shared_kb_features
+  diagnostic_ids:
+  - DIAG-SOIL-TISSUE-TEST
+  management_ids:
+  - MGMT-K-CORRECTION
+  curability:
+    status: correctable_if_confirmed
+  geographic_applicability:
+  - India_region
+  known_uncertainties:
+  - Leaf colour alone does not confirm a deficiency; a confirmatory soil/tissue test source is still pending in this knowledge base.
+  research_role: not_in_research_protocol
+  frozen_model_class: null
+  curation_status: sourced
+  review_status: source_verified
+  last_verified: '2026-10-14'
+- condition_id: COND-APPLE-BLACK-ROT
+  condition_type: infectious_disease
+  cause_category: fungal
+  common_names:
+  - Black rot
+  - Frogeye leaf spot
+  scientific_cause:
+    name: Diplodia seriata
+    synonyms:
+    - Botryosphaeria obtusa
+    claim:
+      text: Caused by Diplodia seriata (syn. Botryosphaeria obtusa); the source spells the synonym 'obtuse'.
+      evidence:
+      - source_id: SRC-PSU-APPLE-BLACKROT
+        passage: Diplodia seriata (Botryosphaeria obtuse syn)
+  affected_plants:
+  - plant_id: PLANT-APPLE
+    claim:
+      text: Attacks fruit, leaves and bark of apple.
+      evidence:
+      - source_id: SRC-PSU-APPLE-BLACKROT
+        passage: attacking the fruit, leaves, and bark of apple trees
+  features:
+  - feature_id: FEAT-PURPLE-MARGIN-FROGEYE
+    role: distinguishing
+    claim:
+      text: Leaf spots keep purple margins while centres turn brown/tan ('frogeye').
+      evidence:
+      - source_id: SRC-PSU-APPLE-BLACKROT
+        passage: Leaf margins remain purple, while the centers turn brown, tan, or yellowish brown
+  - feature_id: FEAT-BLACK-SPECKS-IN-LESION
+    role: distinguishing
+    claim:
+      text: Small black pycnidia may appear in spot centres, visible with a hand lens.
+      evidence:
+      - source_id: SRC-PSU-APPLE-BLACKROT
+        passage: can be viewed easily using a hand lens
+  - feature_id: FEAT-FRUIT-LESIONS
+    role: typical
+    claim:
+      text: Fruit rot usually starts at the calyx end, usually one spot per fruit.
+      evidence:
+      - source_id: SRC-PSU-APPLE-BLACKROT
+        passage: Fruit rot usually appears at the calyx end of the fruit.
+  - feature_id: FEAT-CONCENTRIC-RINGS
+    role: occasional
+    claim:
+      text: Rotted fruit areas may show concentric bands.
+      evidence:
+      - source_id: SRC-PSU-APPLE-BLACKROT
+        passage: a series of concentric bands form
+  - feature_id: FEAT-FRUIT-MUMMY
+    role: typical
+    claim:
+      text: Fruit eventually dries and shrivels into a mummy.
+      evidence:
+      - source_id: SRC-PSU-APPLE-BLACKROT
+        passage: shrivels into a mummy
+  - feature_id: FEAT-STEM-LESIONS
+    role: typical
+    claim:
+      text: Reddish-brown sunken cankers on branches and limbs.
+      evidence:
+      - source_id: SRC-PSU-APPLE-BLACKROT
+        passage: Infected areas of branches and limbs are reddish brown and are sunken slightly below the level of surrounding healthy bark.
+  - feature_id: FEAT-LEAF-SPOTS
+    role: typical
+    claim:
+      text: The disease can appear as a leaf spot.
+      evidence:
+      - source_id: SRC-PSU-APPLE-BLACKROT
+        passage: 'The disease may occur in three forms: a fruit rot, leaf spot, and limb canker on apple trees'
+  favourable_conditions:
+  - feature_id: FEAT-ENV-RAIN-SPLASH-WIND
+    role: typical
+    claim:
+      text: Spores are spread by splashing rain, wind and insects.
+      evidence:
+      - source_id: SRC-PSU-APPLE-BLACKROT
+        passage: Disseminated by splashing rains, wind, and insects
+  spread_and_survival:
+  - text: Overwinters on dead bark, dead twigs and mummified fruit.
+    evidence:
+    - source_id: SRC-PSU-APPLE-BLACKROT
+      passage: The fungus overwinters in fruiting bodies (pycnidia and perithecia) on dead bark, dead twigs, and mummified fruit.
+  look_alikes:
+  - condition_id: COND-APPLE-SCAB
+    basis: research_protocol_pairing
+  - condition_id: COND-APPLE-CEDAR-APPLE-RUST
+    basis: research_protocol_pairing
+  diagnostic_ids:
+  - DIAG-HAND-LENS-PYCNIDIA
+  - DIAG-APPLE-FRUIT-CUT
+  - DIAG-PATHOGEN-LAB-ID
+  management_ids:
+  - MGMT-APPLEBR-SANITATION
+  - MGMT-APPLEBR-MUMMIES
+  - MGMT-APPLEBR-FIREBLIGHT
+  - MGMT-APPLEBR-CHEMICAL
+  curability:
+    status: not_documented
+  geographic_applicability:
+  - international_not_verified_for_India
+  known_uncertainties:
+  - Only a US (Pennsylvania) extension source verified so far; Indian apple-growing guidance not yet sourced.
+  - The source distinguishes black rot from bitter rot (not yet in this knowledge base).
+  research_role: held_out_hard_unknown
+  frozen_model_class: null
+  curation_status: sourced
+  review_status: source_verified
+  last_verified: '2026-10-14'
+- condition_id: COND-APPLE-SCAB
+  condition_type: infectious_disease
+  cause_category: fungal
+  common_names:
+  - Apple scab
+  scientific_cause:
+    name: Venturia inaequalis
+    claim:
+      text: Caused by Venturia inaequalis.
+      evidence:
+      - source_id: SRC-TNAU-APPLE-SCAB-PH
+        passage: 'Apple scab: Venturia inaequalis'
+  affected_plants:
+  - plant_id: PLANT-APPLE
+    claim:
+      text: Post-harvest disease of apple.
+      evidence:
+      - source_id: SRC-TNAU-APPLE-SCAB-PH
+        passage: 'Post Harvest Diseases :: Fruits :: Apple'
+  features:
+  - feature_id: FEAT-FRUIT-LESIONS
+    role: typical
+    claim:
+      text: Small, rough, black, circular lesions on fruit skin (post-harvest).
+      evidence:
+      - source_id: SRC-TNAU-APPLE-SCAB-PH
+        passage: Small, rough, black, circular lesions on their skin
+  favourable_conditions: []
+  spread_and_survival: []
+  look_alikes: []
+  diagnostic_ids:
+  - DIAG-PATHOGEN-LAB-ID
+  management_ids:
+  - MGMT-APPLESCAB-PRUNE
+  - MGMT-APPLESCAB-FALLEN-FRUIT
+  curability:
+    status: not_documented
+  geographic_applicability:
+  - India_region
+  known_uncertainties:
+  - The verified source covers post-harvest fruit symptoms only; leaf symptoms are not yet sourced, so leaf-based retrieval cannot propose this
+    condition.
+  research_role: frozen_model_known_class
+  frozen_model_class: Apple___Apple_scab
+  curation_status: sourced
+  review_status: source_verified
+  last_verified: '2026-10-14'
+- condition_id: COND-GRAPE-ESCA
+  condition_type: infectious_disease
+  cause_category: fungal_complex
+  common_names:
+  - Esca
+  - Black measles
+  scientific_cause:
+    name: Fungal complex incl. Phaeoacremonium aleophilum, other Phaeoacremonium spp., Phaeomoniella chlamydospora
+    claim:
+      text: A complex of wood-infecting fungi.
+      evidence:
+      - source_id: SRC-UCIPM-GRAPE-ESCA
+        passage: Complex of fungi that includes Phaeoacremonium aleophilum
+  affected_plants:
+  - plant_id: PLANT-GRAPE
+    claim:
+      text: A grapevine trunk disease.
+      evidence:
+      - source_id: SRC-UCIPM-GRAPE-ESCA
+        passage: 'Agriculture: Grape Pest Management Guidelines Esca (Black Measles)'
+  features:
+  - feature_id: FEAT-INTERVEINAL-STRIPING
+    role: distinguishing
+    claim:
+      text: 'Interveinal ''striping'': dark red (red cultivars) or yellow (white cultivars) stripes that dry and become necrotic.'
+      evidence:
+      - source_id: SRC-UCIPM-GRAPE-ESCA
+        passage: dark red in red cultivars and yellow in white cultivars, dry and become necrotic
+  - feature_id: FEAT-SINGLE-SHOOT-OR-CANE
+    role: distinguishing
+    claim:
+      text: Often restricted to one shoot or shoots from the same spur or cane.
+      evidence:
+      - source_id: SRC-UCIPM-GRAPE-ESCA
+        passage: They are often restricted to an individual shoot or to shoots originating from the same spur or cane.
+  - feature_id: FEAT-BERRY-SPOTS-PURPLE-RING
+    role: distinguishing
+    claim:
+      text: Small round dark berry spots bordered by a brown-purple ring may occur.
+      evidence:
+      - source_id: SRC-UCIPM-GRAPE-ESCA
+        passage: On berries, small, round, dark spots each bordered by a brown-purple ring, may occur.
+  - feature_id: FEAT-DARK-SPOTS-WOOD-SECTION
+    role: distinguishing
+    claim:
+      text: Cross-sections of wood under symptomatic shoots show concentric rings of dark spots.
+      evidence:
+      - source_id: SRC-UCIPM-GRAPE-ESCA
+        passage: Cross-sectional cuts through canes, spurs, cordons, or trunks from which symptomatic shoots originate will reveal concentric
+          rings of dark spots.
+  favourable_conditions: []
+  spread_and_survival:
+  - text: Pruning wounds are infection sites for rain-released spores.
+    evidence:
+    - source_id: SRC-UCIPM-GRAPE-ESCA
+      passage: wounds made by dormant pruning provide infection sites
+  look_alikes:
+  - condition_id: COND-GRAPE-BLACK-ROT
+    basis: research_protocol_pairing
+  - condition_id: COND-GRAPE-LEAF-BLIGHT-ISARIOPSIS
+    basis: research_protocol_pairing
+  diagnostic_ids:
+  - DIAG-WOOD-CROSS-SECTION
+  - DIAG-PATHOGEN-LAB-ID
+  management_ids: []
+  curability:
+    status: not_curable_in_infected_tissue
+    claim:
+      text: Once a pruning wound is infected, a permanent localized wood infection forms that fungicides cannot eradicate.
+      evidence:
+      - source_id: SRC-UCIPM-GRAPE-ESCA
+        passage: establishes a permanent, localized wood infection, which cannot be eradicated by fungicide applications
+  geographic_applicability:
+  - international_not_verified_for_India
+  seasonality:
+  - text: In California, foliar symptoms are most prevalent in July-August (not verified for Indian seasons).
+    evidence:
+    - source_id: SRC-UCIPM-GRAPE-ESCA
+      passage: most prevalent during July and August
+  known_uncertainties:
+  - Foliar and fruit symptoms are inconsistent from year to year (source statement).
+  - Management in the source points to a separate Eutypa dieback guideline that has not been verified yet.
+  research_role: held_out_hard_unknown
+  frozen_model_class: null
+  curation_status: sourced
+  review_status: source_verified
+  last_verified: '2026-10-14'
+- condition_id: COND-GRAPE-BLACK-ROT
+  condition_type: infectious_disease
+  cause_category: fungal
+  common_names:
+  - Black rot
+  scientific_cause:
+    name: Guignardia bidwellii
+    claim:
+      text: Caused by Guignardia bidwellii.
+      evidence:
+      - source_id: SRC-UMAINE-GRAPE-BLACKROT
+        passage: The fungus Guignardia bidwellii causes black rot of grape.
+  affected_plants:
+  - plant_id: PLANT-GRAPE
+    claim:
+      text: A disease of grape.
+      evidence:
+      - source_id: SRC-UMAINE-GRAPE-BLACKROT
+        passage: The fungus Guignardia bidwellii causes black rot of grape.
+  features:
+  - feature_id: FEAT-GREY-TAN-CENTRE-DARK-MARGIN
+    role: typical
+    claim:
+      text: Leaf spots light tan in the centre, may be circled by a dark tan band.
+      evidence:
+      - source_id: SRC-UMAINE-GRAPE-BLACKROT
+        passage: The spots are commonly light tan in the center and may be circled by a dark tan band
+  - feature_id: FEAT-BLACK-SPECKS-IN-LESION
+    role: distinguishing
+    claim:
+      text: Tiny dark spore-producing structures form within the spots.
+      evidence:
+      - source_id: SRC-UMAINE-GRAPE-BLACKROT
+        passage: two types of tiny, dark, spore-producing structures form within the spots
+  - feature_id: FEAT-FRUIT-MUMMY
+    role: distinguishing
+    claim:
+      text: Infected berries shrivel to small, black, hard mummies.
+      evidence:
+      - source_id: SRC-UMAINE-GRAPE-BLACKROT
+        passage: the grape shrivels from a soft brown rotted fruit to a small, black, hard mummy
+  - feature_id: FEAT-FRUIT-LESIONS
+    role: typical
+    claim:
+      text: Fruit symptoms begin as small brownish spots that expand rapidly.
+      evidence:
+      - source_id: SRC-UMAINE-GRAPE-BLACKROT
+        passage: Symptoms of infected fruit begin as small brownish spots
+  - feature_id: FEAT-LEAF-SPOTS
+    role: typical
+    claim:
+      text: First noticed as small spots on the leaves.
+      evidence:
+      - source_id: SRC-UMAINE-GRAPE-BLACKROT
+        passage: Infections are usually first noticed on the leaves where they appear as small spots
+  favourable_conditions:
+  - feature_id: FEAT-ENV-HIGH-HUMIDITY-WET
+    role: typical
+    claim:
+      text: Infection needs free water on tissue for several hours (about 6 h at 80 °F).
+      evidence:
+      - source_id: SRC-UMAINE-GRAPE-BLACKROT
+        passage: they require sufficient time in the presence of free water in order to germinate and infect
+  spread_and_survival:
+  - text: Overwinters in infected leaves and fruit (ascospores in pseudothecia).
+    evidence:
+    - source_id: SRC-UMAINE-GRAPE-BLACKROT
+      passage: Ascospores are produced in pseudothecia that develop in infected, over-wintered leaves and fruit.
+  look_alikes:
+  - condition_id: COND-GRAPE-ESCA
+    basis: research_protocol_pairing
+  diagnostic_ids:
+  - DIAG-HAND-LENS-PYCNIDIA
+  - DIAG-PATHOGEN-LAB-ID
+  management_ids:
+  - MGMT-GRAPEBR-FALL-CLEANUP
+  - MGMT-GRAPEBR-CANOPY
+  - MGMT-GRAPEBR-RESISTANT
+  - MGMT-GRAPEBR-CHEMICAL
+  curability:
+    status: not_documented
+  geographic_applicability:
+  - international_not_verified_for_India
+  known_uncertainties:
+  - Only a US (Maine) extension source verified so far.
+  research_role: frozen_model_known_class
+  frozen_model_class: Grape___Black_rot
+  curation_status: sourced
+  review_status: source_verified
+  last_verified: '2026-10-14'
+- condition_id: COND-GRAPE-DOWNY-MILDEW
+  condition_type: infectious_disease
+  cause_category: oomycete
+  common_names:
+  - Downy mildew
+  scientific_cause:
+    name: Plasmopara viticola
+    claim:
+      text: Caused by Plasmopara viticola.
+      evidence:
+      - source_id: SRC-TNAU-GRAPE-DOWNY
+        passage: 'Downy mildew: Plasmopara viticola'
+  affected_plants:
+  - plant_id: PLANT-GRAPE
+    claim:
+      text: A disease of grapes.
+      evidence:
+      - source_id: SRC-TNAU-GRAPE-DOWNY
+        passage: 'Horticultural crops : Grapes Downy mildew'
+  features:
+  - feature_id: FEAT-YELLOW-TRANSLUCENT-UPPER-SPOTS
+    role: distinguishing
+    claim:
+      text: Irregular yellowish translucent spots on the upper leaf surface (source spells 'sports').
+      evidence:
+      - source_id: SRC-TNAU-GRAPE-DOWNY
+        passage: Irregular, yellowish, translucent sports on the upper surface of the leaves.
+  - feature_id: FEAT-WHITE-GROWTH-UNDERSIDE
+    role: distinguishing
+    claim:
+      text: White growth on the corresponding lower surface.
+      evidence:
+      - source_id: SRC-TNAU-GRAPE-DOWNY
+        passage: Correspondingly on the lower surface, white, powdery growth on leaves.
+  - feature_id: FEAT-RAPID-BLIGHT-DEFOLIATION
+    role: typical
+    claim:
+      text: Premature defoliation.
+      evidence:
+      - source_id: SRC-TNAU-GRAPE-DOWNY
+        passage: Premature defoliation.
+  - feature_id: FEAT-FRUIT-LESIONS
+    role: occasional
+    claim:
+      text: White fungal growth on berries, which become leathery and shrivel.
+      evidence:
+      - source_id: SRC-TNAU-GRAPE-DOWNY
+        passage: White growth of fungus on berries which subsequently becomes leathery and shrivels.
+  - feature_id: FEAT-LEAF-YELLOWING
+    role: typical
+    claim:
+      text: Affected leaves turn yellow, then brown and dry.
+      evidence:
+      - source_id: SRC-TNAU-GRAPE-DOWNY
+        passage: Affected leaves become, yellow, brown and gets dried.
+  favourable_conditions:
+  - feature_id: FEAT-ENV-HIGH-HUMIDITY-WET
+    role: typical
+    claim:
+      text: High relative humidity (80-100 per cent) is listed as optimum.
+      evidence:
+      - source_id: SRC-TNAU-GRAPE-DOWNY
+        passage: 'Relative humidity : 80-100 per cent'
+  spread_and_survival:
+  - text: Spread through sporangia by wind and rain; survives as oospores in infected tissue.
+    evidence:
+    - source_id: SRC-TNAU-GRAPE-DOWNY
+      passage: 'Spread : Through sporangia by wind, rain etc.'
+  look_alikes: []
+  diagnostic_ids:
+  - DIAG-LEAF-UNDERSIDE
+  - DIAG-PATHOGEN-LAB-ID
+  management_ids:
+  - MGMT-GRAPEDM-CHEMICAL
+  curability:
+    status: not_documented
+  geographic_applicability:
+  - India_region
+  known_uncertainties:
+  - Not one of the frozen model's classes; included as a grape differential.
+  research_role: not_in_research_protocol
+  frozen_model_class: null
+  curation_status: sourced
+  review_status: source_verified
+  last_verified: '2026-10-14'
+- condition_id: COND-MAIZE-NORTHERN-LEAF-BLIGHT
+  condition_type: infectious_disease
+  cause_category: fungal
+  common_names:
+  - Northern corn leaf blight
+  - Turcicum leaf blight
+  - TLB
+  - NLB
+  scientific_cause:
+    name: Exserohilum turcicum
+    claim:
+      text: 'Caused by Exserohilum turcicum (TNAU: Turcicum leaf blight; Cornell names it northern corn leaf blight, spelling the genus ''Exerohilum'').'
+      evidence:
+      - source_id: SRC-TNAU-MAIZE-TLB
+        passage: 'Turcicum Leaf Blight (TLB): Exserohilum turcicum'
+      - source_id: SRC-CORNELL-MAIZE-NCLB
+        passage: Northern corn leaf blight caused by the fungus Exerohilum turcicum
+  affected_plants:
+  - plant_id: PLANT-MAIZE
+    claim:
+      text: A leaf disease of maize.
+      evidence:
+      - source_id: SRC-TNAU-MAIZE-TLB
+        passage: 'Cereals :: Maize Turcicum Leaf Blight'
+  features:
+  - feature_id: FEAT-ELONGATED-CIGAR-LESIONS
+    role: distinguishing
+    claim:
+      text: Long cigar-shaped grey-green to tan lesions.
+      evidence:
+      - source_id: SRC-TNAU-MAIZE-LEAFBLIGHT
+        passage: Long cigar-shape grey-green to tan-coloured lesions on lower leaves.
+  - feature_id: FEAT-OLDER-LOWER-LEAVES-FIRST
+    role: typical
+    claim:
+      text: Lesions begin on lower leaves and move up the plant.
+      evidence:
+      - source_id: SRC-CORNELL-MAIZE-NCLB
+        passage: Lesions run parallel to the leaf margins beginning on the lower leaves and moving up the plant.
+  - feature_id: FEAT-DUSTY-SPORES-UNDERSIDE
+    role: typical
+    claim:
+      text: Spores produced on the leaf underside below lesions (dusty green fuzz).
+      evidence:
+      - source_id: SRC-TNAU-MAIZE-LEAFBLIGHT
+        passage: Spores are produced on the underside of leaf.
+      - source_id: SRC-CORNELL-MAIZE-NCLB
+        passage: giving the appearance of a dusty green fuzz
+  - feature_id: FEAT-RAPID-BLIGHT-DEFOLIATION
+    role: typical
+    claim:
+      text: Lesions coalesce and can cover the entire leaf.
+      evidence:
+      - source_id: SRC-CORNELL-MAIZE-NCLB
+        passage: They may coalesce and cover the enter leaf.
+  - feature_id: FEAT-LEAF-SPOTS
+    role: typical
+    claim:
+      text: Tan, long lesions on the leaves.
+      evidence:
+      - source_id: SRC-CORNELL-MAIZE-NCLB
+        passage: The tan lesions of northern corn leaf blight are slender and oblong tapering at the ends
+  favourable_conditions:
+  - feature_id: FEAT-ENV-COOL-WET
+    role: typical
+    claim:
+      text: Favoured by wet, humid, cool weather later in the season.
+      evidence:
+      - source_id: SRC-TNAU-MAIZE-LEAFBLIGHT
+        passage: Wet humid cool weather typically found later in the growing season.
+  spread_and_survival:
+  - text: Survives on infected plant debris; wind-blown spores spread it.
+    evidence:
+    - source_id: SRC-TNAU-MAIZE-LEAFBLIGHT
+      passage: Survives on infected plant debris. Windblown spores spread the disease.
+  look_alikes:
+  - condition_id: COND-MAIZE-GRAY-LEAF-SPOT
+    basis: research_protocol_pairing
+  diagnostic_ids:
+  - DIAG-LESION-SHAPE-VEINS
+  - DIAG-LEAF-UNDERSIDE
+  - DIAG-PATHOGEN-LAB-ID
+  management_ids:
+  - MGMT-NLB-STUBBLE
+  - MGMT-NLB-RESISTANT
+  - MGMT-NLB-TIMELY-PLANTING
+  - MGMT-NLB-CHEMICAL
+  curability:
+    status: not_documented
+  geographic_applicability:
+  - India_region
+  - international_not_verified_for_India
+  known_uncertainties:
+  - The TNAU 'Leaf Blight' page groups Exserohilum turcicum with Helminthosporium maydis.
+  - 'Lesion size differs between sources (TNAU: 2.5-15 cm; Cornell: 1-6 inches).'
+  research_role: held_out_hard_unknown
+  frozen_model_class: null
+  curation_status: sourced
+  review_status: source_verified
+  last_verified: '2026-10-14'
+- condition_id: COND-MAIZE-GRAY-LEAF-SPOT
+  condition_type: infectious_disease
+  cause_category: fungal
+  common_names:
+  - Gray leaf spot
+  - Cercospora leaf spot
+  scientific_cause:
+    name: Cercospora zeae-maydis
+    claim:
+      text: Caused by Cercospora zeae-maydis.
+      evidence:
+      - source_id: SRC-CORNELL-MAIZE-GLS
+        passage: Gray leaf spot is caused by the fungus Cercospora zeae-maydis
+  affected_plants:
+  - plant_id: PLANT-MAIZE
+    claim:
+      text: A leaf disease of corn (maize).
+      evidence:
+      - source_id: SRC-CORNELL-MAIZE-GLS
+        passage: Gray leaf spot is caused by the fungus Cercospora zeae-maydis
+  features:
+  - feature_id: FEAT-YELLOW-HALO
+    role: typical
+    claim:
+      text: Lesions begin as a small dot with a yellow halo.
+      evidence:
+      - source_id: SRC-CORNELL-MAIZE-GLS
+        passage: lesions of gray leaf spot begin as a small dot with a yellow halo
+  - feature_id: FEAT-VEIN-LIMITED-RECTANGULAR
+    role: distinguishing
+    claim:
+      text: Lesions elongate parallel to the veins, becoming pale brown to grey and rectangular with blunt ends.
+      evidence:
+      - source_id: SRC-CORNELL-MAIZE-GLS
+        passage: Lesions will elongate over time running parallel to the veins becoming pale brown to gray and rectangular in shape with blunt
+          ends.
+  - feature_id: FEAT-OLDER-LOWER-LEAVES-FIRST
+    role: typical
+    claim:
+      text: Usually first noticed in the lower leaves.
+      evidence:
+      - source_id: SRC-CORNELL-MAIZE-GLS
+        passage: Symptoms of gray leaf spot are usually first noticed in the lower leaves.
+  - feature_id: FEAT-RAPID-BLIGHT-DEFOLIATION
+    role: occasional
+    claim:
+      text: Lesions may coalesce and kill leaves.
+      evidence:
+      - source_id: SRC-CORNELL-MAIZE-GLS
+        passage: Lesions may eventually coalesce killing the leaves.
+  favourable_conditions:
+  - feature_id: FEAT-ENV-HIGH-HUMIDITY-WET
+    role: typical
+    claim:
+      text: Favoured by wet humid weather, reduced tillage and continuous corn.
+      evidence:
+      - source_id: SRC-CORNELL-MAIZE-GLS
+        passage: Gray leaf spot is favored by wet humid weather
+  spread_and_survival:
+  - text: Airborne spores spread from corn debris.
+    evidence:
+    - source_id: SRC-CORNELL-MAIZE-GLS
+      passage: Airborne spores are spread locally and regionally from corn debris.
+  look_alikes:
+  - condition_id: COND-MAIZE-NORTHERN-LEAF-BLIGHT
+    basis: research_protocol_pairing
+  diagnostic_ids:
+  - DIAG-LESION-SHAPE-VEINS
+  - DIAG-PATHOGEN-LAB-ID
+  management_ids:
+  - MGMT-GLS-TILLAGE-ROTATION-RESISTANT
+  - MGMT-GLS-CHEMICAL
+  curability:
+    status: not_documented
+  geographic_applicability:
+  - international_not_verified_for_India
+  known_uncertainties:
+  - Only a US (New York) source verified so far.
+  research_role: frozen_model_known_class
+  frozen_model_class: Corn_(maize)___Cercospora_leaf_spot Gray_leaf_spot
+  curation_status: sourced
+  review_status: source_verified
+  last_verified: '2026-10-14'
+- condition_id: COND-MAIZE-COMMON-RUST
+  condition_type: infectious_disease
+  cause_category: fungal
+  common_names:
+  - Common rust
+  scientific_cause:
+    name: Puccinia sorghi
+    claim:
+      text: Caused by Puccinia sorghi.
+      evidence:
+      - source_id: SRC-TNAU-MAIZE-RUST
+        passage: 'Common Rust: Puccinia sorghi'
+  affected_plants:
+  - plant_id: PLANT-MAIZE
+    claim:
+      text: A disease of maize.
+      evidence:
+      - source_id: SRC-TNAU-MAIZE-RUST
+        passage: 'Cereals :: Maize Common Rust'
+  features:
+  - feature_id: FEAT-POWDERY-BROWN-PUSTULES
+    role: distinguishing
+    claim:
+      text: Circular to elongate cinnamon-brown powdery pustules on both leaf surfaces.
+      evidence:
+      - source_id: SRC-TNAU-MAIZE-RUST
+        passage: Circular to elongate cinnamon brown, powdery, erumpent pustules on both leaf surfaces
+  - feature_id: FEAT-STEM-LESIONS
+    role: occasional
+    claim:
+      text: In severe cases infection spreads to the sheath and other parts.
+      evidence:
+      - source_id: SRC-TNAU-MAIZE-RUST
+        passage: In severe cases infection spreads to sheath and other parts
+  favourable_conditions:
+  - feature_id: FEAT-ENV-COOL-WET
+    role: typical
+    claim:
+      text: Favoured by cool to warm, moist weather.
+      evidence:
+      - source_id: SRC-TNAU-MAIZE-RUST
+        passage: Cool, warm and moist weather
+  spread_and_survival:
+  - text: Primary spread through alternate hosts (Oxalis spp.); secondary through wind-borne uredospores.
+    evidence:
+    - source_id: SRC-TNAU-MAIZE-RUST
+      passage: Primary spread through alternate hosts Secondary spread through wind borne uredospores
+  look_alikes: []
+  diagnostic_ids:
+  - DIAG-PATHOGEN-LAB-ID
+  management_ids:
+  - MGMT-RUST-ALTERNATE-HOSTS
+  - MGMT-RUST-CROP-REMAINS
+  - MGMT-RUST-CHEMICAL
+  curability:
+    status: not_documented
+  geographic_applicability:
+  - India_region
+  known_uncertainties: []
+  research_role: frozen_model_known_class
+  frozen_model_class: Corn_(maize)___Common_rust_
+  curation_status: sourced
+  review_status: source_verified
+  last_verified: '2026-10-14'
+- condition_id: COND-MANGO-ANTHRACNOSE
+  condition_type: infectious_disease
+  cause_category: fungal
+  common_names:
+  - Anthracnose
+  scientific_cause:
+    name: Colletotrichum gloeosporioides
+    claim:
+      text: Caused by Colletotrichum gloeosporioides (source spells 'Anthracnos').
+      evidence:
+      - source_id: SRC-TNAU-MANGO-ANTHRACNOSE-PH
+        passage: 'Anthracnos: Colletotrichum gloeosporioides'
+  affected_plants:
+  - plant_id: PLANT-MANGO
+    claim:
+      text: Affects mango leaves, stems, young flowers and fruit.
+      evidence:
+      - source_id: SRC-TNAU-MANGO-ANTHRACNOSE-PH
+        passage: Infection occurs leaves, stems, young flowers and fruit
+  features:
+  - feature_id: FEAT-SUNKEN-BLACK-SPOTS-RIPENING-FRUIT
+    role: distinguishing
+    claim:
+      text: Sunken black spots appear on fruit during ripening (infection usually latent until ripening).
+      evidence:
+      - source_id: SRC-TNAU-MANGO-ANTHRACNOSE-PH
+        passage: Sunken black spots appear on the surface of the fruit during ripening.
+  - feature_id: FEAT-FRUIT-LESIONS
+    role: typical
+    claim:
+      text: Fruit infection usually stays latent until ripening.
+      evidence:
+      - source_id: SRC-TNAU-MANGO-ANTHRACNOSE-PH
+        passage: fruit is usually latent and manifests itself only as the mango begins to ripen
+  favourable_conditions:
+  - feature_id: FEAT-ENV-HIGH-HUMIDITY-WET
+    role: typical
+    claim:
+      text: Most severe in wet weather.
+      evidence:
+      - source_id: SRC-TNAU-MANGO-ANTHRACNOSE-PH
+        passage: The disease is most severe
+  spread_and_survival:
+  - text: Inoculum persists on dried leaves, branches, mummified flowers and bracts; spreads by air-borne conidia.
+    evidence:
+    - source_id: SRC-TNAU-MANGO-ANTHRACNOSE-PH
+      passage: Inoculum remains on dried leaves, defoliated branches, mummified flowers and flower brackets.
+  look_alikes: []
+  diagnostic_ids:
+  - DIAG-PATHOGEN-LAB-ID
+  management_ids: []
+  curability:
+    status: not_documented
+  geographic_applicability:
+  - India_region
+  known_uncertainties:
+  - The verified page's management section refers to products registered in Australian states; it is NOT used.
+  - Leaf symptoms are mentioned but not described in the verified source.
+  research_role: not_in_research_protocol
+  frozen_model_class: null
+  curation_status: sourced
+  review_status: source_verified
+  last_verified: '2026-10-14'
+- condition_id: COND-RICE-BLAST
+  condition_type: infectious_disease
+  cause_category: fungal
+  common_names:
+  - Blast
+  - Rice blast
+  - Leaf blast
+  - Neck blast
+  scientific_cause:
+    name: Magnaporthe oryzae
+    synonyms:
+    - Pyricularia grisea
+    - Magnaporthe grisea
+    claim:
+      text: Caused by Magnaporthe oryzae (syn. P. grisea, Magnaporthe grisea).
+      evidence:
+      - source_id: SRC-TNAU-RICE-BLAST
+        passage: 'Blast : Magnaporthe oryzae (Syn: P. grisea, Magnaporthe grisea)'
+  affected_plants:
+  - plant_id: PLANT-RICE
+    claim:
+      text: Attacks rice at all growth stages.
+      evidence:
+      - source_id: SRC-TNAU-RICE-BLAST
+        passage: The fungus attacks the crop at all stages of crop growth
+  features:
+  - feature_id: FEAT-SPINDLE-GREY-CENTRE-BROWN-MARGIN
+    role: distinguishing
+    claim:
+      text: Spindle-shaped leaf spots with grey centre and dark brown margin.
+      evidence:
+      - source_id: SRC-TNAU-RICE-BLAST
+        passage: the characteristic spindle shaped spots with grey centre and dark brown margin
+  - feature_id: FEAT-NODE-OR-NECK-BLACK-LESIONS
+    role: distinguishing
+    claim:
+      text: Black lesions girdle nodes; neck lesions girdle the panicle neck.
+      evidence:
+      - source_id: SRC-TNAU-RICE-BLAST
+        passage: Black lesions appear on nodes girdling them.
+  - feature_id: FEAT-RAPID-BLIGHT-DEFOLIATION
+    role: typical
+    claim:
+      text: Spots coalesce; large leaf areas dry; severe fields look burnt.
+      evidence:
+      - source_id: SRC-TNAU-RICE-BLAST
+        passage: Severely infected nursery and field appear as burnt.
+  - feature_id: FEAT-LEAF-SPOTS
+    role: typical
+    claim:
+      text: Spindle-shaped leaf spots.
+      evidence:
+      - source_id: SRC-TNAU-RICE-BLAST
+        passage: the characteristic spindle shaped spots with grey centre and dark brown margin (Leaf blast)
+  favourable_conditions:
+  - feature_id: FEAT-ENV-HIGH-HUMIDITY-WET
+    role: typical
+    claim:
+      text: Lesions enlarge under moist weather.
+      evidence:
+      - source_id: SRC-TNAU-RICE-BLAST
+        passage: The lesions soon enlarge under moist weather
+  spread_and_survival: []
+  look_alikes: []
+  diagnostic_ids:
+  - DIAG-PATHOGEN-LAB-ID
+  management_ids: []
+  curability:
+    status: not_documented
+  geographic_applicability:
+  - India_region
+  known_uncertainties:
+  - Spot size and shape vary between rice varieties (source statement).
+  - Management is on a page section not yet verified.
+  research_role: not_in_research_protocol
+  frozen_model_class: null
+  curation_status: sourced
+  review_status: source_verified
+  last_verified: '2026-10-14'
+- condition_id: COND-TOMATO-BACTERIAL-SPOT
+  condition_type: infectious_disease
+  cause_category: bacterial
+  common_names:
+  - Bacterial leaf spot (tomato)
+  scientific_cause:
+    name: Xanthomonas axonopodis pv. vesicatoria
+    claim:
+      text: Caused by Xanthomonas axonopodis pv. vesicatoria.
+      evidence:
+      - source_id: SRC-TNAU-TOM-BACTSPOT
+        passage: 'Bacterial leaf spot : Xanthomonas axonopodis pv. vesicatoria'
+  affected_plants:
+  - plant_id: PLANT-TOMATO
+    claim:
+      text: Recorded on tomato.
+      evidence:
+      - source_id: SRC-TNAU-TOM-BACTSPOT
+        passage: 'Vegetables:: Tomato Bacterial leaf spot'
+  features:
+  - feature_id: FEAT-LEAF-SPOTS
+    role: typical
+    claim:
+      text: Small brown circular leaf spots.
+      evidence:
+      - source_id: SRC-TNAU-TOM-BACTSPOT
+        passage: Small, brown, water soaked, circular spots with yellow halo on leaves.
+  - feature_id: FEAT-YELLOW-HALO
+    role: typical
+    claim:
+      text: Spots have a yellow halo.
+      evidence:
+      - source_id: SRC-TNAU-TOM-BACTSPOT
+        passage: Small, brown, water soaked, circular spots with yellow halo on leaves.
+  - feature_id: FEAT-WATER-SOAKED-LESIONS
+    role: typical
+    claim:
+      text: Spots look water-soaked.
+      evidence:
+      - source_id: SRC-TNAU-TOM-BACTSPOT
+        passage: Small, brown, water soaked, circular spots
+  - feature_id: FEAT-FRUIT-LESIONS
+    role: typical
+    claim:
+      text: Small water-soaked spots on green fruit that become scabby.
+      evidence:
+      - source_id: SRC-TNAU-TOM-BACTSPOT
+        passage: Small, water-soaked spots on green fruit
+  favourable_conditions:
+  - feature_id: FEAT-ENV-RAIN-SPLASH-WIND
+    role: typical
+    claim:
+      text: Spread by rain splash.
+      evidence:
+      - source_id: SRC-TNAU-TOM-BACTSPOT
+        passage: 'Secondary spread: Rain splash'
+  - feature_id: FEAT-ENV-HIGH-HUMIDITY-WET
+    role: typical
+    claim:
+      text: Favoured by moist weather, high humidity or dew.
+      evidence:
+      - source_id: SRC-TNAU-TOM-BACTSPOT
+        passage: High humidity or persistent dew.
+  spread_and_survival:
+  - text: Survives in infected debris; spreads first through debris and seed.
+    evidence:
+    - source_id: SRC-TNAU-TOM-BACTSPOT
+      passage: 'Primary spread: Infected plant debris and seed'
+  look_alikes:
+  - condition_id: COND-TOMATO-EARLY-BLIGHT
+    basis: shared_kb_features
+  diagnostic_ids:
+  - DIAG-PATHOGEN-LAB-ID
+  management_ids:
+  - MGMT-TBS-SEED
+  - MGMT-TBS-CHEMICAL
+  curability:
+    status: not_documented
+  geographic_applicability:
+  - India_region
+  known_uncertainties:
+  - Indian (Tamil Nadu) source; not expert-reviewed.
+  research_role: frozen_model_known_class
+  frozen_model_class: Tomato___Bacterial_spot
+  curation_status: sourced
+  review_status: source_verified
+  last_verified: '2026-10-15'
+- condition_id: COND-TOMATO-LEAF-MOLD
+  condition_type: infectious_disease
+  cause_category: fungal
+  common_names:
+  - Leaf mould (tomato)
+  scientific_cause:
+    name: Passalora fulva
+    synonyms:
+    - Cladosporium fulvum
+    claim:
+      text: Caused by Passalora fulva (syn. Cladosporium fulvum).
+      evidence:
+      - source_id: SRC-CORNELL-TOM-LEAFMOLD
+        passage: Tomato leaf mold is caused by a fungal pathogen called Passalora fulva (syn. Cladosporium fulvum)
+  affected_plants:
+  - plant_id: PLANT-TOMATO
+    claim:
+      text: A foliar disease of tomato.
+      evidence:
+      - source_id: SRC-CORNELL-TOM-LEAFMOLD
+        passage: Tomato leaf mold is a foliar disease
+  features:
+  - feature_id: FEAT-LEAF-SPOTS
+    role: typical
+    claim:
+      text: Light green spots on leaves that later die.
+      evidence:
+      - source_id: SRC-CORNELL-TOM-LEAFMOLD
+        passage: Disease symptoms first appear after seven days as light green spots on leaves.
+      - source_id: SRC-CORNELL-TOM-LEAFMOLD
+        passage: eventually the spots become necrotic
+  - feature_id: FEAT-DUSTY-SPORES-UNDERSIDE
+    role: distinguishing
+    claim:
+      text: Olive-green spore growth appears; the fungus infects the lower leaf surface.
+      evidence:
+      - source_id: SRC-CORNELL-TOM-LEAFMOLD
+        passage: Soon after, olive-green asexual conidia emerge
+      - source_id: SRC-CORNELL-TOM-LEAFMOLD
+        passage: The fungus produces conidia that infect the lower surfaces of leaves.
+  - feature_id: FEAT-OLDER-LOWER-LEAVES-FIRST
+    role: typical
+    claim:
+      text: Starts on the lower leaves.
+      evidence:
+      - source_id: SRC-CORNELL-TOM-LEAFMOLD
+        passage: Disease symptoms appear first on the lower leaves of tomato plants.
+  - feature_id: FEAT-RAPID-BLIGHT-DEFOLIATION
+    role: occasional
+    claim:
+      text: Leaves fall as the disease gets worse.
+      evidence:
+      - source_id: SRC-CORNELL-TOM-LEAFMOLD
+        passage: disease severity increases and defoliation occurs
+  favourable_conditions:
+  - feature_id: FEAT-ENV-HIGH-HUMIDITY-WET
+    role: typical
+    claim:
+      text: Very high humidity triggers infection.
+      evidence:
+      - source_id: SRC-CORNELL-TOM-LEAFMOLD
+        passage: A relative humidity greater than 85% triggers the germination of conidia.
+  spread_and_survival:
+  - text: Spreads by wind and water splash; survives on infected debris.
+    evidence:
+    - source_id: SRC-CORNELL-TOM-LEAFMOLD
+      passage: The pathogen spreads by wind or by water splash.
+    - source_id: SRC-CORNELL-TOM-LEAFMOLD
+      passage: The fungus can survive on infected plant debris
+  look_alikes:
+  - condition_id: COND-TOMATO-MAGNESIUM-DEFICIENCY
+    basis: source_statement
+    claim:
+      text: Magnesium deficiency can be confused with leaf mould.
+      evidence:
+      - source_id: SRC-CORNELL-TOM-LEAFMOLD
+        passage: Abiotic conditions such as magnesium deficiency and the beginning stages of other diseases can produce similar symptoms to tomato
+          leaf mold.
+  diagnostic_ids:
+  - DIAG-LEAF-UNDERSIDE
+  - DIAG-PATHOGEN-LAB-ID
+  management_ids:
+  - MGMT-TLM-REMOVE
+  - MGMT-TLM-ROTATE-SEED
+  - MGMT-TLM-RESISTANT
+  - MGMT-TLM-CHEMICAL
+  curability:
+    status: not_documented
+  geographic_applicability:
+  - international_not_verified_for_India
+  known_uncertainties:
+  - US source written for greenhouses and high tunnels; not verified for India.
+  research_role: frozen_model_known_class
+  frozen_model_class: Tomato___Leaf_Mold
+  curation_status: sourced
+  review_status: source_verified
+  last_verified: '2026-10-15'
+- condition_id: COND-TOMATO-YELLOW-LEAF-CURL-VIRUS
+  condition_type: infectious_disease
+  cause_category: viral
+  common_names:
+  - Tomato leaf curl (leaf curl virus)
+  scientific_cause:
+    name: Tomato leaf curl virus (TLCV)
+    claim:
+      text: Caused by tomato leaf curl virus.
+      evidence:
+      - source_id: SRC-TNAU-TOM-LEAFCURL
+        passage: Causal organism - Tomato leaf curl virus (TLCV)
+  affected_plants:
+  - plant_id: PLANT-TOMATO
+    claim:
+      text: Recorded on tomato.
+      evidence:
+      - source_id: SRC-TNAU-TOM-LEAFCURL
+        passage: 'Vegetables:: Tomato Leaf curl'
+  features:
+  - feature_id: FEAT-LEAF-CURL
+    role: distinguishing
+    claim:
+      text: Leaves roll downward and crinkle.
+      evidence:
+      - source_id: SRC-TNAU-TOM-LEAFCURL
+        passage: Downward rolling and crinkling of the leaves
+  - feature_id: FEAT-STUNTING
+    role: typical
+    claim:
+      text: Severe stunting; short internodes and a bushy look.
+      evidence:
+      - source_id: SRC-TNAU-TOM-LEAFCURL
+        passage: Severe stunting of plants
+      - source_id: SRC-TNAU-TOM-LEAFCURL
+        passage: Appearence of more lateral branches - bushy appearance
+  favourable_conditions: []
+  spread_and_survival:
+  - text: Spread by whiteflies and by moving infected plants.
+    evidence:
+    - source_id: SRC-TNAU-TOM-LEAFCURL
+      passage: 'Primary spread: Whiteflies.'
+    - source_id: SRC-TNAU-TOM-LEAFCURL
+      passage: 'Secondary spread: Movement of infected plants'
+  look_alikes: []
+  diagnostic_ids:
+  - DIAG-WHITEFLY-CHECK
+  - DIAG-PATHOGEN-LAB-ID
+  management_ids:
+  - MGMT-TLC-NURSERY
+  - MGMT-TLC-BARRIER
+  - MGMT-TLC-TRAPS
+  - MGMT-TLC-WEEDHOST
+  - MGMT-TLC-CHEMICAL
+  curability:
+    status: not_curable_in_infected_tissue
+  geographic_applicability:
+  - India_region
+  known_uncertainties:
+  - The research class is 'Tomato yellow leaf curl virus'; this Indian source describes tomato leaf curl virus (TLCV), a related whitefly-borne
+    leaf-curl disease. The record matches them by symptoms; the exact virus needs a laboratory test.
+  - Virus diseases cannot be cured in an infected plant; management prevents spread.
+  research_role: frozen_model_known_class
+  frozen_model_class: Tomato___Tomato_Yellow_Leaf_Curl_Virus
+  curation_status: sourced
+  review_status: source_verified
+  last_verified: '2026-10-15'
+- condition_id: COND-POTATO-EARLY-BLIGHT
+  condition_type: infectious_disease
+  cause_category: fungal
+  common_names:
+  - Early blight (potato)
+  scientific_cause:
+    name: Alternaria solani
+    claim:
+      text: Caused by Alternaria solani.
+      evidence:
+      - source_id: SRC-TNAU-POTATO-EARLYBLIGHT
+        passage: 'Early blight: Alternaria solani'
+  affected_plants:
+  - plant_id: PLANT-POTATO
+    claim:
+      text: Recorded on potato.
+      evidence:
+      - source_id: SRC-TNAU-POTATO-EARLYBLIGHT
+        passage: 'Vegetables:: Potato Early blight'
+  features:
+  - feature_id: FEAT-CONCENTRIC-RINGS
+    role: distinguishing
+    claim:
+      text: Brown-black angular or oval spots with concentric rings.
+      evidence:
+      - source_id: SRC-TNAU-POTATO-EARLYBLIGHT
+        passage: Brown-black necrotic spot-angular, oval shape characterized by concentric rings.
+  - feature_id: FEAT-LEAF-SPOTS
+    role: typical
+    claim:
+      text: Brown-black dead spots on the leaves.
+      evidence:
+      - source_id: SRC-TNAU-POTATO-EARLYBLIGHT
+        passage: Brown-black necrotic spot-angular
+  - feature_id: FEAT-RAPID-BLIGHT-DEFOLIATION
+    role: typical
+    claim:
+      text: Spots merge and spread over the whole leaf.
+      evidence:
+      - source_id: SRC-TNAU-POTATO-EARLYBLIGHT
+        passage: Several spot coalesce & spread all over the leaf.
+  favourable_conditions:
+  - feature_id: FEAT-ENV-RAIN-SPLASH-WIND
+    role: typical
+    claim:
+      text: Spores spread by wind, rain and insects.
+      evidence:
+      - source_id: SRC-TNAU-POTATO-EARLYBLIGHT
+        passage: disseminated by wind to long distances
+  spread_and_survival:
+  - text: Spores and fungus in soil or crop debris stay alive for more than 17 months.
+    evidence:
+    - source_id: SRC-TNAU-POTATO-EARLYBLIGHT
+      passage: can remain viable for more than 17 months
+  look_alikes:
+  - condition_id: COND-POTATO-LATE-BLIGHT
+    basis: shared_kb_features
+  diagnostic_ids:
+  - DIAG-INSPECT-OLDER-LEAVES
+  - DIAG-PATHOGEN-LAB-ID
+  management_ids:
+  - MGMT-POTEB-SEED
+  - MGMT-POTEB-DEBRIS
+  - MGMT-POTEB-RESISTANT
+  - MGMT-POTEB-CHEMICAL
+  curability:
+    status: not_documented
+  geographic_applicability:
+  - India_region
+  known_uncertainties:
+  - Indian (Tamil Nadu) source; not expert-reviewed.
+  research_role: frozen_model_known_class
+  frozen_model_class: Potato___Early_blight
+  curation_status: sourced
+  review_status: source_verified
+  last_verified: '2026-10-15'
+- condition_id: COND-POTATO-LATE-BLIGHT
+  condition_type: infectious_disease
+  cause_category: oomycete
+  common_names:
+  - Late blight (potato)
+  scientific_cause:
+    name: Phytophthora infestans
+    claim:
+      text: Caused by Phytophthora infestans (spelled 'Phytopthora' by the source).
+      evidence:
+      - source_id: SRC-TNAU-POTATO-LATEBLIGHT
+        passage: 'Late blight of potato: Phytopthora infestans'
+  affected_plants:
+  - plant_id: PLANT-POTATO
+    claim:
+      text: Recorded on potato.
+      evidence:
+      - source_id: SRC-TNAU-POTATO-LATEBLIGHT
+        passage: 'Vegetables:: Potato Late blight of potato'
+  features:
+  - feature_id: FEAT-WATER-SOAKED-LESIONS
+    role: distinguishing
+    claim:
+      text: Water-soaked leaf spots that grow and turn purple-brown, then black.
+      evidence:
+      - source_id: SRC-TNAU-POTATO-LATEBLIGHT
+        passage: Water soaked spots appear on leaves, increase in size, turn purple brown& finally black colour
+  - feature_id: FEAT-LEAF-SPOTS
+    role: typical
+    claim:
+      text: Spots on the leaves that darken to black.
+      evidence:
+      - source_id: SRC-TNAU-POTATO-LATEBLIGHT
+        passage: Water soaked spots appear on leaves
+  - feature_id: FEAT-WHITE-GROWTH-UNDERSIDE
+    role: distinguishing
+    claim:
+      text: White growth on the underside of leaves.
+      evidence:
+      - source_id: SRC-TNAU-POTATO-LATEBLIGHT
+        passage: White growth develops on under surface of leaves.
+  - feature_id: FEAT-STEM-LESIONS
+    role: typical
+    claim:
+      text: Spreads to leaf stalks and stems; stems can break at the nodes.
+      evidence:
+      - source_id: SRC-TNAU-POTATO-LATEBLIGHT
+        passage: This spreads to petioles, rachis& stems.
+  favourable_conditions:
+  - feature_id: FEAT-ENV-COOL-WET
+    role: typical
+    claim:
+      text: Favoured by very humid, cool weather with rain.
+      evidence:
+      - source_id: SRC-TNAU-POTATO-LATEBLIGHT
+        passage: 'Epidemiology : RH->90% , Temp.-10-25°C and Night temperature:10°C.'
+  spread_and_survival:
+  - text: Infected tubers and soil are the main source of infection from one crop to the next; spores spread by air.
+    evidence:
+    - source_id: SRC-TNAU-POTATO-LATEBLIGHT
+      passage: The diseased tubers are mainly responsible for persistence of the disease from crop to crop.
+    - source_id: SRC-TNAU-POTATO-LATEBLIGHT
+      passage: The air borne infection is caused by the sporangia.
+  look_alikes:
+  - condition_id: COND-POTATO-EARLY-BLIGHT
+    basis: shared_kb_features
+  diagnostic_ids:
+  - DIAG-LEAF-UNDERSIDE
+  - DIAG-PATHOGEN-LAB-ID
+  management_ids:
+  - MGMT-POTLB-RESISTANT
+  - MGMT-POTLB-HARVEST
+  - MGMT-POTLB-CHEMICAL
+  curability:
+    status: not_documented
+  geographic_applicability:
+  - India_region
+  known_uncertainties:
+  - Indian (Tamil Nadu) source; not expert-reviewed.
+  research_role: frozen_model_known_class
+  frozen_model_class: Potato___Late_blight
+  curation_status: sourced
+  review_status: source_verified
+  last_verified: '2026-10-15'
+- condition_id: COND-PEPPER-BACTERIAL-SPOT
+  condition_type: infectious_disease
+  cause_category: bacterial
+  common_names:
+  - Bacterial leaf spot (pepper / chilli)
+  scientific_cause:
+    name: Xanthomonas campestris pv. vesicatoria
+    claim:
+      text: Caused by Xanthomonas campestris pv. vesicatoria (on chilli).
+      evidence:
+      - source_id: SRC-TNAU-CHILLI-BACTSPOT
+        passage: 'Chilli Bacterial leaf spot: Xanthomonas campestris pv. vesicatoria'
+  affected_plants:
+  - plant_id: PLANT-PEPPER-BELL
+    claim:
+      text: Described on chilli, the same species (Capsicum annuum) as bell pepper (species link is an editorial inference).
+      evidence:
+      - source_id: SRC-TNAU-CHILLI-BACTSPOT
+        passage: 'Vegetables:: Chilli Bacterial leaf spot'
+  features:
+  - feature_id: FEAT-LEAF-SPOTS
+    role: typical
+    claim:
+      text: Small dark-brown or black greasy spots on the leaves.
+      evidence:
+      - source_id: SRC-TNAU-CHILLI-BACTSPOT
+        passage: The leaves exhibit small circular or irregular, dark brown or black greasy spots.
+  - feature_id: FEAT-GREY-TAN-CENTRE-DARK-MARGIN
+    role: typical
+    claim:
+      text: As spots enlarge, the centre becomes lighter with a dark band around it.
+      evidence:
+      - source_id: SRC-TNAU-CHILLI-BACTSPOT
+        passage: As the spots enlarge in size, the centre becomes lighter Surrounded by a dark band of tissue.
+  - feature_id: FEAT-LEAF-YELLOWING
+    role: occasional
+    claim:
+      text: Badly affected leaves turn yellow and fall.
+      evidence:
+      - source_id: SRC-TNAU-CHILLI-BACTSPOT
+        passage: Severely affected leaves become chlorotic and fall off.
+  - feature_id: FEAT-RAPID-BLIGHT-DEFOLIATION
+    role: typical
+    claim:
+      text: Spots merge; badly affected leaves fall.
+      evidence:
+      - source_id: SRC-TNAU-CHILLI-BACTSPOT
+        passage: The spot coalesce to form irregular lesions.
+  - feature_id: FEAT-STEM-LESIONS
+    role: occasional
+    claim:
+      text: Stem infection forms cankers.
+      evidence:
+      - source_id: SRC-TNAU-CHILLI-BACTSPOT
+        passage: Stem infection leads to formation of cankerous growth
+  - feature_id: FEAT-FRUIT-LESIONS
+    role: typical
+    claim:
+      text: Raised water-soaked spots on fruit.
+      evidence:
+      - source_id: SRC-TNAU-CHILLI-BACTSPOT
+        passage: On the fruits round, raised water soaked spots
+  favourable_conditions: []
+  spread_and_survival: []
+  look_alikes:
+  - condition_id: COND-TOMATO-BACTERIAL-SPOT
+    basis: shared_kb_features
+  diagnostic_ids:
+  - DIAG-PATHOGEN-LAB-ID
+  management_ids:
+  - MGMT-PBS-SANITATION
+  - MGMT-PBS-CHEMICAL
+  curability:
+    status: not_documented
+  geographic_applicability:
+  - India_region
+  known_uncertainties:
+  - The source describes chilli; bell pepper is the same species (Capsicum annuum), but bell-pepper-specific guidance was not found.
+  research_role: frozen_model_known_class
+  frozen_model_class: Pepper,_bell___Bacterial_spot
+  curation_status: sourced
+  review_status: source_verified
+  last_verified: '2026-10-15'
+- condition_id: COND-APPLE-CEDAR-APPLE-RUST
+  condition_type: infectious_disease
+  cause_category: fungal
+  common_names:
+  - Cedar apple rust
+  scientific_cause:
+    name: Gymnosporangium juniperi-virginianae
+    claim:
+      text: Caused by the rust fungus Gymnosporangium juniperi-virginianae.
+      evidence:
+      - source_id: SRC-CLEMSON-APPLE-CAR
+        passage: Gymnosporangium juniperi-virginianae can be a jarring thing to find
+  affected_plants:
+  - plant_id: PLANT-APPLE
+    claim:
+      text: Infects apple and crabapple leaves and fruit.
+      evidence:
+      - source_id: SRC-CLEMSON-APPLE-CAR
+        passage: Fruits of infected apple and crabapple trees will become disfigured
+  features:
+  - feature_id: FEAT-YELLOW-ORANGE-SPOTS
+    role: distinguishing
+    claim:
+      text: Yellow-orange to reddish spots on the upper leaf surface.
+      evidence:
+      - source_id: SRC-CLEMSON-APPLE-CAR
+        passage: showing as yellow-orange to reddish circles
+  - feature_id: FEAT-LEAF-SPOTS
+    role: typical
+    claim:
+      text: Spots grow and merge into large rusty patches.
+      evidence:
+      - source_id: SRC-CLEMSON-APPLE-CAR
+        passage: will merge with other infected spots to form large patches of rust on the surface of leaves
+  - feature_id: FEAT-FRUIT-LESIONS
+    role: occasional
+    claim:
+      text: Infected fruit become disfigured.
+      evidence:
+      - source_id: SRC-CLEMSON-APPLE-CAR
+        passage: Fruits of infected apple and crabapple trees will become disfigured
+  favourable_conditions: []
+  spread_and_survival:
+  - text: Spores from galls on red-cedar trees infect apple leaves; spores from apple leaves go back to cedars.
+    evidence:
+    - source_id: SRC-CLEMSON-APPLE-CAR
+      passage: as the spores produced on cedar galls land on leaves of apple and crabapple trees
+  look_alikes: []
+  diagnostic_ids:
+  - DIAG-LEAF-UNDERSIDE
+  - DIAG-PATHOGEN-LAB-ID
+  management_ids:
+  - MGMT-CAR-PRUNE
+  - MGMT-CAR-CEDAR
+  - MGMT-CAR-CHEMICAL
+  curability:
+    status: not_documented
+  geographic_applicability:
+  - international_not_verified_for_India
+  known_uncertainties:
+  - Needs a juniper/red-cedar alternate host; whether it occurs in a given Indian region is not established by this source.
+  research_role: frozen_model_known_class
+  frozen_model_class: Apple___Cedar_apple_rust
+  curation_status: sourced
+  review_status: source_verified
+  last_verified: '2026-10-15'
+- condition_id: COND-GRAPE-LEAF-BLIGHT-ISARIOPSIS
+  condition_type: infectious_disease
+  cause_category: fungal
+  common_names:
+  - Leaf blight (Isariopsis leaf spot)
+  scientific_cause:
+    name: Pseudocercospora (Isariopsis) species
+    claim:
+      text: One of several leaf-spot fungi of grape (Isariopsis / Pseudocercospora).
+      evidence:
+      - source_id: SRC-UKY-GRAPE-LEAFSPOTS
+        passage: Isariopsis / Ppseudocercospora
+  affected_plants:
+  - plant_id: PLANT-GRAPE
+    claim:
+      text: A leaf spot of grapes.
+      evidence:
+      - source_id: SRC-UKY-GRAPE-LEAFSPOTS
+        passage: Leaf Spots of Grapes
+  features:
+  - feature_id: FEAT-LEAF-SPOTS
+    role: typical
+    claim:
+      text: Leaf spots caused by several fungi including Isariopsis.
+      evidence:
+      - source_id: SRC-UKY-GRAPE-LEAFSPOTS
+        passage: are caused by a range of fungi
+  favourable_conditions: []
+  spread_and_survival: []
+  look_alikes:
+  - condition_id: COND-GRAPE-BLACK-ROT
+    basis: shared_kb_features
+  diagnostic_ids:
+  - DIAG-PATHOGEN-LAB-ID
+  management_ids:
+  - MGMT-GRAPELS-VIGOUR-AIR
+  - MGMT-GRAPELS-CHEMICAL
+  curability:
+    status: preventable_and_manageable
+    claim:
+      text: Well-managed vineyards seldom have these leaf spots.
+      evidence:
+      - source_id: SRC-UKY-GRAPE-LEAFSPOTS
+        passage: Well-managed vineyards seldom have leaf spot diseases when fungicides are applied for other diseases.
+  geographic_applicability:
+  - international_not_verified_for_India
+  known_uncertainties:
+  - The source gives no species-specific symptoms; several leaf-spot fungi look alike and need a laboratory to tell apart.
+  - The source says these leaf spots rarely cause yield loss in well-managed vineyards.
+  research_role: frozen_model_known_class
+  frozen_model_class: Grape___Leaf_blight_(Isariopsis_Leaf_Spot)
+  curation_status: sourced
+  review_status: source_verified
+  last_verified: '2026-10-15'

@@ -1,0 +1,13 @@
+# Indian pesticide / biological-product registration verifications (Milestone 3: NONE).
+#
+# A chemical or biological management record may become actionable in a report ONLY if an entry below exists for it,
+# with every field present, citing knowledge-base sources that were fetched and verified:
+#   management_id:           MGMT-... record in stage10/knowledge_base/data/management.yaml
+#   crop:                    crop the registration covers
+#   use:                     target pest/disease the registration covers
+#   registration_source_id:  a KB source of type government_india (e.g. the CIB&RC registered-use list)
+#   label_source_id:         a KB source for the current label guidance
+#   verified_on:             YYYY-MM-DD
+#   expert_reviewed:         true (set only by a qualified expert)
+# Even then, doses are never emitted while stage10/config.yaml has allow_pesticide_dose: false.
+entries: []

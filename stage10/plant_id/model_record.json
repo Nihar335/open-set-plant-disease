@@ -1,0 +1,16 @@
+{
+ "model": "BioCLIP 2",
+ "repository": "https://huggingface.co/imageomics/bioclip-2",
+ "revision": "2957b322090f9cb17ae72c71981c7218a28d81e0",
+ "licence": "MIT (model card YAML and Hugging Face API, checked 2026-10-14)",
+ "purpose_approved": "local evaluation only; not integrated; not farmer-facing",
+ "files": {
+  "open_clip_model.safetensors": {"bytes": 1710517724, "sha256": "b7b2bf6fbc95799e42630e394cf95803892ab447c1a8ab629dbc82fbeaf7dfef",
+                                  "official_lfs_sha256": "b7b2bf6fbc95799e42630e394cf95803892ab447c1a8ab629dbc82fbeaf7dfef", "match": true},
+  "open_clip_config.json": {"bytes": 534, "sha256": "1bf947e96e943fe50efd5c3e26c37f843a2fa3c358967719a68c8a6d17ce68c8"}
+ },
+ "not_downloaded": ["open_clip_pytorch_model.bin (duplicate weights)", "BioCLIP 2.5 Huge", "any other model"],
+ "local_path": "stage10_local/models/bioclip-2 (outside the frozen research directories and outside the Stage-10 manifest)",
+ "disk_bytes": {"stage10_local_total": 1710518685, "isolated_venv_after_install": "about 59 MiB (about 42 MiB added by the 13 packages)"},
+ "download": {"date": "2026-10-14", "seconds": 1371, "method": "huggingface_hub.hf_hub_download, pinned revision, unauthenticated"}
+}
