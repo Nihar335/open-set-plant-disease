@@ -586,6 +586,8 @@ button:disabled { opacity: .65; cursor: wait; }
 .err { color: var(--bad); margin-top: 10px; min-height: 1px; font-weight: 600; }
 .err:empty { display: none; }
 .privacy { font-size: 12px; color: var(--muted); margin-top: 10px; text-align: center; }
+.demo-notice { margin: 12px 0; padding: 10px 14px; border: 1px solid var(--muted); border-radius: 10px; font-size: 14px; line-height: 1.45; }
+.demo-notice[hidden] { display: none; }
 
 /* loading */
 .loading { display: flex; gap: 16px; align-items: center; }
@@ -764,6 +766,7 @@ button.primary:not(:disabled):hover::before { animation: sheen .9s ease; }
 </div>
 
 <main class="wrap">
+<div class="demo-notice" id="demoNotice" role="note" hidden><strong>Research demo, not a diagnostic service.</strong> Results can be wrong, and the disease and treatment information hasn't been reviewed by an expert. Check with an agricultural expert before treating a crop.</div>
   <section id="diagnose" class="page-sec">
   <section class="hero" id="hero">
     <div class="hero-text">
@@ -928,7 +931,7 @@ button.primary:not(:disabled):hover::before { animation: sheen .9s ease; }
       <div style="margin-top:auto">
         <button class="primary" id="go" type="submit">Diagnose</button>
         <div class="err" id="err" role="alert"></div>
-        <div class="privacy">The photo is analysed on this computer and is not stored. Only the place name is sent to the weather service.</div>
+        <div class="privacy" id="privacyNote">The photo is analysed on this computer and is not stored. Only the place name is sent to the weather service.</div>
       </div>
     </div>
   </form>
@@ -955,7 +958,7 @@ button.primary:not(:disabled):hover::before { animation: sheen .9s ease; }
     <div class="sec-head"><span class="eyebrow-lbl">How it works</span><h2 class="sec-title">From one photo to a report you can act on</h2></div>
     <div class="how-grid">
       <div class="how" data-tilt="10"><div class="cube"><span>1</span></div><h3>Photo</h3>
-        <p>You add one leaf photo, the plant name and your state. The photo is analysed on this computer and is never stored.</p></div>
+        <p>You add one leaf photo, the plant name and your state. <span id="privacyHow">The photo is analysed on this computer and is never stored.</span></p></div>
       <div class="how" data-tilt="10"><div class="cube"><span>2</span></div><h3>Symptoms &amp; disease</h3>
         <p>A ResNet-50 with two heads reads the photo: one scores 25 visible symptoms, the other the diseases of that crop. Grad-CAM shows where it looked.</p></div>
       <div class="how" data-tilt="10"><div class="cube"><span>3</span></div><h3>Weather</h3>
@@ -1297,6 +1300,11 @@ async function loadMeta() {
     $("plantList").innerHTML = m.plants.map((p) => `<option value="${esc(p.name)}">${esc(p.scientific_name)}</option>`).join("");
     $("state").innerHTML = '<option value="">Choose…</option>' + m.states.map((s) => `<option>${esc(s)}</option>`).join("");
     $("state").disabled = false; $("go").disabled = false;
+    if (m.hosted) {
+      $("demoNotice").hidden = false;
+      $("privacyNote").textContent = "Your photo is sent to this app's online server for analysis, and the app doesn't save it. The place name goes to a weather service.";
+      $("privacyHow").textContent = "The photo is sent to this app's online server for analysis, and the app doesn't save it.";
+    }
     if (m.threshold != null) document.querySelectorAll(".thr").forEach((el) => (el.textContent = el.closest(".how") ? `${pct(m.threshold)} or more` : pct(m.threshold)));
     try {
       const s = localStorage.getItem("leafscan.state"); if (s) $("state").value = s;

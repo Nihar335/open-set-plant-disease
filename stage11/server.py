@@ -3,11 +3,17 @@
 Run:  python -m stage11.server        (http://127.0.0.1:8770, PORT env var overrides)
 Photos are processed in memory and never stored or sent anywhere. Only the place name (optional) and the
 coordinates of the place or state capital are sent to the Open-Meteo geocoding and weather APIs.
+
+Public hosting: set LEAFSCAN_PUBLIC=1 (see deploy/huggingface). This turns on the request limits below and makes the
+page state that photos go to an online server. HOST sets the listening address (default 127.0.0.1).
 """
 from __future__ import annotations
 
 import io
 import os
+import threading
+import time
+from collections import defaultdict, deque
 from pathlib import Path
 
 from flask import Flask, jsonify, request, send_from_directory
@@ -20,6 +26,35 @@ app = Flask(__name__, static_folder=None)
 app.config["MAX_CONTENT_LENGTH"] = 15 * 1024 * 1024
 app.json.sort_keys = False  # keep the report fields in the required order
 _engine = None
+
+PUBLIC = os.environ.get("LEAFSCAN_PUBLIC") == "1"
+PER_VISITOR = (20, 600)    # at most 20 diagnoses per visitor in 10 minutes
+ALL_VISITORS = (300, 3600)  # at most 300 diagnoses in an hour, across everyone
+MAX_RUNNING = 2            # diagnoses running at once
+MAX_WAIT_S = 20            # how long a request waits for a free slot
+_slots = threading.BoundedSemaphore(MAX_RUNNING)
+_hits: dict[str, deque] = defaultdict(deque)
+_hits_lock = threading.Lock()
+
+
+def _within(key: str, limit: int, window_s: int, now: float) -> bool:
+    q = _hits[key]
+    while q and q[0] <= now - window_s:
+        q.popleft()
+    if len(q) >= limit:
+        return False
+    q.append(now)
+    return True
+
+
+def _allowed() -> bool:
+    """Basic protection against overload. The visitor address comes from the host's proxy header, so it is not proof of identity."""
+    visitor = request.headers.get("X-Forwarded-For", request.remote_addr or "").split(",")[0].strip()
+    now = time.monotonic()
+    with _hits_lock:
+        for key in [k for k, q in _hits.items() if k != "*" and (not q or q[-1] <= now - PER_VISITOR[1])]:
+            del _hits[key]  # forget visitors whose window has passed, so this table cannot grow without limit
+        return _within("ip:" + visitor, *PER_VISITOR, now) and _within("*", *ALL_VISITORS, now)
 
 
 def engine():
@@ -52,6 +87,7 @@ def meta():
                    for p in kb.plants],
         "supported_crops": supported,
         "threshold": THRESHOLD,
+        "hosted": PUBLIC,
     })
 
 
@@ -127,7 +163,16 @@ def diagnose():
                                  "(iPhone HEIC photos: choose 'Most Compatible' in camera settings, or share as JPEG)."}), 400
     if not load_kb().state(state):
         return jsonify({"error": f"Unknown state or union territory: {state}"}), 400
-    return jsonify(engine().diagnose(data, plant, state, place))
+    if not PUBLIC:
+        return jsonify(engine().diagnose(data, plant, state, place))
+    if not _allowed():
+        return jsonify({"error": "Too many requests right now. Please wait a few minutes and try again."}), 429
+    if not _slots.acquire(timeout=MAX_WAIT_S):
+        return jsonify({"error": "The app is busy right now. Please try again in a minute."}), 503
+    try:
+        return jsonify(engine().diagnose(data, plant, state, place))
+    finally:
+        _slots.release()
 
 
 @app.errorhandler(413)
@@ -137,5 +182,10 @@ def too_large(_):
 
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 8770))
+    host = os.environ.get("HOST", "127.0.0.1")
     engine()  # load the model before serving
-    app.run(host="127.0.0.1", port=port, debug=False, threaded=True)
+    if PUBLIC:
+        from waitress import serve
+        serve(app, host=host, port=port, threads=4)
+    else:
+        app.run(host=host, port=port, debug=False, threaded=True)
