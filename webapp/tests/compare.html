@@ -1,0 +1,46 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>LeafScan browser check</title>
+<!-- Runs the real browser pipeline on photos listed in baseline.json and compares with the Python results. -->
+<script src="app/api.js"></script>
+<body>
+<pre id="log">Starting…</pre>
+<script>
+(async () => {
+  const log = document.getElementById("log");
+  const base = await (await fetch("baseline.json")).json();
+  const R = window.__compare = { total: base.length, done: 0, sameTop: 0, sameTop3: 0, sameVerdict: 0, sameCandidates: 0, sameReport: 0,
+    maxLogitDiff: 0, maxSymDiff: 0, times: [], mismatches: [], heatmaps: [] };
+  const top3 = (a) => a.map((v, i) => [v, i]).sort((x, y) => y[0] - x[0]).slice(0, 3).map((x) => x[1]).join();
+  for (const b of base) {
+    try {
+      const blob = await (await fetch("photos/" + b.file)).blob();
+      const t0 = performance.now();
+      const { result, logits, symptoms } = await window.LeafScanTest.call("diagnose", { blob, plant: b.plant, state: "Karnataka", place: "", skipWeather: true });
+      R.times.push(Math.round(performance.now() - t0));
+      const logitDiff = Math.max(...logits.map((v, i) => Math.abs(v - b.logits[i])));
+      R.maxLogitDiff = Math.max(R.maxLogitDiff, logitDiff);
+      const pySym = b.symptoms.map((v) => 1 / (1 + Math.exp(-v)));
+      R.maxSymDiff = Math.max(R.maxSymDiff, ...symptoms.map((v, i) => Math.abs(v - pySym[i])));
+      const top = (a) => a.indexOf(Math.max(...a));
+      if (top(logits) === top(b.logits)) R.sameTop++;
+      if (top3(logits) === top3(b.logits)) R.sameTop3++;
+      const py = b.result;
+      const verdictOk = result.verdict === py.verdict;
+      const candOk = result.candidates.map((c) => c.key).join() === py.candidates.map((c) => c.key).join();
+      const reportOk = result.report.text === py.report.text;
+      if (verdictOk) R.sameVerdict++;
+      if (candOk) R.sameCandidates++;
+      if (reportOk) R.sameReport++;
+      if (!verdictOk || !candOk) R.mismatches.push({ file: b.file, plant: b.plant, source: b.source, js: result.verdict, py: py.verdict,
+        jsTop: result.candidates[0] && [result.candidates[0].key, result.candidates[0].confidence],
+        pyTop: py.candidates[0] && [py.candidates[0].key, py.candidates[0].confidence], logitDiff });
+      if (R.heatmaps.length < 3) R.heatmaps.push({ file: b.file, url: result.heatmap, cls: result.heatmap_class });
+    } catch (e) { R.mismatches.push({ file: b.file, error: String(e) }); }
+    R.done++;
+    log.textContent = `${R.done} of ${R.total}`;
+  }
+  R.finished = true;
+  log.textContent = "Finished\n" + JSON.stringify({ ...R, heatmaps: undefined, times: undefined }, null, 1);
+})();
+</script>

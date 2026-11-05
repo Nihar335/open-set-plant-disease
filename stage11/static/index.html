@@ -1302,8 +1302,8 @@ async function loadMeta() {
     $("state").disabled = false; $("go").disabled = false;
     if (m.hosted) {
       $("demoNotice").hidden = false;
-      $("privacyNote").textContent = "Your photo is sent to this app's online server for analysis, and the app doesn't save it. The place name goes to a weather service.";
-      $("privacyHow").textContent = "The photo is sent to this app's online server for analysis, and the app doesn't save it.";
+      $("privacyNote").textContent = m.privacy_note || "Your photo is sent to this app's online server for analysis, and the app doesn't save it. The place name goes to a weather service.";
+      $("privacyHow").textContent = m.privacy_how || "The photo is sent to this app's online server for analysis, and the app doesn't save it.";
     }
     if (m.threshold != null) document.querySelectorAll(".thr").forEach((el) => (el.textContent = el.closest(".how") ? `${pct(m.threshold)} or more` : pct(m.threshold)));
     try {
