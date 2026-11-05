@@ -2,7 +2,7 @@
 # The app comes from one pinned commit of the GitHub repository. To update the Space, change COMMIT.
 FROM python:3.12-slim
 
-ENV COMMIT=PIN_AFTER_PUSH
+ENV COMMIT=b440bdc2710d2ba65ac5c59f107d40bc9469e039
 
 RUN useradd -m -u 1000 user
 WORKDIR /home/user/app
