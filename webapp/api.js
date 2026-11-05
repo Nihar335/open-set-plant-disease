@@ -5,7 +5,7 @@
   "use strict";
   const BASE = new URL("app/", document.baseURI).href;
   const MAX_BYTES = 15 * 1024 * 1024;
-  const PRIVACY_NOTE = "Your photo is analysed in your browser and is not uploaded. The place name and location coordinates go to a weather service.";
+  const PRIVACY_NOTE = "Your photo is analysed in your browser and is not uploaded. The place name and location coordinates go to a weather service. The first diagnosis downloads a 47 MB model.";
   const PRIVACY_HOW = "The photo is analysed in your browser and is not uploaded.";
   const realFetch = window.fetch.bind(window);
   let worker = null, nextId = 1;

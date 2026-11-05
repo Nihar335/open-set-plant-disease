@@ -4,6 +4,10 @@ Can a plant-disease classifier tell the diseases it has learned from the ones it
 
 This repository has the code, configuration and trained models for that research, along with two applications built on it.
 
+## [Try LeafScan in your browser](https://nihar335.github.io/open-set-plant-disease/)
+
+Nothing to install. Your photo is analysed in your browser and is not uploaded. The first diagnosis downloads a 47 MB model.
+
 > **Research prototype, not a diagnostic tool.** Results can be wrong, and the disease and treatment data has not been reviewed by an expert. Check any diagnosis with a qualified agricultural expert before acting on it.
 
 ## What's here
@@ -11,7 +15,7 @@ This repository has the code, configuration and trained models for that research
 | Part | What it does | Runs from a fresh clone? |
 |---|---|---|
 | **Open-set research** (`src/`, `scripts/`, `demo/`) | Classifies a leaf photo and flags possibly unseen diseases | Yes, for inference. Retraining needs the datasets |
-| **LeafScan** (`stage11/`) | Web app: from a leaf photo, plant name and state, reports symptoms, a likely disease, confirmation tests and options | Yes |
+| **LeafScan** (`stage11/`) | Web app: from a leaf photo, plant name and state, reports symptoms, a likely disease, confirmation tests and options | Yes, or use the [online version](https://nihar335.github.io/open-set-plant-disease/) |
 | **AgroVaidya** (`stage10/`) | Local web app with voice input and multiple languages | **No**, see [below](#agrovaidya) |
 
 ## Setup
@@ -91,6 +95,9 @@ tests/                research tests
 results/              only the saved thresholds and values that the code loads
 stage10/              AgroVaidya app, knowledge base, report engine and plant-name workflow
 stage11/              LeafScan app, model, decision rule, disease data and tests
+webapp/               source of the browser version of LeafScan, and its tests
+docs/                 the built browser version, served by GitHub Pages
+deploy/huggingface/   setup for hosting the server version on a paid Hugging Face Space
 ```
 
 Reports, figures, full results, datasets and third-party models aren't published here. Some READMEs in subfolders, and some code comments, still mention those files.
@@ -111,6 +118,24 @@ python -m src.data.check_leakage
 Then run the stage scripts in `scripts/`, starting with `train_baseline.py`. The training scripts refuse to overwrite existing weights, so move `models/baseline/` and `models/contrastive/` aside first.
 
 LeafScan's training scripts are `stage11/import_extra.py`, `data_index.py`, `train.py` and `evaluate.py`. They also need the AppleLeaf9 and Kashmir apple datasets (from Hugging Face, Project-AgML) in `stage11_local/`, and no script downloads those.
+
+## Browser version of LeafScan
+
+The online version runs the same model with [ONNX Runtime Web](https://onnxruntime.ai), and `webapp/` is a JavaScript port of LeafScan's decision rule, report and image preparation. There's no server, so the only outside calls are to the Open-Meteo weather service. It differs from the server version in two ways:
+
+- Model weights are stored in half precision to halve the download. Scores can differ slightly, so a shown percentage may differ by a point. On 129 validation photos, the verdict and the ranked candidates matched the PyTorch app every time.
+- Photos are decoded by the browser, so results can differ very slightly from the Python decoder.
+
+It has been tested in Chromium-based browsers on a desktop, including at phone width, but not yet on real phones, Safari or Firefox.
+
+To rebuild it after changing the app (`pip install onnx==1.17.0 onnxruntime==1.20.1`, and download the `onnxruntime-web@1.20.1` npm package):
+
+```bash
+python -P webapp/export_onnx.py path/to/leafscan.onnx
+python -P webapp/build_site.py path/to/leafscan.onnx path/to/onnxruntime-web/package
+```
+
+`webapp/tests/` compares the port with the Python engine. It generates expected results with `make_fixtures.py`, then checks them with `core.test.js`.
 
 ## AgroVaidya
 

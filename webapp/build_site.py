@@ -62,6 +62,8 @@ def build(model: Path, vendor: Path) -> None:
     shutil.copy2(ROOT / "webapp" / "ORT_LICENSE.txt", APP / "vendor" / "ORT_LICENSE.txt")
     if model.resolve() != (APP / "model.onnx").resolve():
         shutil.copy2(model, APP / "model.onnx")
+    size = (APP / "model.onnx").stat().st_size
+    assert f"MODEL_BYTES = {size};" in (ROOT / "webapp/worker.js").read_text(encoding="utf-8"), f"update MODEL_BYTES to {size}"
     (APP / "kb.json").write_text(json.dumps(kb_data(), ensure_ascii=False, separators=(",", ":")), encoding="utf-8", newline="\n")
     html = (ROOT / "stage11/static/index.html").read_text(encoding="utf-8")
     assert html.count("<head>") == 1

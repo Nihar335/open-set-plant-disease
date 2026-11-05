@@ -6,6 +6,7 @@
 importScripts("vendor/ort.wasm.min.js", "core.js", "pixels.js");
 
 const MODEL_URL = "model.onnx", KB_URL = "kb.json", WEATHER_TIMEOUT_MS = 8000;
+const MODEL_BYTES = 47459202; // size of model.onnx; build_site.py checks it
 let core = null, session = null;
 
 async function loadCore() {
@@ -22,7 +23,7 @@ async function loadSession(id) {
   post(id, "progress", { stage: "download", loaded: 0, total: 0 });
   const r = await fetch(MODEL_URL);
   if (!r.ok) throw new Error("Could not download the model (HTTP " + r.status + ").");
-  const total = Number(r.headers.get("Content-Length")) || 0;
+  const total = MODEL_BYTES; // not Content-Length: hosts may compress the file in transit
   const reader = r.body.getReader(), parts = [];
   let loaded = 0;
   for (;;) {
