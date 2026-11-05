@@ -6,7 +6,7 @@ This repository has the code, configuration and trained models for that research
 
 ## [Try LeafScan in your browser](https://nihar335.github.io/open-set-plant-disease/)
 
-Nothing to install. Your photo is analysed in your browser and is not uploaded. The first diagnosis downloads a 47 MB model.
+Nothing to install. Your photo is analysed in your browser and is not uploaded. The first diagnosis downloads a 47 MB model, which the browser then keeps for later visits.
 
 > **Research prototype, not a diagnostic tool.** Results can be wrong, and the disease and treatment data has not been reviewed by an expert. Check any diagnosis with a qualified agricultural expert before acting on it.
 

@@ -6,7 +6,9 @@
 importScripts("vendor/ort.wasm.min.js", "core.js", "pixels.js");
 
 const MODEL_URL = "model.onnx", KB_URL = "kb.json", WEATHER_TIMEOUT_MS = 8000;
-const MODEL_BYTES = 47459202; // size of model.onnx; build_site.py checks it
+const WASM_URL = "vendor/ort-wasm-simd-threaded.wasm";
+const MODEL_BYTES = 47459202, MODEL_ID = "3f72cf350d6cde43"; // size and start of SHA-256 of model.onnx; build_site.py checks them
+const CACHE_PREFIX = "leafscan-model-", CACHE_NAME = CACHE_PREFIX + MODEL_ID;
 let core = null, session = null;
 
 async function loadCore() {
@@ -18,25 +20,49 @@ async function loadCore() {
   return core;
 }
 
-async function loadSession(id) {
-  if (session) return session;
-  post(id, "progress", { stage: "download", loaded: 0, total: 0 });
-  const r = await fetch(MODEL_URL);
-  if (!r.ok) throw new Error("Could not download the model (HTTP " + r.status + ").");
-  const total = MODEL_BYTES; // not Content-Length: hosts may compress the file in transit
+/* The browser's normal cache did not keep these large files (the whole model was downloaded again on every visit),
+ * so they are stored in Cache Storage. The name holds the model's identity: a new model replaces the old files. */
+async function openStore() {
+  try {
+    const store = await caches.open(CACHE_NAME);
+    for (const name of await caches.keys()) {
+      if (name.startsWith(CACHE_PREFIX) && name !== CACHE_NAME) await caches.delete(name);
+    }
+    return store;
+  } catch (e) {
+    return null; // storage unavailable, for example in a private window: download each time
+  }
+}
+
+async function fetchStored(url, store, onProgress) {
+  const hit = store && (await store.match(url).catch(() => null));
+  if (hit) return new Uint8Array(await hit.arrayBuffer());
+  const r = await fetch(url);
+  if (!r.ok) throw new Error("Could not download " + url + " (HTTP " + r.status + ").");
   const reader = r.body.getReader(), parts = [];
   let loaded = 0;
   for (;;) {
     const { done, value } = await reader.read();
     if (done) break;
     parts.push(value); loaded += value.length;
-    post(id, "progress", { stage: "download", loaded, total });
+    if (onProgress) onProgress(loaded);
   }
-  const model = new Uint8Array(loaded);
+  const bytes = new Uint8Array(loaded);
   let at = 0;
-  for (const p of parts) { model.set(p, at); at += p.length; }
+  for (const p of parts) { bytes.set(p, at); at += p.length; }
+  if (store) await store.put(url, new Response(bytes)).catch(() => {}); // storage full: still usable this time
+  return bytes;
+}
+
+async function loadSession(id) {
+  if (session) return session;
+  const store = await openStore();
+  // MODEL_BYTES, not Content-Length: hosts may compress the file in transit.
+  const model = await fetchStored(MODEL_URL, store, (loaded) => post(id, "progress", { stage: "download", loaded, total: MODEL_BYTES }));
+  const wasm = await fetchStored(WASM_URL, store);
   post(id, "progress", { stage: "load" });
   ort.env.wasm.wasmPaths = new URL("vendor/", self.location.href).href;
+  ort.env.wasm.wasmBinary = wasm;
   ort.env.wasm.numThreads = self.crossOriginIsolated ? Math.min(4, navigator.hardwareConcurrency || 1) : 1;
   session = await ort.InferenceSession.create(model, { executionProviders: ["wasm"], graphOptimizationLevel: "all" });
   return session;

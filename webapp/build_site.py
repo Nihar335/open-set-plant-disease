@@ -6,6 +6,7 @@ The page comes from stage11/static/index.html and the data from stage11/data, so
 """
 from __future__ import annotations
 
+import hashlib
 import json
 import shutil
 import sys
@@ -63,7 +64,9 @@ def build(model: Path, vendor: Path) -> None:
     if model.resolve() != (APP / "model.onnx").resolve():
         shutil.copy2(model, APP / "model.onnx")
     size = (APP / "model.onnx").stat().st_size
-    assert f"MODEL_BYTES = {size};" in (ROOT / "webapp/worker.js").read_text(encoding="utf-8"), f"update MODEL_BYTES to {size}"
+    model_id = hashlib.sha256((APP / "model.onnx").read_bytes()).hexdigest()[:16]
+    expected = f'MODEL_BYTES = {size}, MODEL_ID = "{model_id}";'
+    assert expected in (ROOT / "webapp/worker.js").read_text(encoding="utf-8"), f"update webapp/worker.js to: {expected}"
     (APP / "kb.json").write_text(json.dumps(kb_data(), ensure_ascii=False, separators=(",", ":")), encoding="utf-8", newline="\n")
     html = (ROOT / "stage11/static/index.html").read_text(encoding="utf-8")
     assert html.count("<head>") == 1
